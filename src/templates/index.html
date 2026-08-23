@@ -2,91 +2,134 @@
 {% from "components/fieldset.html" import fieldset %}
 
 {% block content %}
-  <div class="flex flex-col gap-4">
-    <!-- <WhoAmI /> -->
-    {% call fieldset("cat README.md") %}
-      <div class="flex flex-col lg:flex-row gap-3 text-lg">
-        <article class="text-black text-lg prose-p:m-0 flex flex-col gap-4">
+  <div class="flex flex-col gap-3">
+    {% call fieldset("whoami") %}
+      <div>
+        <article class="text-black prose-p:m-0 flex flex-col gap-3">
           <p>
-            I'm a Computer Science student at Technical University of Munich
-            focused on building practical software systems across backend
-            services, web products, and applied machine learning.
+            I'm a Computer Science student at TUM.
           </p>
           <p>
-            My recent work includes a full-stack student jobs platform, a
-            satellite-data deforestation model, and systems programming projects
-            that make architecture and performance tradeoffs explicit.
+            Interested in parallel programming, HPC, AI and agentic coding.
           </p>
           <p>
-            I like projects that connect clean engineering with real users:
-            matching students with roles, turning data into decisions, and
-            teaching technical topics in a way younger learners can actually
-            use.
+            Currently working as a Research Assistant at TUM's Institute of
+            Automation and Information Systems.
           </p>
-          <p>
-            This public profile keeps the focus on work, projects, and skills.
+          <p id="contact">
+            Based in Munich. Reach me at
+            <a
+              id="link-conversion"
+              rel="nofollow noindex"
+              href="#contact"
+            >email</a>,
+            <a href="https://linkedin.com/in/arda-tas">LinkedIn</a>, or
+            <a href="https://github.com/ardatas">GitHub</a>.
           </p>
         </article>
-        <img
-          src="/assets/portfolio-systems.svg"
-          alt="systems portfolio graphic"
-          class="h-[350px] object-contain"
-          loading="eager"
-        />
       </div>
     {% endcall %}
+    <section id="experience">
+      {% call fieldset("cat ~/experience.md") %}
+        <p class="mb-3 text-sm text-neutral-600">Research, engineering, and community work.</p>
+        <div class="flex flex-col gap-3">
+          <div class="profile-row">
+            <div class="profile-logo profile-logo-tum" aria-label="TUM AIS">
+              <img src="/assets/logo-tum.png" alt="Technical University of Munich" />
+              <span>AIS</span>
+            </div>
+            <div class="min-w-0 flex-1">
+              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
+                <div>
+                  <h3 class="profile-title">TUM AIS</h3>
+                  <p class="font-medium">Research Assistant</p>
+                </div>
+                <time class="profile-date">Present</time>
+              </div>
+              <p class="profile-meta">Institute of Automation and Information Systems · Munich</p>
+              <p class="mt-2">GUI-based industrial time-series pipelines with Python, PySide6, NumPy, SciPy, and HDF5.</p>
+            </div>
+          </div>
+
+          <div class="profile-row">
+            <div class="profile-logo profile-logo-wide">
+              <img src="/assets/logo-zarm.png" alt="ZARM" />
+            </div>
+            <div class="min-w-0 flex-1">
+              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
+                <div>
+                  <h3 class="profile-title">ZARM</h3>
+                  <p class="font-medium">IT Intern</p>
+                </div>
+                <time class="profile-date">06/2022 - 07/2022</time>
+              </div>
+              <p class="profile-meta">Center of Applied Space Technology and Microgravity · Bremen</p>
+              <p class="mt-2">Linux development environments and HPC-backed analysis for drop-tower experiments.</p>
+            </div>
+          </div>
+
+          <div class="profile-row">
+            <div class="profile-logo profile-logo-square">
+              <img src="/assets/logo-tbc.png" alt="TUM Blockchain Club" />
+            </div>
+            <div class="min-w-0 flex-1">
+              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
+                <div>
+                  <h3 class="profile-title">TUM Blockchain Club</h3>
+                  <p class="font-medium">Member and Hackathon Organizer</p>
+                </div>
+                <time class="profile-date">05/2026 - present</time>
+              </div>
+              <p class="profile-meta">Munich</p>
+              <p class="mt-2">Web3 events and organization of the TUM Blockchain Hackathon 2026.</p>
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-3 gap-3">
+            <div class="profile-row compact-row">
+              <div>
+                <h3 class="profile-title">TUM Student Council</h3>
+                <p class="profile-meta">Student representative · present</p>
+              </div>
+            </div>
+            <div class="profile-row compact-row">
+              <div>
+                <h3 class="profile-title">Habitat Foundation</h3>
+                <p class="profile-meta">54+ hours teaching technology and AI</p>
+              </div>
+            </div>
+            <div class="profile-row compact-row">
+              <div>
+                <h3 class="profile-title">KACUV Foundation</h3>
+                <p class="profile-meta">26,000+ TL raised through a marathon</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endcall %}
+    </section>
     <section id="projects">
-      {% call fieldset("ls ~/projects") %}
+      {% call fieldset("ls ~/projects.md") %}
+        <p class="mb-3 text-sm text-neutral-600">Two live websites worth visiting.</p>
         {{ lists["projects"]|safe }}
       {% endcall %}
     </section>
-    <section id="experience">
-      {% call fieldset("cat ~/experience.md") %}
-        <article>
-          <p>
-            Experience across research infrastructure, agile product delivery,
-            university representation, and community technology education.
-          </p>
-          <ul>
-            <li>
-              IT internship exposure to Linux development environments,
-              aerospace engineering workflows, and HPC-backed experiment
-              analysis.
-            </li>
-            <li>
-              Full-stack bootcamp practice with TypeScript, REST API design,
-              data serialization, sprint planning, and iterative delivery.
-            </li>
-            <li>
-              Student representation and student council involvement at TUM.
-            </li>
-            <li>
-              Community work spanning external affairs, youth AI workshops, and
-              fundraising for children with cancer.
-            </li>
-          </ul>
-        </article>
-      {% endcall %}
-    </section>
-    <!-- <Coursework /> -->
     <section id="skills">
       {% call fieldset("cat ~/skills.md") %}
-        <article>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 not-prose">
-            <div class="border border-black dark:border-white p-3">
-              <h3 class="font-mono text-lg font-bold mb-2">Languages</h3>
-              <p>Java, Python, C, JavaScript, TypeScript, OCaml, HTML5, CSS</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div class="skill-panel">
+              <h3 class="skill-title">Languages</h3>
+              <p>Java, Python, C, JavaScript, TypeScript, OCaml, HTML, CSS</p>
             </div>
-            <div class="border border-black dark:border-white p-3">
-              <h3 class="font-mono text-lg font-bold mb-2">Backend & Data</h3>
-              <p>Spring Boot, REST APIs, PostgreSQL, Flyway, Docker, AWS</p>
+            <div class="skill-panel">
+              <h3 class="skill-title">Libraries & frameworks</h3>
+              <p>PyTorch, scikit-learn, SciPy, NumPy, pandas, PySide6, Spring Boot, React, Tailwind, Vite, PostgreSQL, HDF5</p>
             </div>
-            <div class="border border-black dark:border-white p-3">
-              <h3 class="font-mono text-lg font-bold mb-2">Frontend & Tools</h3>
-              <p>React, Tailwind, Vite, Git, CI/CD, Postman, MCP</p>
+            <div class="skill-panel">
+              <h3 class="skill-title">Developer tools</h3>
+              <p>AWS, CI/CD, MCP, Git, Docker, Postman, Flyway, REST APIs</p>
             </div>
-          </div>
-        </article>
+        </div>
       {% endcall %}
     </section>
   </div>

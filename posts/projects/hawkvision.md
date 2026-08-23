@@ -1,22 +1,17 @@
 ---
-title: "Linux and HPC Internship"
-summary: "Development environments and aerospace experiment analysis at ZARM"
+title: "IT Internship at ZARM"
+summary: "Linux development and HPC in an aerospace research environment"
 coverImage: "/assets/linux-hpc.svg"
-order: 0
+order: -2
+listed: false
 ---
 
-At the Center of Applied Space Technology and Microgravity, I worked as an IT
-intern in an aerospace research environment.
+I worked as an IT intern at the Center of Applied Space Technology and
+Microgravity (ZARM) in Bremen from June to July 2022.
 
-The work started with setting up a Debian Linux virtual machine as a development
-environment and using the command line to understand Linux-based distributions
-from a practical systems perspective.
+I set up a Debian Linux virtual machine as the development environment and used
+the command line to learn how Linux-based distributions are configured and run.
 
-The internship also introduced interdisciplinary applications of computer
-science in aerospace engineering. One area of exposure was the use of
-High-Performance Computing for data analysis around experiments in the ZARM drop
-tower.
-
-This experience shaped how I think about software as infrastructure: the useful
-part is not just writing code, but making a reliable environment where technical
-work can happen.
+The internship introduced me to applications of computer science in aerospace
+engineering, including the use of High-Performance Computing to analyze
+experiments from the ZARM drop tower.

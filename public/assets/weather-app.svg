@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-label="Weather visualization app">
-  <rect width="900" height="600" fill="#eff6ff"/>
-  <rect x="92" y="94" width="716" height="410" fill="#ffffff" stroke="#111827" stroke-width="8"/>
-  <path d="M168 386c60-92 122-104 188-34s134 60 204-30 126-102 172-50" fill="none" stroke="#2563eb" stroke-width="10"/>
-  <circle cx="642" cy="194" r="52" fill="#facc15" stroke="#111827" stroke-width="6"/>
-  <path d="M190 200h170M190 250h260M190 300h130" stroke="#111827" stroke-width="10"/>
-  <text x="190" y="452" font-family="IBM Plex Mono, monospace" font-size="28" fill="#111827">TypeScript REST API + frontend</text>
-</svg>

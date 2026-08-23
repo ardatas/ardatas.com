@@ -1,20 +1,24 @@
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="flex flex-col gap-3">
   {% for post in posts %}
-    <a href="{{ post.href }}">
-      <div
-        class="rounded-none outline outline-1 outline-black dark:outline-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black overflow-hidden me-[6px] mb-[6px] shadow-[5px_5px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[5px_5px_0px_1px_rgba(255,255,255,0.25)]"
-      >
-        <div class="w-full">
+    <a
+      href="{{ post.href }}"
+      {% if post.external %}target="_blank" rel="noopener noreferrer"{% endif %}
+      class="group block bg-white border border-[#b7b5ae] p-3 transition-[border-color,transform] hover:border-[#315f87] hover:-translate-y-px focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#315f87]"
+    >
+      <div class="grid grid-cols-[48px_1fr] sm:grid-cols-[48px_1fr_auto] gap-3 items-center">
+        <div class="h-12 w-12 overflow-hidden border border-neutral-200 bg-white p-1">
           <img
-            class="object-cover object-left-top w-full aspect-[3/2]"
+            class="h-full w-full object-contain"
             src="{{ post.coverImage }}"
-            alt="Image for {{ post.title }}"
+            alt="{{ post.title }} logo"
+            loading="eager"
           />
         </div>
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2 leading-6">{{ post.title }}</div>
-          <p>{{ post.summary }}</p>
+        <div class="min-w-0">
+          <div class="font-semibold text-base mb-1 leading-5 tracking-tight">{{ post.title }}</div>
+          <p class="text-sm leading-5 text-neutral-700 dark:text-neutral-300">{{ post.summary }}</p>
         </div>
+        <span class="col-start-2 justify-self-start sm:col-start-auto sm:justify-self-end border border-black px-3 py-1 font-mono text-[11px] group-hover:bg-[#315f87] group-hover:text-white group-hover:border-[#315f87]">Visit ↗</span>
       </div>
     </a>
   {% endfor %}

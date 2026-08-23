@@ -2,20 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f6f4ee;
+  color: #101114;
+}
+
+a {
+  text-underline-offset: 2px;
+}
+
 img {
   @apply max-w-full h-auto w-auto;
 }
 
 h1 {
-  @apply text-4xl;
+  @apply text-3xl;
 }
 
 h2 {
-  @apply text-2xl;
+  @apply text-xl;
 }
 
 h3 {
-  @apply text-2xl font-bold;
+  @apply text-lg font-semibold tracking-tight;
 }
 
 .prose > ul {
@@ -27,15 +40,15 @@ h3 {
 }
 
 .prose > h1 {
-  @apply text-4xl font-bold mb-3;
+  @apply text-3xl font-semibold tracking-tight mb-3;
 }
 
 .prose > h2 {
-  @apply text-3xl font-bold mb-3;
+  @apply text-2xl font-semibold tracking-tight mb-3;
 }
 
 .prose > h3 {
-  @apply text-2xl font-bold;
+  @apply text-lg font-semibold tracking-tight;
 }
 
 .prose > h4 {
@@ -47,7 +60,73 @@ h3 {
 }
 
 article {
-  @apply prose md:prose-lg lg:prose-xl max-w-none prose-neutral dark:prose-invert;
+  @apply prose prose-sm sm:prose-base max-w-none prose-neutral dark:prose-invert prose-headings:font-semibold prose-p:leading-6 prose-li:leading-6;
+}
+
+.profile-row {
+  @apply flex gap-3 border border-[#b7b5ae] bg-white p-3;
+}
+
+.compact-row {
+  @apply min-h-24 items-start;
+}
+
+.profile-logo {
+  @apply flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden border border-[#b7b5ae] bg-white p-1;
+}
+
+.profile-logo img {
+  @apply max-h-full max-w-full object-contain;
+}
+
+.profile-logo-tum {
+  @apply flex-col gap-0.5 border-[#0065bd] bg-[#0065bd] p-1;
+}
+
+.profile-logo-tum img {
+  @apply h-[22px] w-auto;
+}
+
+.profile-logo-tum span {
+  @apply font-mono text-[8px] font-semibold leading-none tracking-[0.16em] text-white;
+}
+
+.profile-logo-wide {
+  @apply w-12 p-1;
+}
+
+.profile-logo-square {
+  @apply w-12 p-1;
+}
+
+.profile-title {
+  @apply text-[15px] font-semibold leading-5 tracking-tight;
+}
+
+.profile-date {
+  @apply whitespace-nowrap font-mono text-[11px] text-neutral-600;
+}
+
+.profile-meta {
+  @apply mt-0.5 text-xs text-neutral-500;
+}
+
+.skill-panel {
+  @apply border border-[#b7b5ae] bg-white p-3 text-sm leading-5;
+}
+
+.skill-title {
+  @apply mb-2 font-mono text-xs font-semibold uppercase tracking-[0.08em] text-[#315f87];
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
 }
 
 .icon {

@@ -1,21 +1,15 @@
 ---
-title: "Developer Toolkit"
-summary: "Languages, frameworks, and deployment tools used across projects"
+title: "Technical Skills"
+summary: "Languages, frameworks, data tools, and deployment experience"
 coverImage: "/assets/toolkit.svg"
-order: 5
+order: 3
+listed: false
 ---
 
-My technical toolkit is broad enough to build complete products, but still
-centered on clear system boundaries and maintainable implementation.
+I work with Java, Python, C, JavaScript, TypeScript, OCaml, HTML5, and CSS.
 
-On the language side, I have worked with Java, Python, C, JavaScript,
-TypeScript, OCaml, HTML5, and CSS. For backend and product work, the strongest
-recurring stack is Spring Boot, REST APIs, PostgreSQL, Flyway, Docker, and AWS.
+My libraries and frameworks include PyTorch, scikit-learn, SciPy, NumPy, pandas,
+PySide6, Spring Boot, React, Tailwind, Vite, PostgreSQL, and HDF5.
 
-On the frontend side, I use React, Tailwind, and Vite to build interactive web
-interfaces. Git, CI/CD workflows, Postman, and MCP-based tooling support the
-development process around those applications.
-
-The common pattern across the stack is pragmatic engineering: choose tools that
-make the system easier to reason about, ship the smallest useful version, and
-keep the deployment path understandable.
+For development and deployment, I use AWS, CI/CD, MCP, Git, Docker, Postman,
+Flyway, and REST APIs.

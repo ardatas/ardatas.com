@@ -2,7 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/ardatas/public_html/
-    - test -d "$DEPLOYPATH"
-    - pnpm install --frozen-lockfile
-    - pnpm build
     - /bin/cp -a dist/. "$DEPLOYPATH"

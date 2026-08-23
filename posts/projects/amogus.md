@@ -1,22 +1,21 @@
 ---
 title: "Werkio"
-summary: "Full-stack platform for student jobs and academic-role discovery"
-coverImage: "/assets/werkio.svg"
-order: -3
+summary: "Student jobs and academic roles at getwerkio.com"
+coverImage: "/assets/logo-werkio.png"
+order: -5
+website: "https://getwerkio.com"
 ---
 
-Werkio is a full-stack web application for aggregating student jobs, academic
-roles, and research opportunities into a personalized daily digest.
+Werkio is a full-stack web app that collects student jobs and academic roles
+from German universities, research institutes, and companies. Users receive a
+personalized daily digest instead of checking each source separately.
 
-The backend is organized around a hexagonal architecture in Spring Boot, with
-PostgreSQL for persistence and Flyway for schema migrations. The API is consumed
-by a React and Tailwind single-page application.
+The backend uses hexagonal architecture with Spring Boot, PostgreSQL, and Flyway.
+It exposes a REST API consumed by a React and Tailwind single-page application.
 
-The product workflow emphasizes consent and relevance: users confirm sign-up
-through double opt-in, choose tags that describe their interests, and receive a
-scheduled digest matched against a large job corpus.
+Google OAuth and double opt-in handle registration. Tag-based matching filters
+more than 2,000 jobs, and Brevo SMTP sends the digest at 07:00 Europe/Berlin.
 
-Deployment work included Docker Compose, TLS termination, cloud hosting,
-snapshot backups, lightweight analytics, and uptime monitoring. The result is a
-practical product that combines backend design, frontend delivery, operations,
-and user-focused matching logic.
+The application runs on AWS EC2 with Docker Compose and Caddy TLS. Operations
+include EBS snapshot backups, self-hosted Umami analytics, and UptimeRobot
+monitoring.

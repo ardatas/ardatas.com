@@ -20,16 +20,19 @@ html() {
 static() {
     local assets=(
         blockchain.svg
-        cache-simulator.svg
         experience.svg
         fundraising.svg
         linux-hpc.svg
+        logo-github.svg
+        logo-linkedin.svg
+        logo-tbc.png
+        logo-tum.png
+        logo-werkio.png
+        logo-zarm.png
         portfolio-systems.svg
         projects.svg
-        satellite-ml.svg
         toolkit.svg
         tum-cs.svg
-        weather-app.svg
         werkio.svg
         workshops.svg
     )
@@ -46,6 +49,9 @@ static() {
 
     echo "Copying public/robots.txt to dist/robots.txt"
     cp public/robots.txt dist/robots.txt || fail
+
+    echo "Copying public/link-conversion.js to dist/link-conversion.js"
+    cp public/link-conversion.js dist/link-conversion.js || fail
 }
 
 opt_imgs() {

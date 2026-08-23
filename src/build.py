@@ -68,7 +68,8 @@ def get_post(folder, file):
 
     obj.content = html
     obj["slug"] = file.replace(".md", "")
-    obj["href"] = f"/{folder}/{obj['slug']}"
+    obj["href"] = obj.get("website", f"/{folder}/{obj['slug']}.html")
+    obj["external"] = "website" in obj
 
     if "order" not in obj:
         obj["order"] = 0
@@ -149,7 +150,8 @@ def render_post(folder, post):
 
 def render_post_list(folder, posts):
     template = env.get_template(f"posts/{folder}/list.html")
-    return template.render(posts=posts)
+    listed_posts = [post for post in posts if post.get("listed", True)]
+    return template.render(posts=listed_posts)
 
 
 post_folders = [f for f in os.listdir("posts") if os.path.isdir(f"posts/{f}")]
@@ -178,7 +180,7 @@ def img_tag_rule(img_tag: element.Tag):
 seo_common = {
     "url": url,
     "title": name,
-    "description": "Computer science portfolio focused on full-stack systems, applied machine learning, and developer tooling.",
+    "description": "Computer science portfolio focused on industrial data tooling, backend systems, and web products.",
     "image": urljoin(url, "/assets/portfolio-systems.svg"),
 }
 
