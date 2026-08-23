@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-label="Satellite machine learning project">
+  <rect width="900" height="600" fill="#ecfeff"/>
+  <path d="M0 430c180-96 330-96 450 0s270 96 450 0v170H0V430Z" fill="#14532d"/>
+  <path d="M0 368c170-64 320-64 450 0s280 64 450 0v90c-180 96-330 96-450 0S180 362 0 458v-90Z" fill="#22c55e"/>
+  <g transform="translate(240 110) rotate(-18)" stroke="#0f172a" stroke-width="8" fill="#fff">
+    <rect x="130" y="82" width="150" height="90"/>
+    <rect x="0" y="52" width="110" height="150" fill="#bfdbfe"/>
+    <rect x="300" y="52" width="110" height="150" fill="#bfdbfe"/>
+    <path d="M110 128h20M280 128h20"/>
+  </g>
+  <g font-family="IBM Plex Mono, monospace" fill="#0f172a">
+    <text x="88" y="96" font-size="34">Sentinel data</text>
+    <text x="88" y="142" font-size="24">deforestation signal model</text>
+  </g>
+</svg>

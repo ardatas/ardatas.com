@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-label="Fundraising marathon">
+  <rect width="900" height="600" fill="#fff1f2"/>
+  <path d="M140 420c110-120 210-120 300 0s190 120 320 0" fill="none" stroke="#be123c" stroke-width="12"/>
+  <g stroke="#111827" stroke-width="7" fill="#ffffff">
+    <circle cx="270" cy="270" r="62"/>
+    <path d="M270 332v104M220 380h100"/>
+    <circle cx="622" cy="270" r="62"/>
+    <path d="M622 332v104M572 380h100"/>
+  </g>
+  <text x="126" y="128" font-family="IBM Plex Mono, monospace" font-size="34" fill="#111827">fundraising through action</text>
+  <text x="126" y="178" font-family="IBM Plex Mono, monospace" font-size="26" fill="#111827">26,000+ TL raised</text>
+</svg>

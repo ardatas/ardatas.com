@@ -8,12 +8,10 @@ import frontmatter
 from bs4 import BeautifulSoup, element
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-first_name = "Sagar"
-last_name = "Patil"
+first_name = "Arda"
+last_name = "Tas"
 name = f"{first_name} {last_name}"
-domain = "sagarpatil.me"
-generic_username = "sagarreddypatil"
-twitter_username = f"@{generic_username}"
+domain = "ardatas.com"
 url = f"https://{domain}"  # for opengraph
 
 
@@ -89,13 +87,6 @@ def og_tags(data: dict):
     return tags
 
 
-twitter_tags_common = {
-    "domain": domain,
-    "card": "summary_large_image",
-    "site": twitter_username,
-}
-
-
 def twitter_tags(data: dict):
     lut = {
         "card": "name",
@@ -104,10 +95,9 @@ def twitter_tags(data: dict):
         "title": "name",
         "description": "name",
         "image": "name",
-        "site": "name",
     }
 
-    data = {**twitter_tags_common, **data}
+    data = {"domain": domain, "card": "summary_large_image", **data}
 
     tags = []
     for key, value in data.items():
@@ -188,8 +178,8 @@ def img_tag_rule(img_tag: element.Tag):
 seo_common = {
     "url": url,
     "title": name,
-    "description": f"{name}'s personal website",
-    "image": urljoin(url, "/assets/me-small.jpg"),
+    "description": "Computer science portfolio focused on full-stack systems, applied machine learning, and developer tooling.",
+    "image": urljoin(url, "/assets/portfolio-systems.svg"),
 }
 
 og = og_tags(
@@ -198,7 +188,6 @@ og = og_tags(
         "type": "profile",
         "profile:first_name": first_name,
         "profile:last_name": last_name,
-        "profile:username": generic_username,
     }
 )
 

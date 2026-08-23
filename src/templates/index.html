@@ -8,106 +8,86 @@
       <div class="flex flex-col lg:flex-row gap-3 text-lg">
         <article class="text-black text-lg prose-p:m-0 flex flex-col gap-4">
           <p>
-            I'm a Software Engineer at
-            <a href="https://starlink.com">SpaceX</a> working on Starlink Beam
-            Planning. I graduated from Purdue University with a degree in
-            Computer Science.
+            I'm a Computer Science student at Technical University of Munich
+            focused on building practical software systems across backend
+            services, web products, and applied machine learning.
           </p>
           <p>
-            I like programming languages, compilers, space exploration, and
-            photography.
+            My recent work includes a full-stack student jobs platform, a
+            satellite-data deforestation model, and systems programming projects
+            that make architecture and performance tradeoffs explicit.
           </p>
           <p>
-            I also like working on projects and leaving them unfinished. Feel
-            free to nerd-snipe me with more ideas.
+            I like projects that connect clean engineering with real users:
+            matching students with roles, turning data into decisions, and
+            teaching technical topics in a way younger learners can actually
+            use.
           </p>
           <p>
-            I've previously interned at <a href="https://tesla.com">Tesla</a>,
-            <a href="https://asylonrobotics.com/">Asylon</a>,
-            <a href="https://www.agi.com/">AGI</a>, and
-            <a href="https://bloomberg.com/">Bloomberg</a>.
+            This public profile keeps the focus on work, projects, and skills.
           </p>
         </article>
         <img
-          src="/assets/me-small.jpg"
-          alt="me"
-          class="h-[350px] object-cover"
+          src="/assets/portfolio-systems.svg"
+          alt="systems portfolio graphic"
+          class="h-[350px] object-contain"
           loading="eager"
         />
       </div>
     {% endcall %}
-    {% call fieldset("ls ~/projects") %}
-      {{ lists["projects"]|safe }}
-    {% endcall %}
-    {% call fieldset("cat ~/friends.md") %}
-      <article>
-        Cool friends working on cool stuff
-        <ul>
-          <li><a href="https://arefmalek.com/">Aref Malek</a></li>
-          <li><a href="https://coleroberts.dev/index">Cole Roberts</a></li>
-          <li><a href="https://harmya.me/">Harmya Bhatt</a></li>
-          <li><a href="https://bhavesh.dev/about">Bhavesh</a></li>
-          <li><a href="https://www.zietek.dev/">Jacob Zietek</a></li>
-          <li><a href="https://jinen.setpal.net/">Jinen Setpal</a></li>
-          <li><a href="https://mikail-khan.com/">Mikail Khan</a></li>
-          <li><a href="https://arnavmehra.com/">Arnav Mehra</a></li>
-          <li><a href="https://wade.dev/">Nicholas Wade</a></li>
-        </ul>
-      </article>
-    {% endcall %}
+    <section id="projects">
+      {% call fieldset("ls ~/projects") %}
+        {{ lists["projects"]|safe }}
+      {% endcall %}
+    </section>
+    <section id="experience">
+      {% call fieldset("cat ~/experience.md") %}
+        <article>
+          <p>
+            Experience across research infrastructure, agile product delivery,
+            university representation, and community technology education.
+          </p>
+          <ul>
+            <li>
+              IT internship exposure to Linux development environments,
+              aerospace engineering workflows, and HPC-backed experiment
+              analysis.
+            </li>
+            <li>
+              Full-stack bootcamp practice with TypeScript, REST API design,
+              data serialization, sprint planning, and iterative delivery.
+            </li>
+            <li>
+              Student representation and student council involvement at TUM.
+            </li>
+            <li>
+              Community work spanning external affairs, youth AI workshops, and
+              fundraising for children with cancer.
+            </li>
+          </ul>
+        </article>
+      {% endcall %}
+    </section>
     <!-- <Coursework /> -->
-    {% call fieldset("ls ~/photography/") %}
-      <div>
-        I shoot on a Canon EOS M50 with the Helios 44-2 58mm f/2 lens, a 15-45
-        mm kit lens, and an iPhone 14 Pro
-        <section class="grid grid-flow-row-dense grid-cols-5 gap-1 mt-2">
-          <img
-            src="/photography/golden-gate-bridge.jpg"
-            class="row-span-2 col-span-3"
-            alt="grand canyon 2"
-          />
-          <img
-            src="/photography/sunset.jpg"
-            class="row-span-3 col-span-2"
-            alt="michigan 1"
-          />
-          <img
-            src="/photography/grand-canyon-1.jpg"
-            class="row-span-2 col-span-3"
-            alt="grand canyon 1"
-          />
-          <img
-            src="/photography/andromeda.jpg"
-            class="row-span-2 col-span-3"
-            alt="andromeda"
-          />
-          <img
-            src="/photography/laptop.jpg"
-            class="row-span-2 col-span-3"
-            alt="grand canyon 1"
-          />
-          <img
-            src="/photography/emu.jpg"
-            class="row-span-2 col-span-3"
-            alt="emu board"
-          />
-          <img
-            src="/photography/antelope-canyon.jpg"
-            class="row-span-3 col-span-2"
-            alt="antelope canyon"
-          />
-          <img
-            src="/photography/michigan-1.jpg"
-            class="row-span-3 col-span-2"
-            alt="michigan 1"
-          />
-          <img
-            src="/photography/grand-canyon-2.jpg"
-            class="row-span-2 col-span-3"
-            alt="grand canyon 2"
-          />
-        </section>
-      </div>
-    {% endcall %}
+    <section id="skills">
+      {% call fieldset("cat ~/skills.md") %}
+        <article>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 not-prose">
+            <div class="border border-black dark:border-white p-3">
+              <h3 class="font-mono text-lg font-bold mb-2">Languages</h3>
+              <p>Java, Python, C, JavaScript, TypeScript, OCaml, HTML5, CSS</p>
+            </div>
+            <div class="border border-black dark:border-white p-3">
+              <h3 class="font-mono text-lg font-bold mb-2">Backend & Data</h3>
+              <p>Spring Boot, REST APIs, PostgreSQL, Flyway, Docker, AWS</p>
+            </div>
+            <div class="border border-black dark:border-white p-3">
+              <h3 class="font-mono text-lg font-bold mb-2">Frontend & Tools</h3>
+              <p>React, Tailwind, Vite, Git, CI/CD, Postman, MCP</p>
+            </div>
+          </div>
+        </article>
+      {% endcall %}
+    </section>
   </div>
 {% endblock %}

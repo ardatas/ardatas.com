@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-labelledby="title desc">
+  <title id="title">Systems portfolio graphic</title>
+  <desc id="desc">A terminal-inspired diagram of software systems, data, and deployment layers.</desc>
+  <rect width="720" height="520" fill="#f7f4ee"/>
+  <rect x="44" y="46" width="632" height="428" fill="#ffffff" stroke="#111827" stroke-width="6"/>
+  <rect x="44" y="46" width="632" height="58" fill="#111827"/>
+  <circle cx="78" cy="75" r="10" fill="#ef4444"/>
+  <circle cx="112" cy="75" r="10" fill="#f59e0b"/>
+  <circle cx="146" cy="75" r="10" fill="#10b981"/>
+  <text x="190" y="83" font-family="IBM Plex Mono, monospace" font-size="24" fill="#f9fafb">arda systems:~</text>
+  <g font-family="IBM Plex Mono, monospace" font-size="24" fill="#111827">
+    <text x="78" y="160">$ build full-stack products</text>
+    <text x="78" y="212">$ model satellite signals</text>
+    <text x="78" y="264">$ simulate cache behavior</text>
+  </g>
+  <g stroke="#111827" stroke-width="5" fill="none">
+    <path d="M116 330h150v70H116z"/>
+    <path d="M286 330h150v70H286z"/>
+    <path d="M456 330h150v70H456z"/>
+    <path d="M266 365h20M436 365h20"/>
+  </g>
+  <g font-family="IBM Plex Mono, monospace" font-size="20" fill="#111827">
+    <text x="147" y="372">API</text>
+    <text x="322" y="372">DATA</text>
+    <text x="488" y="372">SHIP</text>
+  </g>
+</svg>

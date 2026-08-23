@@ -18,10 +18,34 @@ html() {
 }
 
 static() {
-    for ent in public/*; do
-        echo "Copying $ent to dist/${ent##*/}"
-        cp -r $ent dist/${ent##*/} || fail
+    local assets=(
+        blockchain.svg
+        cache-simulator.svg
+        experience.svg
+        fundraising.svg
+        linux-hpc.svg
+        portfolio-systems.svg
+        projects.svg
+        satellite-ml.svg
+        toolkit.svg
+        tum-cs.svg
+        weather-app.svg
+        werkio.svg
+        workshops.svg
+    )
+
+    mkdir -p dist/assets || fail
+
+    for asset in "${assets[@]}"; do
+        echo "Copying public/assets/$asset to dist/assets/$asset"
+        cp "public/assets/$asset" "dist/assets/$asset" || fail
     done
+
+    echo "Copying public/favicon.svg to dist/favicon.svg"
+    cp public/favicon.svg dist/favicon.svg || fail
+
+    echo "Copying public/robots.txt to dist/robots.txt"
+    cp public/robots.txt dist/robots.txt || fail
 }
 
 opt_imgs() {

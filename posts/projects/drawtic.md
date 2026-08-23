@@ -1,23 +1,22 @@
 ---
-title: "Drawtic Phone"
-summary: "Draw anywhere you want, zero consequences"
-coverImage: "/assets/drawtic.jpg"
-order: 4.5
+title: "Weather Visualization Bootcamp"
+summary: "TypeScript full-stack application with REST API design"
+coverImage: "/assets/weather-app.svg"
+order: 1
 ---
 
-This was a Hackathon project for BoilerMake X.
+At the Hasso Plattner Informatik Institute bootcamp, I worked on a full-stack
+weather visualization application built with TypeScript.
 
-The premise is simple, just drawing anywhere with your hands and a laptop with a camera.
+The project covered both application layers: a backend REST API for weather data
+and a frontend that visualized the API response for users. A key part of the
+work was handling serialization cleanly between the backend and frontend so that
+data stayed predictable across the stack.
 
-Aref and I was responsible for the drawing part of the whole thing, basing
-off of the work of a [previous Python prototype by Aref](https://github.com/arefmalek/airdraw).
+The bootcamp also emphasized agile delivery habits. Sprint planning, daily
+stand-ups, and iterative delivery were part of the process, which made the work
+feel closer to a product team than a one-off assignment.
 
-This version had to be in the browser, and we decided to make a game out of it, similar to [Gartic Phone](https://garticphone.com/).
-
-We used an open source model by Google to track the player's hand, which ran
-entirely in-browser. All we had to do after that is match hand positions to
-different tools. For example, if only the index finger and thumb were up, you had the drawing tool, and you could control the size of your brush based on the dot product of the pointing vectors of each finger.
-
-Then to draw, we simply stored a list of strokes, where each stroke was a list of positions. Showing the drawing was as simple as drawing lines according to the strokes.
-
-The code for this project can be found on [GitHub](https://github.com/arefmalek/DrawticPhone)
+The result was a compact but complete exercise in web application delivery:
+define the data contract, implement the API, render the frontend, and keep the
+team moving through short feedback cycles.

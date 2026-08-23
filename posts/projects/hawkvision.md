@@ -1,16 +1,22 @@
 ---
-title: "HawkVision"
-summary: "One-stop-shop for all your machine vision needs"
-coverImage: "/assets/frcvision.jpeg"
-order: 6
+title: "Linux and HPC Internship"
+summary: "Development environments and aerospace experiment analysis at ZARM"
+coverImage: "/assets/linux-hpc.svg"
+order: 0
 ---
 
-HawkVision is a computer vision project I developed during my time at the FIRST Robotics Team 2554.
+At the Center of Applied Space Technology and Microgravity, I worked as an IT
+intern in an aerospace research environment.
 
-The goal of the project was to track a target marked with retroreflective tape. The camera that we used on the robot had a green ring light on it, so that the vision target appears bright green on the camera view.
+The work started with setting up a Debian Linux virtual machine as a development
+environment and using the command line to understand Linux-based distributions
+from a practical systems perspective.
 
-To track the targets, we used a program called GRIP to build an OpenCV pipeline with color thresholds that narrowed out the vision target. We also calibrated the camera and found its focal length to determine the angle to the target.
+The internship also introduced interdisciplinary applications of computer
+science in aerospace engineering. One area of exposure was the use of
+High-Performance Computing for data analysis around experiments in the ZARM drop
+tower.
 
-With this information, we were able to run a PID loop on the robot so that it could automatically align with the target on command.
-
-The code for this project can be found on [GitLab](https://gitlab.com/team-2554/hawkvision-2.0).
+This experience shaped how I think about software as infrastructure: the useful
+part is not just writing code, but making a reliable environment where technical
+work can happen.
