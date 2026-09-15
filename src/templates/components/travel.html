@@ -66,7 +66,7 @@
     </details>
     <noscript><p class="travel-no-script">The interactive globe needs JavaScript. Open “All the places” to explore every stop.</p></noscript>
     <script id="travel-data" type="application/json">{{ travel | tojson }}</script>
-    <script type="module" src="/travel/globe.js"></script>
-    <link rel="stylesheet" href="/travel/globe.css" />
+    <script type="module" src="/travel/globe.js?v={{ asset_versions['travel/globe.js'] }}"></script>
+    <link rel="stylesheet" href="/travel/globe.css?v={{ asset_versions['travel/globe.css'] }}" />
   {% endcall %}
 </section>

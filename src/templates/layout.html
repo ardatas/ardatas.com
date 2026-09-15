@@ -10,7 +10,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="icon" href="/favicon.svg" />
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGklEQVR4nO3BAQEAAACCIP+vbkhAAQAAAO8GECAAARlDNO4AAAAASUVORK5CYII=" />
     <title>{{ title }}</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,7 +21,7 @@
     />
 
     <link rel="stylesheet" href="/index.css?v={{ css_version }}" />
-    <script src="/link-conversion.js" defer></script>
+    <script src="/link-conversion.js?v={{ asset_versions['link-conversion.js'] }}" defer></script>
     <script>
       /*to prevent Firefox FOUC, this must be here*/
       let FF_FOUC_FIX;

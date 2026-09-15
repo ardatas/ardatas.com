@@ -42,6 +42,13 @@ env = Environment(
 with open(os.path.join(args.output, "index.css"), "rb") as stylesheet:
     env.globals["css_version"] = hashlib.sha256(stylesheet.read()).hexdigest()[:12]
 
+# Public scripts and globe styles also need fresh URLs when their contents change.
+public_path = os.path.join(script_path, "..", "public")
+env.globals["asset_versions"] = {}
+for asset in ("link-conversion.js", "travel/globe.js", "travel/globe.css"):
+    with open(os.path.join(public_path, asset), "rb") as source:
+        env.globals["asset_versions"][asset] = hashlib.sha256(source.read()).hexdigest()[:12]
+
 if not args.no_clean:
     # delete everything inside the output directory
     for root, dirs, files in os.walk(args.output):

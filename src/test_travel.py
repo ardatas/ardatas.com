@@ -42,6 +42,7 @@ class TravelTests(unittest.TestCase):
     def test_every_place_readable_without_javascript(self):
         env = Environment(loader=FileSystemLoader(ROOT / 'templates'),
                           autoescape=select_autoescape(['html']))
+        env.globals['asset_versions'] = {'travel/globe.js': 'test', 'travel/globe.css': 'test'}
         # Use the same fieldset macro as the home page.
         template = env.from_string('{% from "components/fieldset.html" import fieldset %}'
                                    '{% include "components/travel.html" %}')
