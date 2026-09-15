@@ -97,6 +97,12 @@
         </div>
       {% endcall %}
     </section>
+    <section id="projects">
+      {% call fieldset("ls ~/projects.md") %}
+        <p class="mb-3 text-sm text-neutral-600">Two live websites worth visiting.</p>
+        {{ lists["projects"]|safe }}
+      {% endcall %}
+    </section>
     <section id="education">
       {% call fieldset("cat ~/education.md") %}
         <div class="flex flex-col gap-3">
@@ -128,12 +134,6 @@
             </div>
           </div>
         </div>
-      {% endcall %}
-    </section>
-    <section id="projects">
-      {% call fieldset("ls ~/projects.md") %}
-        <p class="mb-3 text-sm text-neutral-600">Two live websites worth visiting.</p>
-        {{ lists["projects"]|safe }}
       {% endcall %}
     </section>
     <section id="skills">
