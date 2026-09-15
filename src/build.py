@@ -1,6 +1,7 @@
 import os
 import json
 import argparse
+import hashlib
 from shutil import rmtree
 from urllib.parse import urljoin
 
@@ -36,6 +37,10 @@ env = Environment(
     loader=FileSystemLoader(f"{script_path}/templates"),
     autoescape=select_autoescape(["html"]),
 )
+
+# Change the stylesheet URL whenever its contents change after deployment.
+with open(os.path.join(args.output, "index.css"), "rb") as stylesheet:
+    env.globals["css_version"] = hashlib.sha256(stylesheet.read()).hexdigest()[:12]
 
 if not args.no_clean:
     # delete everything inside the output directory

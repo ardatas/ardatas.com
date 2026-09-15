@@ -104,7 +104,6 @@ html_static() {
 
 rm -rf dist && mkdir dist
 
-tw &
-html_static &
-
-my_wait
+# HTML includes a hash of the finished stylesheet for cache invalidation.
+tw
+html_static
