@@ -61,7 +61,46 @@ async function start() {
   };
   const clamp = THREE.MathUtils.clamp;
   const worldAltitude = () => Math.sqrt(1 + (height / (2 * tanHalfFov * Math.min(width * 0.41, height * 0.4))) ** 2) - 1;
-  const longitudeDelta = (a, b) => ((b - a + 540) % 360) - 180;
+  const wrapLongitude = (lon) => ((lon + 180) % 360 + 360) % 360 - 180;
+  const longitudeDelta = (a, b) => wrapLongitude(b - a);
+
+  // A stationary, distant starfield, naturally occluded by the globe.
+  const starCanvas = document.createElement('canvas');
+  starCanvas.width = starCanvas.height = 32;
+  const starContext = starCanvas.getContext('2d');
+  const starGlow = starContext.createRadialGradient(16, 16, 0, 16, 16, 16);
+  starGlow.addColorStop(0, 'rgba(255,255,255,1)');
+  starGlow.addColorStop(0.2, 'rgba(255,255,255,0.85)');
+  starGlow.addColorStop(0.5, 'rgba(255,255,255,0.25)');
+  starGlow.addColorStop(1, 'rgba(255,255,255,0)');
+  starContext.fillStyle = starGlow;
+  starContext.fillRect(0, 0, 32, 32);
+  const starTexture = new THREE.CanvasTexture(starCanvas);
+  let starSeed = 2026;
+  const randomStar = () => {
+    starSeed = (Math.imul(starSeed, 1664525) + 1013904223) >>> 0;
+    return starSeed / 4294967296;
+  };
+  for (const [count, size, opacity] of [[3600, 1.8, 0.65], [300, 3.6, 0.9]]) {
+    const positions = [], colors = [];
+    for (let i = 0; i < count; i++) {
+      const latitude = Math.asin(randomStar() * 2 - 1);
+      const longitude = randomStar() * Math.PI * 2;
+      const radius = 28 + randomStar() * 10;
+      positions.push(radius * Math.cos(latitude) * Math.cos(longitude), radius * Math.sin(latitude), radius * Math.cos(latitude) * Math.sin(longitude));
+      const tint = randomStar();
+      const color = new THREE.Color(tint < 0.15 ? 0xffe2be : tint < 0.4 ? 0xaacbff : 0xe5edff);
+      color.multiplyScalar(0.45 + randomStar() * 0.55);
+      colors.push(...color.toArray());
+    }
+    const geometry = new THREE.BufferGeometry();
+    geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+    geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+    scene.add(new THREE.Points(geometry, new THREE.PointsMaterial({
+      map: starTexture, size, sizeAttenuation: false, vertexColors: true,
+      transparent: true, opacity, depthWrite: false, toneMapped: false,
+    })));
+  }
 
   scene.add(new THREE.AmbientLight(0xc4daff, 1.2));
   const sun = new THREE.DirectionalLight(0xfff4dd, 3.0);
@@ -129,7 +168,7 @@ async function start() {
   ];
   const loadedRegions = new Set();
   function loadCloseRegions() {
-    const lon = ((state.lon + 540) % 360) - 180;
+    const lon = wrapLongitude(state.lon);
     for (const [name, west, east, south, north] of closeRegions) {
       if (loadedRegions.has(name) || lon < west - 4 || lon > east + 4 || state.lat < south - 4 || state.lat > north + 4) continue;
       loadedRegions.add(name);
@@ -170,13 +209,28 @@ async function start() {
 
   const gold = new THREE.MeshStandardMaterial({ color: 0xf8cd78, metalness: 0.52, roughness: 0.23 });
   const ice = new THREE.MeshStandardMaterial({ color: 0x93d9e9, metalness: 0.45, roughness: 0.2 });
-  const copper = new THREE.MeshStandardMaterial({ color: 0xf1a774, metalness: 0.38, roughness: 0.24 });
-  const silver = new THREE.MeshStandardMaterial({ color: 0xdce7ef, metalness: 0.65, roughness: 0.26 });
+  const pinRed = new THREE.MeshPhysicalMaterial({ color: 0xf03545, metalness: 0.22, roughness: 0.18, clearcoat: 1, clearcoatRoughness: 0.12 });
+  const silver = new THREE.MeshStandardMaterial({ color: 0xe7f3fa, metalness: 0.7, roughness: 0.2 });
   const red = new THREE.MeshStandardMaterial({ color: 0xf38c8c, metalness: 0.3, roughness: 0.35 });
-  const pinHead = new THREE.SphereGeometry(0.24, 20, 14);
-  const pinStem = new THREE.CylinderGeometry(0.045, 0.015, 0.8, 10);
-  const footGeometry = new THREE.RingGeometry(0.1, 0.25, 24);
-  const footMaterial = new THREE.MeshBasicMaterial({ color: 0xf8cd78, side: THREE.DoubleSide, transparent: true, opacity: 0.5, depthWrite: false });
+  // Turned enamel thumbtacks: rounded cap, recessed neck, flared lower rim.
+  const pinHead = new THREE.LatheGeometry([
+    [0, -0.24], [0.28, -0.24], [0.34, -0.2], [0.34, -0.14],
+    [0.23, -0.1], [0.19, -0.04], [0.19, 0.12], [0.25, 0.16],
+    [0.34, 0.18], [0.36, 0.24], [0.32, 0.31], [0.2, 0.35], [0, 0.36],
+  ].map(([x, y]) => new THREE.Vector2(x, y)), 40);
+  const pinStem = new THREE.CylinderGeometry(0.055, 0.008, 1, 16);
+  const collarGeometry = new THREE.TorusGeometry(0.315, 0.027, 8, 40);
+  const shadowCanvas = document.createElement('canvas');
+  shadowCanvas.width = shadowCanvas.height = 64;
+  const shadowContext = shadowCanvas.getContext('2d');
+  const shadowGradient = shadowContext.createRadialGradient(32, 32, 2, 32, 32, 32);
+  shadowGradient.addColorStop(0, 'rgba(0, 5, 15, 0.65)');
+  shadowGradient.addColorStop(0.4, 'rgba(0, 5, 15, 0.28)');
+  shadowGradient.addColorStop(1, 'rgba(0, 5, 15, 0)');
+  shadowContext.fillStyle = shadowGradient;
+  shadowContext.fillRect(0, 0, 64, 64);
+  const footGeometry = new THREE.PlaneGeometry(1.1, 0.75);
+  const footMaterial = new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(shadowCanvas), transparent: true, depthWrite: false });
   const starShape = new THREE.Shape();
   for (let i = 0; i < 10; i++) {
     const angle = Math.PI / 2 + i * Math.PI / 5, r = i % 2 ? 0.19 : 0.43;
@@ -193,20 +247,33 @@ async function start() {
     const direction = toWorld(place.lat, place.lon);
     group.position.copy(direction).multiplyScalar(1.001);
     group.quaternion.setFromUnitVectors(up, direction);
-    const material = place.base === 'home' ? gold : place.base === 'second' ? ice : kind === 'country' ? gold : copper;
+    const material = place.base === 'home' ? gold : place.base === 'second' ? ice : pinRed;
+    // Lean the tack so its shaft and head thickness remain visible from above.
+    const tilt = 0.9;
     const stem = new THREE.Mesh(pinStem, silver);
-    stem.position.y = 0.4;
+    stem.rotation.z = -tilt;
+    stem.position.set(Math.sin(tilt) * 0.5, Math.cos(tilt) * 0.5, 0);
     group.add(stem);
     const head = new THREE.Mesh(place.base === 'home' ? starGeometry : pinHead, material);
-    head.position.y = 0.88;
+    head.rotation.z = -tilt;
+    head.position.set(Math.sin(tilt) * 1.05, Math.cos(tilt) * 1.05, 0);
     group.add(head);
+    const collar = new THREE.Mesh(collarGeometry, silver);
+    collar.rotation.set(Math.PI / 2, 0, 0);
+    const collarMount = new THREE.Group();
+    collarMount.rotation.z = -tilt;
+    collarMount.position.set(Math.sin(tilt) * 0.85, Math.cos(tilt) * 0.85, 0);
+    collarMount.add(collar);
+    collarMount.visible = !place.base && kind !== 'egg';
+    group.add(collarMount);
     const foot = new THREE.Mesh(footGeometry, footMaterial);
     foot.rotation.x = -Math.PI / 2;
-    foot.position.y = 0.01;
+    foot.position.set(0.17, 0.01, 0);
     group.add(foot);
     if (kind === 'egg') {
       stem.visible = false;
       head.visible = false;
+      head.position.set(0, 0.55, 0);
       foot.visible = false;
       for (const angle of [-Math.PI / 4, Math.PI / 4]) {
         const bar = new THREE.Mesh(new THREE.BoxGeometry(0.11, 0.8, 0.1), red);
@@ -222,7 +289,7 @@ async function start() {
     button.dataset.kind = kind;
     button.dataset.place = place.name;
     if (place.base) button.dataset.base = place.base;
-    const description = kind === 'country' ? `${place.cities.length} ${place.cities.length === 1 ? 'place' : 'places'} · Explore` : place.base === 'home' ? '★ Home base' : place.base === 'second' ? 'Second home base' : kind === 'egg' ? places.easterEgg.message : country.name;
+    const description = kind === 'country' ? `${place.cities.length} ${place.cities.length === 1 ? 'place' : 'places'} · Explore` : place.base === 'home' ? 'current base' : place.base === 'second' ? 'Second home base' : kind === 'egg' ? places.easterEgg.message : country.name;
     button.setAttribute('aria-label', `${place.name}, ${description}`);
     const label = document.createElement('span');
     label.className = 'travel-marker-label';
@@ -281,7 +348,7 @@ async function start() {
     const pin = pins.find((item) => item.kind === 'city' && item.place.base === button.dataset.base);
     selectedCountry = pin.country.id;
     flyTo(pin.place.lat, pin.place.lon, 0.12);
-    showMessage(`${pin.place.name} · ${pin.place.base === 'home' ? '★ Home base' : 'Second home base'}`);
+    showMessage(`${pin.place.name} · ${pin.place.base === 'home' ? 'current base' : 'Second home base'}`);
   }));
   function resetView() {
     selectedCountry = null;
@@ -376,6 +443,10 @@ async function start() {
     else if (event.key === 'ArrowUp') target.lat = clamp(target.lat + step, -80, 80);
     else if (event.key === 'ArrowDown') target.lat = clamp(target.lat - step, -80, 80);
     else return;
+    if (event.key.startsWith('Arrow')) {
+      selectedCountry = null;
+      syncControls();
+    }
     event.preventDefault();
     requestRender();
   });
@@ -419,12 +490,13 @@ async function start() {
       if (!pin.group.visible) continue;
       const distance = camera.position.distanceTo(pin.group.position);
       const pixelScale = 2 * distance * tanHalfFov / height;
-      const pinPixels = pin.place.base ? 26 : pin.kind === 'country' ? 20 : 16;
+      const pinPixels = pin.place.base ? 28 : pin.kind === 'country' ? 24 : 21;
       const scale = pixelScale * pinPixels;
       pin.group.scale.setScalar(scale);
       // Face the extruded home star toward the camera while keeping its stem radial.
       if (pin.place.base === 'home') pin.head.quaternion.copy(pin.group.quaternion.clone().invert().multiply(camera.quaternion));
-      projected.copy(pin.direction).multiplyScalar(1.001 + scale * 0.88).project(camera);
+      pin.group.updateMatrixWorld(true);
+      pin.head.getWorldPosition(projected).project(camera);
       const x = (projected.x * 0.5 + 0.5) * width, y = (-projected.y * 0.5 + 0.5) * height;
       pin.screen.set(x, y, projected.z);
       const onScreen = x > 12 && x < width - 15 && y > 66 && y < height - 85 && projected.z < 1;

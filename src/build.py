@@ -9,6 +9,7 @@ import frontmatter
 from bs4 import BeautifulSoup, element
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from running_stats import load_running_stats
+from travel_stats import build_exploration_stats
 
 first_name = "Arda"
 last_name = "Tas"
@@ -202,7 +203,9 @@ index = env.get_template("index.html")
 running = load_running_stats(os.path.join(script_path, "data", "running.json"))
 with open(os.path.join(script_path, "data", "travel.json"), encoding="utf-8") as f:
     travel = json.load(f)
-rendered = index.render(lists=lists, name=name, title=name, running=running, travel=travel)
+travel["countries"].sort(key=lambda country: len(country["cities"]), reverse=True)
+rendered = index.render(lists=lists, name=name, title=name, running=running, travel=travel,
+                        exploration=build_exploration_stats(travel["countries"]))
 soup = bs(rendered)
 for item in seotags:
     soup.head.append(bs(item))

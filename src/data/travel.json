@@ -168,7 +168,8 @@
           "lon": 34.7239,
           "base": null
         }
-      ]
+      ],
+      "continent": "Asia"
     },
     {
       "id": "gr",
@@ -184,7 +185,8 @@
           "lon": 26.1358,
           "base": null
         }
-      ]
+      ],
+      "continent": "Europe"
     },
     {
       "id": "bg",
@@ -200,7 +202,8 @@
           "lon": 24.695,
           "base": null
         }
-      ]
+      ],
+      "continent": "Europe"
     },
     {
       "id": "it",
@@ -286,7 +289,8 @@
           "lon": 14.4845,
           "base": null
         }
-      ]
+      ],
+      "continent": "Europe"
     },
     {
       "id": "hr",
@@ -302,7 +306,8 @@
           "lon": 15.9819,
           "base": null
         }
-      ]
+      ],
+      "continent": "Europe"
     },
     {
       "id": "at",
@@ -318,7 +323,8 @@
           "lon": 13.055,
           "base": null
         }
-      ]
+      ],
+      "continent": "Europe"
     },
     {
       "id": "cz",
@@ -334,7 +340,8 @@
           "lon": 14.4378,
           "base": null
         }
-      ]
+      ],
+      "continent": "Europe"
     },
     {
       "id": "ch",
@@ -350,7 +357,8 @@
           "lon": 8.5417,
           "base": null
         }
-      ]
+      ],
+      "continent": "Europe"
     },
     {
       "id": "de",
@@ -457,7 +465,8 @@
           "lon": 11.7582,
           "base": null
         }
-      ]
+      ],
+      "continent": "Europe"
     },
     {
       "id": "kg",
@@ -473,7 +482,8 @@
           "lon": 74.5698,
           "base": null
         }
-      ]
+      ],
+      "continent": "Asia"
     },
     {
       "id": "ee",
@@ -489,7 +499,8 @@
           "lon": 24.7536,
           "base": null
         }
-      ]
+      ],
+      "continent": "Europe"
     },
     {
       "id": "lv",
@@ -512,7 +523,8 @@
           "lon": 26.5362,
           "base": null
         }
-      ]
+      ],
+      "continent": "Europe"
     }
   ],
   "easterEgg": {

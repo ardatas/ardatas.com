@@ -2,11 +2,19 @@
   {% call fieldset("cd ~/world") %}
     <div class="travel-heading">
       <div>
-        <h3 id="travel-heading">Where I’ve been.</h3>
-        <p>Some places stay with you. These are mine.</p>
+        <h3 id="travel-heading">lore so far</h3>
       </div>
       <p class="travel-count"><strong>{{ travel.countries | length }}</strong> countries <span>/</span> <strong>{{ travel.countries | map(attribute='cities') | map('length') | sum }}</strong> places</p>
     </div>
+    <dl class="travel-exploration" aria-label="Exploration by countries visited">
+      {% for stat in exploration %}
+      <div class="travel-exploration-stat">
+        <dt>{{ stat.name }} explored</dt>
+        <dd><strong>{{ '%.1f' | format(stat.percent) }}<span>%</span></strong><small>{{ stat.visited }} / {{ stat.total }} countries</small></dd>
+        <div class="travel-exploration-track" aria-hidden="true"><span style="width: {{ stat.percent }}%"></span></div>
+      </div>
+      {% endfor %}
+    </dl>
     <div class="travel-stage" id="travel-stage" aria-describedby="travel-help">
       <div class="travel-canvas" id="travel-canvas"></div>
       <div class="travel-markers" id="travel-markers"></div>
@@ -26,7 +34,7 @@
       </div>
       <div class="travel-stage-bottom">
         <div class="travel-bases" aria-label="Home bases">
-          <button type="button" data-base="home" disabled><span class="travel-star" aria-hidden="true">★</span><span>Munich<small>Home base</small></span></button>
+          <button type="button" data-base="home" disabled><span class="travel-star" aria-hidden="true">★</span><span>Munich<small>current base</small></span></button>
           <button type="button" data-base="second" disabled><span class="travel-second-dot" aria-hidden="true">●</span><span>Istanbul<small>Second home base</small></span></button>
         </div>
         <button type="button" class="travel-touch-toggle" id="travel-touch-toggle" aria-pressed="false" disabled>Explore globe</button>
@@ -49,7 +57,7 @@
           <h4>{{ country.name }}</h4>
           <ul>
             {% for city in country.cities %}
-            <li>{{ city.name }}{% if city.base == 'home' %} <span>★ Home base</span>{% elif city.base == 'second' %} <span>Second home base</span>{% endif %}</li>
+            <li>{{ city.name }}{% if city.base == 'home' %} <span>current base</span>{% elif city.base == 'second' %} <span>Second home base</span>{% endif %}</li>
             {% endfor %}
           </ul>
         </div>

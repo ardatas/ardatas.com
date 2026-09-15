@@ -219,6 +219,34 @@
 </div>
 </fieldset>
 </section>
+<section id="resources">
+<fieldset class="border-t md:border border-solid border-[#8f8d86] min-w-0 p-1 md:p-4 pt-2">
+<legend class="ms-4 md:ms-0">
+<h2 class="section-title mx-2 font-mono italic tracking-tight bg-[#f6f4ee] px-1">cat ~/resources.md</h2>
+</legend>
+<p class="mb-3 text-sm text-neutral-600">some resources I think you should check out</p>
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<li>
+<a class="resource-link group" href="https://joinheader.com/topics/bf25c29e-de97-46f2-9c46-47e4e9d75e40?subscribe=1" rel="noopener noreferrer" target="_blank">
+<div class="min-w-0">
+<h3 class="profile-title">learn agentic coding with Header:</h3>
+<p class="mt-2 font-mono text-xs text-neutral-500 break-words">joinheader.com</p>
+</div>
+<span aria-hidden="true" class="resource-arrow">↗</span>
+</a>
+</li>
+<li>
+<a class="resource-link group" href="https://github.com/ardatas/ResumeTemplate" rel="noopener noreferrer" target="_blank">
+<div class="min-w-0">
+<h3 class="profile-title">best resume template ever:</h3>
+<p class="mt-2 font-mono text-xs text-neutral-500 break-words">github.com/ardatas/ResumeTemplate</p>
+</div>
+<span aria-hidden="true" class="resource-arrow">↗</span>
+</a>
+</li>
+</ul>
+</fieldset>
+</section>
 <section id="running">
 <fieldset class="border-t md:border border-solid border-[#8f8d86] min-w-0 p-1 md:p-4 pt-2">
 <legend class="ms-4 md:ms-0">
@@ -284,34 +312,6 @@
 </div>
 </fieldset>
 </section>
-<section id="resources">
-<fieldset class="border-t md:border border-solid border-[#8f8d86] min-w-0 p-1 md:p-4 pt-2">
-<legend class="ms-4 md:ms-0">
-<h2 class="section-title mx-2 font-mono italic tracking-tight bg-[#f6f4ee] px-1">cat ~/resources.md</h2>
-</legend>
-<p class="mb-3 text-sm text-neutral-600">some resources I think you should check out</p>
-<ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
-<li>
-<a class="resource-link group" href="https://joinheader.com/topics/bf25c29e-de97-46f2-9c46-47e4e9d75e40?subscribe=1" rel="noopener noreferrer" target="_blank">
-<div class="min-w-0">
-<h3 class="profile-title">learn agentic coding with Header:</h3>
-<p class="mt-2 font-mono text-xs text-neutral-500 break-words">joinheader.com</p>
-</div>
-<span aria-hidden="true" class="resource-arrow">↗</span>
-</a>
-</li>
-<li>
-<a class="resource-link group" href="https://github.com/ardatas/ResumeTemplate" rel="noopener noreferrer" target="_blank">
-<div class="min-w-0">
-<h3 class="profile-title">best resume template ever:</h3>
-<p class="mt-2 font-mono text-xs text-neutral-500 break-words">github.com/ardatas/ResumeTemplate</p>
-</div>
-<span aria-hidden="true" class="resource-arrow">↗</span>
-</a>
-</li>
-</ul>
-</fieldset>
-</section>
 <section aria-labelledby="travel-heading" id="travel">
 <fieldset class="border-t md:border border-solid border-[#8f8d86] min-w-0 p-1 md:p-4 pt-2">
 <legend class="ms-4 md:ms-0">
@@ -319,11 +319,27 @@
 </legend>
 <div class="travel-heading">
 <div>
-<h3 id="travel-heading">Where I’ve been.</h3>
-<p>Some places stay with you. These are mine.</p>
+<h3 id="travel-heading">lore so far</h3>
 </div>
 <p class="travel-count"><strong>12</strong> countries <span>/</span> <strong>58</strong> places</p>
 </div>
+<dl aria-label="Exploration by countries visited" class="travel-exploration">
+<div class="travel-exploration-stat">
+<dt>World explored</dt>
+<dd><strong>6.2<span>%</span></strong><small>12 / 195 countries</small></dd>
+<div aria-hidden="true" class="travel-exploration-track"><span style="width: 6.2%"></span></div>
+</div>
+<div class="travel-exploration-stat">
+<dt>Europe explored</dt>
+<dd><strong>22.7<span>%</span></strong><small>10 / 44 countries</small></dd>
+<div aria-hidden="true" class="travel-exploration-track"><span style="width: 22.7%"></span></div>
+</div>
+<div class="travel-exploration-stat">
+<dt>Asia explored</dt>
+<dd><strong>4.2<span>%</span></strong><small>2 / 48 countries</small></dd>
+<div aria-hidden="true" class="travel-exploration-track"><span style="width: 4.2%"></span></div>
+</div>
+</dl>
 <div aria-describedby="travel-help" class="travel-stage" id="travel-stage">
 <div class="travel-canvas" id="travel-canvas"></div>
 <div class="travel-markers" id="travel-markers"></div>
@@ -343,7 +359,7 @@
 </div>
 <div class="travel-stage-bottom">
 <div aria-label="Home bases" class="travel-bases">
-<button data-base="home" disabled="" type="button"><span aria-hidden="true" class="travel-star">★</span><span>Munich<small>Home base</small></span></button>
+<button data-base="home" disabled="" type="button"><span aria-hidden="true" class="travel-star">★</span><span>Munich<small>current base</small></span></button>
 <button data-base="second" disabled="" type="button"><span aria-hidden="true" class="travel-second-dot">●</span><span>Istanbul<small>Second home base</small></span></button>
 </div>
 <button aria-pressed="false" class="travel-touch-toggle" disabled="" id="travel-touch-toggle" type="button">Explore globe</button>
@@ -355,17 +371,17 @@
 </div>
 <nav aria-label="Explore visited countries" class="travel-countries">
 <button aria-pressed="false" data-country="tr" disabled="" type="button">Türkiye<span>23</span></button>
+<button aria-pressed="false" data-country="de" disabled="" type="button">Germany<span>14</span></button>
+<button aria-pressed="false" data-country="it" disabled="" type="button">Italy<span>11</span></button>
+<button aria-pressed="false" data-country="lv" disabled="" type="button">Latvia<span>2</span></button>
 <button aria-pressed="false" data-country="gr" disabled="" type="button">Greece<span>1</span></button>
 <button aria-pressed="false" data-country="bg" disabled="" type="button">Bulgaria<span>1</span></button>
-<button aria-pressed="false" data-country="it" disabled="" type="button">Italy<span>11</span></button>
 <button aria-pressed="false" data-country="hr" disabled="" type="button">Croatia<span>1</span></button>
 <button aria-pressed="false" data-country="at" disabled="" type="button">Austria<span>1</span></button>
 <button aria-pressed="false" data-country="cz" disabled="" type="button">Czechia<span>1</span></button>
 <button aria-pressed="false" data-country="ch" disabled="" type="button">Switzerland<span>1</span></button>
-<button aria-pressed="false" data-country="de" disabled="" type="button">Germany<span>14</span></button>
 <button aria-pressed="false" data-country="kg" disabled="" type="button">Kyrgyzstan<span>1</span></button>
 <button aria-pressed="false" data-country="ee" disabled="" type="button">Estonia<span>1</span></button>
-<button aria-pressed="false" data-country="lv" disabled="" type="button">Latvia<span>2</span></button>
 </nav>
 <details class="travel-places" id="travel-places">
 <summary>All the places <span>58 stops, and counting</span></summary>
@@ -399,15 +415,22 @@
 </ul>
 </div>
 <div>
-<h4>Greece</h4>
+<h4>Germany</h4>
 <ul>
-<li>Chios</li>
-</ul>
-</div>
-<div>
-<h4>Bulgaria</h4>
-<ul>
-<li>Pamporovo</li>
+<li>Munich <span>current base</span></li>
+<li>Hamburg</li>
+<li>Kiel</li>
+<li>Bremen</li>
+<li>Berlin</li>
+<li>Potsdam</li>
+<li>Cottbus</li>
+<li>Dresden</li>
+<li>Dortmund</li>
+<li>Stuttgart</li>
+<li>Starnberg</li>
+<li>Garmisch-Partenkirchen</li>
+<li>Ingolstadt</li>
+<li>Tegernsee</li>
 </ul>
 </div>
 <div>
@@ -424,6 +447,25 @@
 <li>San Gimignano</li>
 <li>Sorrento</li>
 <li>Positano</li>
+</ul>
+</div>
+<div>
+<h4>Latvia</h4>
+<ul>
+<li>Riga</li>
+<li>Daugavpils</li>
+</ul>
+</div>
+<div>
+<h4>Greece</h4>
+<ul>
+<li>Chios</li>
+</ul>
+</div>
+<div>
+<h4>Bulgaria</h4>
+<ul>
+<li>Pamporovo</li>
 </ul>
 </div>
 <div>
@@ -451,25 +493,6 @@
 </ul>
 </div>
 <div>
-<h4>Germany</h4>
-<ul>
-<li>Munich <span>★ Home base</span></li>
-<li>Hamburg</li>
-<li>Kiel</li>
-<li>Bremen</li>
-<li>Berlin</li>
-<li>Potsdam</li>
-<li>Cottbus</li>
-<li>Dresden</li>
-<li>Dortmund</li>
-<li>Stuttgart</li>
-<li>Starnberg</li>
-<li>Garmisch-Partenkirchen</li>
-<li>Ingolstadt</li>
-<li>Tegernsee</li>
-</ul>
-</div>
-<div>
 <h4>Kyrgyzstan</h4>
 <ul>
 <li>Bishkek</li>
@@ -481,17 +504,10 @@
 <li>Tallinn</li>
 </ul>
 </div>
-<div>
-<h4>Latvia</h4>
-<ul>
-<li>Riga</li>
-<li>Daugavpils</li>
-</ul>
-</div>
 </div>
 </details>
 <noscript><p class="travel-no-script">The interactive globe needs JavaScript. Open “All the places” to explore every stop.</p></noscript>
-<script id="travel-data" type="application/json">{"countries": [{"altitude": 0.43, "cities": [{"base": null, "id": "tr-0", "lat": 38.7569, "lon": 30.5387, "name": "Afyonkarahisar"}, {"base": null, "id": "tr-1", "lat": 39.9334, "lon": 32.8597, "name": "Ankara"}, {"base": null, "id": "tr-2", "lat": 36.8969, "lon": 30.7133, "name": "Antalya"}, {"base": null, "id": "tr-3", "lat": 41.1105, "lon": 42.7022, "name": "Ardahan"}, {"base": null, "id": "tr-4", "lat": 37.7203, "lon": 30.2908, "name": "Burdur"}, {"base": null, "id": "tr-5", "lat": 40.195, "lon": 29.06, "name": "Bursa"}, {"base": null, "id": "tr-6", "lat": 40.1553, "lon": 26.4142, "name": "\u00c7anakkale"}, {"base": null, "id": "tr-7", "lat": 40.5506, "lon": 34.9556, "name": "\u00c7orum"}, {"base": null, "id": "tr-8", "lat": 37.7765, "lon": 29.0864, "name": "Denizli"}, {"base": null, "id": "tr-9", "lat": 41.6771, "lon": 26.5557, "name": "Edirne"}, {"base": null, "id": "tr-10", "lat": 39.7667, "lon": 30.5256, "name": "Eski\u015fehir"}, {"base": null, "id": "tr-11", "lat": 37.7648, "lon": 30.5566, "name": "Isparta"}, {"base": "second", "id": "tr-12", "lat": 41.0082, "lon": 28.9784, "name": "Istanbul"}, {"base": null, "id": "tr-13", "lat": 38.4237, "lon": 27.1428, "name": "\u0130zmir"}, {"base": null, "id": "tr-14", "lat": 41.2061, "lon": 32.6204, "name": "Karab\u00fck"}, {"base": null, "id": "tr-15", "lat": 40.6013, "lon": 43.0975, "name": "Kars"}, {"base": null, "id": "tr-16", "lat": 41.3887, "lon": 33.7827, "name": "Kastamonu"}, {"base": null, "id": "tr-17", "lat": 39.8468, "lon": 33.5153, "name": "K\u0131r\u0131kkale"}, {"base": null, "id": "tr-18", "lat": 41.7351, "lon": 27.2252, "name": "K\u0131rklareli"}, {"base": null, "id": "tr-19", "lat": 39.4192, "lon": 29.9857, "name": "K\u00fctahya"}, {"base": null, "id": "tr-20", "lat": 38.6191, "lon": 27.4289, "name": "Manisa"}, {"base": null, "id": "tr-21", "lat": 37.2153, "lon": 28.3636, "name": "Mu\u011fla"}, {"base": null, "id": "tr-22", "lat": 38.6244, "lon": 34.7239, "name": "Nev\u015fehir"}], "id": "tr", "lat": 39, "lon": 34, "name": "T\u00fcrkiye"}, {"altitude": 0.28, "cities": [{"base": null, "id": "gr-0", "lat": 38.3682, "lon": 26.1358, "name": "Chios"}], "id": "gr", "lat": 38.2, "lon": 23.4, "name": "Greece"}, {"altitude": 0.25, "cities": [{"base": null, "id": "bg-0", "lat": 41.65, "lon": 24.695, "name": "Pamporovo"}], "id": "bg", "lat": 42.65, "lon": 25.2, "name": "Bulgaria"}, {"altitude": 0.4, "cities": [{"base": null, "id": "it-0", "lat": 45.4642, "lon": 9.19, "name": "Milan"}, {"base": null, "id": "it-1", "lat": 45.4408, "lon": 12.3155, "name": "Venice"}, {"base": null, "id": "it-2", "lat": 41.9028, "lon": 12.4964, "name": "Rome"}, {"base": null, "id": "it-3", "lat": 43.7696, "lon": 11.2558, "name": "Florence"}, {"base": null, "id": "it-4", "lat": 43.7228, "lon": 10.4017, "name": "Pisa"}, {"base": null, "id": "it-5", "lat": 40.8518, "lon": 14.2681, "name": "Naples"}, {"base": null, "id": "it-6", "lat": 45.8081, "lon": 9.0852, "name": "Como"}, {"base": null, "id": "it-7", "lat": 43.3188, "lon": 11.3308, "name": "Siena"}, {"base": null, "id": "it-8", "lat": 43.4676, "lon": 11.0435, "name": "San Gimignano"}, {"base": null, "id": "it-9", "lat": 40.6263, "lon": 14.3758, "name": "Sorrento"}, {"base": null, "id": "it-10", "lat": 40.6281, "lon": 14.4845, "name": "Positano"}], "id": "it", "lat": 42.5, "lon": 12.8, "name": "Italy"}, {"altitude": 0.24, "cities": [{"base": null, "id": "hr-0", "lat": 45.815, "lon": 15.9819, "name": "Zagreb"}], "id": "hr", "lat": 45.1, "lon": 16.1, "name": "Croatia"}, {"altitude": 0.23, "cities": [{"base": null, "id": "at-0", "lat": 47.8095, "lon": 13.055, "name": "Salzburg"}], "id": "at", "lat": 47.5, "lon": 14.3, "name": "Austria"}, {"altitude": 0.25, "cities": [{"base": null, "id": "cz-0", "lat": 50.0755, "lon": 14.4378, "name": "Prague"}], "id": "cz", "lat": 49.8, "lon": 15.5, "name": "Czechia"}, {"altitude": 0.21, "cities": [{"base": null, "id": "ch-0", "lat": 47.3769, "lon": 8.5417, "name": "Zurich"}], "id": "ch", "lat": 46.8, "lon": 8.2, "name": "Switzerland"}, {"altitude": 0.39, "cities": [{"base": "home", "id": "de-0", "lat": 48.1351, "lon": 11.582, "name": "Munich"}, {"base": null, "id": "de-1", "lat": 53.5511, "lon": 9.9937, "name": "Hamburg"}, {"base": null, "id": "de-2", "lat": 54.3233, "lon": 10.1228, "name": "Kiel"}, {"base": null, "id": "de-3", "lat": 53.0793, "lon": 8.8017, "name": "Bremen"}, {"base": null, "id": "de-4", "lat": 52.52, "lon": 13.405, "name": "Berlin"}, {"base": null, "id": "de-5", "lat": 52.3906, "lon": 13.0645, "name": "Potsdam"}, {"base": null, "id": "de-6", "lat": 51.7563, "lon": 14.3329, "name": "Cottbus"}, {"base": null, "id": "de-7", "lat": 51.0504, "lon": 13.7373, "name": "Dresden"}, {"base": null, "id": "de-8", "lat": 51.5136, "lon": 7.4653, "name": "Dortmund"}, {"base": null, "id": "de-9", "lat": 48.7758, "lon": 9.1829, "name": "Stuttgart"}, {"base": null, "id": "de-10", "lat": 47.9979, "lon": 11.3403, "name": "Starnberg"}, {"base": null, "id": "de-11", "lat": 47.4917, "lon": 11.0955, "name": "Garmisch-Partenkirchen"}, {"base": null, "id": "de-12", "lat": 48.7665, "lon": 11.4258, "name": "Ingolstadt"}, {"base": null, "id": "de-13", "lat": 47.7129, "lon": 11.7582, "name": "Tegernsee"}], "id": "de", "lat": 51.1, "lon": 10.4, "name": "Germany"}, {"altitude": 0.28, "cities": [{"base": null, "id": "kg-0", "lat": 42.8746, "lon": 74.5698, "name": "Bishkek"}], "id": "kg", "lat": 41.8, "lon": 74.6, "name": "Kyrgyzstan"}, {"altitude": 0.23, "cities": [{"base": null, "id": "ee-0", "lat": 59.437, "lon": 24.7536, "name": "Tallinn"}], "id": "ee", "lat": 58.8, "lon": 25.5, "name": "Estonia"}, {"altitude": 0.24, "cities": [{"base": null, "id": "lv-0", "lat": 56.9496, "lon": 24.1052, "name": "Riga"}, {"base": null, "id": "lv-1", "lat": 55.8747, "lon": 26.5362, "name": "Daugavpils"}], "id": "lv", "lat": 56.9, "lon": 24.9, "name": "Latvia"}], "easterEgg": {"lat": 52.0302, "lon": 8.5325, "message": "Does not exist.", "name": "Bielefeld"}}</script>
+<script id="travel-data" type="application/json">{"countries": [{"altitude": 0.43, "cities": [{"base": null, "id": "tr-0", "lat": 38.7569, "lon": 30.5387, "name": "Afyonkarahisar"}, {"base": null, "id": "tr-1", "lat": 39.9334, "lon": 32.8597, "name": "Ankara"}, {"base": null, "id": "tr-2", "lat": 36.8969, "lon": 30.7133, "name": "Antalya"}, {"base": null, "id": "tr-3", "lat": 41.1105, "lon": 42.7022, "name": "Ardahan"}, {"base": null, "id": "tr-4", "lat": 37.7203, "lon": 30.2908, "name": "Burdur"}, {"base": null, "id": "tr-5", "lat": 40.195, "lon": 29.06, "name": "Bursa"}, {"base": null, "id": "tr-6", "lat": 40.1553, "lon": 26.4142, "name": "\u00c7anakkale"}, {"base": null, "id": "tr-7", "lat": 40.5506, "lon": 34.9556, "name": "\u00c7orum"}, {"base": null, "id": "tr-8", "lat": 37.7765, "lon": 29.0864, "name": "Denizli"}, {"base": null, "id": "tr-9", "lat": 41.6771, "lon": 26.5557, "name": "Edirne"}, {"base": null, "id": "tr-10", "lat": 39.7667, "lon": 30.5256, "name": "Eski\u015fehir"}, {"base": null, "id": "tr-11", "lat": 37.7648, "lon": 30.5566, "name": "Isparta"}, {"base": "second", "id": "tr-12", "lat": 41.0082, "lon": 28.9784, "name": "Istanbul"}, {"base": null, "id": "tr-13", "lat": 38.4237, "lon": 27.1428, "name": "\u0130zmir"}, {"base": null, "id": "tr-14", "lat": 41.2061, "lon": 32.6204, "name": "Karab\u00fck"}, {"base": null, "id": "tr-15", "lat": 40.6013, "lon": 43.0975, "name": "Kars"}, {"base": null, "id": "tr-16", "lat": 41.3887, "lon": 33.7827, "name": "Kastamonu"}, {"base": null, "id": "tr-17", "lat": 39.8468, "lon": 33.5153, "name": "K\u0131r\u0131kkale"}, {"base": null, "id": "tr-18", "lat": 41.7351, "lon": 27.2252, "name": "K\u0131rklareli"}, {"base": null, "id": "tr-19", "lat": 39.4192, "lon": 29.9857, "name": "K\u00fctahya"}, {"base": null, "id": "tr-20", "lat": 38.6191, "lon": 27.4289, "name": "Manisa"}, {"base": null, "id": "tr-21", "lat": 37.2153, "lon": 28.3636, "name": "Mu\u011fla"}, {"base": null, "id": "tr-22", "lat": 38.6244, "lon": 34.7239, "name": "Nev\u015fehir"}], "continent": "Asia", "id": "tr", "lat": 39, "lon": 34, "name": "T\u00fcrkiye"}, {"altitude": 0.39, "cities": [{"base": "home", "id": "de-0", "lat": 48.1351, "lon": 11.582, "name": "Munich"}, {"base": null, "id": "de-1", "lat": 53.5511, "lon": 9.9937, "name": "Hamburg"}, {"base": null, "id": "de-2", "lat": 54.3233, "lon": 10.1228, "name": "Kiel"}, {"base": null, "id": "de-3", "lat": 53.0793, "lon": 8.8017, "name": "Bremen"}, {"base": null, "id": "de-4", "lat": 52.52, "lon": 13.405, "name": "Berlin"}, {"base": null, "id": "de-5", "lat": 52.3906, "lon": 13.0645, "name": "Potsdam"}, {"base": null, "id": "de-6", "lat": 51.7563, "lon": 14.3329, "name": "Cottbus"}, {"base": null, "id": "de-7", "lat": 51.0504, "lon": 13.7373, "name": "Dresden"}, {"base": null, "id": "de-8", "lat": 51.5136, "lon": 7.4653, "name": "Dortmund"}, {"base": null, "id": "de-9", "lat": 48.7758, "lon": 9.1829, "name": "Stuttgart"}, {"base": null, "id": "de-10", "lat": 47.9979, "lon": 11.3403, "name": "Starnberg"}, {"base": null, "id": "de-11", "lat": 47.4917, "lon": 11.0955, "name": "Garmisch-Partenkirchen"}, {"base": null, "id": "de-12", "lat": 48.7665, "lon": 11.4258, "name": "Ingolstadt"}, {"base": null, "id": "de-13", "lat": 47.7129, "lon": 11.7582, "name": "Tegernsee"}], "continent": "Europe", "id": "de", "lat": 51.1, "lon": 10.4, "name": "Germany"}, {"altitude": 0.4, "cities": [{"base": null, "id": "it-0", "lat": 45.4642, "lon": 9.19, "name": "Milan"}, {"base": null, "id": "it-1", "lat": 45.4408, "lon": 12.3155, "name": "Venice"}, {"base": null, "id": "it-2", "lat": 41.9028, "lon": 12.4964, "name": "Rome"}, {"base": null, "id": "it-3", "lat": 43.7696, "lon": 11.2558, "name": "Florence"}, {"base": null, "id": "it-4", "lat": 43.7228, "lon": 10.4017, "name": "Pisa"}, {"base": null, "id": "it-5", "lat": 40.8518, "lon": 14.2681, "name": "Naples"}, {"base": null, "id": "it-6", "lat": 45.8081, "lon": 9.0852, "name": "Como"}, {"base": null, "id": "it-7", "lat": 43.3188, "lon": 11.3308, "name": "Siena"}, {"base": null, "id": "it-8", "lat": 43.4676, "lon": 11.0435, "name": "San Gimignano"}, {"base": null, "id": "it-9", "lat": 40.6263, "lon": 14.3758, "name": "Sorrento"}, {"base": null, "id": "it-10", "lat": 40.6281, "lon": 14.4845, "name": "Positano"}], "continent": "Europe", "id": "it", "lat": 42.5, "lon": 12.8, "name": "Italy"}, {"altitude": 0.24, "cities": [{"base": null, "id": "lv-0", "lat": 56.9496, "lon": 24.1052, "name": "Riga"}, {"base": null, "id": "lv-1", "lat": 55.8747, "lon": 26.5362, "name": "Daugavpils"}], "continent": "Europe", "id": "lv", "lat": 56.9, "lon": 24.9, "name": "Latvia"}, {"altitude": 0.28, "cities": [{"base": null, "id": "gr-0", "lat": 38.3682, "lon": 26.1358, "name": "Chios"}], "continent": "Europe", "id": "gr", "lat": 38.2, "lon": 23.4, "name": "Greece"}, {"altitude": 0.25, "cities": [{"base": null, "id": "bg-0", "lat": 41.65, "lon": 24.695, "name": "Pamporovo"}], "continent": "Europe", "id": "bg", "lat": 42.65, "lon": 25.2, "name": "Bulgaria"}, {"altitude": 0.24, "cities": [{"base": null, "id": "hr-0", "lat": 45.815, "lon": 15.9819, "name": "Zagreb"}], "continent": "Europe", "id": "hr", "lat": 45.1, "lon": 16.1, "name": "Croatia"}, {"altitude": 0.23, "cities": [{"base": null, "id": "at-0", "lat": 47.8095, "lon": 13.055, "name": "Salzburg"}], "continent": "Europe", "id": "at", "lat": 47.5, "lon": 14.3, "name": "Austria"}, {"altitude": 0.25, "cities": [{"base": null, "id": "cz-0", "lat": 50.0755, "lon": 14.4378, "name": "Prague"}], "continent": "Europe", "id": "cz", "lat": 49.8, "lon": 15.5, "name": "Czechia"}, {"altitude": 0.21, "cities": [{"base": null, "id": "ch-0", "lat": 47.3769, "lon": 8.5417, "name": "Zurich"}], "continent": "Europe", "id": "ch", "lat": 46.8, "lon": 8.2, "name": "Switzerland"}, {"altitude": 0.28, "cities": [{"base": null, "id": "kg-0", "lat": 42.8746, "lon": 74.5698, "name": "Bishkek"}], "continent": "Asia", "id": "kg", "lat": 41.8, "lon": 74.6, "name": "Kyrgyzstan"}, {"altitude": 0.23, "cities": [{"base": null, "id": "ee-0", "lat": 59.437, "lon": 24.7536, "name": "Tallinn"}], "continent": "Europe", "id": "ee", "lat": 58.8, "lon": 25.5, "name": "Estonia"}], "easterEgg": {"lat": 52.0302, "lon": 8.5325, "message": "Does not exist.", "name": "Bielefeld"}}</script>
 <script src="/travel/globe.js" type="module"></script>
 <link href="/travel/globe.css" rel="stylesheet"/>
 </fieldset>

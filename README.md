@@ -90,3 +90,12 @@ its view changes. Higher-detail imagery loads when cities are revealed.
 - **All the places** remains available without JavaScript or WebGL.
 
 Asset provenance and license details are in `public/travel/ATTRIBUTION.md`.
+
+Exploration percentages are calculated at build time by `src/travel_stats.py`.
+They count unique visited countries, using 195 UN member/observer states for the
+world and UN M49 regional assignments for continents (Türkiye is in Asia).
+Only continents with at least one visited country are shown. Every country in
+`src/data/travel.json` has a `continent` field; use Africa, Asia, Europe,
+North America, South America, or Oceania when adding a new country.
+The displayed fractions show countries visited out of the total; these values
+do not estimate land area or the completeness of a visit.

@@ -5,6 +5,7 @@ import unittest
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from bs4 import BeautifulSoup
+from travel_stats import build_exploration_stats
 
 ROOT = Path(__file__).resolve().parent
 
@@ -44,13 +45,28 @@ class TravelTests(unittest.TestCase):
         # Use the same fieldset macro as the home page.
         template = env.from_string('{% from "components/fieldset.html" import fieldset %}'
                                    '{% include "components/travel.html" %}')
-        soup = BeautifulSoup(template.render(travel=self.travel), 'html.parser')
+        soup = BeautifulSoup(template.render(travel=self.travel,
+            exploration=build_exploration_stats(self.countries)), 'html.parser')
         listed = soup.select('.travel-place-list li')
         self.assertEqual(len(listed), 58)
         for city in self.cities:
             self.assertTrue(any(item.get_text().startswith(city['name']) for item in listed))
         self.assertEqual(json.loads(soup.select_one('#travel-data').string), self.travel)
         self.assertEqual(len(soup.select('[data-country]')), 12)
+
+    def test_exploration_counts_countries_and_only_visited_continents(self):
+        stats = build_exploration_stats(self.countries)
+        self.assertEqual(stats, [
+            {'name': 'World', 'visited': 12, 'total': 195, 'percent': 6.2},
+            {'name': 'Europe', 'visited': 10, 'total': 44, 'percent': 22.7},
+            {'name': 'Asia', 'visited': 2, 'total': 48, 'percent': 4.2},
+        ])
+        self.assertEqual(build_exploration_stats(self.countries + self.countries), stats)
+        self.assertEqual(build_exploration_stats([]), [
+            {'name': 'World', 'visited': 0, 'total': 195, 'percent': 0.0},
+        ])
+        unvisited = {'id': 'xx', 'name': 'Unvisited', 'continent': 'Africa', 'cities': []}
+        self.assertEqual(build_exploration_stats(self.countries + [unvisited]), stats)
 
 
 if __name__ == '__main__':
