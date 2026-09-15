@@ -19,19 +19,19 @@ yarn dev
 yarn build
 ```
 
-## Running widget
+## Running stats
 
-The running section embeds Strava's official weekly summary from
-`src/templates/components/running.html`. Strava serves the latest weekly
-summary when visitors load the widget; no API credentials, local data updates,
-or scheduled rebuilds are required.
+The custom running card uses `src/data/running.json`. Update the snapshot and
+run `pnpm build` to regenerate the page. It does not update automatically.
 
-The widget shows the current week's distance, time, and elevation using
-Strava's own design. It does not provide the former year-to-date totals or
-average pace. The profile link remains available if the embed cannot load.
+Keep all totals within the same period. Store distance in kilometres, moving
+time in seconds, run count as an integer, and elevation gain in metres. Use
+`YYYY-MM-DD` for `updated_at`. Leave unavailable values as `null`.
 
-To replace the embed, open your Strava profile, choose **Share Your Activities**,
-and copy the URL from **Summary Widget** into the iframe source.
+`best_efforts` stores Strava's all-time best efforts separately from the annual totals.
+Each entry has a `distance` label, a `time`, and its source Strava activity `url`.
+Only include distances with recorded best efforts; do not extrapolate times.
+The card includes the snapshot date and a link to the Strava profile.
 
 ## Map
 ```

@@ -1,16 +1,62 @@
 <section id="running">
   {% call fieldset("cat ~/running.md") %}
-    <iframe
-      class="running-widget"
-      title="Arda’s weekly running summary on Strava"
-      src="https://www.strava.com/athletes/154252817/activity-summary/a38f1ff492bcb5d85ec063a524398e4ce4ef7df8"
-      width="100%"
-      height="160"
-      loading="eager"
-      scrolling="no"
-    ></iframe>
-    <p class="mt-3 text-xs text-neutral-500">
-      <a class="social-link" href="https://www.strava.com/athletes/154252817" target="_blank" rel="noopener noreferrer">View on Strava <span aria-hidden="true">↗</span></a>
-    </p>
+    <div class="running-card">
+      <div class="running-header">
+        <div class="flex items-center gap-3">
+          <svg class="running-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="15" cy="4" r="2" />
+            <path d="m12 8 3 3 4 1M8 11l3-3 3 1-2 5 4 3v4M12 14l-4 2-4 5M8 16l-3-2" />
+          </svg>
+          <div>
+            <h3 class="running-title">Running</h3>
+          </div>
+        </div>
+        <img class="running-logo" src="/assets/logo-strava.svg" alt="Strava" width="432" height="91" />
+      </div>
+      {% if running.period %}
+        <div class="px-4 sm:px-6">
+          <p class="running-period">{{ running.period }}</p>
+        </div>
+      {% endif %}
+      <div class="running-main-stats">
+        <dl>
+          <dt>Distance</dt>
+          <dd>{{ running.distance if running.distance is not none else "—" }} <span>km</span></dd>
+        </dl>
+        {% if running.best_efforts %}
+          <div class="running-best-times">
+            <h4 class="mb-3 text-sm font-semibold">All-time best efforts</h4>
+            <dl class="grid grid-cols-3 gap-3">
+              {% for effort in running.best_efforts %}
+                <div>
+                  <dt>{{ effort.distance }}</dt>
+                  <dd><a class="running-best-link" href="{{ effort.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ effort.distance }} best effort {{ effort.time }} on Strava">{{ effort.time }}</a></dd>
+                </div>
+              {% endfor %}
+            </dl>
+          </div>
+        {% endif %}
+      </div>
+      <dl class="running-secondary-stats">
+        <div>
+          <dt>Runs</dt>
+          <dd>{{ running.runs if running.runs is not none else "—" }}</dd>
+        </div>
+        <div>
+          <dt>Moving time</dt>
+          <dd>{{ running.moving_time if running.moving_time is not none else "—" }}</dd>
+        </div>
+        <div>
+          <dt>Elevation gain</dt>
+          <dd>{{ running.elevation if running.elevation is not none else "—" }} <span>m</span></dd>
+        </div>
+      </dl>
+      {% if running.updated_at or running.profile_url %}
+        <div class="running-footer">
+          {% if running.updated_at %}<p>As of <time datetime="{{ running.updated_at }}">{{ running.updated_label }}</time></p>{% endif %}
+          {% if running.profile_url %}<a href="{{ running.profile_url }}" target="_blank" rel="noopener noreferrer" class="social-link">View on Strava <span aria-hidden="true">↗</span></a>{% endif %}
+        </div>
+      {% endif %}
+    </div>
   {% endcall %}
 </section>

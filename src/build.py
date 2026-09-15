@@ -8,6 +8,7 @@ import mistune
 import frontmatter
 from bs4 import BeautifulSoup, element
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+from running_stats import load_running_stats
 
 first_name = "Arda"
 last_name = "Tas"
@@ -198,9 +199,10 @@ twitter = twitter_tags({**seo_common, "card": "summary"})
 seotags = og + twitter
 
 index = env.get_template("index.html")
+running = load_running_stats(os.path.join(script_path, "data", "running.json"))
 with open(os.path.join(script_path, "data", "travel.json"), encoding="utf-8") as f:
     travel = json.load(f)
-rendered = index.render(lists=lists, name=name, title=name, travel=travel)
+rendered = index.render(lists=lists, name=name, title=name, running=running, travel=travel)
 soup = bs(rendered)
 for item in seotags:
     soup.head.append(bs(item))

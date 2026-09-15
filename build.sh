@@ -27,6 +27,7 @@ static() {
         logo-github.svg
         logo-istanbul-erkek.png
         logo-linkedin.svg
+        logo-strava.svg
         logo-tbc.png
         logo-tum.png
         logo-tum-education.svg

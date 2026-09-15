@@ -135,12 +135,78 @@ article {
   @apply mb-2 font-mono text-xs font-semibold uppercase tracking-[0.08em] text-[#315f87];
 }
 
-.running-widget {
-  display: block;
-  width: 100%;
-  height: 160px;
-  border: 0;
-  background: white;
+.running-card {
+  @apply border border-[#b7b5ae] border-t-[3px] border-t-[#fc4c02] bg-white;
+}
+
+.running-header {
+  @apply flex items-center justify-between gap-4 px-4 pt-5 sm:px-6;
+}
+
+.running-icon {
+  @apply shrink-0 text-[#fc4c02];
+}
+
+.running-title {
+  @apply text-xl font-semibold tracking-tight;
+}
+
+.running-period {
+  @apply mt-2 inline-block border border-[#fc4c02]/30 bg-[#fff1e9] px-2.5 py-1 text-sm font-semibold leading-5 text-[#a83200] sm:text-base;
+}
+
+.running-logo {
+  width: 96px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.running-main-stats {
+  @apply grid grid-cols-1 gap-5 px-4 py-6 sm:px-6 md:grid-cols-[1fr_2fr];
+}
+
+.running-card dt {
+  @apply mb-1 text-xs text-neutral-500 sm:text-sm;
+}
+
+.running-main-stats dd {
+  @apply text-3xl font-semibold leading-tight tracking-tight tabular-nums sm:text-5xl;
+}
+
+.running-main-stats dd span {
+  @apply text-sm font-normal text-neutral-500 sm:text-lg;
+}
+
+.running-best-times {
+  @apply border-t border-neutral-200 pt-4 md:border-l md:border-t-0 md:pl-6 md:pt-0;
+}
+
+.running-best-times dd {
+  @apply whitespace-nowrap text-xl sm:text-2xl;
+}
+
+.running-best-link {
+  @apply decoration-[#fc4c02]/40 underline underline-offset-4 hover:text-[#a83200] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#fc4c02];
+}
+
+.running-secondary-stats {
+  @apply grid grid-cols-3 divide-x divide-neutral-200 border-t border-neutral-200 py-4;
+}
+
+.running-secondary-stats > div {
+  @apply min-w-0 px-3 sm:px-6;
+}
+
+.running-secondary-stats dd {
+  @apply text-base font-semibold tracking-tight tabular-nums sm:text-xl;
+}
+
+.running-secondary-stats dd span {
+  @apply text-sm font-normal text-neutral-500;
+}
+
+.running-footer {
+  @apply flex flex-wrap items-center justify-between gap-2 border-t border-neutral-200 px-4 py-3 text-xs text-neutral-500 sm:px-6;
 }
 
 .social-link {

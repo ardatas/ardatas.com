@@ -1,0 +1,26 @@
+{
+  "period": "2026 · Year to date",
+  "updated_at": "2026-09-15",
+  "profile_url": "https://www.strava.com/athletes/154252817",
+  "distance_km": 102.7,
+  "moving_time_seconds": 40140,
+  "runs": 22,
+  "elevation_gain_m": 713,
+  "best_efforts": [
+    {
+      "distance": "1 km",
+      "time": "3:56",
+      "url": "https://www.strava.com/activities/14238490381/best-efforts"
+    },
+    {
+      "distance": "5 km",
+      "time": "25:58",
+      "url": "https://www.strava.com/activities/19715618337/best-efforts"
+    },
+    {
+      "distance": "10 km",
+      "time": "1:10:44",
+      "url": "https://www.strava.com/activities/18380738272/best-efforts"
+    }
+  ]
+}
