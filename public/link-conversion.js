@@ -1,12 +1,13 @@
-const emailLink = document.getElementById("link-conversion");
+const emailLinks = document.querySelectorAll("#link-conversion, [data-email-link]");
 
-if (emailLink) {
+if (emailLinks.length) {
   const address = [
-    97, 114, 100, 97, 46, 116, 97, 115, 64, 116, 117, 109, 46, 100, 101,
+    97, 114, 100, 97, 64, 97, 114, 100, 97, 116, 97, 115, 46, 99, 111, 109,
   ]
     .map((character) => String.fromCharCode(character))
     .join("");
 
-  emailLink.href = `mailto:${address}`;
-  emailLink.textContent = address;
+  emailLinks.forEach((emailLink) => {
+    emailLink.href = `mailto:${address}`;
+  });
 }

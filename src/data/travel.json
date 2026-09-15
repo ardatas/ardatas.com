@@ -1,0 +1,524 @@
+{
+  "countries": [
+    {
+      "id": "tr",
+      "name": "Türkiye",
+      "lat": 39,
+      "lon": 34,
+      "altitude": 0.43,
+      "cities": [
+        {
+          "id": "tr-0",
+          "name": "Afyonkarahisar",
+          "lat": 38.7569,
+          "lon": 30.5387,
+          "base": null
+        },
+        {
+          "id": "tr-1",
+          "name": "Ankara",
+          "lat": 39.9334,
+          "lon": 32.8597,
+          "base": null
+        },
+        {
+          "id": "tr-2",
+          "name": "Antalya",
+          "lat": 36.8969,
+          "lon": 30.7133,
+          "base": null
+        },
+        {
+          "id": "tr-3",
+          "name": "Ardahan",
+          "lat": 41.1105,
+          "lon": 42.7022,
+          "base": null
+        },
+        {
+          "id": "tr-4",
+          "name": "Burdur",
+          "lat": 37.7203,
+          "lon": 30.2908,
+          "base": null
+        },
+        {
+          "id": "tr-5",
+          "name": "Bursa",
+          "lat": 40.195,
+          "lon": 29.06,
+          "base": null
+        },
+        {
+          "id": "tr-6",
+          "name": "Çanakkale",
+          "lat": 40.1553,
+          "lon": 26.4142,
+          "base": null
+        },
+        {
+          "id": "tr-7",
+          "name": "Çorum",
+          "lat": 40.5506,
+          "lon": 34.9556,
+          "base": null
+        },
+        {
+          "id": "tr-8",
+          "name": "Denizli",
+          "lat": 37.7765,
+          "lon": 29.0864,
+          "base": null
+        },
+        {
+          "id": "tr-9",
+          "name": "Edirne",
+          "lat": 41.6771,
+          "lon": 26.5557,
+          "base": null
+        },
+        {
+          "id": "tr-10",
+          "name": "Eskişehir",
+          "lat": 39.7667,
+          "lon": 30.5256,
+          "base": null
+        },
+        {
+          "id": "tr-11",
+          "name": "Isparta",
+          "lat": 37.7648,
+          "lon": 30.5566,
+          "base": null
+        },
+        {
+          "id": "tr-12",
+          "name": "Istanbul",
+          "lat": 41.0082,
+          "lon": 28.9784,
+          "base": "second"
+        },
+        {
+          "id": "tr-13",
+          "name": "İzmir",
+          "lat": 38.4237,
+          "lon": 27.1428,
+          "base": null
+        },
+        {
+          "id": "tr-14",
+          "name": "Karabük",
+          "lat": 41.2061,
+          "lon": 32.6204,
+          "base": null
+        },
+        {
+          "id": "tr-15",
+          "name": "Kars",
+          "lat": 40.6013,
+          "lon": 43.0975,
+          "base": null
+        },
+        {
+          "id": "tr-16",
+          "name": "Kastamonu",
+          "lat": 41.3887,
+          "lon": 33.7827,
+          "base": null
+        },
+        {
+          "id": "tr-17",
+          "name": "Kırıkkale",
+          "lat": 39.8468,
+          "lon": 33.5153,
+          "base": null
+        },
+        {
+          "id": "tr-18",
+          "name": "Kırklareli",
+          "lat": 41.7351,
+          "lon": 27.2252,
+          "base": null
+        },
+        {
+          "id": "tr-19",
+          "name": "Kütahya",
+          "lat": 39.4192,
+          "lon": 29.9857,
+          "base": null
+        },
+        {
+          "id": "tr-20",
+          "name": "Manisa",
+          "lat": 38.6191,
+          "lon": 27.4289,
+          "base": null
+        },
+        {
+          "id": "tr-21",
+          "name": "Muğla",
+          "lat": 37.2153,
+          "lon": 28.3636,
+          "base": null
+        },
+        {
+          "id": "tr-22",
+          "name": "Nevşehir",
+          "lat": 38.6244,
+          "lon": 34.7239,
+          "base": null
+        }
+      ]
+    },
+    {
+      "id": "gr",
+      "name": "Greece",
+      "lat": 38.2,
+      "lon": 23.4,
+      "altitude": 0.28,
+      "cities": [
+        {
+          "id": "gr-0",
+          "name": "Chios",
+          "lat": 38.3682,
+          "lon": 26.1358,
+          "base": null
+        }
+      ]
+    },
+    {
+      "id": "bg",
+      "name": "Bulgaria",
+      "lat": 42.65,
+      "lon": 25.2,
+      "altitude": 0.25,
+      "cities": [
+        {
+          "id": "bg-0",
+          "name": "Pamporovo",
+          "lat": 41.65,
+          "lon": 24.695,
+          "base": null
+        }
+      ]
+    },
+    {
+      "id": "it",
+      "name": "Italy",
+      "lat": 42.5,
+      "lon": 12.8,
+      "altitude": 0.4,
+      "cities": [
+        {
+          "id": "it-0",
+          "name": "Milan",
+          "lat": 45.4642,
+          "lon": 9.19,
+          "base": null
+        },
+        {
+          "id": "it-1",
+          "name": "Venice",
+          "lat": 45.4408,
+          "lon": 12.3155,
+          "base": null
+        },
+        {
+          "id": "it-2",
+          "name": "Rome",
+          "lat": 41.9028,
+          "lon": 12.4964,
+          "base": null
+        },
+        {
+          "id": "it-3",
+          "name": "Florence",
+          "lat": 43.7696,
+          "lon": 11.2558,
+          "base": null
+        },
+        {
+          "id": "it-4",
+          "name": "Pisa",
+          "lat": 43.7228,
+          "lon": 10.4017,
+          "base": null
+        },
+        {
+          "id": "it-5",
+          "name": "Naples",
+          "lat": 40.8518,
+          "lon": 14.2681,
+          "base": null
+        },
+        {
+          "id": "it-6",
+          "name": "Como",
+          "lat": 45.8081,
+          "lon": 9.0852,
+          "base": null
+        },
+        {
+          "id": "it-7",
+          "name": "Siena",
+          "lat": 43.3188,
+          "lon": 11.3308,
+          "base": null
+        },
+        {
+          "id": "it-8",
+          "name": "San Gimignano",
+          "lat": 43.4676,
+          "lon": 11.0435,
+          "base": null
+        },
+        {
+          "id": "it-9",
+          "name": "Sorrento",
+          "lat": 40.6263,
+          "lon": 14.3758,
+          "base": null
+        },
+        {
+          "id": "it-10",
+          "name": "Positano",
+          "lat": 40.6281,
+          "lon": 14.4845,
+          "base": null
+        }
+      ]
+    },
+    {
+      "id": "hr",
+      "name": "Croatia",
+      "lat": 45.1,
+      "lon": 16.1,
+      "altitude": 0.24,
+      "cities": [
+        {
+          "id": "hr-0",
+          "name": "Zagreb",
+          "lat": 45.815,
+          "lon": 15.9819,
+          "base": null
+        }
+      ]
+    },
+    {
+      "id": "at",
+      "name": "Austria",
+      "lat": 47.5,
+      "lon": 14.3,
+      "altitude": 0.23,
+      "cities": [
+        {
+          "id": "at-0",
+          "name": "Salzburg",
+          "lat": 47.8095,
+          "lon": 13.055,
+          "base": null
+        }
+      ]
+    },
+    {
+      "id": "cz",
+      "name": "Czechia",
+      "lat": 49.8,
+      "lon": 15.5,
+      "altitude": 0.25,
+      "cities": [
+        {
+          "id": "cz-0",
+          "name": "Prague",
+          "lat": 50.0755,
+          "lon": 14.4378,
+          "base": null
+        }
+      ]
+    },
+    {
+      "id": "ch",
+      "name": "Switzerland",
+      "lat": 46.8,
+      "lon": 8.2,
+      "altitude": 0.21,
+      "cities": [
+        {
+          "id": "ch-0",
+          "name": "Zurich",
+          "lat": 47.3769,
+          "lon": 8.5417,
+          "base": null
+        }
+      ]
+    },
+    {
+      "id": "de",
+      "name": "Germany",
+      "lat": 51.1,
+      "lon": 10.4,
+      "altitude": 0.39,
+      "cities": [
+        {
+          "id": "de-0",
+          "name": "Munich",
+          "lat": 48.1351,
+          "lon": 11.582,
+          "base": "home"
+        },
+        {
+          "id": "de-1",
+          "name": "Hamburg",
+          "lat": 53.5511,
+          "lon": 9.9937,
+          "base": null
+        },
+        {
+          "id": "de-2",
+          "name": "Kiel",
+          "lat": 54.3233,
+          "lon": 10.1228,
+          "base": null
+        },
+        {
+          "id": "de-3",
+          "name": "Bremen",
+          "lat": 53.0793,
+          "lon": 8.8017,
+          "base": null
+        },
+        {
+          "id": "de-4",
+          "name": "Berlin",
+          "lat": 52.52,
+          "lon": 13.405,
+          "base": null
+        },
+        {
+          "id": "de-5",
+          "name": "Potsdam",
+          "lat": 52.3906,
+          "lon": 13.0645,
+          "base": null
+        },
+        {
+          "id": "de-6",
+          "name": "Cottbus",
+          "lat": 51.7563,
+          "lon": 14.3329,
+          "base": null
+        },
+        {
+          "id": "de-7",
+          "name": "Dresden",
+          "lat": 51.0504,
+          "lon": 13.7373,
+          "base": null
+        },
+        {
+          "id": "de-8",
+          "name": "Dortmund",
+          "lat": 51.5136,
+          "lon": 7.4653,
+          "base": null
+        },
+        {
+          "id": "de-9",
+          "name": "Stuttgart",
+          "lat": 48.7758,
+          "lon": 9.1829,
+          "base": null
+        },
+        {
+          "id": "de-10",
+          "name": "Starnberg",
+          "lat": 47.9979,
+          "lon": 11.3403,
+          "base": null
+        },
+        {
+          "id": "de-11",
+          "name": "Garmisch-Partenkirchen",
+          "lat": 47.4917,
+          "lon": 11.0955,
+          "base": null
+        },
+        {
+          "id": "de-12",
+          "name": "Ingolstadt",
+          "lat": 48.7665,
+          "lon": 11.4258,
+          "base": null
+        },
+        {
+          "id": "de-13",
+          "name": "Tegernsee",
+          "lat": 47.7129,
+          "lon": 11.7582,
+          "base": null
+        }
+      ]
+    },
+    {
+      "id": "kg",
+      "name": "Kyrgyzstan",
+      "lat": 41.8,
+      "lon": 74.6,
+      "altitude": 0.28,
+      "cities": [
+        {
+          "id": "kg-0",
+          "name": "Bishkek",
+          "lat": 42.8746,
+          "lon": 74.5698,
+          "base": null
+        }
+      ]
+    },
+    {
+      "id": "ee",
+      "name": "Estonia",
+      "lat": 58.8,
+      "lon": 25.5,
+      "altitude": 0.23,
+      "cities": [
+        {
+          "id": "ee-0",
+          "name": "Tallinn",
+          "lat": 59.437,
+          "lon": 24.7536,
+          "base": null
+        }
+      ]
+    },
+    {
+      "id": "lv",
+      "name": "Latvia",
+      "lat": 56.9,
+      "lon": 24.9,
+      "altitude": 0.24,
+      "cities": [
+        {
+          "id": "lv-0",
+          "name": "Riga",
+          "lat": 56.9496,
+          "lon": 24.1052,
+          "base": null
+        },
+        {
+          "id": "lv-1",
+          "name": "Daugavpils",
+          "lat": 55.8747,
+          "lon": 26.5362,
+          "base": null
+        }
+      ]
+    }
+  ],
+  "easterEgg": {
+    "name": "Bielefeld",
+    "lat": 52.0302,
+    "lon": 8.5325,
+    "message": "Does not exist."
+  }
+}

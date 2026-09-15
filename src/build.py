@@ -1,4 +1,5 @@
 import os
+import json
 import argparse
 from shutil import rmtree
 from urllib.parse import urljoin
@@ -197,7 +198,9 @@ twitter = twitter_tags({**seo_common, "card": "summary"})
 seotags = og + twitter
 
 index = env.get_template("index.html")
-rendered = index.render(lists=lists, name=name, title=name)
+with open(os.path.join(script_path, "data", "travel.json"), encoding="utf-8") as f:
+    travel = json.load(f)
+rendered = index.render(lists=lists, name=name, title=name, travel=travel)
 soup = bs(rendered)
 for item in seotags:
     soup.head.append(bs(item))

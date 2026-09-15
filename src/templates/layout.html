@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Sans:wdth,wght@75..100,400..600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Instrument+Sans:wdth,wght@75..100,400..600&display=swap"
       rel="stylesheet"
     />
 
@@ -31,35 +31,44 @@
     <main
       class="flex min-h-screen flex-col max-w-5xl mx-auto px-4 py-4 sm:py-8 text-[15px] leading-5 font-normal tracking-[-0.005em] antialiased font-sans"
     >
-      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-3">
+      <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-3 mb-3">
         <a href="/">
-          <h1 class="font-mono text-lg font-semibold tracking-tight">{{ name }}</h1>
+          <h1 class="site-name font-mono tracking-tight">{{ name }}</h1>
         </a>
         <nav class="grid grid-cols-2 sm:flex gap-2" aria-label="Primary links">
-          {% call button("https://linkedin.com/in/arda-tas", "min-w-24") %}
+          {% call button("https://linkedin.com/in/arda-tas", "min-w-32 sm:w-32", "linkedin") %}
             <img class="h-5 w-5" src="/assets/logo-linkedin.svg" alt="" aria-hidden="true" />
             <span>LinkedIn</span>
           {% endcall %}
-          {% call button("https://github.com/ardatas", "min-w-24") %}
-            <img class="h-5 w-5" src="/assets/logo-github.svg" alt="" aria-hidden="true" />
+          {% call button("https://github.com/ardatas", "min-w-32 sm:w-32") %}
+            <img class="h-5 w-5 group-hover:brightness-0 group-hover:invert" src="/assets/logo-github.svg" alt="" aria-hidden="true" />
             <span>GitHub</span>
           {% endcall %}
-          {% call button("#experience", "min-w-24") %}
+          {% call button("#experience", "min-w-32 sm:w-32") %}
             <span>Experience</span>
           {% endcall %}
-          {% call button("#projects", "min-w-24") %}
+          {% call button("#projects", "min-w-32 sm:w-32") %}
             <span>Projects</span>
           {% endcall %}
         </nav>
       </div>
       {% block content %}{% endblock %}
       <div class="h-3"></div>
-      {% call fieldset("cat README.md") %}
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-sm">
-          <span>Built as a static portfolio with Python, Jinja, and Tailwind.</span>
-          <a class="underline underline-offset-2" href="https://github.com/ardatas/ardatas.com">Source code on GitHub</a>
-        </div>
-      {% endcall %}
+      <section id="links">
+        {% call fieldset("cat ~/links.md") %}
+          <ul class="list-disc pl-5 space-y-2 text-sm">
+            <li>
+              <a class="social-link" href="https://linkedin.com/in/arda-tas" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </li>
+            <li>
+              <a class="social-link" href="https://github.com/ardatas" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </li>
+            <li>
+              <a class="social-link" data-email-link href="/#contact" rel="nofollow noindex">Email</a>
+            </li>
+          </ul>
+        {% endcall %}
+      </section>
     </main>
     <script
       id="MathJax-script"

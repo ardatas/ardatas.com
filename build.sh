@@ -19,14 +19,17 @@ html() {
 
 static() {
     local assets=(
+        arda-portrait.jpg
         blockchain.svg
         experience.svg
         fundraising.svg
         linux-hpc.svg
         logo-github.svg
+        logo-istanbul-erkek.png
         logo-linkedin.svg
         logo-tbc.png
         logo-tum.png
+        logo-tum-education.svg
         logo-werkio.png
         logo-zarm.png
         portfolio-systems.svg
@@ -52,6 +55,9 @@ static() {
 
     echo "Copying public/link-conversion.js to dist/link-conversion.js"
     cp public/link-conversion.js dist/link-conversion.js || fail
+
+    echo "Copying the self-contained travel globe to dist/travel"
+    cp -R public/travel dist/travel || fail
 }
 
 opt_imgs() {

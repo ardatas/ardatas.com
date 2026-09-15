@@ -1,7 +1,7 @@
-{% macro button(href, class) %}
+{% macro button(href, class, variant="default") %}
   <a
     href="{{ href }}"
-    class="flex flex-row items-center justify-center gap-1.5 rounded-none border border-black bg-white hover:bg-[#315f87] hover:border-[#315f87] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#315f87] font-mono text-[11px] font-medium px-3 h-8 shadow-[2px_2px_0_0_rgba(16,17,20,0.35)] {{ class }}"
+    class="group flex flex-row items-center justify-center gap-2 rounded-none border {% if variant == 'linkedin' %}border-[#0a66c2] bg-[#0a66c2] text-white hover:bg-[#004182] hover:border-[#004182]{% else %}border-black bg-white hover:bg-[#315f87] hover:border-[#315f87] hover:text-white{% endif %} focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#315f87] font-mono text-sm font-semibold px-3 h-11 shadow-[2px_2px_0_0_rgba(16,17,20,0.35)] {{ class }}"
   >
     {{ caller() }}
   </a>

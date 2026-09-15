@@ -31,6 +31,14 @@ h3 {
   @apply text-lg font-semibold tracking-tight;
 }
 
+.site-name {
+  @apply text-2xl sm:text-3xl font-bold;
+}
+
+.section-title {
+  @apply text-lg sm:text-xl font-bold;
+}
+
 .prose > ul {
   @apply my-0;
 }
@@ -61,6 +69,14 @@ h3 {
 
 article {
   @apply prose prose-sm sm:prose-base max-w-none prose-neutral dark:prose-invert prose-headings:font-semibold prose-p:leading-6 prose-li:leading-6;
+}
+
+.whoami-portrait {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  margin-inline: auto;
+  border: 1px solid #8f8d86;
 }
 
 .profile-row {
@@ -117,6 +133,26 @@ article {
 
 .skill-title {
   @apply mb-2 font-mono text-xs font-semibold uppercase tracking-[0.08em] text-[#315f87];
+}
+
+.running-widget {
+  display: block;
+  width: 100%;
+  height: 160px;
+  border: 0;
+  background: white;
+}
+
+.social-link {
+  @apply underline underline-offset-2 hover:text-[#315f87] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#315f87];
+}
+
+.resource-link {
+  @apply flex h-full items-center justify-between gap-4 border border-[#b7b5ae] bg-white p-4 transition-colors hover:border-[#315f87] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#315f87];
+}
+
+.resource-arrow {
+  @apply flex h-8 w-8 shrink-0 items-center justify-center border border-[#b7b5ae] text-lg text-[#315f87] transition-colors group-hover:border-[#315f87] group-hover:bg-[#315f87] group-hover:text-white;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -4,29 +4,38 @@
 {% block content %}
   <div class="flex flex-col gap-3">
     {% call fieldset("whoami") %}
-      <div>
-        <article class="text-black prose-p:m-0 flex flex-col gap-3">
+      <div class="grid items-center gap-6 md:grid-cols-[minmax(0,1fr)_240px] md:gap-8 lg:grid-cols-[minmax(0,1fr)_280px]">
+        <article class="min-w-0 text-black prose-p:m-0 flex flex-col gap-3">
           <p>
-            I'm a Computer Science student at TUM.
+            Heyy!! I'm Arda, a CS student at TUM in my 3rd semester and currently a research assistant at TUM AIS.
           </p>
           <p>
-            Interested in parallel programming, HPC, AI and agentic coding.
+            Most of my spare time goes into building stuff (like this website 😝), breaking my head over CUDA and checking
+            <strong><a href="https://x.com/thsottiaux">Tibo's X account</a></strong> for a new Codex reset.
           </p>
           <p>
-            Currently working as a Research Assistant at TUM's Institute of
-            Automation and Information Systems.
+            Other than that, I'm into parallel programming, HPC, agentic coding and harness engineering.
+          </p>
+          <p>
+            Based in Munich.
           </p>
           <p id="contact">
-            Based in Munich. Reach me at
+            Reach me at
             <a
               id="link-conversion"
               rel="nofollow noindex"
               href="#contact"
-            >email</a>,
-            <a href="https://linkedin.com/in/arda-tas">LinkedIn</a>, or
-            <a href="https://github.com/ardatas">GitHub</a>.
+            ><strong>arda (at) ardatas (dot) com</strong></a>
           </p>
         </article>
+        <img
+          class="whoami-portrait"
+          src="/assets/arda-portrait.jpg"
+          alt="Arda sitting in the sunshine in front of a historic building"
+          width="960"
+          height="1280"
+          fetchpriority="high"
+        />
       </div>
     {% endcall %}
     <section id="experience">
@@ -85,24 +94,37 @@
             </div>
           </div>
 
-          <div class="grid sm:grid-cols-3 gap-3">
-            <div class="profile-row compact-row">
-              <div>
-                <h3 class="profile-title">TUM Student Council</h3>
-                <p class="profile-meta">Student representative · present</p>
-              </div>
+        </div>
+      {% endcall %}
+    </section>
+    <section id="education">
+      {% call fieldset("cat ~/education.md") %}
+        <div class="flex flex-col gap-3">
+          <div class="profile-row">
+            <div class="profile-logo profile-logo-tum">
+              <img src="/assets/logo-tum-education.svg" alt="Technical University of Munich" />
             </div>
-            <div class="profile-row compact-row">
-              <div>
-                <h3 class="profile-title">Habitat Foundation</h3>
-                <p class="profile-meta">54+ hours teaching technology and AI</p>
-              </div>
+            <div class="min-w-0 flex-1">
+              <h3 class="profile-title">Technical University of Munich</h3>
+              <p class="font-medium">Bachelor of Computer Science</p>
+              <p class="profile-meta">Minor in Mathematics</p>
+              <p class="mt-2">Student representative · present</p>
             </div>
-            <div class="profile-row compact-row">
-              <div>
-                <h3 class="profile-title">KACUV Foundation</h3>
-                <p class="profile-meta">26,000+ TL raised through a marathon</p>
+          </div>
+          <div class="profile-row">
+            <div class="profile-logo">
+              <img src="/assets/logo-istanbul-erkek.png" alt="Istanbul Erkek Lisesi" />
+            </div>
+            <div class="min-w-0 flex-1">
+              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
+                <div>
+                  <h3 class="profile-title">Istanbul Erkek Lisesi</h3>
+                  <p class="font-medium">High School Diploma</p>
+                </div>
+                <span class="profile-date">Sep 2020 – Jun 2025</span>
               </div>
+              <p class="profile-meta">German International School · Abitur</p>
+              <p class="mt-2">Grade: 1,3 (GPA 3.7)</p>
             </div>
           </div>
         </div>
@@ -132,5 +154,42 @@
         </div>
       {% endcall %}
     </section>
+    {% include "components/running.html" %}
+    <section id="resources">
+      {% call fieldset("cat ~/resources.md") %}
+        <p class="mb-3 text-sm text-neutral-600">some resources I think you should check out</p>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <li>
+            <a
+              class="resource-link group"
+              href="https://joinheader.com/topics/bf25c29e-de97-46f2-9c46-47e4e9d75e40?subscribe=1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="min-w-0">
+                <h3 class="profile-title">learn agentic coding with Header:</h3>
+                <p class="mt-2 font-mono text-xs text-neutral-500 break-words">joinheader.com</p>
+              </div>
+              <span class="resource-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="resource-link group"
+              href="https://github.com/ardatas/ResumeTemplate"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="min-w-0">
+                <h3 class="profile-title">best resume template ever:</h3>
+                <p class="mt-2 font-mono text-xs text-neutral-500 break-words">github.com/ardatas/ResumeTemplate</p>
+              </div>
+              <span class="resource-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      {% endcall %}
+    </section>
+    {% include "components/travel.html" %}
   </div>
 {% endblock %}

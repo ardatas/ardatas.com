@@ -1,0 +1,64 @@
+<section id="travel" aria-labelledby="travel-heading">
+  {% call fieldset("cd ~/world") %}
+    <div class="travel-heading">
+      <div>
+        <h3 id="travel-heading">Where I’ve been.</h3>
+        <p>Some places stay with you. These are mine.</p>
+      </div>
+      <p class="travel-count"><strong>{{ travel.countries | length }}</strong> countries <span>/</span> <strong>{{ travel.countries | map(attribute='cities') | map('length') | sum }}</strong> places</p>
+    </div>
+    <div class="travel-stage" id="travel-stage" aria-describedby="travel-help">
+      <div class="travel-canvas" id="travel-canvas"></div>
+      <div class="travel-markers" id="travel-markers"></div>
+      <div class="travel-stage-top">
+        <span class="travel-view" id="travel-view">The whole picture</span>
+        <button type="button" class="travel-reset" id="travel-reset" disabled>↺ <span>World view</span></button>
+      </div>
+      <div class="travel-loading" id="travel-loading" role="status">
+        <span class="travel-loading-orbit" aria-hidden="true"></span>
+        <p>Bringing the world into view…</p>
+      </div>
+      <div class="travel-tooltip" id="travel-tooltip" role="status" hidden></div>
+      <div class="travel-zoom" aria-label="Globe zoom">
+        <button type="button" id="travel-zoom-in" aria-label="Zoom in" disabled>+</button>
+        <span id="travel-zoom-level" aria-hidden="true">1×</span>
+        <button type="button" id="travel-zoom-out" aria-label="Zoom out" disabled>−</button>
+      </div>
+      <div class="travel-stage-bottom">
+        <div class="travel-bases" aria-label="Home bases">
+          <button type="button" data-base="home" disabled><span class="travel-star" aria-hidden="true">★</span><span>Munich<small>Home base</small></span></button>
+          <button type="button" data-base="second" disabled><span class="travel-second-dot" aria-hidden="true">●</span><span>Istanbul<small>Second home base</small></span></button>
+        </div>
+        <button type="button" class="travel-touch-toggle" id="travel-touch-toggle" aria-pressed="false" disabled>Explore globe</button>
+      </div>
+    </div>
+    <div class="travel-caption">
+      <p id="travel-help"><span class="travel-desktop-help">Scroll to zoom · Drag to explore · Select a pin</span><span class="travel-mobile-help">Tap Explore globe to drag and pinch, or choose a country.</span></p>
+      <a href="https://science.nasa.gov/earth/earth-observatory/blue-marble-next-generation/base-map/" target="_blank" rel="noopener noreferrer">Imagery: NASA Blue Marble ↗</a>
+    </div>
+    <nav class="travel-countries" aria-label="Explore visited countries">
+      {% for country in travel.countries %}
+      <button type="button" data-country="{{ country.id }}" aria-pressed="false" disabled>{{ country.name }}<span>{{ country.cities | length }}</span></button>
+      {% endfor %}
+    </nav>
+    <details class="travel-places" id="travel-places">
+      <summary>All the places <span>{{ travel.countries | map(attribute='cities') | map('length') | sum }} stops, and counting</span></summary>
+      <div class="travel-place-list">
+        {% for country in travel.countries %}
+        <div>
+          <h4>{{ country.name }}</h4>
+          <ul>
+            {% for city in country.cities %}
+            <li>{{ city.name }}{% if city.base == 'home' %} <span>★ Home base</span>{% elif city.base == 'second' %} <span>Second home base</span>{% endif %}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endfor %}
+      </div>
+    </details>
+    <noscript><p class="travel-no-script">The interactive globe needs JavaScript. Open “All the places” to explore every stop.</p></noscript>
+    <script id="travel-data" type="application/json">{{ travel | tojson }}</script>
+    <script type="module" src="/travel/globe.js"></script>
+    <link rel="stylesheet" href="/travel/globe.css" />
+  {% endcall %}
+</section>
