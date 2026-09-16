@@ -99,3 +99,52 @@ Only continents with at least one visited country are shown. Every country in
 North America, South America, or Oceania when adding a new country.
 The displayed fractions show countries visited out of the total; these values
 do not estimate land area or the completeness of a visit.
+
+## Julia set explorer
+
+The homepage embeds the interactive explorer after Projects. `/julia/` provides
+the same explorer as a standalone, shareable page. Its defaults come from
+`ardatas/gra26capsproject`: `c=-0.5125+0.5213i`, top-left `-2+1.5i`, 800×600,
+pixel spacing `0.005`, 100 iterations, grayscale.
+
+The original C renderer is vendored at a pinned commit in `src/julia/vendor/`;
+see `src/julia/UPSTREAM.md` for attribution and the one portability patch.
+`bridge.c` adapts its pixel buffer to RGBA. Compiled SIMD and scalar WebAssembly
+artifacts live in `public/julia/`. A module worker renders short row batches,
+discards superseded requests, and transfers completed images to the canvas.
+The scalar build is used if SIMD is unavailable or cannot load.
+
+Sliders and numeric fields update the image immediately. Previews preserve the
+view while reducing pixel count; a full-resolution render follows when input
+settles. Animation starts paused, uses an adaptive preview targeting 30 fps,
+and pauses when the explorer or tab is hidden. Actual speed depends on the
+device, view, and iteration count. Images are capped at 2048×2048 and 2000
+iterations. Float precision limits deep zoom; pixel spacing is bounded at 1e-7.
+
+- Click the canvas, then scroll to zoom around the pointer. Drag to pan.
+- Focus the canvas for arrow-key panning, `+`/`-` zoom, and `Home` to reset the view.
+- `Escape` releases scrolling. On touchscreens, tap **Explore image**, then use
+  drag/pinch gestures. **Done exploring** restores page scrolling.
+- **Download PNG** pauses animation and renders the selected full resolution.
+- **Copy link** encodes all rendering parameters in a `/julia/` URL.
+- **Reset defaults** restores the original project parameters and pauses animation.
+
+`pnpm build` copies the precompiled files into `dist/julia/` and versions their
+URLs, including worker and Wasm dependencies. No server computation, special
+isolation headers, or Emscripten installation is needed to build/deploy the site.
+When changing C code, install Emscripten **4.0.15**, activate its environment, and
+run `bash scripts/build-julia.sh` before building the website.
+
+Validation:
+
+```sh
+node tests/julia-renderer.mjs  # requires a native C compiler; byte-for-byte parity
+pnpm build
+python3 -m http.server 8766 --bind 127.0.0.1 --directory dist
+# In another terminal, with Playwright and its Chromium/WebKit browsers installed:
+node tests/julia-browser.mjs
+```
+
+The browser test accepts `JULIA_TEST_URL` and `PLAYWRIGHT_MODULE` overrides.
+Tests cover default and edge-case parity, scalar/SIMD builds, input validation,
+sharing, animation, cancellation, PNG export, fallback, and mobile layout.

@@ -103,6 +103,7 @@
         {{ lists["projects"]|safe }}
       {% endcall %}
     </section>
+    {% include "components/julia.html" %}
     <section id="education">
       {% call fieldset("cat ~/education.md") %}
         <div class="flex flex-col gap-3">

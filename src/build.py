@@ -45,7 +45,8 @@ with open(os.path.join(args.output, "index.css"), "rb") as stylesheet:
 # Public scripts and globe styles also need fresh URLs when their contents change.
 public_path = os.path.join(script_path, "..", "public")
 env.globals["asset_versions"] = {}
-for asset in ("link-conversion.js", "travel/globe.js", "travel/globe.css"):
+for asset in ("link-conversion.js", "travel/globe.js", "travel/globe.css",
+              "julia/explorer.js", "julia/explorer.css", "julia/manifest.json"):
     with open(os.path.join(public_path, asset), "rb") as source:
         env.globals["asset_versions"][asset] = hashlib.sha256(source.read()).hexdigest()[:12]
 
@@ -226,3 +227,8 @@ for img_tag in soup.find_all("img"):
     img_tag_rule(img_tag)
 
 write_output(soup.encode_contents().decode("utf-8"), "index.html")
+
+julia_page = env.get_template("julia.html").render(
+    name=name, title=f"{name} | Julia set explorer", julia_page=True)
+write_output("\n".join(line.rstrip() for line in julia_page.splitlines()) + "\n",
+             "julia", "index.html")

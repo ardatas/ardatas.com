@@ -1,0 +1,87 @@
+<section id="julia" class="julia-section" data-julia
+  data-manifest="/julia/manifest.json?v={{ asset_versions['julia/manifest.json'] }}">
+  {% call fieldset("./julia") %}
+    <div class="julia-heading">
+      <div>
+        <h3>One equation. Endless shapes.</h3>
+        <p>Change <span class="julia-math">c</span> and watch a different Julia set emerge.</p>
+      </div>
+      <span class="julia-equation" aria-label="z next equals z squared plus c">z<sub>n+1</sub> = z<sub>n</sub>² + c</span>
+    </div>
+    <div class="julia-workbench">
+      <div class="julia-display">
+        <div class="julia-stage">
+          <canvas width="800" height="600" tabindex="0" aria-label="Interactive Julia set. Use arrow keys to pan, plus and minus to zoom, and Home to reset the view." aria-describedby="julia-navigation"></canvas>
+          <p class="julia-loading" role="status">Loading Julia explorer…</p>
+          <noscript><p class="julia-noscript">Enable JavaScript to explore the Julia set.</p></noscript>
+        </div>
+        <div class="julia-imagebar">
+          <span data-render-status aria-live="off">800 × 600 · grayscale</span>
+          <div class="julia-zoom" role="group" aria-label="View controls">
+            <button type="button" data-action="zoom-out" aria-label="Zoom out">−</button>
+            <button type="button" data-action="home" aria-label="Reset view">⌂</button>
+            <button type="button" data-action="zoom-in" aria-label="Zoom in">+</button>
+          </div>
+        </div>
+        <p id="julia-navigation" class="julia-hint">Click, then scroll to zoom · drag to pan · Esc releases scrolling</p>
+        <button type="button" data-action="touch" class="julia-touch-toggle" aria-pressed="false">Explore image</button>
+      </div>
+      <div class="julia-controls">
+        <div class="julia-control-title">The constant <i>c</i></div>
+        <div class="julia-parameter">
+          <label for="julia-cr">Real part <span>Re(c)</span></label>
+          <input id="julia-cr" data-param="cr" type="number" min="-10" max="10" step="any" value="-0.5125" inputmode="decimal" />
+          <input data-slider="cr" type="range" min="-2" max="2" step="0.0001" value="-0.5125" aria-label="Real part slider" />
+        </div>
+        <div class="julia-parameter">
+          <label for="julia-ci">Imaginary part <span>Im(c)</span></label>
+          <input id="julia-ci" data-param="ci" type="number" min="-10" max="10" step="any" value="0.5213" inputmode="decimal" />
+          <input data-slider="ci" type="range" min="-2" max="2" step="0.0001" value="0.5213" aria-label="Imaginary part slider" />
+        </div>
+        <div class="julia-pair">
+          <label for="julia-iterations">Iterations</label>
+          <input id="julia-iterations" data-param="iterations" type="number" min="0" max="2000" step="1" value="100" />
+        </div>
+        <label class="julia-checkbox"><input data-param="color" type="checkbox" /> Color palette</label>
+        <div class="julia-animation">
+          <button type="button" data-action="animate" aria-pressed="false" class="julia-primary">▶ Animate</button>
+          <label for="julia-speed">Speed <output data-speed-label>1×</output></label>
+          <input id="julia-speed" type="range" min="0.25" max="3" step="0.25" value="1" aria-label="Animation speed" />
+          <p>A small orbit around your chosen <i>c</i>.</p>
+        </div>
+        <button type="button" data-action="reset">Reset defaults</button>
+      </div>
+    </div>
+    <details class="julia-advanced">
+      <summary>Advanced parameters</summary>
+      <div class="julia-advanced-grid">
+        <label>Top-left real<input data-param="sr" type="number" min="-100" max="100" step="any" value="-2" /></label>
+        <label>Top-left imaginary<input data-param="si" type="number" min="-100" max="100" step="any" value="1.5" /></label>
+        <label>Pixel spacing<input data-param="res" type="number" min="0.0000001" max="1" step="any" value="0.005" /></label>
+        <label>Width (px)<input data-param="width" type="number" min="64" max="2048" step="1" value="800" /></label>
+        <label>Height (px)<input data-param="height" type="number" min="64" max="2048" step="1" value="600" /></label>
+      </div>
+      <p>Higher dimensions and iteration counts take longer. Moving previews refine when you stop.</p>
+    </details>
+    <p class="julia-feedback" data-feedback role="status" aria-live="polite"></p>
+    <div class="julia-footer">
+      <div class="julia-actions">
+        <button type="button" data-action="fullscreen">Fullscreen</button>
+        <button type="button" data-action="download">Download PNG</button>
+        <button type="button" data-action="share">Copy link</button>
+        {% if not julia_page %}<a href="/julia/">Open explorer ↗</a>{% endif %}
+      </div>
+      <div class="julia-project-note">
+        <p class="julia-project-lead">I like seeing how much performance I can squeeze out of a program.</p>
+        <p class="julia-project-story">For this Julia renderer, we used <strong>SIMD to calculate four pixels at once</strong>.
+          That brought the default render from <strong>13.18 ms down to 4.30 ms</strong>, about
+          <strong>3.1× faster</strong> than the scalar version. Profiling the code and chipping away at those
+          milliseconds was my favourite part of the project.</p>
+        <p class="julia-project-benchmark">Native C benchmark · AMD Ryzen 9 5950X · 800 × 600, 100 iterations ·
+          <a href="https://github.com/ardatas/gra26capsproject#performance-and-correctness-analysis" target="_blank" rel="noopener noreferrer">Code &amp; benchmarks ↗</a></p>
+      </div>
+    </div>
+  {% endcall %}
+</section>
+<link rel="stylesheet" href="/julia/explorer.css?v={{ asset_versions['julia/explorer.css'] }}" />
+<script type="module" src="/julia/explorer.js?v={{ asset_versions['julia/explorer.js'] }}"></script>

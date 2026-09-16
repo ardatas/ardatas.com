@@ -59,6 +59,10 @@ static() {
 
     echo "Copying the self-contained travel globe to dist/travel"
     cp -R public/travel dist/travel || fail
+
+    echo "Copying the Julia explorer to dist/julia"
+    mkdir -p dist/julia || fail
+    cp -R public/julia/. dist/julia/ || fail
 }
 
 opt_imgs() {
@@ -103,6 +107,8 @@ html_static() {
 }
 
 rm -rf dist && mkdir dist
+
+python3 scripts/julia-manifest.py || fail
 
 # HTML includes a hash of the finished stylesheet for cache invalidation.
 tw

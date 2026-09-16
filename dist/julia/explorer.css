@@ -1,0 +1,89 @@
+.julia-section {
+  --j-paper: #f6f4ee;
+  --j-ink: #101114;
+  --j-blue: #315f87;
+  --j-line: #b7b5ae;
+  --j-muted: #62625e;
+  color: var(--j-ink);
+  scroll-margin-top: 24px;
+}
+.julia-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 18px; }
+.julia-heading h3 { font-size: 20px; font-weight: 600; line-height: 1.25; letter-spacing: -.035em; }
+.julia-heading p { font-size: 13px; margin-top: 6px; color: var(--j-muted); }
+.julia-equation { font: 16px 'IBM Plex Mono', monospace; white-space: nowrap; }
+.julia-workbench { display: grid; grid-template-columns: minmax(0, 1fr) 232px; border: 1px solid var(--j-line); background: #fff; }
+.julia-display { min-width: 0; padding: 12px; border-right: 1px solid var(--j-line); }
+.julia-stage { position: relative; overflow: hidden; background: #101114; aspect-ratio: 4 / 3; display: flex; align-items: center; justify-content: center; }
+.julia-stage canvas { display: block; width: 100%; height: 100%; object-fit: contain; cursor: grab; touch-action: pan-y; }
+.julia-stage canvas:active { cursor: grabbing; }
+.julia-stage canvas.is-exploring { touch-action: none; }
+.julia-stage canvas:focus-visible { outline-offset: -3px; }
+.julia-loading, .julia-noscript { position: absolute; inset: 0; display: grid; place-content: center; color: #fff; padding: 24px; text-align: center; font: 12px 'IBM Plex Mono', monospace; pointer-events: none; }
+.julia-loading[hidden] { display: none; }
+.julia-imagebar { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 10px; }
+.julia-imagebar > span { font: 10px 'IBM Plex Mono', monospace; color: var(--j-muted); font-variant-numeric: tabular-nums; }
+.julia-section button, .julia-actions > a { border: 1px solid var(--j-line); padding: 7px 10px; background: #fff; font: 11px 'IBM Plex Mono', monospace; color: var(--j-ink); cursor: pointer; text-decoration: none; line-height: 1.4; }
+.julia-section button:hover, .julia-actions > a:hover { border-color: var(--j-blue); color: var(--j-blue); background: #f0f4f7; }
+.julia-section button:disabled { opacity: .5; cursor: wait; }
+.julia-section :is(button, input, a, summary, canvas):focus-visible { outline: 2px solid var(--j-blue); outline-offset: 3px; }
+.julia-zoom { display: flex; gap: 4px; }
+.julia-zoom button { min-width: 30px; min-height: 30px; padding: 4px 8px; font-size: 16px; }
+.julia-hint { color: var(--j-muted); font-size: 11px; line-height: 1.5; margin-top: 10px; }
+.julia-section .julia-touch-toggle { display: none; margin-top: 10px; }
+.julia-controls { padding: 16px; display: flex; flex-direction: column; gap: 15px; }
+.julia-control-title { font: 11px 'IBM Plex Mono', monospace; color: var(--j-blue); text-transform: uppercase; letter-spacing: .06em; }
+.julia-parameter { display: grid; grid-template-columns: 1fr 91px; gap: 8px; align-items: center; }
+.julia-parameter label, .julia-pair label, .julia-checkbox { font-size: 12px; }
+.julia-parameter label span { display: block; font: 10px 'IBM Plex Mono', monospace; color: var(--j-muted); margin-top: 2px; }
+.julia-section input[type=number] { min-width: 0; width: 100%; padding: 7px 5px; border: 1px solid var(--j-line); background: var(--j-paper); border-radius: 0; color: var(--j-ink); font: 11px 'IBM Plex Mono', monospace; font-variant-numeric: tabular-nums; }
+.julia-section input[aria-invalid=true] { border-color: #a42d2d; }
+.julia-section input[type=range] { width: 100%; accent-color: var(--j-blue); cursor: pointer; min-height: 22px; }
+.julia-parameter input[type=range] { grid-column: 1 / -1; }
+.julia-pair { display: grid; grid-template-columns: 1fr 91px; align-items: center; gap: 8px; }
+.julia-checkbox { display: flex; gap: 8px; align-items: center; cursor: pointer; }
+.julia-checkbox input { width: 15px; height: 15px; accent-color: var(--j-blue); }
+.julia-animation { padding-top: 14px; border-top: 1px solid var(--j-line); display: grid; grid-template-columns: 1fr; gap: 8px; }
+.julia-section .julia-primary { background: var(--j-blue); border-color: var(--j-blue); color: #fff; padding: 9px; }
+.julia-section .julia-primary:hover { background: #234762; color: #fff; }
+.julia-animation label { display: flex; justify-content: space-between; font-size: 11px; margin-top: 3px; }
+.julia-animation output { font-family: 'IBM Plex Mono', monospace; }
+.julia-animation p, .julia-advanced > p { font-size: 11px; color: var(--j-muted); line-height: 1.5; }
+.julia-advanced { margin-top: 12px; border-bottom: 1px solid var(--j-line); padding-bottom: 12px; }
+.julia-advanced summary { width: fit-content; cursor: pointer; font: 11px 'IBM Plex Mono', monospace; padding: 4px 0; }
+.julia-advanced-grid { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 12px; padding: 12px 0; }
+.julia-advanced-grid label { font-size: 11px; display: grid; gap: 5px; align-content: start; }
+.julia-feedback { font-size: 12px; color: var(--j-blue); overflow-wrap: anywhere; }
+.julia-feedback:not(:empty) { padding: 10px 0; }
+.julia-footer { padding-top: 12px; display: flex; flex-direction: column; gap: 12px; }
+.julia-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.julia-project-note { margin-top: 4px; padding-top: 18px; border-top: 1px solid var(--j-line); }
+.julia-project-lead { max-width: 760px; font-size: 21px; font-weight: 600; line-height: 1.35; letter-spacing: -.025em; }
+.julia-project-story { max-width: 780px; margin-top: 10px; font-size: 16px; font-weight: 500; line-height: 1.65; }
+.julia-project-story strong { font-weight: 700; }
+.julia-project-benchmark { margin-top: 12px; font-size: 12px; line-height: 1.6; color: var(--j-muted); }
+.julia-project-benchmark a { text-decoration: underline; }
+.julia-section:fullscreen { overflow-y: auto; padding: 24px; background: var(--j-paper); }
+.julia-section:fullscreen > fieldset { max-width: 1400px; margin: auto; }
+@media (pointer: coarse) {
+  .julia-section .julia-touch-toggle { display: inline-block; min-height: 40px; }
+  .julia-zoom button { min-height: 40px; min-width: 40px; }
+}
+@media (max-width: 680px) {
+  .julia-heading { align-items: flex-start; flex-direction: column; gap: 10px; }
+  .julia-heading h3 { font-size: 19px; }
+  .julia-equation { font-size: 13px; }
+  .julia-workbench { grid-template-columns: 1fr; }
+  .julia-display { border-right: 0; border-bottom: 1px solid var(--j-line); padding: 8px; }
+  .julia-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 14px; }
+  .julia-control-title, .julia-animation { grid-column: 1 / -1; }
+  .julia-parameter { grid-template-columns: 1fr; gap: 5px; }
+  .julia-parameter label span { display: inline; margin-left: 4px; }
+  .julia-parameter input[type=number] { font-size: 16px; }
+  .julia-pair { grid-template-columns: 1fr; }
+  .julia-controls > button { align-self: end; min-height: 40px; }
+  .julia-advanced-grid { grid-template-columns: 1fr 1fr; }
+  .julia-section:fullscreen { padding: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .julia-section { scroll-behavior: auto; }
+}

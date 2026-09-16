@@ -44,10 +44,10 @@
             <img class="h-5 w-5 group-hover:brightness-0 group-hover:invert" src="/assets/logo-github.svg" alt="" aria-hidden="true" />
             <span>GitHub</span>
           {% endcall %}
-          {% call button("#experience", "min-w-32 sm:w-32") %}
+          {% call button("/#experience" if julia_page else "#experience", "min-w-32 sm:w-32") %}
             <span>Experience</span>
           {% endcall %}
-          {% call button("#projects", "min-w-32 sm:w-32") %}
+          {% call button("/#projects" if julia_page else "#projects", "min-w-32 sm:w-32") %}
             <span>Projects</span>
           {% endcall %}
         </nav>
