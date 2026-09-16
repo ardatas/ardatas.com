@@ -20,11 +20,11 @@
 }
 .travel-stage { position: relative; isolation: isolate; contain: layout paint; overflow: hidden; width: 100%; height: 690px; background: radial-gradient(ellipse at 48% 46%, #1a3048 0%, #101d30 37%, var(--space) 76%); color: #f0f4fa; border: 1px solid #1c2d41; }
 .travel-canvas, .travel-markers { position: absolute; inset: 0; }
-.travel-canvas canvas { display: block; width: 100%; height: 100%; cursor: grab; touch-action: pan-y; outline-offset: -4px; }
-.travel-stage.is-exploring canvas { touch-action: none; }
+.travel-canvas canvas { display: block; width: 100%; height: 100%; cursor: grab; touch-action: pan-y pinch-zoom; outline-offset: -4px; }
+.travel-stage.is-exploring canvas, .travel-stage.is-exploring .travel-marker { touch-action: none; }
 .travel-canvas canvas:active { cursor: grabbing; }
 .travel-markers { pointer-events: none; overflow: hidden; }
-.travel-marker { position: absolute; left: 0; top: 0; width: 26px; height: 26px; margin: -13px; border: 0; background: transparent; border-radius: 50%; pointer-events: auto; cursor: pointer; }
+.travel-marker { position: absolute; left: 0; top: 0; width: 26px; height: 26px; margin: -13px; border: 0; background: transparent; border-radius: 50%; pointer-events: auto; cursor: pointer; touch-action: pan-y pinch-zoom; }
 .travel-marker[hidden] { display: none; }
 .travel-marker:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 .travel-marker-label { position: absolute; top: -9px; left: 23px; width: max-content; max-width: 165px; padding: 4px 7px; color: #f3f5f8; font-family: 'IBM Plex Mono', monospace; font-size: 10px; line-height: 1.5; font-weight: 500; text-align: left; text-shadow: 0 1px 6px #000; background: #0a1424b8; border: 1px solid #bdd1ec24; border-radius: 3px; opacity: 0; pointer-events: none; transition: opacity .15s; }
@@ -45,7 +45,16 @@
 .travel-bases small { display: block; font-size: 10px; color: #93a4ba; }
 .travel-star { color: var(--gold); font-size: 24px; }
 .travel-second-dot { color: var(--ice); font-size: 15px; }
-.travel-touch-toggle { display: none; pointer-events: auto; color: #e7f1ff; border: 1px solid #9aacc050; background: #0b1629eb; border-radius: 4px; padding: 8px 10px; font-size: 11px; }
+.travel-mobile-controls { display: none; }
+.travel-touch-toggle { flex-shrink: 0; color: #e7f1ff; border: 1px solid #40546c; background: #0b1629; border-radius: 4px; padding: 10px 14px; min-height: 44px; font-size: 12px; }
+.travel-touch-toggle[aria-pressed="true"] { background: #df3545; border-color: #df3545; color: #fff; }
+.travel-touch-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 12px; }
+.travel-touch-bar p { font-size: 12px; line-height: 1.5; color: #505b64; }
+.travel-pickers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 12px; }
+.travel-pickers label { min-width: 0; font-size: 11px; color: #505b64; }
+.travel-pickers select { display: block; width: 100%; min-height: 46px; margin-top: 5px; padding: 8px; border: 1px solid var(--line); border-radius: 4px; background: #fff; color: var(--ink); font-family: inherit; font-size: 16px; }
+.travel-pickers select:disabled { color: #737a80; background: #eeede8; }
+.travel-pickers select:focus-visible { outline: 2px solid #82b4d5; outline-offset: 2px; }
 .travel-loading { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #b4c2d4; pointer-events: none; padding: 50px; text-align: center; }
 .travel-loading[hidden] { display: none; }
 .travel-loading-orbit { width: 130px; height: 130px; border-radius: 50%; border: 1px solid #667e9840; box-shadow: inset -15px -10px 35px #080f1d, inset 10px 5px 40px #40608150, 0 0 65px #6689ba15; }
@@ -72,7 +81,7 @@
 .travel-stage button:not(.travel-marker):hover:enabled { color: #fff; background-color: #29415999; }
 @media (max-width: 640px) {
   .travel-heading { align-items: start; flex-direction: column; gap: 12px; padding: 10px 0 18px; }
-  .travel-stage { height: 550px; }
+  .travel-stage { height: clamp(260px, 58svh, 440px); }
   .travel-stage-top { inset: 16px 14px auto; }
   .travel-view { font-size: 9px; letter-spacing: .08em; }
   .travel-reset { font-size: 11px; }
@@ -86,12 +95,18 @@
   .travel-place-list { columns: 2; }
   .travel-tooltip { bottom: 105px; }
 }
-@media (pointer: coarse) {
-  .travel-touch-toggle { display: block; }
+@media (max-width: 640px), (any-pointer: coarse) {
+  .travel-mobile-controls { display: block; }
+  .travel-mobile-controls.is-exploring { position: sticky; top: 0; z-index: 10; padding-top: 8px; background: #f6f4ee; }
   .travel-mobile-help { display: inline; }
   .travel-desktop-help { display: none; }
+  .travel-stage { height: clamp(260px, 58svh, 480px); }
+  .travel-stage.is-exploring { border-color: #df3545; }
+  .travel-reset, .travel-bases button { min-height: 44px; }
+  .travel-marker { width: 44px; height: 44px; margin: -22px; }
   .travel-zoom button { min-width: 44px; min-height: 44px; }
   .travel-countries button { min-height: 44px; }
+  .travel-mobile-controls.is-ready ~ .travel-countries { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   #travel * { transition: none; }

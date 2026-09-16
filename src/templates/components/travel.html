@@ -15,6 +15,25 @@
       </div>
       {% endfor %}
     </dl>
+    <div class="travel-mobile-controls">
+      <div class="travel-touch-bar">
+        <p id="travel-touch-status" aria-live="polite">Swipe to scroll the page</p>
+        <button type="button" class="travel-touch-toggle" id="travel-touch-toggle" aria-pressed="false" aria-controls="travel-stage" disabled>Explore globe</button>
+      </div>
+      <div class="travel-pickers">
+        <label for="travel-country-select">Country
+          <select id="travel-country-select" disabled>
+            <option value="">World view</option>
+            {% for country in travel.countries %}
+            <option value="{{ country.id }}">{{ country.name }} · {{ country.cities | length }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <label for="travel-city-select">City
+          <select id="travel-city-select" disabled><option value="">—</option></select>
+        </label>
+      </div>
+    </div>
     <div class="travel-stage" id="travel-stage" aria-describedby="travel-help">
       <div class="travel-canvas" id="travel-canvas"></div>
       <div class="travel-markers" id="travel-markers"></div>
@@ -37,11 +56,10 @@
           <button type="button" data-base="home" disabled><span class="travel-star" aria-hidden="true">★</span><span>Munich<small>current base</small></span></button>
           <button type="button" data-base="second" disabled><span class="travel-second-dot" aria-hidden="true">●</span><span>Istanbul<small>Second home base</small></span></button>
         </div>
-        <button type="button" class="travel-touch-toggle" id="travel-touch-toggle" aria-pressed="false" disabled>Explore globe</button>
       </div>
     </div>
     <div class="travel-caption">
-      <p id="travel-help"><span class="travel-desktop-help">Scroll to zoom · Drag to explore · Select a pin</span><span class="travel-mobile-help">Tap Explore globe to drag and pinch, or choose a country.</span></p>
+      <p id="travel-help"><span class="travel-desktop-help">Scroll to zoom · Drag to explore · Select a pin</span><span class="travel-mobile-help">Choose a country and city, or tap Explore globe to drag and pinch. Tap Done to scroll again.</span></p>
       <a href="https://science.nasa.gov/earth/earth-observatory/blue-marble-next-generation/base-map/" target="_blank" rel="noopener noreferrer">Imagery: NASA Blue Marble ↗</a>
     </div>
     <nav class="travel-countries" aria-label="Explore visited countries">

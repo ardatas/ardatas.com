@@ -13,7 +13,7 @@ const loader = new IntersectionObserver((entries) => {
     loading.hidden = false;
     loading.querySelector('p').textContent = 'The globe couldn’t load. Every stop is listed below.';
     document.querySelector('#travel-places').open = true;
-    section.querySelectorAll('button').forEach((button) => { button.disabled = true; });
+    section.querySelectorAll('button, select').forEach((control) => { control.disabled = true; });
   });
 }, { rootMargin: '350px' });
 loader.observe(stage);
@@ -28,6 +28,9 @@ async function start() {
   const zoomOut = document.querySelector('#travel-zoom-out');
   const reset = document.querySelector('#travel-reset');
   const touchToggle = document.querySelector('#travel-touch-toggle');
+  const touchStatus = document.querySelector('#travel-touch-status');
+  const countrySelect = document.querySelector('#travel-country-select');
+  const citySelect = document.querySelector('#travel-city-select');
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(38, 1, 0.002, 50);
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'low-power' });
@@ -43,6 +46,7 @@ async function start() {
 
   let width = 1, height = 1, frame = 0, visible = true, selectedCountry = null;
   let hovered = null, scrollReleased = false, detailRequested = false;
+  let selectedCity = null, suppressPinClick = false;
   let borderMaterial, detailMesh, failed = false;
   const MIN_ALTITUDE = 0.065;
   const CITY_ALTITUDE = 0.68;
@@ -305,14 +309,11 @@ async function start() {
     button.addEventListener('pointerleave', () => { hovered = null; requestRender(); });
     button.addEventListener('focus', () => { hovered = pin; requestRender(); });
     button.addEventListener('blur', () => { hovered = null; requestRender(); });
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (event) => {
+      if (suppressPinClick && event.detail > 0) return;
       if (kind === 'country') focusCountry(country);
       else if (kind === 'egg') showMessage('Bielefeld · Does not exist.');
-      else {
-        selectedCountry = country.id;
-        flyTo(place.lat, place.lon, Math.min(target.altitude, 0.1));
-        showMessage(`${place.name} · ${description}`);
-      }
+      else focusCity(place, country);
     });
   }
   for (const country of places.countries) {
@@ -327,6 +328,15 @@ async function start() {
   }
   function syncControls() {
     section.querySelectorAll('[data-country]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.country === selectedCountry)));
+    countrySelect.value = selectedCountry || '';
+    if (citySelect.dataset.country !== (selectedCountry || '')) {
+      citySelect.dataset.country = selectedCountry || '';
+      const country = places.countries.find((item) => item.id === selectedCountry);
+      citySelect.replaceChildren(new Option(country ? 'All cities' : '—', ''));
+      for (const city of country?.cities || []) citySelect.add(new Option(city.name, city.id));
+      citySelect.disabled = !country;
+    }
+    citySelect.value = selectedCity || '';
   }
   function flyTo(lat, lon, altitude) {
     target.lat = clamp(lat, -80, 80);
@@ -337,21 +347,39 @@ async function start() {
   }
   function focusCountry(country) {
     selectedCountry = country.id;
+    selectedCity = null;
     showMessage('');
     const city = country.cities.length === 1 ? country.cities[0] : country;
     flyTo(city.lat, city.lon, country.altitude);
   }
+  function focusCity(city, country) {
+    selectedCountry = country.id;
+    selectedCity = city.id;
+    flyTo(city.lat, city.lon, 0.1);
+    showMessage(`${city.name} · ${city.base === 'home' ? 'current base' : city.base === 'second' ? 'Second home base' : country.name}`);
+  }
+  countrySelect.addEventListener('change', () => {
+    const country = places.countries.find((item) => item.id === countrySelect.value);
+    if (country) focusCountry(country);
+    else resetView();
+  });
+  citySelect.addEventListener('change', () => {
+    const country = places.countries.find((item) => item.id === selectedCountry);
+    if (!country) return;
+    const city = country.cities.find((item) => item.id === citySelect.value);
+    if (city) focusCity(city, country);
+    else focusCountry(country);
+  });
   section.querySelectorAll('[data-country]').forEach((button) => button.addEventListener('click', () => {
     focusCountry(places.countries.find((country) => country.id === button.dataset.country));
   }));
   section.querySelectorAll('.travel-bases [data-base]').forEach((button) => button.addEventListener('click', () => {
     const pin = pins.find((item) => item.kind === 'city' && item.place.base === button.dataset.base);
-    selectedCountry = pin.country.id;
-    flyTo(pin.place.lat, pin.place.lon, 0.12);
-    showMessage(`${pin.place.name} · ${pin.place.base === 'home' ? 'current base' : 'Second home base'}`);
+    focusCity(pin.place, pin.country);
   }));
   function resetView() {
     selectedCountry = null;
+    selectedCity = null;
     showMessage('');
     flyTo(32, 26, worldAltitude());
   }
@@ -365,7 +393,7 @@ async function start() {
   zoomOut.addEventListener('click', () => zoom(1 / 0.65));
   stage.addEventListener('pointerenter', () => { scrollReleased = false; });
   stage.addEventListener('wheel', (event) => {
-    if (scrollReleased || event.target.closest('button:not(.travel-marker)')) return;
+    if (scrollReleased || (window.matchMedia('(any-pointer: coarse)').matches && !stage.classList.contains('is-exploring')) || event.target.closest('button:not(.travel-marker)')) return;
     const delta = event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? height : 1);
     if ((target.altitude >= worldAltitude() - 0.001 && delta < 0) || (target.altitude <= MIN_ALTITUDE + 0.001 && delta > 0)) return;
     // Scrolling forward moves into the world; scroll back pulls away.
@@ -387,22 +415,29 @@ async function start() {
 
   const pointers = new Map();
   let previousDistance = 0;
-  canvas.addEventListener('pointerdown', (event) => {
+  // Listen on the stage so gestures beginning on a pin behave like the canvas.
+  // Capture on the original target to preserve a stationary pin's click.
+  stage.addEventListener('pointerdown', (event) => {
+    if (event.target !== canvas && !event.target.closest('.travel-marker')) return;
+    if (!pointers.size) suppressPinClick = false;
     if (event.pointerType === 'touch' && !stage.classList.contains('is-exploring')) return;
     if (event.button !== 0) return;
-    canvas.focus({ preventScroll: true });
-    canvas.setPointerCapture(event.pointerId);
-    pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    if (event.pointerType !== 'touch' && event.target === canvas) canvas.focus({ preventScroll: true });
+    event.target.setPointerCapture(event.pointerId);
+    pointers.set(event.pointerId, { x: event.clientX, y: event.clientY, startX: event.clientX, startY: event.clientY, element: event.target });
     if (pointers.size === 2) {
+      suppressPinClick = true;
       const [a, b] = [...pointers.values()];
       previousDistance = Math.hypot(a.x - b.x, a.y - b.y);
     }
     showMessage('');
   });
-  canvas.addEventListener('pointermove', (event) => {
+  stage.addEventListener('pointermove', (event) => {
     const previous = pointers.get(event.pointerId);
     if (!previous) return;
-    pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    if (!suppressPinClick && Math.hypot(event.clientX - previous.startX, event.clientY - previous.startY) < 6) return;
+    suppressPinClick = true;
+    pointers.set(event.pointerId, { ...previous, x: event.clientX, y: event.clientY });
     if (pointers.size === 2) {
       const [a, b] = [...pointers.values()];
       const distance = Math.hypot(a.x - b.x, a.y - b.y);
@@ -410,6 +445,7 @@ async function start() {
       previousDistance = distance;
     } else {
       selectedCountry = null;
+      selectedCity = null;
       syncControls();
       const sensitivity = Math.min(target.altitude, 2) * 65 / height;
       target.lon -= (event.clientX - previous.x) * sensitivity;
@@ -417,15 +453,23 @@ async function start() {
       requestRender();
     }
   });
-  for (const event of ['pointerup', 'pointercancel', 'lostpointercapture']) canvas.addEventListener(event, (e) => { pointers.delete(e.pointerId); previousDistance = 0; });
+  for (const event of ['pointerup', 'pointercancel', 'lostpointercapture']) stage.addEventListener(event, (e) => { pointers.delete(e.pointerId); previousDistance = 0; });
   function setTouchMode(active) {
     stage.classList.toggle('is-exploring', active);
+    document.querySelector('.travel-mobile-controls').classList.toggle('is-exploring', active);
     touchToggle.setAttribute('aria-pressed', String(active));
-    touchToggle.textContent = active ? 'Done exploring' : 'Explore globe';
-    if (!active) pointers.clear();
+    touchToggle.textContent = active ? 'Done' : 'Explore globe';
+    touchStatus.textContent = active ? 'Drag to rotate · Pinch to zoom' : 'Swipe to scroll the page';
+    if (!active) {
+      for (const [id, pointer] of pointers) {
+        if (pointer.element.hasPointerCapture(id)) pointer.element.releasePointerCapture(id);
+      }
+      pointers.clear();
+      previousDistance = 0;
+    }
   }
   touchToggle.addEventListener('click', () => setTouchMode(!stage.classList.contains('is-exploring')));
-  stage.addEventListener('keydown', (event) => {
+  section.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
       scrollReleased = true;
       setTouchMode(false);
@@ -445,6 +489,7 @@ async function start() {
     else return;
     if (event.key.startsWith('Arrow')) {
       selectedCountry = null;
+      selectedCity = null;
       syncControls();
     }
     event.preventDefault();
@@ -456,7 +501,7 @@ async function start() {
   }
   function render() {
     frame = 0;
-    const factor = reducedMotion.matches ? 1 : 0.16;
+    const factor = reducedMotion.matches || pointers.size ? 1 : 0.16;
     state.lat += (target.lat - state.lat) * factor;
     state.lon += (target.lon - state.lon) * factor;
     state.altitude += (target.altitude - state.altitude) * factor;
@@ -537,10 +582,14 @@ async function start() {
   new ResizeObserver(resize).observe(stage);
   new IntersectionObserver((entries) => {
     visible = entries[0].isIntersecting;
+    if (!visible) setTouchMode(false);
     if (!visible && frame) { cancelAnimationFrame(frame); frame = 0; }
     if (visible) requestRender();
   }).observe(stage);
-  document.addEventListener('visibilitychange', requestRender);
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) setTouchMode(false);
+    requestRender();
+  });
   canvas.addEventListener('webglcontextlost', (event) => {
     event.preventDefault();
     failed = true;
@@ -548,10 +597,14 @@ async function start() {
     loading.hidden = false;
     loading.querySelector('p').textContent = 'The 3D view paused. Reload to restore it, or browse every place below.';
     document.querySelector('#travel-places').open = true;
-    section.querySelectorAll('button').forEach((button) => { button.disabled = true; });
+    setTouchMode(false);
+    section.querySelectorAll('button, select').forEach((control) => { control.disabled = true; });
   });
   resize();
   section.querySelectorAll('button').forEach((button) => { button.disabled = false; });
+  countrySelect.disabled = false;
+  syncControls();
+  document.querySelector('.travel-mobile-controls').classList.add('is-ready');
   loading.hidden = true;
   stage.dataset.ready = 'true';
   requestRender();
