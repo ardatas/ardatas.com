@@ -84,7 +84,7 @@ def get_post(folder, file):
 
     obj.content = html
     obj["slug"] = file.replace(".md", "")
-    obj["href"] = obj.get("website", f"/{folder}/{obj['slug']}.html")
+    obj["href"] = obj.get("href", obj.get("website", f"/{folder}/{obj['slug']}.html"))
     obj["external"] = "website" in obj
 
     if "order" not in obj:

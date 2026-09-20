@@ -102,8 +102,8 @@ do not estimate land area or the completeness of a visit.
 
 ## Julia set explorer
 
-The homepage embeds the interactive explorer after Projects. `/julia/` provides
-the same explorer as a standalone, shareable page. Its defaults come from
+The homepage links to the interactive explorer from a card in Projects.
+`/julia/` provides the standalone, shareable explorer. Its defaults come from
 `ardatas/gra26capsproject`: `c=-0.5125+0.5213i`, top-left `-2+1.5i`, 800×600,
 pixel spacing `0.005`, 100 iterations, grayscale.
 

@@ -40,7 +40,7 @@
     {% endcall %}
     <section id="experience">
       {% call fieldset("cat ~/experience.md") %}
-        <p class="mb-3 text-sm text-neutral-600">Research, engineering, and community work.</p>
+        <p class="mb-3 text-lg font-bold text-neutral-800">Research, engineering, and community work.</p>
         <div class="flex flex-col gap-3">
           <div class="profile-row">
             <div class="profile-logo profile-logo-tum" aria-label="TUM AIS">
@@ -99,11 +99,10 @@
     </section>
     <section id="projects">
       {% call fieldset("ls ~/projects.md") %}
-        <p class="mb-3 text-sm text-neutral-600">Two live websites worth visiting.</p>
+        <p class="mb-3 text-lg font-bold text-neutral-800">Websites and interactive projects worth exploring.</p>
         {{ lists["projects"]|safe }}
       {% endcall %}
     </section>
-    {% include "components/julia.html" %}
     <section id="education">
       {% call fieldset("cat ~/education.md") %}
         <div class="flex flex-col gap-3">
@@ -157,7 +156,7 @@
     </section>
     <section id="resources">
       {% call fieldset("cat ~/resources.md") %}
-        <p class="mb-3 text-sm text-neutral-600">some resources I think you should check out</p>
+        <p class="mb-3 text-lg font-bold text-neutral-800">some resources I think you should check out</p>
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
           <li>
             <a

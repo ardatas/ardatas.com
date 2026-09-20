@@ -23,6 +23,7 @@ static() {
         blockchain.svg
         experience.svg
         fundraising.svg
+        julia.svg
         linux-hpc.svg
         logo-github.svg
         logo-istanbul-erkek.png

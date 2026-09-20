@@ -127,17 +127,30 @@ for (const [name, engine] of [['Chromium', chromium], ['WebKit', webkit]]) {
   assert.equal(await image(), initial);
   await page.unroute('**/renderer-simd.wasm*');
 
-  // The homepage loads the same component and pauses when it leaves view.
-  await page.goto(`${base}/#julia`);
+  // The homepage presents Julia using the same compact card as other projects.
+  await page.goto(`${base}/#projects`);
+  assert.equal(await page.locator('[data-julia]').count(), 0);
+  const cards = page.locator('#projects a.group');
+  assert.equal(await cards.count(), 3);
+  const sizes = await cards.evaluateAll(elements => elements.map(element => {
+    const { width, height } = element.getBoundingClientRect();
+    return { width, height };
+  }));
+  assert.deepEqual(sizes[2], sizes[0]);
+  await page.locator('#projects a[href="/julia/"]').click();
+  await page.waitForURL(`${base}/julia/`);
   await page.waitForFunction(() => document.querySelector('[data-julia]').dataset.frames);
   await page.locator('[data-action=animate]').click();
-  await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+  await page.locator('[data-julia]').evaluate(element => element.style.display = 'none');
   await page.waitForFunction(() => document.querySelector('[data-action=animate]').getAttribute('aria-pressed') === 'false');
   assert.deepEqual(errors, []);
   console.log(`${name}: controls, native defaults, ${animationFrames} frames / 1.2s, PNG, sharing, cancellation (${Math.round(cancellation.ms)}ms), scalar fallback, offscreen pause pass.`);
 
   const mobile = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, reducedMotion: 'reduce' });
-  await mobile.goto(`${base}/julia/`);
+  await mobile.goto(`${base}/#projects`);
+  assert.equal(await mobile.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+  await mobile.locator('#projects a[href="/julia/"]').tap();
+  await mobile.waitForURL(`${base}/julia/`);
   await mobile.waitForFunction(() => document.querySelector('[data-julia]').dataset.frames);
   assert.equal(await mobile.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
   assert.equal(await mobile.locator('[data-action=animate]').getAttribute('aria-pressed'), 'false');

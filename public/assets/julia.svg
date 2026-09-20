@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Julia set equation">
+  <rect width="48" height="48" fill="#f4f3ef"/>
+  <g fill="#315f87" font-family="Georgia, serif">
+    <text x="5" y="31" font-size="26" font-style="italic">z</text>
+    <text x="17" y="19" font-size="13">2</text>
+    <text x="23" y="31" font-size="21">+c</text>
+  </g>
+</svg>
