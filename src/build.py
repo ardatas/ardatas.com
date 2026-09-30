@@ -45,7 +45,8 @@ with open(os.path.join(args.output, "index.css"), "rb") as stylesheet:
 # Public scripts and globe styles also need fresh URLs when their contents change.
 public_path = os.path.join(script_path, "..", "public")
 env.globals["asset_versions"] = {}
-for asset in ("favicon.svg", "link-conversion.js", "travel/globe.js", "travel/globe.css",
+for asset in ("favicon.svg", "favicon.ico", "favicon.png", "apple-touch-icon.png",
+              "link-conversion.js", "travel/globe.js", "travel/globe.css",
               "julia/explorer.js", "julia/explorer.css", "julia/manifest.json"):
     with open(os.path.join(public_path, asset), "rb") as source:
         env.globals["asset_versions"][asset] = hashlib.sha256(source.read()).hexdigest()[:12]

@@ -50,8 +50,10 @@ static() {
         cp "public/assets/$asset" "dist/assets/$asset" || fail
     done
 
-    echo "Copying public/favicon.svg to dist/favicon.svg"
-    cp public/favicon.svg dist/favicon.svg || fail
+    for icon in favicon.svg favicon.ico favicon.png apple-touch-icon.png; do
+        echo "Copying public/$icon to dist/$icon"
+        cp "public/$icon" "dist/$icon" || fail
+    done
 
     echo "Copying public/robots.txt to dist/robots.txt"
     cp public/robots.txt dist/robots.txt || fail
