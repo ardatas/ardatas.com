@@ -11,13 +11,13 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&amp;family=Instrument+Sans:wdth,wght@75..100,400..600&amp;display=swap" rel="stylesheet"/>
-<link href="/index.css?v=dfc70382baa9" rel="stylesheet"/>
+<link href="/index.css?v=b93195441ade" rel="stylesheet"/>
 <script defer="" src="/link-conversion.js?v=33de9b6de076"></script>
 <script>
       /*to prevent Firefox FOUC, this must be here*/
       let FF_FOUC_FIX;
     </script>
-<meta content="https://ardatas.com/projects/amogus" property="og:url"/><meta content="Arda Tas | Werkio" property="og:title"/><meta content="Student jobs and academic roles at getwerkio.com" property="og:description"/><meta content="https://ardatas.com/assets/logo-werkio.png.webp" property="og:image"/><meta content="website" property="og:type"/><meta content="Student jobs and academic roles at getwerkio.com" name="description"/><meta content="ardatas.com" property="twitter:domain"/><meta content="summary_large_image" name="twitter:card"/><meta content="https://ardatas.com/projects/amogus" property="twitter:url"/><meta content="Arda Tas | Werkio" name="twitter:title"/><meta content="Student jobs and academic roles at getwerkio.com" name="twitter:description"/><meta content="https://ardatas.com/assets/logo-werkio.png.webp" name="twitter:image"/></head>
+<meta content="https://ardatas.com/projects/amogus" property="og:url"/><meta content="Arda Tas | Werkio" property="og:title"/><meta content="Full-stack job platform with AI-assisted application workflows" property="og:description"/><meta content="https://ardatas.com/assets/logo-werkio.png.webp" property="og:image"/><meta content="website" property="og:type"/><meta content="Full-stack job platform with AI-assisted application workflows" name="description"/><meta content="ardatas.com" property="twitter:domain"/><meta content="summary_large_image" name="twitter:card"/><meta content="https://ardatas.com/projects/amogus" property="twitter:url"/><meta content="Arda Tas | Werkio" name="twitter:title"/><meta content="Full-stack job platform with AI-assisted application workflows" name="twitter:description"/><meta content="https://ardatas.com/assets/logo-werkio.png.webp" name="twitter:image"/></head>
 <body class="bg-[#f6f4ee] text-[#101114]">
 <main class="flex min-h-screen flex-col max-w-5xl mx-auto px-4 py-4 sm:py-8 text-[15px] leading-5 font-normal tracking-[-0.005em] antialiased font-sans">
 <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-3 mb-3">
@@ -47,21 +47,30 @@
 </legend>
 <article>
 <h2 class="m-0 mb-1 text-4xl">Werkio</h2>
-<h3 class="italic text-xl m-0 font-normal">Student jobs and academic roles at getwerkio.com</h3>
+<h3 class="italic text-xl m-0 font-normal">Full-stack job platform with AI-assisted application workflows</h3>
 <div class="h-4"></div>
 </article>
 <img class="mb-4" src="/assets/logo-werkio.png.webp"/>
 <article>
-<p>Werkio is a full-stack web app that collects student jobs and academic roles
-from German universities, research institutes, and companies. Users receive a
-personalized daily digest instead of checking each source separately.</p>
-<p>The backend uses hexagonal architecture with Spring Boot, PostgreSQL, and Flyway.
-It exposes a REST API consumed by a React and Tailwind single-page application.</p>
-<p>Google OAuth and double opt-in handle registration. Tag-based matching filters
-more than 2,000 jobs, and Brevo SMTP sends the digest at 07:00 Europe/Berlin.</p>
-<p>The application runs on AWS EC2 with Docker Compose and Caddy TLS. Operations
-include EBS snapshot backups, self-hosted Umami analytics, and UptimeRobot
-monitoring.</p>
+<p>I built Werkio, a full-stack web app for finding student jobs and academic roles,
+and developed its AI-assisted application workflows across a TypeScript browser
+extension, React frontend, and Spring Boot backend.</p>
+<p>The Copilot uses Gemini to map profile data to application forms and draft
+cover letters from approved facts and job context. I added structured JSON
+validation and evidence checks, with review steps for uncertain or sensitive
+fields. Users review the proposed changes and submit applications themselves.</p>
+<p>I implemented workflow state and error handling so the extension can explain
+failures and invalidate stale plans when the active page changes. Access checks,
+CSRF protection, and feature flags control when actions are available.</p>
+<p>I wrote Playwright end-to-end tests that load the browser extension against
+controlled application forms. They cover multi-step forms, sensitive fields,
+provider and network failures, preserving user edits, and manual submission.
+Backend unit, integration, and security tests cover the API and persistence
+boundaries; GitHub Actions runs the checks before integration.</p>
+<p>The platform uses PostgreSQL and Flyway behind a REST API, with Docker Compose
+and Caddy on AWS EC2. Job matching and email digests support the core job-search
+product.</p>
+<p><a href="https://getwerkio.com">Visit Werkio</a>.</p>
 </article>
 </fieldset>
 <div class="h-3"></div>

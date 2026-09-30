@@ -6,10 +6,21 @@ order: 3
 listed: false
 ---
 
-I work with Java, Python, C, JavaScript, TypeScript, OCaml, HTML5, and CSS.
+I work with Python, TypeScript, JavaScript, Java, C, OCaml, HTML, and CSS.
 
-My libraries and frameworks include PyTorch, scikit-learn, SciPy, NumPy, pandas,
-PySide6, Spring Boot, React, Tailwind, Vite, PostgreSQL, and HDF5.
+For product engineering, I use React, Spring Boot, REST APIs, PostgreSQL,
+Flyway, Tailwind, Vite, and TypeScript browser extensions.
 
-For development and deployment, I use AWS, CI/CD, MCP, Git, Docker, Postman,
-Flyway, and REST APIs.
+My AI workflow work includes the Gemini API, structured LLM outputs,
+human-in-the-loop review, schema validation, workflow state and error handling,
+and MCP.
+
+I use Playwright for end-to-end tests alongside unit, integration, and regression
+testing. My security work includes OAuth, CSRF protection, access controls,
+and feature flags.
+
+For data processing and scientific Python, I use NumPy, SciPy, pandas, PySide6,
+HDF5, PyTorch, and scikit-learn, including industrial time-series pipelines.
+
+My development and deployment tools include Git, GitHub Actions, CI/CD, Docker,
+AWS, Node.js tooling, and Postman.

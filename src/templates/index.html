@@ -14,7 +14,7 @@
             <strong><a href="https://x.com/thsottiaux">Tibo's X account</a></strong> for a new Codex reset.
           </p>
           <p>
-            Other than that, I'm into parallel programming, HPC, agentic coding and harness engineering.
+            I build AI-assisted workflows and full-stack products, with a focus on user control, reliable execution and end-to-end testing. I'm also into parallel programming, HPC, agentic coding and harness engineering.
           </p>
           <p>
             Based in Munich.
@@ -99,7 +99,7 @@
     </section>
     <section id="projects">
       {% call fieldset("ls ~/projects.md") %}
-        <p class="mb-3 text-lg font-bold text-neutral-800">Websites and interactive projects worth exploring.</p>
+        <p class="mb-3 text-lg font-bold text-neutral-800">AI workflows, industrial data tools, and interactive projects.</p>
         {{ lists["projects"]|safe }}
       {% endcall %}
     </section>
@@ -141,15 +141,27 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
             <div class="skill-panel">
               <h3 class="skill-title">Languages</h3>
-              <p>Java, Python, C, JavaScript, TypeScript, OCaml, HTML, CSS</p>
+              <p>Python, TypeScript, JavaScript, Java, C, OCaml, HTML, CSS</p>
             </div>
             <div class="skill-panel">
-              <h3 class="skill-title">Libraries & frameworks</h3>
-              <p>PyTorch, scikit-learn, SciPy, NumPy, pandas, PySide6, Spring Boot, React, Tailwind, Vite, PostgreSQL, HDF5</p>
+              <h3 class="skill-title">Product engineering</h3>
+              <p>React, Spring Boot, REST APIs, PostgreSQL, Flyway, Tailwind, Vite, browser extensions</p>
+            </div>
+            <div class="skill-panel">
+              <h3 class="skill-title">AI workflows</h3>
+              <p>Gemini API, structured LLM outputs, human-in-the-loop review, schema validation, workflow state and error handling, MCP</p>
+            </div>
+            <div class="skill-panel">
+              <h3 class="skill-title">Testing & security</h3>
+              <p>Playwright end-to-end tests, unit and integration testing, regression testing, OAuth, CSRF protection, access controls, feature flags</p>
+            </div>
+            <div class="skill-panel">
+              <h3 class="skill-title">Data & scientific Python</h3>
+              <p>NumPy, SciPy, pandas, PySide6, HDF5, PyTorch, scikit-learn, industrial time-series pipelines</p>
             </div>
             <div class="skill-panel">
               <h3 class="skill-title">Developer tools</h3>
-              <p>AWS, CI/CD, MCP, Git, Docker, Postman, Flyway, REST APIs</p>
+              <p>Git, GitHub Actions, CI/CD, Docker, AWS, Node.js tooling, Postman</p>
             </div>
         </div>
       {% endcall %}
@@ -190,6 +202,8 @@
       {% endcall %}
     </section>
     {% include "components/running.html" %}
+    {# Disabled: "lore so far" travel component.
     {% include "components/travel.html" %}
+    #}
   </div>
 {% endblock %}

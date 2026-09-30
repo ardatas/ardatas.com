@@ -3,7 +3,8 @@ title: "Industrial Data Pipeline at TUM AIS"
 summary: "Visual workflows for industrial time-series processing"
 coverImage: "/assets/experience.svg"
 order: -4
-listed: false
+highlights:
+  - "Developing a Python desktop application for visually building, running, and inspecting industrial time-series workflows with PySide6, NumPy, SciPy, and HDF5."
 ---
 
 I work as a student assistant at TUM's Institute of Automation and Information

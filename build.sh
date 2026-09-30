@@ -26,6 +26,7 @@ static() {
         julia.svg
         linux-hpc.svg
         logo-github.svg
+        logo-header.png
         logo-istanbul-erkek.png
         logo-linkedin.svg
         logo-strava.svg

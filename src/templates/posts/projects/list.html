@@ -20,6 +20,13 @@
         </div>
         <span class="col-start-2 justify-self-start sm:col-start-auto sm:justify-self-end border border-black px-3 py-1 font-mono text-[11px] group-hover:bg-[#315f87] group-hover:text-white group-hover:border-[#315f87]">Visit ↗</span>
       </div>
+      {% if post.highlights %}
+        <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-5 text-neutral-700">
+          {% for highlight in post.highlights %}
+            <li>{{ highlight }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
     </a>
   {% endfor %}
 </div>
