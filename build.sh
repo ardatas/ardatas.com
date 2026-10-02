@@ -29,6 +29,7 @@ static() {
         logo-header.png
         logo-istanbul-erkek.png
         logo-linkedin.svg
+        logo-larpyourresume.svg
         logo-strava.svg
         logo-tbc.png
         logo-tum.png
