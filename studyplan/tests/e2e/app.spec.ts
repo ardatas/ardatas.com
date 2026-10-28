@@ -3,7 +3,7 @@ import type {Page} from '@playwright/test';
 import fs from 'node:fs/promises';
 const at='2026-11-04T10:30:00Z';
 async function list(page:Page,course?:string){if(course)await page.getByRole('combobox',{name:'Courses',exact:true}).selectOption(course);const button=page.getByRole('button',{name:'Slot list',exact:true});if(await button.isVisible())await button.click();}
-async function openSelected(page:Page,label:string){await page.getByRole('button',{name:/My plan/}).click();const card=page.locator('.event-card').filter({hasText:label}).first();await page.locator('.event-card').filter({hasText:label}).first().click();}
+async function openSelected(page:Page,label:string){await page.getByRole('button',{name:/My plan/}).click();const card=page.locator('.event-card').filter({hasText:label}).first();if(!(await card.isVisible()))await page.locator('.mobile-overlap:visible').first().click();await card.click();}
 test.beforeEach(async({page})=>{await page.clock.install({time:new Date(at)});await page.goto('./');});
 test('course dropdown, readable compact details, selection and persistence',async({page})=>{
  await expect(page.getByRole('heading',{name:'TUM Computer Science · Semester 3',exact:true})).toBeVisible();
@@ -38,7 +38,7 @@ test('calendar views, live line and no horizontal week scrolling',async({page},i
  await page.getByRole('button',{name:'List',exact:true}).click();await expect(page.locator('.agenda')).toBeVisible();await page.getByRole('button',{name:'Week',exact:true}).click();await page.getByRole('button',{name:'Today',exact:true}).click();
  await page.getByRole('combobox',{name:'Courses',exact:true}).selectOption('all');
  await expect(page.locator('.day-heading')).toHaveCount(5);
- const viewport=page.viewportSize()!;if(viewport.width>900){expect(await page.locator('.time-scroll').evaluate(e=>e.scrollWidth<=e.clientWidth)).toBe(true);for(const day of await page.locator('.day-heading').all()){const b=await day.boundingBox();expect(b!.x).toBeGreaterThanOrEqual(0);expect(b!.x+b!.width).toBeLessThanOrEqual(viewport.width);}}else{await expect(page.locator('.week-scroll-hint')).toBeVisible();}
+ const viewport=page.viewportSize()!;expect(await page.locator('.time-scroll').evaluate(e=>e.scrollWidth<=e.clientWidth)).toBe(true);for(const day of await page.locator('.day-heading').all()){const b=await day.boundingBox();expect(b!.x).toBeGreaterThanOrEqual(0);expect(b!.x+b!.width).toBeLessThanOrEqual(viewport.width);}
  const calendar=await page.locator('.calendar-panel').boundingBox();if(info.project.name==='chromium'){expect(calendar!.y).toBeLessThan(220);expect(calendar!.height).toBeGreaterThan(viewport.height*.75);}
  await page.screenshot({path:`artifacts/${info.project.name}-week-v2.png`,fullPage:false});
  await page.getByRole('button',{name:'Day',exact:true}).click();const card=page.locator('.overlap-lanes .event-card').first();await card.click();await expect(page.getByRole('dialog')).toContainText('Official source');await expect(page.getByRole('dialog').getByText('Room',{exact:true})).toBeVisible();
@@ -56,7 +56,7 @@ test('320px layout, root assets and malformed initial share preserve saved plan'
 });
 test('range updates calendar and assembly-conflict details remain accessible',async({page})=>{
  await list(page,'its');await page.locator('.slot-summary').filter({hasText:'IT Security · Group 16'}).click();await page.getByText('Dates & exceptions',{exact:true}).click();await expect(page.getByRole('dialog')).toContainText('FVV: teaching is suspended in Garching from 10:00 to 11:30');await expect(page.getByRole('dialog').getByRole('checkbox').first()).toBeDisabled();await page.keyboard.press('Escape');
- await page.getByRole('button',{name:'Schedule dates & exclusions'}).click();await page.getByLabel('Schedule start').fill('2027-01-11');await page.getByRole('button',{name:'Apply dates'}).click();await page.getByRole('button',{name:'Week',exact:true}).click();await expect(page.getByRole('heading',{name:'11 Jan – 17 Jan 2027',exact:true})).toBeVisible();await expect(page.locator('.event-card,.event-group').first()).toBeVisible();
+ await page.getByRole('button',{name:'Schedule dates & exclusions'}).click();await page.getByLabel('Schedule start').fill('2027-01-11');await page.getByRole('button',{name:'Apply dates'}).click();await page.getByRole('button',{name:'Week',exact:true}).click();await expect(page.getByRole('heading',{name:'11 Jan – 17 Jan 2027',exact:true})).toBeVisible();await expect(page.locator('.event-card:visible,.event-group:visible,.mobile-overlap:visible').first()).toBeVisible();
 });
 test('course, search and type filters restore on a later visit; reset is guarded',async({page,context})=>{
  await list(page,'ana');await page.getByRole('button',{name:'Add Analysis · Group 11',exact:true}).click();await page.getByRole('textbox',{name:'Search courses, tutors or rooms'}).fill('Matei');await page.getByRole('combobox',{name:'Session type'}).selectOption('Tutorial');
@@ -69,32 +69,49 @@ test('corrupt storage and unavailable storage leave the planner usable',async({p
  const isolated=await context.browser()!.newContext();await isolated.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw new DOMException('Unavailable','SecurityError');}});});const blocked=await isolated.newPage();await blocked.goto(page.url());await list(blocked);await blocked.getByRole('button',{name:'Add GBS · Mi-1400-A',exact:true}).click();await expect(blocked.getByRole('status')).toContainText('storage is unavailable');await expect(blocked.getByRole('button',{name:'Share',exact:true})).toBeEnabled();await isolated.close();
 });
 
-test('Week keeps readable columns on 320, 390 and 768px screens and fits desktop',async({page},info)=>{
- await page.getByRole('combobox',{name:'Courses',exact:true}).selectOption('all');await page.getByRole('button',{name:'Week',exact:true}).click();
+test('portrait week fits five aligned weekdays and scrolls vertically with sticky dates',async({page},info)=>{
+ await expect(page.getByRole('button',{name:'Week',exact:true})).toHaveAttribute('aria-pressed','true');
+ await page.screenshot({path:`artifacts/${info.project.name}-default-week.png`});
+ await page.getByRole('combobox',{name:'Courses',exact:true}).selectOption('all');
  for(const width of [320,390,768,1024]){
   await page.setViewportSize({width,height:844});expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(width);
-  const scroll=page.locator('.time-scroll');const group=page.locator('.event-group').first();expect((await group.boundingBox())!.width).toBeGreaterThan(170);
-  expect(await group.evaluate(e=>e.scrollWidth<=e.clientWidth)).toBe(true);
-  if(width<=900){await expect(page.locator('.week-scroll-hint')).toBeVisible();expect(await scroll.evaluate(e=>e.scrollWidth>e.clientWidth)).toBe(true);await scroll.evaluate(e=>e.scrollLeft=e.scrollWidth);const last=await page.locator('.day-heading').last().boundingBox();expect(last!.x+last!.width).toBeLessThanOrEqual(width);await page.locator('.day-heading').last().click();await expect(page.getByRole('button',{name:'Day',exact:true})).toHaveAttribute('aria-pressed','true');await page.getByRole('button',{name:'Week',exact:true}).click();}
-  else expect(await scroll.evaluate(e=>e.scrollWidth<=e.clientWidth)).toBe(true);
-  await scroll.evaluate(e=>e.scrollLeft=0);if(width===390)await page.screenshot({path:`artifacts/${info.project.name}-mobile-week-v2.png`});
+  const scroll=page.locator('.time-scroll');expect(await scroll.evaluate(e=>e.scrollWidth<=e.clientWidth)).toBe(true);
+  const headings=await page.locator('.day-heading').all();const columns=await page.locator('.day-column').all();
+  for(let i=0;i<5;i++){const h=(await headings[i].boundingBox())!,c=(await columns[i].boundingBox())!;expect(h.x).toBeCloseTo(c.x,0);expect(h.width).toBeCloseTo(c.width,0);expect(h.x+h.width).toBeLessThanOrEqual(width);}
+  if(width<=900){
+   expect(await scroll.evaluate(e=>e.scrollHeight>e.clientHeight)).toBe(true);
+   const before=(await headings[0].boundingBox())!;await scroll.evaluate(e=>e.scrollTop=e.scrollHeight);
+   expect((await headings[0].boundingBox())!.y).toBeCloseTo(before.y,0);
+   const lastHour=(await page.locator('.hours span').last().boundingBox())!,bounds=(await scroll.boundingBox())!;expect(lastHour.y+lastHour.height).toBeLessThanOrEqual(bounds.y+bounds.height+1);
+   await scroll.evaluate(e=>e.scrollTop=0);
+   const crowded=page.locator('.mobile-overlap:visible').first();expect((await crowded.boundingBox())!.width).toBeGreaterThan(44);
+   await crowded.click();await expect(page.getByRole('button',{name:'Day',exact:true})).toHaveAttribute('aria-pressed','true');
+   const option=page.locator('.overlap-lanes .event-card:visible').first();await option.click();await expect(page.getByRole('dialog')).toContainText('Official source');await page.keyboard.press('Escape');await expect(option).toBeFocused();
+   await page.getByRole('button',{name:'Week',exact:true}).click();
+  }else expect(await scroll.evaluate(e=>e.scrollHeight<=e.clientHeight+1)).toBe(true);
+  if(width===390){await scroll.evaluate(e=>e.scrollTop=160);await page.screenshot({path:`artifacts/${info.project.name}-mobile-week.png`});}
  }
 });
 
-test('Day and Week show the complete time range without vertical scrolling',async({page})=>{
- await page.getByRole('combobox',{name:'Courses',exact:true}).selectOption('all');
+test('desktop keeps the full day fitted; mobile Day has readable vertical spacing',async({page})=>{
  for(const viewport of [{width:1440,height:1000},{width:1024,height:768},{width:390,height:844},{width:320,height:800}]){
   await page.setViewportSize(viewport);
   for(const view of ['Day','Week']){
    await page.getByRole('button',{name:view,exact:true}).click();const grid=page.locator('.time-scroll');
-   expect(await grid.evaluate(e=>e.scrollHeight<=e.clientHeight+1)).toBe(true);
-   const bounds=await grid.boundingBox();for(const label of [page.locator('.hours span').first(),page.locator('.hours span').last()]){const box=await label.boundingBox();expect(box!.y).toBeGreaterThanOrEqual(bounds!.y);expect(box!.y+box!.height).toBeLessThanOrEqual(bounds!.y+bounds!.height+1);}
-   for(const event of await page.locator('.positioned-event').all()){const box=await event.boundingBox();expect(box!.y).toBeGreaterThanOrEqual(bounds!.y);expect(box!.y+box!.height).toBeLessThanOrEqual(bounds!.y+bounds!.height+1);}
+   expect(await grid.evaluate(e=>e.scrollWidth<=e.clientWidth)).toBe(true);
+   expect(await grid.evaluate(e=>e.scrollHeight>e.clientHeight+1)).toBe(viewport.width<=900);
   }
  }
 });
 
+test('mobile month fits the screen and opens a day',async({page})=>{
+ await page.setViewportSize({width:320,height:800});await page.getByRole('button',{name:'Month',exact:true}).click();
+ expect(await page.locator('.month-scroll').evaluate(e=>e.scrollWidth<=e.clientWidth)).toBe(true);
+ await page.locator('.month-date').nth(10).click();await expect(page.getByRole('button',{name:'Day',exact:true})).toHaveAttribute('aria-pressed','true');
+});
+
 test('overlapping sessions have separate clickable lanes inside their time box',async({page})=>{
+ await page.setViewportSize({width:1440,height:1000});
  await page.getByRole('combobox',{name:'Courses',exact:true}).selectOption('all');await page.getByRole('button',{name:'Week',exact:true}).click();
  for(const group of await page.locator('.overlap-lanes').all()){
   const count=Number((await group.getAttribute('aria-label'))!.split(' ')[0]);await expect(group.locator('.event-card')).toHaveCount(count);

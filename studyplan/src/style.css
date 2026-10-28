@@ -11,7 +11,7 @@
 .detail-dialog{max-width:430px!important;max-height:min(650px,82dvh);padding:22px!important;gap:13px!important}.detail-dialog h2{font-size:19px}.detail-facts{display:flex;flex-direction:column;gap:8px;margin:0}.detail-facts>div{display:grid;grid-template-columns:50px minmax(0,1fr);gap:10px}.detail-facts dt{font-size:12px;color:var(--muted)}.detail-facts dd{margin:0;font-size:13px;overflow-wrap:anywhere}.detail-dialog details{border-top:1px solid var(--line);padding-top:8px}.detail-dialog summary{cursor:pointer;min-height:32px;font-size:12px;display:list-item;margin-left:15px;padding:5px 0}.date-details>p{margin:7px 0!important;font-size:11px}.date-details .occurrence-list{max-height:230px;overflow:auto}.schedule-notes p{font-size:12px;color:var(--muted);padding-top:7px}.reset-section{border-top:1px solid var(--line);padding-top:10px}.reset-section>p{font-size:12px}.reset-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.reset-confirm{border-color:#c27765;color:#ffd1bf;background:#442f2b}
 
 .week-scroll-hint{display:none}
-@media(max-width:900px){.week-scroll-hint.visible{display:block;font-size:11px;color:var(--muted);padding:5px 10px;margin:0;border-top:1px solid var(--line)}.week-scroll{overflow-x:auto}.week-scroll .time-grid{min-width:1100px}.week-scroll .hours{position:sticky;left:0}.week-scroll .day-heading{font-size:12px}.week-scroll .event-group{padding:10px;gap:6px}.week-scroll .event-group strong{font-size:13px}.week-scroll .event-group .event-time{font-size:11px;white-space:nowrap}.week-scroll .group-courses{font-size:10px}.week-scroll .group-action{font-size:11px}.week-scroll .group-preview{display:flex}}
+
 
 /* Course colours stay consistent through browsing, selection and details. */
 .course-select{border-left:4px solid var(--event-color)}
@@ -68,3 +68,65 @@
 @media(max-width:700px){.selection-key{font-size:10px;gap:3px 10px;padding-bottom:6px}}
 @container(max-height:35px){.lane-event .event-card strong{display:flex;align-items:center;justify-content:center;gap:3px;white-space:nowrap;overflow:hidden}.lane-event .card-course{display:inline;font-size:10px!important}.lane-event .card-full-label{display:none}.lane-event .card-short-label{display:inline;margin:0}.lane-event .overlap-mark{flex-shrink:0;margin:0}}
 @container(max-height:35px) and (max-width:70px){.lane-event .card-course{display:none}.lane-event .card-tiny-course{display:inline;font-size:9px!important}.lane-event .event-card strong{gap:2px}}
+
+/* Portrait calendars use the screen width for weekdays and scroll through time. */
+.mobile-overlap{display:none}
+@media(max-width:900px){
+ .time-scroll{--time-gutter:40px;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-width:thin}
+ .time-grid{height:auto;min-height:100%;grid-template-rows:48px 832px}
+ .time-heading,.day-heading{height:48px;padding:4px 2px}
+ .day-heading{flex-direction:column;flex-wrap:nowrap;gap:0;font-size:10px}
+ .day-heading strong{font-size:17px;line-height:24px}
+ .day-heading small{display:none}
+ .day-heading.today strong{width:25px;height:25px;font-size:16px}
+ .hours span{right:4px;font-size:9px;line-height:12px}
+ .week-scroll .positioned-event{left:1px;right:1px}
+ .week-scroll .positioned-event>.event-card{padding:6px 3px;gap:4px;border-left-width:2px;border-radius:4px}
+ .week-scroll .event-card .event-time{font-size:9px;white-space:normal;overflow-wrap:normal}
+ .week-scroll .event-card strong{font-size:11px;line-height:1.3;white-space:normal;overflow-wrap:anywhere}
+ .week-scroll .card-full-label{display:none}
+ .week-scroll .card-short-label{display:block;margin-top:3px;font-size:12px;color:var(--ink)}
+ .week-scroll .event-card>span:not(.event-time),.week-scroll .event-card>small{display:none}
+ .week-scroll .overlap-lanes{display:none}
+ .week-scroll .mobile-overlap{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:3px;width:100%;height:100%;min-height:0;padding:6px 3px;border-radius:4px;border-left:2px solid #8bb7df;background:#1a3653;font-size:10px;line-height:1.3;overflow:hidden;text-align:left}
+ .mobile-overlap strong{font-size:18px}
+ .mobile-group-courses{font-size:9px;color:#b5d5f2;overflow-wrap:anywhere}
+ .mobile-group-selected{color:#b4edd9;font-size:9px}
+ .mobile-group-conflict{color:#ffd08a;font-size:9px}
+ .week-scroll-hint.visible{display:block;margin:0;padding:0 4px 6px;font-size:10px;color:var(--muted)}
+ .month-grid{min-width:0}
+ .month-cell{min-height:110px;padding:3px}
+ .month-cell .event-card{padding:3px;min-height:0}
+ .month-cell .event-time,.month-cell .card-full-label{display:none}
+ .month-cell .card-short-label{display:block}
+ .month-cell .event-card strong{font-size:10px;overflow-wrap:anywhere}
+ .month-cell .more{font-size:10px;overflow-wrap:anywhere}
+}
+@media(max-width:700px){
+ .site-header{padding:8px 10px;flex-wrap:nowrap;align-items:center;gap:6px}
+ .identity{gap:6px;flex:1}.identity>svg{display:none}
+ .identity h1{font-size:13px;line-height:1.35}.identity p{font-size:9px;line-height:1.3}
+ .main-actions{width:auto;margin:0;gap:4px}
+ .main-actions button{min-width:40px;min-height:44px;padding:8px}
+ .main-actions button>span{display:none}
+ main{padding:6px 4px 0;gap:5px}
+ .filter-bar{gap:4px;grid-template-columns:minmax(0,1fr) 100px 44px}
+ .mode-switch{padding:2px;gap:2px}
+ .mode-switch button{min-height:40px;padding:6px;font-size:12px}
+ .course-select{min-height:40px;padding:6px 9px;font-size:16px}
+ .filter-bar>select:not(.course-select){width:100px;font-size:16px;min-height:44px;padding:4px}
+ .search input{padding:8px 0}.search{padding:0 7px}
+ .slots-toggle,.range-button{min-height:44px}
+ .course-legend{grid-template-columns:repeat(5,minmax(0,1fr));gap:3px}
+ .course-legend button{min-height:36px;font-size:9px;padding:4px 2px;gap:3px}
+ .course-count{font-size:9px}
+ .calendar-panel{padding:0;border-radius:8px}
+ .calendar-toolbar{padding:5px;gap:4px}
+ .date-nav button{min-height:40px;min-width:36px}
+ .calendar-toolbar h2{font-size:12px}
+ .view-switch button{min-height:40px;font-size:11px}
+ .time-scroll{border-left:0;border-right:0;border-radius:0}
+ .selection-key{padding:0 5px 4px;font-size:9px}
+ .calendar-empty{padding:6px;font-size:11px}
+ footer{padding:2px 8px max(2px,env(safe-area-inset-bottom));min-height:26px}
+}
