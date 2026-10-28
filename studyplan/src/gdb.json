@@ -6,7 +6,7 @@
     "label": "Gruppe 03",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-03-2026-10-21",
@@ -15,7 +15,7 @@
         "end": "09:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -25,7 +25,7 @@
         "end": "09:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -35,7 +35,7 @@
         "end": "09:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -45,7 +45,7 @@
         "end": "09:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -55,7 +55,7 @@
         "end": "09:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -65,7 +65,7 @@
         "end": "09:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -75,7 +75,7 @@
         "end": "09:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -85,7 +85,7 @@
         "end": "09:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -95,7 +95,7 @@
         "end": "09:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -105,7 +105,7 @@
         "end": "09:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -115,7 +115,7 @@
         "end": "09:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -125,7 +125,7 @@
         "end": "09:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -135,7 +135,7 @@
         "end": "09:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -145,7 +145,7 @@
         "end": "09:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -157,7 +157,7 @@
     "label": "Gruppe 08",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-08-2026-10-23",
@@ -166,7 +166,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -176,7 +176,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -186,7 +186,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -196,7 +196,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -206,7 +206,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -216,7 +216,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -226,7 +226,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -236,7 +236,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -246,7 +246,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -256,7 +256,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -266,7 +266,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -276,7 +276,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -286,7 +286,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -296,7 +296,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -308,7 +308,7 @@
     "label": "Gruppe 11",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-11-2026-10-20",
@@ -317,7 +317,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -327,7 +327,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -337,7 +337,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -347,7 +347,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -357,7 +357,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -367,7 +367,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -377,7 +377,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -387,7 +387,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -397,7 +397,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -407,7 +407,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -417,7 +417,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -427,7 +427,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -437,7 +437,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -447,7 +447,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -459,7 +459,7 @@
     "label": "Gruppe 12",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-12-2026-10-20",
@@ -468,7 +468,7 @@
         "end": "11:45",
         "room": "02.07.023",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -478,7 +478,7 @@
         "end": "11:45",
         "room": "02.07.023",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -488,7 +488,7 @@
         "end": "11:45",
         "room": "02.07.023",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -498,7 +498,7 @@
         "end": "11:45",
         "room": "02.07.023",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -508,7 +508,7 @@
         "end": "11:45",
         "room": "02.07.023",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -518,7 +518,7 @@
         "end": "11:45",
         "room": "02.07.023",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -528,7 +528,7 @@
         "end": "11:45",
         "room": "02.07.023",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -538,7 +538,7 @@
         "end": "11:45",
         "room": "02.07.023",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -548,7 +548,7 @@
         "end": "11:45",
         "room": "02.07.023",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -558,7 +558,7 @@
         "end": "11:45",
         "room": "02.07.023",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -568,7 +568,7 @@
         "end": "11:45",
         "room": "02.07.023",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -578,7 +578,7 @@
         "end": "11:45",
         "room": "02.07.023",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -588,7 +588,7 @@
         "end": "11:45",
         "room": "02.07.023",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -598,7 +598,7 @@
         "end": "11:45",
         "room": "02.07.023",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -610,7 +610,7 @@
     "label": "Gruppe 13",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-13-2026-10-20",
@@ -619,7 +619,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -629,7 +629,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -639,7 +639,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -649,7 +649,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -659,7 +659,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -669,7 +669,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -679,7 +679,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -689,7 +689,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -699,7 +699,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -709,7 +709,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -719,7 +719,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -729,7 +729,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -739,7 +739,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -749,7 +749,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Saket Veerubhotla",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -761,7 +761,7 @@
     "label": "Gruppe 15",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-15-2026-10-20",
@@ -770,7 +770,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -780,7 +780,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -790,7 +790,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -800,7 +800,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -810,7 +810,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -820,7 +820,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -830,7 +830,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -840,7 +840,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -850,7 +850,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -860,7 +860,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -870,7 +870,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -880,7 +880,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -890,7 +890,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -900,7 +900,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -912,7 +912,7 @@
     "label": "Gruppe 16",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-16-2026-10-22",
@@ -921,7 +921,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -931,7 +931,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -941,7 +941,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -951,7 +951,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -961,7 +961,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -971,7 +971,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -981,7 +981,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -991,7 +991,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1001,7 +1001,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1011,7 +1011,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1021,7 +1021,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1031,7 +1031,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1041,7 +1041,7 @@
         "end": "15:45",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -1053,7 +1053,7 @@
     "label": "Gruppe 17",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-17-2026-10-19",
@@ -1062,7 +1062,7 @@
         "end": "15:30",
         "room": "00.08.038",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1072,7 +1072,7 @@
         "end": "15:30",
         "room": "00.08.038",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1082,7 +1082,7 @@
         "end": "15:30",
         "room": "00.08.038",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1092,7 +1092,7 @@
         "end": "15:30",
         "room": "00.08.038",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1102,7 +1102,7 @@
         "end": "15:30",
         "room": "00.08.038",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1112,7 +1112,7 @@
         "end": "15:30",
         "room": "00.08.038",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1122,7 +1122,7 @@
         "end": "15:30",
         "room": "00.08.038",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1132,7 +1132,7 @@
         "end": "15:30",
         "room": "00.08.038",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1142,7 +1142,7 @@
         "end": "15:30",
         "room": "00.08.038",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1152,7 +1152,7 @@
         "end": "15:30",
         "room": "00.08.038",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1162,7 +1162,7 @@
         "end": "15:30",
         "room": "00.08.038",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1172,7 +1172,7 @@
         "end": "15:30",
         "room": "00.08.038",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1182,7 +1182,7 @@
         "end": "15:30",
         "room": "00.08.038",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1192,7 +1192,7 @@
         "end": "15:30",
         "room": "00.08.038",
         "tutor": "Mathis Kengni Fozin",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -1204,7 +1204,7 @@
     "label": "Gruppe 20",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-20-2026-10-23",
@@ -1213,7 +1213,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1223,7 +1223,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1233,7 +1233,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1243,7 +1243,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1253,7 +1253,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1263,7 +1263,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1273,7 +1273,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1283,7 +1283,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1293,7 +1293,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1303,7 +1303,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1313,7 +1313,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1323,7 +1323,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1333,7 +1333,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1343,7 +1343,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -1355,7 +1355,7 @@
     "label": "Gruppe 21",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-21-2026-10-19",
@@ -1364,7 +1364,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1374,7 +1374,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1384,7 +1384,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1394,7 +1394,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1404,7 +1404,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1414,7 +1414,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1424,7 +1424,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1434,7 +1434,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1444,7 +1444,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1454,7 +1454,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1464,7 +1464,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1474,7 +1474,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1484,7 +1484,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1494,7 +1494,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -1506,7 +1506,7 @@
     "label": "Gruppe 22",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-22-2026-10-20",
@@ -1515,7 +1515,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1525,7 +1525,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1535,7 +1535,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1545,7 +1545,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1555,7 +1555,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1565,7 +1565,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1575,7 +1575,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1585,7 +1585,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1595,7 +1595,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1605,7 +1605,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1615,7 +1615,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1625,7 +1625,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1635,7 +1635,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1645,7 +1645,7 @@
         "end": "13:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -1657,7 +1657,7 @@
     "label": "Gruppe 23",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-23-2026-10-22",
@@ -1666,7 +1666,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1676,7 +1676,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1686,7 +1686,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1696,7 +1696,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1706,7 +1706,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1716,7 +1716,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1726,7 +1726,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1736,7 +1736,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1746,7 +1746,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1756,7 +1756,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1766,7 +1766,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1776,7 +1776,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1786,7 +1786,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Clemens Ege",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -1798,7 +1798,7 @@
     "label": "Gruppe 24",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-24-2026-10-20",
@@ -1807,7 +1807,7 @@
         "end": "15:45",
         "room": "00.08.036",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1817,7 +1817,7 @@
         "end": "15:45",
         "room": "00.08.036",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1827,7 +1827,7 @@
         "end": "15:45",
         "room": "00.08.036",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1837,7 +1837,7 @@
         "end": "15:45",
         "room": "00.08.036",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1847,7 +1847,7 @@
         "end": "15:45",
         "room": "00.08.036",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1857,7 +1857,7 @@
         "end": "15:45",
         "room": "00.08.036",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1867,7 +1867,7 @@
         "end": "15:45",
         "room": "00.08.036",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1877,7 +1877,7 @@
         "end": "15:45",
         "room": "00.08.036",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1887,7 +1887,7 @@
         "end": "15:45",
         "room": "00.08.036",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1897,7 +1897,7 @@
         "end": "15:45",
         "room": "00.08.036",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1907,7 +1907,7 @@
         "end": "15:45",
         "room": "00.08.036",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1917,7 +1917,7 @@
         "end": "15:45",
         "room": "00.08.036",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1927,7 +1927,7 @@
         "end": "15:45",
         "room": "00.08.036",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1937,7 +1937,7 @@
         "end": "15:45",
         "room": "00.08.036",
         "tutor": "Ryoma Takei",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -1949,7 +1949,7 @@
     "label": "Gruppe 25",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-25-2026-10-19",
@@ -1958,7 +1958,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1968,7 +1968,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1978,7 +1978,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1988,7 +1988,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -1998,7 +1998,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2008,7 +2008,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2018,7 +2018,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2028,7 +2028,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2038,7 +2038,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2048,7 +2048,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2058,7 +2058,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2068,7 +2068,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2078,7 +2078,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2088,7 +2088,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -2100,7 +2100,7 @@
     "label": "Gruppe 26",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-26-2026-10-21",
@@ -2109,7 +2109,7 @@
         "end": "15:30",
         "room": "00.08.036",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2119,7 +2119,7 @@
         "end": "15:30",
         "room": "00.08.036",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2129,7 +2129,7 @@
         "end": "15:30",
         "room": "00.08.036",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2139,7 +2139,7 @@
         "end": "15:30",
         "room": "00.08.036",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2149,7 +2149,7 @@
         "end": "15:30",
         "room": "00.08.036",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2159,7 +2159,7 @@
         "end": "15:30",
         "room": "00.08.036",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2169,7 +2169,7 @@
         "end": "15:30",
         "room": "00.08.036",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2179,7 +2179,7 @@
         "end": "15:30",
         "room": "00.08.036",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2189,7 +2189,7 @@
         "end": "15:30",
         "room": "00.08.036",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2199,7 +2199,7 @@
         "end": "15:30",
         "room": "00.08.036",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2209,7 +2209,7 @@
         "end": "15:30",
         "room": "00.08.036",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2219,7 +2219,7 @@
         "end": "15:30",
         "room": "00.08.036",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2229,7 +2229,7 @@
         "end": "15:30",
         "room": "00.08.036",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2239,7 +2239,7 @@
         "end": "15:30",
         "room": "00.08.036",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -2251,7 +2251,7 @@
     "label": "Gruppe 27",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-27-2026-10-21",
@@ -2260,7 +2260,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2270,7 +2270,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2280,7 +2280,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2290,7 +2290,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2300,7 +2300,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2310,7 +2310,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2320,7 +2320,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2330,7 +2330,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2340,7 +2340,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2350,7 +2350,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2360,7 +2360,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2370,7 +2370,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2380,7 +2380,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2390,7 +2390,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Vivienne Metz",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -2402,7 +2402,7 @@
     "label": "Gruppe 29",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-29-2026-10-21",
@@ -2411,7 +2411,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2421,7 +2421,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2431,7 +2431,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2441,7 +2441,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2451,7 +2451,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2461,7 +2461,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2471,7 +2471,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2481,7 +2481,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2491,7 +2491,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2501,7 +2501,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2511,7 +2511,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2521,7 +2521,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2531,7 +2531,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2541,7 +2541,7 @@
         "end": "17:30",
         "room": "02.11.018",
         "tutor": "Luka Piljic",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -2553,7 +2553,7 @@
     "label": "Gruppe 32",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-32-2026-10-22",
@@ -2562,7 +2562,7 @@
         "end": "15:45",
         "room": "00.08.038",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2572,7 +2572,7 @@
         "end": "15:45",
         "room": "00.08.038",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2582,7 +2582,7 @@
         "end": "15:45",
         "room": "00.08.038",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2592,7 +2592,7 @@
         "end": "15:45",
         "room": "00.08.038",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2602,7 +2602,7 @@
         "end": "15:45",
         "room": "00.08.038",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2612,7 +2612,7 @@
         "end": "15:45",
         "room": "00.08.038",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2622,7 +2622,7 @@
         "end": "15:45",
         "room": "00.08.038",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2632,7 +2632,7 @@
         "end": "15:45",
         "room": "00.08.038",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2642,7 +2642,7 @@
         "end": "15:45",
         "room": "00.08.038",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2652,7 +2652,7 @@
         "end": "15:45",
         "room": "00.08.038",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2662,7 +2662,7 @@
         "end": "15:45",
         "room": "00.08.038",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2672,7 +2672,7 @@
         "end": "15:45",
         "room": "00.08.038",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2682,7 +2682,7 @@
         "end": "15:45",
         "room": "00.08.038",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -2694,7 +2694,7 @@
     "label": "Gruppe 34",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-34-2026-10-22",
@@ -2703,7 +2703,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2713,7 +2713,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2723,7 +2723,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2733,7 +2733,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2743,7 +2743,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2753,7 +2753,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2763,7 +2763,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2773,7 +2773,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2783,7 +2783,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2793,7 +2793,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2803,7 +2803,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2813,7 +2813,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2823,7 +2823,7 @@
         "end": "11:45",
         "room": "02.09.014",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -2835,7 +2835,7 @@
     "label": "Gruppe 36",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-36-2026-10-23",
@@ -2844,7 +2844,7 @@
         "end": "11:30",
         "room": "00.13.054",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2854,7 +2854,7 @@
         "end": "11:30",
         "room": "00.13.054",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2864,7 +2864,7 @@
         "end": "11:30",
         "room": "00.13.054",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2874,7 +2874,7 @@
         "end": "11:30",
         "room": "00.13.054",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2884,7 +2884,7 @@
         "end": "11:30",
         "room": "00.13.054",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2894,7 +2894,7 @@
         "end": "11:30",
         "room": "00.13.054",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2904,7 +2904,7 @@
         "end": "11:30",
         "room": "00.13.054",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2914,7 +2914,7 @@
         "end": "11:30",
         "room": "00.13.054",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2924,7 +2924,7 @@
         "end": "11:30",
         "room": "00.13.054",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2934,7 +2934,7 @@
         "end": "11:30",
         "room": "00.13.054",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2944,7 +2944,7 @@
         "end": "11:30",
         "room": "00.13.054",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2954,7 +2954,7 @@
         "end": "11:30",
         "room": "00.13.054",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2964,7 +2964,7 @@
         "end": "11:30",
         "room": "00.13.054",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -2974,7 +2974,7 @@
         "end": "11:30",
         "room": "00.13.054",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -2986,7 +2986,7 @@
     "label": "Gruppe 37",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-37-2026-10-22",
@@ -2995,7 +2995,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3005,7 +3005,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3015,7 +3015,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3025,7 +3025,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3035,7 +3035,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3045,7 +3045,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3055,7 +3055,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3065,7 +3065,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3075,7 +3075,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3085,7 +3085,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3095,7 +3095,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3105,7 +3105,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3115,7 +3115,7 @@
         "end": "13:45",
         "room": "02.09.014",
         "tutor": "Nico Waldforst",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -3127,7 +3127,7 @@
     "label": "Gruppe 38",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-38-2026-10-21",
@@ -3136,7 +3136,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3146,7 +3146,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3156,7 +3156,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3166,7 +3166,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3176,7 +3176,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3186,7 +3186,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3196,7 +3196,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3206,7 +3206,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3216,7 +3216,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3226,7 +3226,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3236,7 +3236,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3246,7 +3246,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3256,7 +3256,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3266,7 +3266,7 @@
         "end": "09:30",
         "room": "02.09.014",
         "tutor": "Ilya Kats",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -3278,7 +3278,7 @@
     "label": "Gruppe 39",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-39-2026-10-21",
@@ -3287,7 +3287,7 @@
         "end": "15:30",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3297,7 +3297,7 @@
         "end": "15:30",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3307,7 +3307,7 @@
         "end": "15:30",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3317,7 +3317,7 @@
         "end": "15:30",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3327,7 +3327,7 @@
         "end": "15:30",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3337,7 +3337,7 @@
         "end": "15:30",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3347,7 +3347,7 @@
         "end": "15:30",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3357,7 +3357,7 @@
         "end": "15:30",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3367,7 +3367,7 @@
         "end": "15:30",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3377,7 +3377,7 @@
         "end": "15:30",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3387,7 +3387,7 @@
         "end": "15:30",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3397,7 +3397,7 @@
         "end": "15:30",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3407,7 +3407,7 @@
         "end": "15:30",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3417,7 +3417,7 @@
         "end": "15:30",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -3429,7 +3429,7 @@
     "label": "Gruppe 40",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-40-2026-10-21",
@@ -3438,7 +3438,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3448,7 +3448,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3458,7 +3458,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3468,7 +3468,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3478,7 +3478,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3488,7 +3488,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3498,7 +3498,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3508,7 +3508,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3518,7 +3518,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3528,7 +3528,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3538,7 +3538,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3548,7 +3548,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3558,7 +3558,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3568,7 +3568,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Marek Cedula",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -3580,7 +3580,7 @@
     "label": "Gruppe 41",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-41-2026-10-22",
@@ -3589,7 +3589,7 @@
         "end": "13:30",
         "room": "01.09.014",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3599,7 +3599,7 @@
         "end": "13:30",
         "room": "01.09.014",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3609,7 +3609,7 @@
         "end": "13:30",
         "room": "01.09.014",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3619,7 +3619,7 @@
         "end": "13:30",
         "room": "01.09.014",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3629,7 +3629,7 @@
         "end": "13:30",
         "room": "01.09.014",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3639,7 +3639,7 @@
         "end": "13:30",
         "room": "01.09.014",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3649,7 +3649,7 @@
         "end": "13:30",
         "room": "01.09.014",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3659,7 +3659,7 @@
         "end": "13:30",
         "room": "01.09.014",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3669,7 +3669,7 @@
         "end": "13:30",
         "room": "01.09.014",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3679,7 +3679,7 @@
         "end": "13:30",
         "room": "01.09.014",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3689,7 +3689,7 @@
         "end": "13:30",
         "room": "01.09.014",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3699,7 +3699,7 @@
         "end": "13:30",
         "room": "01.09.014",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3709,7 +3709,7 @@
         "end": "13:30",
         "room": "01.09.014",
         "tutor": "Van Trang Nguyen",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -3721,7 +3721,7 @@
     "label": "Gruppe 43",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-43-2026-10-22",
@@ -3730,7 +3730,7 @@
         "end": "11:30",
         "room": "00.08.059",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3740,7 +3740,7 @@
         "end": "11:30",
         "room": "00.08.059",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3750,7 +3750,7 @@
         "end": "11:30",
         "room": "00.08.059",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3760,7 +3760,7 @@
         "end": "11:30",
         "room": "00.08.059",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3770,7 +3770,7 @@
         "end": "11:30",
         "room": "00.08.059",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3780,7 +3780,7 @@
         "end": "11:30",
         "room": "00.08.059",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3790,7 +3790,7 @@
         "end": "11:30",
         "room": "00.08.059",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3800,7 +3800,7 @@
         "end": "11:30",
         "room": "00.08.059",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3810,7 +3810,7 @@
         "end": "11:30",
         "room": "00.08.059",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3820,7 +3820,7 @@
         "end": "11:30",
         "room": "00.08.059",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3830,7 +3830,7 @@
         "end": "11:30",
         "room": "00.08.059",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3840,7 +3840,7 @@
         "end": "11:30",
         "room": "00.08.059",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3850,7 +3850,7 @@
         "end": "11:30",
         "room": "00.08.059",
         "tutor": "Tim Graham",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -3862,7 +3862,7 @@
     "label": "Gruppe 46",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-46-2026-10-19",
@@ -3871,7 +3871,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3881,7 +3881,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3891,7 +3891,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3901,7 +3901,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3911,7 +3911,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3921,7 +3921,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3931,7 +3931,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3941,7 +3941,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3951,7 +3951,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3961,7 +3961,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3971,7 +3971,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3981,7 +3981,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -3991,7 +3991,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4001,7 +4001,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Sike Wang",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -4013,7 +4013,7 @@
     "label": "Gruppe 48",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-48-2026-10-22",
@@ -4022,7 +4022,7 @@
         "end": "09:45",
         "room": "00.08.038",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4032,7 +4032,7 @@
         "end": "09:45",
         "room": "00.08.038",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4042,7 +4042,7 @@
         "end": "09:45",
         "room": "00.08.038",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4052,7 +4052,7 @@
         "end": "09:45",
         "room": "00.08.038",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4062,7 +4062,7 @@
         "end": "09:45",
         "room": "00.08.038",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4072,7 +4072,7 @@
         "end": "09:45",
         "room": "00.08.038",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4082,7 +4082,7 @@
         "end": "09:45",
         "room": "00.08.038",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4092,7 +4092,7 @@
         "end": "09:45",
         "room": "00.08.038",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4102,7 +4102,7 @@
         "end": "09:45",
         "room": "00.08.038",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4112,7 +4112,7 @@
         "end": "09:45",
         "room": "00.08.038",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4122,7 +4122,7 @@
         "end": "09:45",
         "room": "00.08.038",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4132,7 +4132,7 @@
         "end": "09:45",
         "room": "00.08.038",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4142,7 +4142,7 @@
         "end": "09:45",
         "room": "00.08.038",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -4154,7 +4154,7 @@
     "label": "Gruppe 52",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-52-2026-10-22",
@@ -4163,7 +4163,7 @@
         "end": "10:00",
         "room": "02.11.018",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4173,7 +4173,7 @@
         "end": "10:00",
         "room": "02.11.018",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4183,7 +4183,7 @@
         "end": "10:00",
         "room": "02.11.018",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4193,7 +4193,7 @@
         "end": "10:00",
         "room": "02.11.018",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4203,7 +4203,7 @@
         "end": "10:00",
         "room": "02.11.018",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4213,7 +4213,7 @@
         "end": "10:00",
         "room": "02.11.018",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4223,7 +4223,7 @@
         "end": "10:00",
         "room": "02.11.018",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4233,7 +4233,7 @@
         "end": "10:00",
         "room": "02.11.018",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4243,7 +4243,7 @@
         "end": "10:00",
         "room": "02.11.018",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4253,7 +4253,7 @@
         "end": "10:00",
         "room": "02.11.018",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4263,7 +4263,7 @@
         "end": "10:00",
         "room": "02.11.018",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4273,7 +4273,7 @@
         "end": "10:00",
         "room": "02.11.018",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4283,7 +4283,7 @@
         "end": "10:00",
         "room": "02.11.018",
         "tutor": "Oskar Xiong",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -4295,7 +4295,7 @@
     "label": "Gruppe 54",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-54-2026-10-22",
@@ -4304,7 +4304,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4314,7 +4314,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4324,7 +4324,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4334,7 +4334,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4344,7 +4344,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4354,7 +4354,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4364,7 +4364,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4374,7 +4374,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4384,7 +4384,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4394,7 +4394,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4404,7 +4404,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4414,7 +4414,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4424,7 +4424,7 @@
         "end": "17:45",
         "room": "02.09.014",
         "tutor": "Boris Angelov",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -4436,7 +4436,7 @@
     "label": "Gruppe 58",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-58-2026-10-19",
@@ -4445,7 +4445,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4455,7 +4455,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4465,7 +4465,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4475,7 +4475,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4485,7 +4485,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4495,7 +4495,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4505,7 +4505,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4515,7 +4515,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4525,7 +4525,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4535,7 +4535,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4545,7 +4545,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4555,7 +4555,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4565,7 +4565,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4575,7 +4575,7 @@
         "end": "15:30",
         "room": "02.11.018",
         "tutor": "Artin Demirci",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]
@@ -4587,7 +4587,7 @@
     "label": "Gruppe 59",
     "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19",
     "checkedAt": "2026-10-28T00:27:25.162767+00:00",
-    "note": "Published weekly pattern (90 minutes). Dates expanded within TUM teaching dates; course-specific recurrence exceptions and end date are unverified. Export is opt-in.",
+    "note": "Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.",
     "occurrences": [
       {
         "id": "gdb-59-2026-10-20",
@@ -4596,7 +4596,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4606,7 +4606,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4616,7 +4616,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4626,7 +4626,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4636,7 +4636,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4646,7 +4646,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4656,7 +4656,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4666,7 +4666,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4676,7 +4676,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4686,7 +4686,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4696,7 +4696,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4706,7 +4706,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4716,7 +4716,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       },
       {
@@ -4726,7 +4726,7 @@
         "end": "11:30",
         "room": "02.11.018",
         "tutor": "Jakob Friedrich",
-        "status": "provisional",
+        "status": "scheduled",
         "source": "https://erdbtutor.db.in.tum.de/schedule?course_id=19"
       }
     ]

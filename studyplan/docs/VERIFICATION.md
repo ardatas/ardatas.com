@@ -28,3 +28,13 @@ The NumProg update adds 18 active tutorial options from the authenticated Moodle
 ## Data limits
 
 No Apple or Google Calendar account was modified. ICS compatibility is supported by parser and actual browser download checks. GDB dates remain provisional and require export opt-in. Unverified Analysis and GDB lectures are omitted. Course data is a checked snapshot, not a live subscription.
+
+
+## 28 October 2026 — weekly GDB sequence and holiday exclusions
+
+- Read and visually checked both pages of the user-provided TUM circular.
+- Changed GDB's generated occurrences from provisional to scheduled under the user's explicit recurrence assumption; retained source timestamps, group/occurrence IDs, saved selections and manual exclusions.
+- Added a shared holiday calendar used by course generators, public imports and the final normalization of every course. Existing GBS holiday entries now have explicit exclusion reasons and a circular link.
+- Verified holidays and inclusive break boundaries in all exported courses; checked that 23 December and 7 January remain available and that assembly conflicts still stay excluded.
+- Production build, 16 logic tests and all 28 desktop/mobile browser tests passed. Browser validation covers GDB downloads without opt-in, excluded holiday dates, module-switch context, mobile layout and selection persistence.
+- These are local checks. The user performs deployment from GitHub; no live publication is claimed.

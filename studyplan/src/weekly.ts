@@ -1,3 +1,4 @@
+import { teachingFreeReason } from './exceptions';
 import { addDays } from './model';
 import type { Slot } from './model';
 const checkedAt='2026-10-28T00:33:36Z';
@@ -19,9 +20,9 @@ const security:Row[]=[
 export const weekly:Slot[]=[];
 for(const [course,rows,source] of [['ana',analysis,analysisSource],['its',security,securitySource]] as const){for(const [group,day,start,end,room,tutor,note] of rows){const id=`${course}-${group}`;const occurrences=[];
  for(let date=addDays('2026-10-19',day);date<='2027-02-05';date=addDays(date,7)){
- if((date>='2026-12-24'&&date<='2027-01-06')||date==='2026-12-03')continue;
+ if(teachingFreeReason(date))continue;
  occurrences.push({id:id+'-'+date,date,start,end,room,tutor,status:note==='Cancelled'?'cancelled':'scheduled',source});}
  weekly.push({id,course,kind:course==='ana'&&group===4?'Help session':'Tutorial',label:`Group ${group}${note==='English'?' · English':''}`,source,checkedAt,note:`${note?note+'. ':''}Weekly from 19 October. Exact times from the detailed Moodle table. Expanded through the published TUM teaching period; holidays excluded. Check Moodle for later changes.`,occurrences});}}
 const itsDates=[];
-for(let date='2026-10-13';date<='2027-02-05';date=addDays(date,7)){if(date==='2026-11-10'||(date>='2026-12-24'&&date<='2027-01-06'))continue;itsDates.push(date);}
+for(let date='2026-10-13';date<='2027-02-05';date=addDays(date,7)){if(date==='2026-11-10'||teachingFreeReason(date))continue;itsDates.push(date);}
 weekly.push({id:'its-lectures',course:'its',kind:'Lecture',label:'Lecture + replacement date',source:securitySource,checkedAt,note:'Tuesdays 10:00–12:00. No lecture 10 November; replacement Friday 20 November 08:00–10:00, MI HS 1. Other Fridays are not regular lectures.',occurrences:[...itsDates,'2026-11-20'].sort().map(date=>({id:'its-lecture-'+date,date,start:date==='2026-11-20'?'08:00':'10:00',end:date==='2026-11-20'?'10:00':'12:00',room:date==='2026-11-20'?'MI HS 1':'Audimax im Galileo',tutor:'Claudia Eckert / Manuel Andreas',status:'scheduled',source:securitySource}))});

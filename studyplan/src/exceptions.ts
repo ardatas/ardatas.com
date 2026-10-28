@@ -1,5 +1,17 @@
 import type { Occurrence } from './model';
-export const termSource='https://www.tum.de/fileadmin/w00bfo/www/Studium/Im_Studium/Termine_Fristen/251118__Rundschreiben__Termine_und_Feiertage_2026-2027_final.pdf';
+import academicCalendar from './academic-calendar.json';
+export const termSource=academicCalendar.source;
+export function teachingFreeReason(date:string):string|undefined {
+ const holiday=(academicCalendar.days as Record<string,string>)[date];
+ const recess=academicCalendar.breaks.find(period=>date>=period.from&&date<=period.to);
+ return recess?`${recess.name} (${recess.from}–${recess.to}, inclusive)`:holiday;
+}
+/** Apply the university calendar to every course, including imported dated sessions. */
+export function applyHolidayException(event:Occurrence):Occurrence {
+ const reason=teachingFreeReason(event.date);
+ if(!reason||event.status==='cancelled')return event;
+ return {...event,status:'source-conflict',sourceStatus:event.sourceStatus||event.status,conflictReason:`No teaching: ${reason}.`,conflictSource:termSource};
+}
 // Rooms from the verified Garching course tables that overlap these assembly dates.
 // Do not infer a campus for unknown, online, or unrelated rooms.
 const garchingRooms=new Set(['00.13.008','00.08.036','02.07.023','02.11.018','02.13.010','01.13.007','01.06.020','00.13.054','03.09.012']);

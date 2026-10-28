@@ -1,3 +1,4 @@
+import { teachingFreeReason } from './exceptions';
 import { addDays } from './model';
 import type { Slot } from './model';
 const source='https://www.moodle.tum.de/course/view.php?id=121375';
@@ -29,7 +30,7 @@ export const numprog:Slot[]=rows.map(([group,day,start,end,room,tutor,language])
  const id=`num-${group}`;
  const occurrences:Slot['occurrences']=[];
  for(let date=addDays('2026-10-19',day);date<='2027-02-05';date=addDays(date,7)){
-  if((date>='2026-12-24'&&date<='2027-01-06')||date==='2026-12-03')continue;
+  if(teachingFreeReason(date))continue;
   occurrences.push({id:`${id}-${date}`,date,start,end,room,tutor,status:'scheduled',source});
  }
  return {id,course:'num',kind:'Tutorial',label:`${group==='online-16'?'Online 16:00 (no group number)':`Group ${group}`} · ${language}`,source,checkedAt:'2026-10-28',note:`${language}. Full two-hour tutorial. Moodle's timetable overrides TUMonline times and rooms. Weekly dates expanded from the first exercise week, 19 October, through the teaching period; university holidays excluded. Check Moodle for later cancellations.${room==='Online'?' Join via the link on Moodle.':''}`,occurrences};

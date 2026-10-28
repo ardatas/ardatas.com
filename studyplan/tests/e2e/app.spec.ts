@@ -45,8 +45,8 @@ test('calendar views, live line and no horizontal week scrolling',async({page},i
  await page.keyboard.press('Escape');await expect(card).toBeFocused();
  await page.screenshot({path:`artifacts/${info.project.name}-day-v2.png`,fullPage:false});
 });
-test('provisional export, cancelled groups and malformed links',async({page})=>{
- await list(page,'gdb');await page.getByRole('button',{name:'Add GDB · Gruppe 03',exact:true}).click();await page.getByRole('button',{name:'Export calendar'}).click();await expect(page.getByRole('button',{name:'Download .ics'})).toBeDisabled();await page.getByRole('checkbox',{name:/Include.*provisional/}).check();await expect(page.getByRole('button',{name:'Download .ics'})).toBeEnabled();await page.keyboard.press('Escape');
+test('GDB exports by default without holidays; cancelled groups and malformed links',async({page})=>{
+ await list(page,'gdb');await page.getByRole('button',{name:'Add GDB · Gruppe 03',exact:true}).click();await page.getByRole('button',{name:'Export calendar'}).click();await expect(page.getByRole('checkbox',{name:/Include.*provisional/})).toHaveCount(0);await expect(page.getByRole('button',{name:'Download .ics'})).toBeEnabled();const pending=page.waitForEvent('download');await page.getByRole('button',{name:'Download .ics'}).click();const download=await pending;const body=await fs.readFile((await download.path())!,'utf8');expect(body).toContain('UID:gdb-03-');expect(body).toContain('STATUS:CONFIRMED');expect(body).not.toContain('TENTATIVE');expect(body).not.toMatch(/DTSTART:202612(?:2[4-9]|3[01])|DTSTART:2027010[1-6]/);await page.keyboard.press('Escape');
  await list(page,'its');await expect(page.getByRole('button',{name:'Add IT Security · Group 13',exact:true})).toBeDisabled();await page.goto('./#plan=bad');await expect(page.getByRole('status')).toContainText('invalid');
 });
 test('320px layout, root assets and malformed initial share preserve saved plan',async({page})=>{

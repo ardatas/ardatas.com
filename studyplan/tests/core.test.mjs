@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import ICAL from 'ical.js';
-import {applyAssemblyException} from '../src/exceptions.ts';
+import {applyAssemblyException,applyHolidayException,teachingFreeReason} from '../src/exceptions.ts';
 import {slots} from '../src/data.ts';
 import {exportICS,berlinUTC,foldLine,escapeICS} from '../src/calendar.ts';
 import {DEFAULT_PLAN,parsePlan,encodePlan,activeOccurrences,conflicts,layout,monday,berlinNow} from '../src/model.ts';
@@ -22,9 +22,9 @@ test('IT replacement Friday only, cancelled group and published times preserved'
 test('holiday source conflicts never exported, even with provisional opted in',()=>{
  const all=plan(slots.map(s=>s.id));const ics=exportICS(slots,all,true);assert.ok(!ics.includes('DTSTART:20261203'));for(const s of slots)for(const e of activeOccurrences(s,all)){assert.ok(e.date<'2026-12-24'||e.date>'2027-01-06');}
 });
-test('date bounds, exclusions, stable UIDs and provisional opt-in',()=>{
- const s=slots.find(s=>s.id==='gdb-03');assert.equal(activeOccurrences(s,plan([s.id]),false).length,0);assert.ok(activeOccurrences(s,plan([s.id]),true).length>0);
- const p=plan([s.id],{from:'2026-10-28',to:'2026-11-04',excluded:['gdb-03-2026-11-04']});const parsed=new ICAL.Component(ICAL.parse(exportICS(slots,p,true)));const events=parsed.getAllSubcomponents('vevent');assert.equal(events.length,1);assert.equal(events[0].getFirstPropertyValue('uid'),'gdb-03-2026-10-28@studyplan.ardatas.com');assert.equal(events[0].getFirstPropertyValue('dtstart').toString(),'2026-10-28T07:00:00Z');
+test('GDB follows the weekly sequence by default with date bounds, exclusions and stable UIDs',()=>{
+ const s=slots.find(s=>s.id==='gdb-03');assert.ok(activeOccurrences(s,plan([s.id]),false).length>0);assert.ok(s.occurrences.every(e=>e.status!=='provisional'));assert.ok(exportICS(slots,plan([s.id])).includes('UID:gdb-03-'));assert.ok(!exportICS(slots,plan([s.id])).includes('STATUS:TENTATIVE'));
+ const p=plan([s.id],{from:'2026-10-28',to:'2026-11-04',excluded:['gdb-03-2026-11-04']});const parsed=new ICAL.Component(ICAL.parse(exportICS(slots,p)));const events=parsed.getAllSubcomponents('vevent');assert.equal(events.length,1);assert.equal(events[0].getFirstPropertyValue('uid'),'gdb-03-2026-10-28@studyplan.ardatas.com');assert.equal(events[0].getFirstPropertyValue('dtstart').toString(),'2026-10-28T07:00:00Z');
 });
 test('ICS round-trips Unicode, escaping, UTF8 byte folding and CRLF',()=>{
  const slot={...slots[0],id:'fixture',label:'Ä'.repeat(90)+', ; \\ \n text',occurrences:[{...slots[0].occurrences[0],id:'fixture-event',date:'2026-10-28',room:'Room, 1; Ä\\B\nNext'}]};const ics=exportICS([slot],plan(['fixture']));assert.ok(!/(.)(?<!\r)\n/.test(ics));for(const line of ics.split('\r\n'))assert.ok(Buffer.byteLength(line)<=75);const event=new ICAL.Component(ICAL.parse(ics)).getFirstSubcomponent('vevent');assert.equal(event.getFirstPropertyValue('location'),slot.occurrences[0].room);assert.equal(event.getFirstPropertyValue('summary'),slot.course.toUpperCase()+' · '+slot.label);assert.equal(escapeICS('a,b;c\\d\ne'),'a\\,b\\;c\\\\d\\ne');assert.ok(foldLine('😀'.repeat(80)).includes('\r\n '));
@@ -68,4 +68,24 @@ test('NumProg uses Moodle corrections, split groups and online options without c
  assert.equal(num.find(s=>s.id==='num-09').occurrences.find(e=>e.date==='2026-10-28').status,'source-conflict');
  const p=plan(['num-04a','num-18a','num-09','its-16']);assert.deepEqual(parsePlan(decodeURIComponent(encodePlan(p).slice(6)),slots),p);
  const ics=exportICS(slots,p);assert.match(ics,/NUM · Group 04a/);assert.match(ics,/LOCATION:Online/);assert.ok(!ics.includes('UID:num-09-2026-10-28@'));
+});
+
+
+test('official holiday calendar excludes every course and retains both break boundaries',()=>{
+ const all=plan(slots.map(s=>s.id),{from:'2026-10-12',to:'2027-02-28'});
+ const exported=new ICAL.Component(ICAL.parse(exportICS(slots,all))).getAllSubcomponents('vevent');
+ for(const event of exported){const date=event.getFirstPropertyValue('dtstart').toString().slice(0,10);assert.equal(teachingFreeReason(date),undefined,date);}
+ const fixture={...slots[0].occurrences[0],status:'scheduled'};
+ for(const date of ['2026-10-03','2026-11-01','2026-12-03','2026-12-24','2026-12-31','2027-01-01','2027-01-06']){
+  const blocked=applyHolidayException({...fixture,date});assert.equal(blocked.status,'source-conflict');assert.match(blocked.conflictReason,/No teaching/);assert.match(blocked.conflictSource,/251118/);
+  assert.equal(activeOccurrences({...slots[0],occurrences:[blocked]},all).length,0);
+ }
+ for(const date of ['2026-12-02','2026-12-04','2026-12-23','2027-01-07','2027-02-05']){
+  const event={...fixture,date};assert.strictEqual(applyHolidayException(event),event);
+  assert.ok(slots.some(s=>activeOccurrences(s,all).some(e=>e.date===date)),date);
+ }
+ const gdb=slots.filter(s=>s.course==='gdb');
+ assert.ok(gdb.some(s=>activeOccurrences(s,all).some(e=>e.date==='2026-12-23')));
+ assert.ok(gdb.some(s=>activeOccurrences(s,all).some(e=>e.date==='2027-01-07')));
+ const cancelled={...fixture,date:'2026-12-03',status:'cancelled'};assert.strictEqual(applyHolidayException(cancelled),cancelled);
 });

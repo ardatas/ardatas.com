@@ -1,0 +1,40 @@
+{
+  "source": "https://www.tum.de/fileadmin/w00bfo/www/Studium/Im_Studium/Termine_Fristen/251118__Rundschreiben__Termine_und_Feiertage_2026-2027_final.pdf",
+  "winterTeaching": {
+    "from": "2026-10-12",
+    "to": "2027-02-05"
+  },
+  "breaks": [
+    {
+      "from": "2026-12-24",
+      "to": "2027-01-06",
+      "name": "Christmas break"
+    },
+    {
+      "from": "2027-03-25",
+      "to": "2027-03-30",
+      "name": "Easter break"
+    },
+    {
+      "from": "2027-05-15",
+      "to": "2027-05-18",
+      "name": "Whitsun break"
+    }
+  ],
+  "days": {
+    "2026-10-03": "German Unity Day",
+    "2026-11-01": "All Saints' Day",
+    "2026-12-03": "Dies Academicus (teaching-free day listed in section d)",
+    "2026-12-25": "Christmas Day",
+    "2026-12-26": "Second Christmas Day",
+    "2027-01-01": "New Year's Day",
+    "2027-01-06": "Epiphany",
+    "2027-03-26": "Good Friday",
+    "2027-03-29": "Easter Monday",
+    "2027-05-01": "Labour Day",
+    "2027-05-06": "Ascension Day",
+    "2027-05-17": "Whit Monday",
+    "2027-05-27": "Corpus Christi",
+    "2027-08-15": "Assumption Day"
+  }
+}

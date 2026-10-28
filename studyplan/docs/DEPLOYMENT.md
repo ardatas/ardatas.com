@@ -51,7 +51,7 @@ The existing personal site's deployment target is `/home/ardatas/public_html/`. 
 - Check `https://studyplan.ardatas.com/`, JavaScript, CSS, fonts and favicon return HTTP 200 over valid HTTPS.
 - Confirm the personal homepage still works.
 - Select a tutorial, reload, open a shared URL in a fresh browser, and download an ICS file. Compare exported dates and rooms with source data.
-- Check mobile navigation, readable blocks, date exclusions, and provisional GDB export opt-in.
+- Check mobile navigation, readable blocks, date exclusions, and GDB default export and university holiday exclusions.
 - A successful upload or local test does not establish live delivery. Record the actual live checks separately.
 
 For rollback, restore only the dedicated subdomain directory from its backup. Leave the personal site untouched.

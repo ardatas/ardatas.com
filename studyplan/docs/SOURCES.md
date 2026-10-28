@@ -5,7 +5,7 @@ Source facts were checked from the user's open Safari course pages and published
 | Course | Included | Basis and limits |
 | --- | --- | --- |
 | GBS | 26 tutorial groups and two lecture series | Public tutoring API supplies individual dates, tutor, room and cancellation state. Moodle supplies an explicit lecture-date plan. |
-| GDB | 32 tutorial groups | Tutor schedule publishes group, weekday, start, room and tutor. Its embedded 2012 dates are layout anchors, not 2026 occurrences. Generated 2026/27 dates are provisional; export requires opt-in. |
+| GDB | 32 tutorial groups | Tutor schedule publishes group, weekday, start, room and tutor. Its embedded 2012 dates are layout anchors, not 2026 occurrences. As requested, the published weekly sequence is assumed to run through 5 February 2027, excluding university holidays, teaching breaks and applicable assembly suspensions; exports include these sessions by default. |
 | Analysis | 16 tutorial groups and one homework-help session | Moodle detailed group table supplies exact times, tutors and rooms. Detailed times take precedence over the coarse two-hour overview. Weekly sessions begin 19 October. Lecture times/rooms are not yet verified. |
 | IT Security | 28 active tutorials, one cancelled group and one lecture series | Moodle publishes weekly groups. Group 13 is cancelled. The Friday lecture is a replacement on 20 November for 10 November, not a general weekly Friday lecture. |
 
@@ -34,3 +34,12 @@ GBS's currently published tutorial endpoint has no sessions for the weeks beginn
 ## Calendar format
 
 Exports follow [RFC 5545](https://www.rfc-editor.org/rfc/rfc5545). Repeated meetings are explicit VEVENTs, preserving date-specific rooms, tutors, cancellations and skipped dates without an unbounded recurrence rule. Berlin local times convert to UTC using IANA timezone rules. Actual Google Calendar or Apple Calendar account imports have not been performed; parser and browser-download tests establish file behavior only.
+
+
+## Academic calendar update — 28 October 2026
+
+Both pages of the user-supplied TUM circular were reviewed. Its winter teaching period is 12 October 2026 through 5 February 2027. Christmas break runs from 24 December through 6 January inclusive. Section d lists 3 December (Dies Academicus) as a teaching-free day; this planner excludes the full day, consistent with that list and its existing calendar rule. Section i also specifies the ceremony time of 10:00–13:00. German Unity Day (3 October) and All Saints' Day (1 November) are included in the central holiday calendar, although neither changes the current weekday tutorial roster.
+
+`src/academic-calendar.json` is shared by the weekly generators, public import scripts and final occurrence normalization. It includes the circular's other holiday/break dates for completeness; this planner still covers winter 2026/27 only. FVV/SVV remain partial-day exclusions for verified Garching rooms, not whole-day holidays. Existing course cancellations, saved selections, occurrence IDs and manually skipped dates are preserved.
+
+GDB's weekly schedule is now treated as scheduled by user instruction, not as independently verified individual dates. No new authenticated course check was performed. All courses' active calendar occurrences and exports must exclude the university holidays and breaks.
