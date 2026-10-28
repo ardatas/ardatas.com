@@ -1,0 +1,8 @@
+# EXAMPLE ONLY. Dedicated document root verified in cPanel on 28 October 2026.
+# Requires a reviewed prebuilt dist/ in the cPanel checkout; never target public_html/.
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/ardatas/studyplan.ardatas.com/
+    - /bin/test -d "$DEPLOYPATH"
+    - /bin/cp -a dist/assets dist/licenses dist/index.html dist/favicon.svg "$DEPLOYPATH"

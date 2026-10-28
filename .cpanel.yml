@@ -3,3 +3,6 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/ardatas/public_html/
     - /bin/cp -a dist/. "$DEPLOYPATH"
+    - export STUDYPLANPATH=/home/ardatas/studyplan.ardatas.com/
+    - /bin/test -d "$STUDYPLANPATH"
+    - /bin/cp -a studyplan/dist/assets studyplan/dist/licenses studyplan/dist/index.html studyplan/dist/favicon.svg "$STUDYPLANPATH"

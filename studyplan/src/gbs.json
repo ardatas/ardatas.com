@@ -1,0 +1,4188 @@
+[
+  {
+    "id": "gbs-624",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Fr-1000-A",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10391",
+        "date": "2026-10-30",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/624/10391"
+      },
+      {
+        "id": "gbs-session-10392",
+        "date": "2026-11-06",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/624/10392"
+      },
+      {
+        "id": "gbs-session-10393",
+        "date": "2026-11-13",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/624/10393"
+      },
+      {
+        "id": "gbs-session-10394",
+        "date": "2026-11-20",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/624/10394"
+      },
+      {
+        "id": "gbs-session-10395",
+        "date": "2026-11-27",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/624/10395"
+      },
+      {
+        "id": "gbs-session-10396",
+        "date": "2026-12-04",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/624/10396"
+      },
+      {
+        "id": "gbs-session-10397",
+        "date": "2026-12-11",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/624/10397"
+      },
+      {
+        "id": "gbs-session-10398",
+        "date": "2026-12-18",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/624/10398"
+      },
+      {
+        "id": "gbs-session-10399",
+        "date": "2026-12-25",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/624/10399"
+      },
+      {
+        "id": "gbs-session-10400",
+        "date": "2027-01-01",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/624/10400"
+      },
+      {
+        "id": "gbs-session-10401",
+        "date": "2027-01-08",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/624/10401"
+      },
+      {
+        "id": "gbs-session-10402",
+        "date": "2027-01-15",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/624/10402"
+      },
+      {
+        "id": "gbs-session-10403",
+        "date": "2027-01-22",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/624/10403"
+      },
+      {
+        "id": "gbs-session-10404",
+        "date": "2027-01-29",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/624/10404"
+      },
+      {
+        "id": "gbs-session-10405",
+        "date": "2027-02-05",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/624/10405"
+      }
+    ]
+  },
+  {
+    "id": "gbs-625",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Fr-1200-C",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10407",
+        "date": "2026-10-30",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/625/10407"
+      },
+      {
+        "id": "gbs-session-10408",
+        "date": "2026-11-06",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/625/10408"
+      },
+      {
+        "id": "gbs-session-10409",
+        "date": "2026-11-13",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/625/10409"
+      },
+      {
+        "id": "gbs-session-10410",
+        "date": "2026-11-20",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/625/10410"
+      },
+      {
+        "id": "gbs-session-10411",
+        "date": "2026-11-27",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/625/10411"
+      },
+      {
+        "id": "gbs-session-10412",
+        "date": "2026-12-04",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/625/10412"
+      },
+      {
+        "id": "gbs-session-10413",
+        "date": "2026-12-11",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/625/10413"
+      },
+      {
+        "id": "gbs-session-10414",
+        "date": "2026-12-18",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/625/10414"
+      },
+      {
+        "id": "gbs-session-10415",
+        "date": "2026-12-25",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/625/10415"
+      },
+      {
+        "id": "gbs-session-10416",
+        "date": "2027-01-01",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/625/10416"
+      },
+      {
+        "id": "gbs-session-10417",
+        "date": "2027-01-08",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/625/10417"
+      },
+      {
+        "id": "gbs-session-10418",
+        "date": "2027-01-15",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/625/10418"
+      },
+      {
+        "id": "gbs-session-10419",
+        "date": "2027-01-22",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/625/10419"
+      },
+      {
+        "id": "gbs-session-10420",
+        "date": "2027-01-29",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/625/10420"
+      },
+      {
+        "id": "gbs-session-10421",
+        "date": "2027-02-05",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Andreea-Karina Vusca",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/625/10421"
+      }
+    ]
+  },
+  {
+    "id": "gbs-627",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Do-1000-B",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10439",
+        "date": "2026-10-29",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.053",
+        "tutor": "Felix Daxenberger",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/627/10439"
+      },
+      {
+        "id": "gbs-session-10440",
+        "date": "2026-11-05",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.053",
+        "tutor": "Felix Daxenberger",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/627/10440"
+      },
+      {
+        "id": "gbs-session-10441",
+        "date": "2026-11-12",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.053",
+        "tutor": "Felix Daxenberger",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/627/10441"
+      },
+      {
+        "id": "gbs-session-10442",
+        "date": "2026-11-19",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.053",
+        "tutor": "Felix Daxenberger",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/627/10442"
+      },
+      {
+        "id": "gbs-session-10443",
+        "date": "2026-11-26",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.053",
+        "tutor": "Felix Daxenberger",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/627/10443"
+      },
+      {
+        "id": "gbs-session-10444",
+        "date": "2026-12-03",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.053",
+        "tutor": "Felix Daxenberger",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/627/10444"
+      },
+      {
+        "id": "gbs-session-10445",
+        "date": "2026-12-10",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.053",
+        "tutor": "Felix Daxenberger",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/627/10445"
+      },
+      {
+        "id": "gbs-session-10446",
+        "date": "2026-12-17",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.053",
+        "tutor": "Felix Daxenberger",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/627/10446"
+      },
+      {
+        "id": "gbs-session-10447",
+        "date": "2026-12-24",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.053",
+        "tutor": "Felix Daxenberger",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/627/10447"
+      },
+      {
+        "id": "gbs-session-10448",
+        "date": "2026-12-31",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.053",
+        "tutor": "Felix Daxenberger",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/627/10448"
+      },
+      {
+        "id": "gbs-session-10449",
+        "date": "2027-01-07",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.053",
+        "tutor": "Felix Daxenberger",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/627/10449"
+      },
+      {
+        "id": "gbs-session-10450",
+        "date": "2027-01-14",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.053",
+        "tutor": "Felix Daxenberger",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/627/10450"
+      },
+      {
+        "id": "gbs-session-10451",
+        "date": "2027-01-21",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.053",
+        "tutor": "Felix Daxenberger",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/627/10451"
+      },
+      {
+        "id": "gbs-session-10452",
+        "date": "2027-01-28",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.053",
+        "tutor": "Felix Daxenberger",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/627/10452"
+      },
+      {
+        "id": "gbs-session-10453",
+        "date": "2027-02-04",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.053",
+        "tutor": "Felix Daxenberger",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/627/10453"
+      }
+    ]
+  },
+  {
+    "id": "gbs-628",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Do-1200-A",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10455",
+        "date": "2026-10-29",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.036",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/628/10455"
+      },
+      {
+        "id": "gbs-session-10456",
+        "date": "2026-11-05",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.036",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/628/10456"
+      },
+      {
+        "id": "gbs-session-10457",
+        "date": "2026-11-12",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.036",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/628/10457"
+      },
+      {
+        "id": "gbs-session-10458",
+        "date": "2026-11-19",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.036",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/628/10458"
+      },
+      {
+        "id": "gbs-session-10459",
+        "date": "2026-11-26",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.036",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/628/10459"
+      },
+      {
+        "id": "gbs-session-10460",
+        "date": "2026-12-03",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.036",
+        "tutor": "Dezhong Zhuang",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/628/10460"
+      },
+      {
+        "id": "gbs-session-10461",
+        "date": "2026-12-10",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.036",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/628/10461"
+      },
+      {
+        "id": "gbs-session-10462",
+        "date": "2026-12-17",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.036",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/628/10462"
+      },
+      {
+        "id": "gbs-session-10463",
+        "date": "2026-12-24",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.036",
+        "tutor": "Dezhong Zhuang",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/628/10463"
+      },
+      {
+        "id": "gbs-session-10464",
+        "date": "2026-12-31",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.036",
+        "tutor": "Dezhong Zhuang",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/628/10464"
+      },
+      {
+        "id": "gbs-session-10465",
+        "date": "2027-01-07",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.036",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/628/10465"
+      },
+      {
+        "id": "gbs-session-10466",
+        "date": "2027-01-14",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.036",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/628/10466"
+      },
+      {
+        "id": "gbs-session-10467",
+        "date": "2027-01-21",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.036",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/628/10467"
+      },
+      {
+        "id": "gbs-session-10468",
+        "date": "2027-01-28",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.036",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/628/10468"
+      },
+      {
+        "id": "gbs-session-10469",
+        "date": "2027-02-04",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.036",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/628/10469"
+      }
+    ]
+  },
+  {
+    "id": "gbs-626",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Di-1000-B",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10423",
+        "date": "2026-10-27",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.008",
+        "tutor": "Felix Daxenberger",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/626/10423"
+      },
+      {
+        "id": "gbs-session-10424",
+        "date": "2026-11-03",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.008",
+        "tutor": "Felix Daxenberger",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/626/10424"
+      },
+      {
+        "id": "gbs-session-10425",
+        "date": "2026-11-10",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.008",
+        "tutor": "Felix Daxenberger",
+        "status": "cancelled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/626/10425"
+      },
+      {
+        "id": "gbs-session-10426",
+        "date": "2026-11-17",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.008",
+        "tutor": "Felix Daxenberger",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/626/10426"
+      },
+      {
+        "id": "gbs-session-10427",
+        "date": "2026-11-24",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.008",
+        "tutor": "Felix Daxenberger",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/626/10427"
+      },
+      {
+        "id": "gbs-session-10428",
+        "date": "2026-12-01",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.008",
+        "tutor": "Felix Daxenberger",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/626/10428"
+      },
+      {
+        "id": "gbs-session-10429",
+        "date": "2026-12-08",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.008",
+        "tutor": "Felix Daxenberger",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/626/10429"
+      },
+      {
+        "id": "gbs-session-10430",
+        "date": "2026-12-15",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.008",
+        "tutor": "Felix Daxenberger",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/626/10430"
+      },
+      {
+        "id": "gbs-session-10431",
+        "date": "2026-12-22",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.008",
+        "tutor": "Felix Daxenberger",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/626/10431"
+      },
+      {
+        "id": "gbs-session-10432",
+        "date": "2026-12-29",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.008",
+        "tutor": "Felix Daxenberger",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/626/10432"
+      },
+      {
+        "id": "gbs-session-10433",
+        "date": "2027-01-05",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.008",
+        "tutor": "Felix Daxenberger",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/626/10433"
+      },
+      {
+        "id": "gbs-session-10434",
+        "date": "2027-01-12",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.008",
+        "tutor": "Felix Daxenberger",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/626/10434"
+      },
+      {
+        "id": "gbs-session-10435",
+        "date": "2027-01-19",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.008",
+        "tutor": "Felix Daxenberger",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/626/10435"
+      },
+      {
+        "id": "gbs-session-10436",
+        "date": "2027-01-26",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.008",
+        "tutor": "Felix Daxenberger",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/626/10436"
+      },
+      {
+        "id": "gbs-session-10437",
+        "date": "2027-02-02",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.008",
+        "tutor": "Felix Daxenberger",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/626/10437"
+      }
+    ]
+  },
+  {
+    "id": "gbs-629",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Di-1600-A",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10471",
+        "date": "2026-10-27",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/629/10471"
+      },
+      {
+        "id": "gbs-session-10472",
+        "date": "2026-11-03",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/629/10472"
+      },
+      {
+        "id": "gbs-session-10473",
+        "date": "2026-11-10",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/629/10473"
+      },
+      {
+        "id": "gbs-session-10474",
+        "date": "2026-11-17",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/629/10474"
+      },
+      {
+        "id": "gbs-session-10475",
+        "date": "2026-11-24",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/629/10475"
+      },
+      {
+        "id": "gbs-session-10476",
+        "date": "2026-12-01",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/629/10476"
+      },
+      {
+        "id": "gbs-session-10477",
+        "date": "2026-12-08",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/629/10477"
+      },
+      {
+        "id": "gbs-session-10478",
+        "date": "2026-12-15",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/629/10478"
+      },
+      {
+        "id": "gbs-session-10479",
+        "date": "2026-12-22",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/629/10479"
+      },
+      {
+        "id": "gbs-session-10480",
+        "date": "2026-12-29",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Dezhong Zhuang",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/629/10480"
+      },
+      {
+        "id": "gbs-session-10481",
+        "date": "2027-01-05",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Dezhong Zhuang",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/629/10481"
+      },
+      {
+        "id": "gbs-session-10482",
+        "date": "2027-01-12",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/629/10482"
+      },
+      {
+        "id": "gbs-session-10483",
+        "date": "2027-01-19",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/629/10483"
+      },
+      {
+        "id": "gbs-session-10484",
+        "date": "2027-01-26",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/629/10484"
+      },
+      {
+        "id": "gbs-session-10485",
+        "date": "2027-02-02",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Dezhong Zhuang",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/629/10485"
+      }
+    ]
+  },
+  {
+    "id": "gbs-630",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Mi-1400-A",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10487",
+        "date": "2026-10-28",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.008",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/630/10487"
+      },
+      {
+        "id": "gbs-session-10488",
+        "date": "2026-11-04",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.008",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/630/10488"
+      },
+      {
+        "id": "gbs-session-10489",
+        "date": "2026-11-11",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.008",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/630/10489"
+      },
+      {
+        "id": "gbs-session-10490",
+        "date": "2026-11-18",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.008",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/630/10490"
+      },
+      {
+        "id": "gbs-session-10491",
+        "date": "2026-11-25",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.008",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/630/10491"
+      },
+      {
+        "id": "gbs-session-10492",
+        "date": "2026-12-02",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.008",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/630/10492"
+      },
+      {
+        "id": "gbs-session-10493",
+        "date": "2026-12-09",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.008",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/630/10493"
+      },
+      {
+        "id": "gbs-session-10494",
+        "date": "2026-12-16",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.008",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/630/10494"
+      },
+      {
+        "id": "gbs-session-10495",
+        "date": "2026-12-23",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.008",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/630/10495"
+      },
+      {
+        "id": "gbs-session-10496",
+        "date": "2026-12-30",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.008",
+        "tutor": "Zofia Czerniawska",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/630/10496"
+      },
+      {
+        "id": "gbs-session-10497",
+        "date": "2027-01-06",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.008",
+        "tutor": "Zofia Czerniawska",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/630/10497"
+      },
+      {
+        "id": "gbs-session-10498",
+        "date": "2027-01-13",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.008",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/630/10498"
+      },
+      {
+        "id": "gbs-session-10499",
+        "date": "2027-01-20",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.008",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/630/10499"
+      },
+      {
+        "id": "gbs-session-10500",
+        "date": "2027-01-27",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.008",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/630/10500"
+      },
+      {
+        "id": "gbs-session-10501",
+        "date": "2027-02-03",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.008",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/630/10501"
+      }
+    ]
+  },
+  {
+    "id": "gbs-631",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Mi-1600-A",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10503",
+        "date": "2026-10-28",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/631/10503"
+      },
+      {
+        "id": "gbs-session-10504",
+        "date": "2026-11-04",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/631/10504"
+      },
+      {
+        "id": "gbs-session-10505",
+        "date": "2026-11-11",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/631/10505"
+      },
+      {
+        "id": "gbs-session-10506",
+        "date": "2026-11-18",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/631/10506"
+      },
+      {
+        "id": "gbs-session-10507",
+        "date": "2026-11-25",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/631/10507"
+      },
+      {
+        "id": "gbs-session-10508",
+        "date": "2026-12-02",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/631/10508"
+      },
+      {
+        "id": "gbs-session-10509",
+        "date": "2026-12-09",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/631/10509"
+      },
+      {
+        "id": "gbs-session-10510",
+        "date": "2026-12-16",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/631/10510"
+      },
+      {
+        "id": "gbs-session-10511",
+        "date": "2026-12-23",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/631/10511"
+      },
+      {
+        "id": "gbs-session-10512",
+        "date": "2026-12-30",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Zofia Czerniawska",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/631/10512"
+      },
+      {
+        "id": "gbs-session-10513",
+        "date": "2027-01-06",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Zofia Czerniawska",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/631/10513"
+      },
+      {
+        "id": "gbs-session-10514",
+        "date": "2027-01-13",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/631/10514"
+      },
+      {
+        "id": "gbs-session-10515",
+        "date": "2027-01-20",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/631/10515"
+      },
+      {
+        "id": "gbs-session-10516",
+        "date": "2027-01-27",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/631/10516"
+      },
+      {
+        "id": "gbs-session-10517",
+        "date": "2027-02-03",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "00.11.038",
+        "tutor": "Zofia Czerniawska",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/631/10517"
+      }
+    ]
+  },
+  {
+    "id": "gbs-633",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Fr-1400-A",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10535",
+        "date": "2026-10-30",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "01.13.007",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/633/10535"
+      },
+      {
+        "id": "gbs-session-10536",
+        "date": "2026-11-06",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "01.13.007",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/633/10536"
+      },
+      {
+        "id": "gbs-session-10537",
+        "date": "2026-11-13",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "01.13.007",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/633/10537"
+      },
+      {
+        "id": "gbs-session-10538",
+        "date": "2026-11-20",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "01.13.007",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/633/10538"
+      },
+      {
+        "id": "gbs-session-10539",
+        "date": "2026-11-27",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "01.13.007",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/633/10539"
+      },
+      {
+        "id": "gbs-session-10540",
+        "date": "2026-12-04",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "01.13.007",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/633/10540"
+      },
+      {
+        "id": "gbs-session-10541",
+        "date": "2026-12-11",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "01.13.007",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/633/10541"
+      },
+      {
+        "id": "gbs-session-10542",
+        "date": "2026-12-18",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "01.13.007",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/633/10542"
+      },
+      {
+        "id": "gbs-session-10543",
+        "date": "2026-12-25",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "01.13.007",
+        "tutor": "Tobias Vale",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/633/10543"
+      },
+      {
+        "id": "gbs-session-10544",
+        "date": "2027-01-01",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "01.13.007",
+        "tutor": "Tobias Vale",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/633/10544"
+      },
+      {
+        "id": "gbs-session-10545",
+        "date": "2027-01-08",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "01.13.007",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/633/10545"
+      },
+      {
+        "id": "gbs-session-10546",
+        "date": "2027-01-15",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "01.13.007",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/633/10546"
+      },
+      {
+        "id": "gbs-session-10547",
+        "date": "2027-01-22",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "01.13.007",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/633/10547"
+      },
+      {
+        "id": "gbs-session-10548",
+        "date": "2027-01-29",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "01.13.007",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/633/10548"
+      },
+      {
+        "id": "gbs-session-10549",
+        "date": "2027-02-05",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "01.13.007",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/633/10549"
+      }
+    ]
+  },
+  {
+    "id": "gbs-634",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Do-1400-B",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10551",
+        "date": "2026-10-29",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/634/10551"
+      },
+      {
+        "id": "gbs-session-10552",
+        "date": "2026-11-05",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/634/10552"
+      },
+      {
+        "id": "gbs-session-10553",
+        "date": "2026-11-12",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/634/10553"
+      },
+      {
+        "id": "gbs-session-10554",
+        "date": "2026-11-19",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/634/10554"
+      },
+      {
+        "id": "gbs-session-10555",
+        "date": "2026-11-26",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/634/10555"
+      },
+      {
+        "id": "gbs-session-10556",
+        "date": "2026-12-03",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/634/10556"
+      },
+      {
+        "id": "gbs-session-10557",
+        "date": "2026-12-10",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/634/10557"
+      },
+      {
+        "id": "gbs-session-10558",
+        "date": "2026-12-17",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/634/10558"
+      },
+      {
+        "id": "gbs-session-10559",
+        "date": "2026-12-24",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/634/10559"
+      },
+      {
+        "id": "gbs-session-10560",
+        "date": "2026-12-31",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/634/10560"
+      },
+      {
+        "id": "gbs-session-10561",
+        "date": "2027-01-07",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/634/10561"
+      },
+      {
+        "id": "gbs-session-10562",
+        "date": "2027-01-14",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/634/10562"
+      },
+      {
+        "id": "gbs-session-10563",
+        "date": "2027-01-21",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/634/10563"
+      },
+      {
+        "id": "gbs-session-10564",
+        "date": "2027-01-28",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/634/10564"
+      },
+      {
+        "id": "gbs-session-10565",
+        "date": "2027-02-04",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/634/10565"
+      }
+    ]
+  },
+  {
+    "id": "gbs-632",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Mo-1600-A",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10519",
+        "date": "2026-10-26",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.07.023",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/632/10519"
+      },
+      {
+        "id": "gbs-session-10520",
+        "date": "2026-11-02",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.07.023",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/632/10520"
+      },
+      {
+        "id": "gbs-session-10521",
+        "date": "2026-11-09",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.07.023",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/632/10521"
+      },
+      {
+        "id": "gbs-session-10522",
+        "date": "2026-11-16",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.07.023",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/632/10522"
+      },
+      {
+        "id": "gbs-session-10523",
+        "date": "2026-11-23",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.07.023",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/632/10523"
+      },
+      {
+        "id": "gbs-session-10524",
+        "date": "2026-11-30",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.07.023",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/632/10524"
+      },
+      {
+        "id": "gbs-session-10525",
+        "date": "2026-12-07",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.07.023",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/632/10525"
+      },
+      {
+        "id": "gbs-session-10526",
+        "date": "2026-12-14",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.07.023",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/632/10526"
+      },
+      {
+        "id": "gbs-session-10527",
+        "date": "2026-12-21",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.07.023",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/632/10527"
+      },
+      {
+        "id": "gbs-session-10528",
+        "date": "2026-12-28",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.07.023",
+        "tutor": "Tobias Vale",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/632/10528"
+      },
+      {
+        "id": "gbs-session-10529",
+        "date": "2027-01-04",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.07.023",
+        "tutor": "Tobias Vale",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/632/10529"
+      },
+      {
+        "id": "gbs-session-10530",
+        "date": "2027-01-11",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.07.023",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/632/10530"
+      },
+      {
+        "id": "gbs-session-10531",
+        "date": "2027-01-18",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.07.023",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/632/10531"
+      },
+      {
+        "id": "gbs-session-10532",
+        "date": "2027-01-25",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.07.023",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/632/10532"
+      },
+      {
+        "id": "gbs-session-10533",
+        "date": "2027-02-01",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.07.023",
+        "tutor": "Tobias Vale",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/632/10533"
+      }
+    ]
+  },
+  {
+    "id": "gbs-635",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Fr-1200-A",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10567",
+        "date": "2026-10-30",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/635/10567"
+      },
+      {
+        "id": "gbs-session-10568",
+        "date": "2026-11-06",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/635/10568"
+      },
+      {
+        "id": "gbs-session-10569",
+        "date": "2026-11-13",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/635/10569"
+      },
+      {
+        "id": "gbs-session-10570",
+        "date": "2026-11-20",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/635/10570"
+      },
+      {
+        "id": "gbs-session-10571",
+        "date": "2026-11-27",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/635/10571"
+      },
+      {
+        "id": "gbs-session-10572",
+        "date": "2026-12-04",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/635/10572"
+      },
+      {
+        "id": "gbs-session-10573",
+        "date": "2026-12-11",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/635/10573"
+      },
+      {
+        "id": "gbs-session-10574",
+        "date": "2026-12-18",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/635/10574"
+      },
+      {
+        "id": "gbs-session-10575",
+        "date": "2026-12-25",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/635/10575"
+      },
+      {
+        "id": "gbs-session-10576",
+        "date": "2027-01-01",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/635/10576"
+      },
+      {
+        "id": "gbs-session-10577",
+        "date": "2027-01-08",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/635/10577"
+      },
+      {
+        "id": "gbs-session-10578",
+        "date": "2027-01-15",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/635/10578"
+      },
+      {
+        "id": "gbs-session-10579",
+        "date": "2027-01-22",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/635/10579"
+      },
+      {
+        "id": "gbs-session-10580",
+        "date": "2027-01-29",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/635/10580"
+      },
+      {
+        "id": "gbs-session-10581",
+        "date": "2027-02-05",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Henry Jakob Meyran",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/635/10581"
+      }
+    ]
+  },
+  {
+    "id": "gbs-636",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Di-1400-A",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10583",
+        "date": "2026-10-27",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/636/10583"
+      },
+      {
+        "id": "gbs-session-10584",
+        "date": "2026-11-03",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/636/10584"
+      },
+      {
+        "id": "gbs-session-10585",
+        "date": "2026-11-10",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/636/10585"
+      },
+      {
+        "id": "gbs-session-10586",
+        "date": "2026-11-17",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/636/10586"
+      },
+      {
+        "id": "gbs-session-10587",
+        "date": "2026-11-24",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/636/10587"
+      },
+      {
+        "id": "gbs-session-10588",
+        "date": "2026-12-01",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/636/10588"
+      },
+      {
+        "id": "gbs-session-10589",
+        "date": "2026-12-08",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/636/10589"
+      },
+      {
+        "id": "gbs-session-10590",
+        "date": "2026-12-15",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/636/10590"
+      },
+      {
+        "id": "gbs-session-10591",
+        "date": "2026-12-22",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/636/10591"
+      },
+      {
+        "id": "gbs-session-10592",
+        "date": "2026-12-29",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Myroslav Lenkevych",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/636/10592"
+      },
+      {
+        "id": "gbs-session-10593",
+        "date": "2027-01-05",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Myroslav Lenkevych",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/636/10593"
+      },
+      {
+        "id": "gbs-session-10594",
+        "date": "2027-01-12",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/636/10594"
+      },
+      {
+        "id": "gbs-session-10595",
+        "date": "2027-01-19",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/636/10595"
+      },
+      {
+        "id": "gbs-session-10596",
+        "date": "2027-01-26",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/636/10596"
+      },
+      {
+        "id": "gbs-session-10597",
+        "date": "2027-02-02",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/636/10597"
+      }
+    ]
+  },
+  {
+    "id": "gbs-637",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Do-1400-A",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10599",
+        "date": "2026-10-29",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.036",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/637/10599"
+      },
+      {
+        "id": "gbs-session-10600",
+        "date": "2026-11-05",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.036",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/637/10600"
+      },
+      {
+        "id": "gbs-session-10601",
+        "date": "2026-11-12",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.036",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/637/10601"
+      },
+      {
+        "id": "gbs-session-10602",
+        "date": "2026-11-19",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.036",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/637/10602"
+      },
+      {
+        "id": "gbs-session-10603",
+        "date": "2026-11-26",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.036",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/637/10603"
+      },
+      {
+        "id": "gbs-session-10604",
+        "date": "2026-12-03",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.036",
+        "tutor": "Myroslav Lenkevych",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/637/10604"
+      },
+      {
+        "id": "gbs-session-10605",
+        "date": "2026-12-10",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.036",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/637/10605"
+      },
+      {
+        "id": "gbs-session-10606",
+        "date": "2026-12-17",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.036",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/637/10606"
+      },
+      {
+        "id": "gbs-session-10607",
+        "date": "2026-12-24",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.036",
+        "tutor": "Myroslav Lenkevych",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/637/10607"
+      },
+      {
+        "id": "gbs-session-10608",
+        "date": "2026-12-31",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.036",
+        "tutor": "Myroslav Lenkevych",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/637/10608"
+      },
+      {
+        "id": "gbs-session-10609",
+        "date": "2027-01-07",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.036",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/637/10609"
+      },
+      {
+        "id": "gbs-session-10610",
+        "date": "2027-01-14",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.036",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/637/10610"
+      },
+      {
+        "id": "gbs-session-10611",
+        "date": "2027-01-21",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.036",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/637/10611"
+      },
+      {
+        "id": "gbs-session-10612",
+        "date": "2027-01-28",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.036",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/637/10612"
+      },
+      {
+        "id": "gbs-session-10613",
+        "date": "2027-02-04",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.13.036",
+        "tutor": "Myroslav Lenkevych",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/637/10613"
+      }
+    ]
+  },
+  {
+    "id": "gbs-639",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Do-1400-C",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10631",
+        "date": "2026-10-29",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/639/10631"
+      },
+      {
+        "id": "gbs-session-10632",
+        "date": "2026-11-05",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/639/10632"
+      },
+      {
+        "id": "gbs-session-10633",
+        "date": "2026-11-12",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/639/10633"
+      },
+      {
+        "id": "gbs-session-10634",
+        "date": "2026-11-19",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/639/10634"
+      },
+      {
+        "id": "gbs-session-10635",
+        "date": "2026-11-26",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/639/10635"
+      },
+      {
+        "id": "gbs-session-10636",
+        "date": "2026-12-03",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Sandra Jevtic",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/639/10636"
+      },
+      {
+        "id": "gbs-session-10637",
+        "date": "2026-12-10",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/639/10637"
+      },
+      {
+        "id": "gbs-session-10638",
+        "date": "2026-12-17",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/639/10638"
+      },
+      {
+        "id": "gbs-session-10639",
+        "date": "2026-12-24",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Sandra Jevtic",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/639/10639"
+      },
+      {
+        "id": "gbs-session-10640",
+        "date": "2026-12-31",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Sandra Jevtic",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/639/10640"
+      },
+      {
+        "id": "gbs-session-10641",
+        "date": "2027-01-07",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/639/10641"
+      },
+      {
+        "id": "gbs-session-10642",
+        "date": "2027-01-14",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/639/10642"
+      },
+      {
+        "id": "gbs-session-10643",
+        "date": "2027-01-21",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/639/10643"
+      },
+      {
+        "id": "gbs-session-10644",
+        "date": "2027-01-28",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/639/10644"
+      },
+      {
+        "id": "gbs-session-10645",
+        "date": "2027-02-04",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/639/10645"
+      }
+    ]
+  },
+  {
+    "id": "gbs-638",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Di-1400-B",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10615",
+        "date": "2026-10-27",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.055",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/638/10615"
+      },
+      {
+        "id": "gbs-session-10616",
+        "date": "2026-11-03",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.055",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/638/10616"
+      },
+      {
+        "id": "gbs-session-10617",
+        "date": "2026-11-10",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.055",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/638/10617"
+      },
+      {
+        "id": "gbs-session-10618",
+        "date": "2026-11-17",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.055",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/638/10618"
+      },
+      {
+        "id": "gbs-session-10619",
+        "date": "2026-11-24",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.055",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/638/10619"
+      },
+      {
+        "id": "gbs-session-10620",
+        "date": "2026-12-01",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.055",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/638/10620"
+      },
+      {
+        "id": "gbs-session-10621",
+        "date": "2026-12-08",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.055",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/638/10621"
+      },
+      {
+        "id": "gbs-session-10622",
+        "date": "2026-12-15",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.055",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/638/10622"
+      },
+      {
+        "id": "gbs-session-10623",
+        "date": "2026-12-22",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.055",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/638/10623"
+      },
+      {
+        "id": "gbs-session-10624",
+        "date": "2026-12-29",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.055",
+        "tutor": "Sandra Jevtic",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/638/10624"
+      },
+      {
+        "id": "gbs-session-10625",
+        "date": "2027-01-05",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.055",
+        "tutor": "Sandra Jevtic",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/638/10625"
+      },
+      {
+        "id": "gbs-session-10626",
+        "date": "2027-01-12",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.055",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/638/10626"
+      },
+      {
+        "id": "gbs-session-10627",
+        "date": "2027-01-19",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.055",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/638/10627"
+      },
+      {
+        "id": "gbs-session-10628",
+        "date": "2027-01-26",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.055",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/638/10628"
+      },
+      {
+        "id": "gbs-session-10629",
+        "date": "2027-02-02",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.08.055",
+        "tutor": "Sandra Jevtic",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/638/10629"
+      }
+    ]
+  },
+  {
+    "id": "gbs-641",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Mi-1400-B",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10663",
+        "date": "2026-10-28",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/641/10663"
+      },
+      {
+        "id": "gbs-session-10664",
+        "date": "2026-11-04",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/641/10664"
+      },
+      {
+        "id": "gbs-session-10665",
+        "date": "2026-11-11",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/641/10665"
+      },
+      {
+        "id": "gbs-session-10666",
+        "date": "2026-11-18",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/641/10666"
+      },
+      {
+        "id": "gbs-session-10667",
+        "date": "2026-11-25",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/641/10667"
+      },
+      {
+        "id": "gbs-session-10668",
+        "date": "2026-12-02",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/641/10668"
+      },
+      {
+        "id": "gbs-session-10669",
+        "date": "2026-12-09",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/641/10669"
+      },
+      {
+        "id": "gbs-session-10670",
+        "date": "2026-12-16",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/641/10670"
+      },
+      {
+        "id": "gbs-session-10671",
+        "date": "2026-12-23",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/641/10671"
+      },
+      {
+        "id": "gbs-session-10672",
+        "date": "2026-12-30",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/641/10672"
+      },
+      {
+        "id": "gbs-session-10673",
+        "date": "2027-01-06",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/641/10673"
+      },
+      {
+        "id": "gbs-session-10674",
+        "date": "2027-01-13",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/641/10674"
+      },
+      {
+        "id": "gbs-session-10675",
+        "date": "2027-01-20",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/641/10675"
+      },
+      {
+        "id": "gbs-session-10676",
+        "date": "2027-01-27",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/641/10676"
+      },
+      {
+        "id": "gbs-session-10677",
+        "date": "2027-02-03",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/641/10677"
+      }
+    ]
+  },
+  {
+    "id": "gbs-642",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Di-1000-C",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10679",
+        "date": "2026-10-27",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/642/10679"
+      },
+      {
+        "id": "gbs-session-10680",
+        "date": "2026-11-03",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/642/10680"
+      },
+      {
+        "id": "gbs-session-10681",
+        "date": "2026-11-10",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "cancelled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/642/10681"
+      },
+      {
+        "id": "gbs-session-10682",
+        "date": "2026-11-17",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/642/10682"
+      },
+      {
+        "id": "gbs-session-10683",
+        "date": "2026-11-24",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/642/10683"
+      },
+      {
+        "id": "gbs-session-10684",
+        "date": "2026-12-01",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/642/10684"
+      },
+      {
+        "id": "gbs-session-10685",
+        "date": "2026-12-08",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/642/10685"
+      },
+      {
+        "id": "gbs-session-10686",
+        "date": "2026-12-15",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/642/10686"
+      },
+      {
+        "id": "gbs-session-10687",
+        "date": "2026-12-22",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/642/10687"
+      },
+      {
+        "id": "gbs-session-10688",
+        "date": "2026-12-29",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/642/10688"
+      },
+      {
+        "id": "gbs-session-10689",
+        "date": "2027-01-05",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/642/10689"
+      },
+      {
+        "id": "gbs-session-10690",
+        "date": "2027-01-12",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/642/10690"
+      },
+      {
+        "id": "gbs-session-10691",
+        "date": "2027-01-19",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/642/10691"
+      },
+      {
+        "id": "gbs-session-10692",
+        "date": "2027-01-26",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/642/10692"
+      },
+      {
+        "id": "gbs-session-10693",
+        "date": "2027-02-02",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/642/10693"
+      }
+    ]
+  },
+  {
+    "id": "gbs-643",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Do-1000-A",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10695",
+        "date": "2026-10-29",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/643/10695"
+      },
+      {
+        "id": "gbs-session-10696",
+        "date": "2026-11-05",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/643/10696"
+      },
+      {
+        "id": "gbs-session-10697",
+        "date": "2026-11-12",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/643/10697"
+      },
+      {
+        "id": "gbs-session-10698",
+        "date": "2026-11-19",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/643/10698"
+      },
+      {
+        "id": "gbs-session-10699",
+        "date": "2026-11-26",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/643/10699"
+      },
+      {
+        "id": "gbs-session-10700",
+        "date": "2026-12-03",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/643/10700"
+      },
+      {
+        "id": "gbs-session-10701",
+        "date": "2026-12-10",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/643/10701"
+      },
+      {
+        "id": "gbs-session-10702",
+        "date": "2026-12-17",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/643/10702"
+      },
+      {
+        "id": "gbs-session-10703",
+        "date": "2026-12-24",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/643/10703"
+      },
+      {
+        "id": "gbs-session-10704",
+        "date": "2026-12-31",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/643/10704"
+      },
+      {
+        "id": "gbs-session-10705",
+        "date": "2027-01-07",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/643/10705"
+      },
+      {
+        "id": "gbs-session-10706",
+        "date": "2027-01-14",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/643/10706"
+      },
+      {
+        "id": "gbs-session-10707",
+        "date": "2027-01-21",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/643/10707"
+      },
+      {
+        "id": "gbs-session-10708",
+        "date": "2027-01-28",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/643/10708"
+      },
+      {
+        "id": "gbs-session-10709",
+        "date": "2027-02-04",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.13.036",
+        "tutor": "Conrad Laurenz Fischer",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/643/10709"
+      }
+    ]
+  },
+  {
+    "id": "gbs-644",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Di-1200-E",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10711",
+        "date": "2026-10-27",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.009A",
+        "tutor": "Leon Friedrich Stark",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/644/10711"
+      },
+      {
+        "id": "gbs-session-10712",
+        "date": "2026-11-03",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.009A",
+        "tutor": "Leon Friedrich Stark",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/644/10712"
+      },
+      {
+        "id": "gbs-session-10713",
+        "date": "2026-11-10",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.009A",
+        "tutor": "Leon Friedrich Stark",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/644/10713"
+      },
+      {
+        "id": "gbs-session-10714",
+        "date": "2026-11-17",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.009A",
+        "tutor": "Leon Friedrich Stark",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/644/10714"
+      },
+      {
+        "id": "gbs-session-10715",
+        "date": "2026-11-24",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.009A",
+        "tutor": "Leon Friedrich Stark",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/644/10715"
+      },
+      {
+        "id": "gbs-session-10716",
+        "date": "2026-12-01",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.009A",
+        "tutor": "Leon Friedrich Stark",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/644/10716"
+      },
+      {
+        "id": "gbs-session-10717",
+        "date": "2026-12-08",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.009A",
+        "tutor": "Leon Friedrich Stark",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/644/10717"
+      },
+      {
+        "id": "gbs-session-10718",
+        "date": "2026-12-15",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.009A",
+        "tutor": "Leon Friedrich Stark",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/644/10718"
+      },
+      {
+        "id": "gbs-session-10719",
+        "date": "2026-12-22",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.009A",
+        "tutor": "Leon Friedrich Stark",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/644/10719"
+      },
+      {
+        "id": "gbs-session-10720",
+        "date": "2026-12-29",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.009A",
+        "tutor": "Leon Friedrich Stark",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/644/10720"
+      },
+      {
+        "id": "gbs-session-10721",
+        "date": "2027-01-05",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.009A",
+        "tutor": "Leon Friedrich Stark",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/644/10721"
+      },
+      {
+        "id": "gbs-session-10722",
+        "date": "2027-01-12",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.009A",
+        "tutor": "Leon Friedrich Stark",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/644/10722"
+      },
+      {
+        "id": "gbs-session-10723",
+        "date": "2027-01-19",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.009A",
+        "tutor": "Leon Friedrich Stark",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/644/10723"
+      },
+      {
+        "id": "gbs-session-10724",
+        "date": "2027-01-26",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.009A",
+        "tutor": "Leon Friedrich Stark",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/644/10724"
+      },
+      {
+        "id": "gbs-session-10725",
+        "date": "2027-02-02",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.13.009A",
+        "tutor": "Leon Friedrich Stark",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/644/10725"
+      }
+    ]
+  },
+  {
+    "id": "gbs-640",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Di-1200-B",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10647",
+        "date": "2026-10-27",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/640/10647"
+      },
+      {
+        "id": "gbs-session-10648",
+        "date": "2026-11-03",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/640/10648"
+      },
+      {
+        "id": "gbs-session-10649",
+        "date": "2026-11-10",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/640/10649"
+      },
+      {
+        "id": "gbs-session-10650",
+        "date": "2026-11-17",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/640/10650"
+      },
+      {
+        "id": "gbs-session-10651",
+        "date": "2026-11-24",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/640/10651"
+      },
+      {
+        "id": "gbs-session-10652",
+        "date": "2026-12-01",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/640/10652"
+      },
+      {
+        "id": "gbs-session-10653",
+        "date": "2026-12-08",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/640/10653"
+      },
+      {
+        "id": "gbs-session-10654",
+        "date": "2026-12-15",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/640/10654"
+      },
+      {
+        "id": "gbs-session-10655",
+        "date": "2026-12-22",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/640/10655"
+      },
+      {
+        "id": "gbs-session-10656",
+        "date": "2026-12-29",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/640/10656"
+      },
+      {
+        "id": "gbs-session-10657",
+        "date": "2027-01-05",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/640/10657"
+      },
+      {
+        "id": "gbs-session-10658",
+        "date": "2027-01-12",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/640/10658"
+      },
+      {
+        "id": "gbs-session-10659",
+        "date": "2027-01-19",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/640/10659"
+      },
+      {
+        "id": "gbs-session-10660",
+        "date": "2027-01-26",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/640/10660"
+      },
+      {
+        "id": "gbs-session-10661",
+        "date": "2027-02-02",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.11.038",
+        "tutor": "Merle Wilmink",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/640/10661"
+      }
+    ]
+  },
+  {
+    "id": "gbs-645",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Di-1200-C",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10727",
+        "date": "2026-10-27",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "01.07.023",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/645/10727"
+      },
+      {
+        "id": "gbs-session-10728",
+        "date": "2026-11-03",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "01.07.023",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/645/10728"
+      },
+      {
+        "id": "gbs-session-10729",
+        "date": "2026-11-10",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "01.07.023",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/645/10729"
+      },
+      {
+        "id": "gbs-session-10730",
+        "date": "2026-11-17",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "01.07.023",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/645/10730"
+      },
+      {
+        "id": "gbs-session-10731",
+        "date": "2026-11-24",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "01.07.023",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/645/10731"
+      },
+      {
+        "id": "gbs-session-10732",
+        "date": "2026-12-01",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "01.07.023",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/645/10732"
+      },
+      {
+        "id": "gbs-session-10733",
+        "date": "2026-12-08",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "01.07.023",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/645/10733"
+      },
+      {
+        "id": "gbs-session-10734",
+        "date": "2026-12-15",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "01.07.023",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/645/10734"
+      },
+      {
+        "id": "gbs-session-10735",
+        "date": "2026-12-22",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "01.07.023",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/645/10735"
+      },
+      {
+        "id": "gbs-session-10736",
+        "date": "2026-12-29",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "01.07.023",
+        "tutor": "Nicolas Haunschild",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/645/10736"
+      },
+      {
+        "id": "gbs-session-10737",
+        "date": "2027-01-05",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "01.07.023",
+        "tutor": "Nicolas Haunschild",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/645/10737"
+      },
+      {
+        "id": "gbs-session-10738",
+        "date": "2027-01-12",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "01.07.023",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/645/10738"
+      },
+      {
+        "id": "gbs-session-10739",
+        "date": "2027-01-19",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "01.07.023",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/645/10739"
+      },
+      {
+        "id": "gbs-session-10740",
+        "date": "2027-01-26",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "01.07.023",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/645/10740"
+      },
+      {
+        "id": "gbs-session-10741",
+        "date": "2027-02-02",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "01.07.023",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/645/10741"
+      }
+    ]
+  },
+  {
+    "id": "gbs-646",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Do-1200-C",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10743",
+        "date": "2026-10-29",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/646/10743"
+      },
+      {
+        "id": "gbs-session-10744",
+        "date": "2026-11-05",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/646/10744"
+      },
+      {
+        "id": "gbs-session-10745",
+        "date": "2026-11-12",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/646/10745"
+      },
+      {
+        "id": "gbs-session-10746",
+        "date": "2026-11-19",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/646/10746"
+      },
+      {
+        "id": "gbs-session-10747",
+        "date": "2026-11-26",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/646/10747"
+      },
+      {
+        "id": "gbs-session-10748",
+        "date": "2026-12-03",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Nicolas Haunschild",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/646/10748"
+      },
+      {
+        "id": "gbs-session-10749",
+        "date": "2026-12-10",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/646/10749"
+      },
+      {
+        "id": "gbs-session-10750",
+        "date": "2026-12-17",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/646/10750"
+      },
+      {
+        "id": "gbs-session-10751",
+        "date": "2026-12-24",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Nicolas Haunschild",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/646/10751"
+      },
+      {
+        "id": "gbs-session-10752",
+        "date": "2026-12-31",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Nicolas Haunschild",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/646/10752"
+      },
+      {
+        "id": "gbs-session-10753",
+        "date": "2027-01-07",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/646/10753"
+      },
+      {
+        "id": "gbs-session-10754",
+        "date": "2027-01-14",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/646/10754"
+      },
+      {
+        "id": "gbs-session-10755",
+        "date": "2027-01-21",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/646/10755"
+      },
+      {
+        "id": "gbs-session-10756",
+        "date": "2027-01-28",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/646/10756"
+      },
+      {
+        "id": "gbs-session-10757",
+        "date": "2027-02-04",
+        "start": "12:00",
+        "end": "14:00",
+        "room": "00.08.053",
+        "tutor": "Nicolas Haunschild",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/646/10757"
+      }
+    ]
+  },
+  {
+    "id": "gbs-647",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Mo-1600-E",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10759",
+        "date": "2026-10-26",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.13.007",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/647/10759"
+      },
+      {
+        "id": "gbs-session-10760",
+        "date": "2026-11-02",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.13.007",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/647/10760"
+      },
+      {
+        "id": "gbs-session-10761",
+        "date": "2026-11-09",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.13.007",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/647/10761"
+      },
+      {
+        "id": "gbs-session-10762",
+        "date": "2026-11-16",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.13.007",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/647/10762"
+      },
+      {
+        "id": "gbs-session-10763",
+        "date": "2026-11-23",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.13.007",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/647/10763"
+      },
+      {
+        "id": "gbs-session-10764",
+        "date": "2026-11-30",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.13.007",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/647/10764"
+      },
+      {
+        "id": "gbs-session-10765",
+        "date": "2026-12-07",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.13.007",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/647/10765"
+      },
+      {
+        "id": "gbs-session-10766",
+        "date": "2026-12-14",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.13.007",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/647/10766"
+      },
+      {
+        "id": "gbs-session-10767",
+        "date": "2026-12-21",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.13.007",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/647/10767"
+      },
+      {
+        "id": "gbs-session-10768",
+        "date": "2026-12-28",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.13.007",
+        "tutor": "Isabella Tefera",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/647/10768"
+      },
+      {
+        "id": "gbs-session-10769",
+        "date": "2027-01-04",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.13.007",
+        "tutor": "Isabella Tefera",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/647/10769"
+      },
+      {
+        "id": "gbs-session-10770",
+        "date": "2027-01-11",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.13.007",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/647/10770"
+      },
+      {
+        "id": "gbs-session-10771",
+        "date": "2027-01-18",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.13.007",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/647/10771"
+      },
+      {
+        "id": "gbs-session-10772",
+        "date": "2027-01-25",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.13.007",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/647/10772"
+      },
+      {
+        "id": "gbs-session-10773",
+        "date": "2027-02-01",
+        "start": "16:00",
+        "end": "18:00",
+        "room": "01.13.007",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/647/10773"
+      }
+    ]
+  },
+  {
+    "id": "gbs-648",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Mi-1000-A",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10775",
+        "date": "2026-10-28",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Isabella Tefera",
+        "status": "cancelled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/648/10775"
+      },
+      {
+        "id": "gbs-session-10776",
+        "date": "2026-11-04",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/648/10776"
+      },
+      {
+        "id": "gbs-session-10777",
+        "date": "2026-11-11",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/648/10777"
+      },
+      {
+        "id": "gbs-session-10778",
+        "date": "2026-11-18",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/648/10778"
+      },
+      {
+        "id": "gbs-session-10779",
+        "date": "2026-11-25",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/648/10779"
+      },
+      {
+        "id": "gbs-session-10780",
+        "date": "2026-12-02",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/648/10780"
+      },
+      {
+        "id": "gbs-session-10781",
+        "date": "2026-12-09",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/648/10781"
+      },
+      {
+        "id": "gbs-session-10782",
+        "date": "2026-12-16",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/648/10782"
+      },
+      {
+        "id": "gbs-session-10783",
+        "date": "2026-12-23",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/648/10783"
+      },
+      {
+        "id": "gbs-session-10784",
+        "date": "2026-12-30",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Isabella Tefera",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/648/10784"
+      },
+      {
+        "id": "gbs-session-10785",
+        "date": "2027-01-06",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Isabella Tefera",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/648/10785"
+      },
+      {
+        "id": "gbs-session-10786",
+        "date": "2027-01-13",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/648/10786"
+      },
+      {
+        "id": "gbs-session-10787",
+        "date": "2027-01-20",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/648/10787"
+      },
+      {
+        "id": "gbs-session-10788",
+        "date": "2027-01-27",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/648/10788"
+      },
+      {
+        "id": "gbs-session-10789",
+        "date": "2027-02-03",
+        "start": "10:00",
+        "end": "12:00",
+        "room": "00.08.036",
+        "tutor": "Isabella Tefera",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/648/10789"
+      }
+    ]
+  },
+  {
+    "id": "gbs-649",
+    "course": "gbs",
+    "kind": "Tutorial",
+    "label": "Di-1400-J",
+    "source": "https://gbs.cm.in.tum.de/tutorials/",
+    "checkedAt": "2026-10-28T00:23:35.543999+00:00",
+    "note": "Published dated sessions. Room is the current tutorial room; check the source for later changes.",
+    "occurrences": [
+      {
+        "id": "gbs-session-10791",
+        "date": "2026-10-27",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "🖥️",
+        "tutor": "Martin Uhl",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/649/10791"
+      },
+      {
+        "id": "gbs-session-10792",
+        "date": "2026-11-03",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "🖥️",
+        "tutor": "Martin Uhl",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/649/10792"
+      },
+      {
+        "id": "gbs-session-10793",
+        "date": "2026-11-10",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "🖥️",
+        "tutor": "Martin Uhl",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/649/10793"
+      },
+      {
+        "id": "gbs-session-10794",
+        "date": "2026-11-17",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "🖥️",
+        "tutor": "Martin Uhl",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/649/10794"
+      },
+      {
+        "id": "gbs-session-10795",
+        "date": "2026-11-24",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "🖥️",
+        "tutor": "Martin Uhl",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/649/10795"
+      },
+      {
+        "id": "gbs-session-10796",
+        "date": "2026-12-01",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "🖥️",
+        "tutor": "Martin Uhl",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/649/10796"
+      },
+      {
+        "id": "gbs-session-10797",
+        "date": "2026-12-08",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "🖥️",
+        "tutor": "Martin Uhl",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/649/10797"
+      },
+      {
+        "id": "gbs-session-10798",
+        "date": "2026-12-15",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "🖥️",
+        "tutor": "Martin Uhl",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/649/10798"
+      },
+      {
+        "id": "gbs-session-10799",
+        "date": "2026-12-22",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "🖥️",
+        "tutor": "Martin Uhl",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/649/10799"
+      },
+      {
+        "id": "gbs-session-10800",
+        "date": "2026-12-29",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "🖥️",
+        "tutor": "Martin Uhl",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/649/10800"
+      },
+      {
+        "id": "gbs-session-10801",
+        "date": "2027-01-05",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "🖥️",
+        "tutor": "Martin Uhl",
+        "status": "source-conflict",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/649/10801"
+      },
+      {
+        "id": "gbs-session-10802",
+        "date": "2027-01-12",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "🖥️",
+        "tutor": "Martin Uhl",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/649/10802"
+      },
+      {
+        "id": "gbs-session-10803",
+        "date": "2027-01-19",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "🖥️",
+        "tutor": "Martin Uhl",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/649/10803"
+      },
+      {
+        "id": "gbs-session-10804",
+        "date": "2027-01-26",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "🖥️",
+        "tutor": "Martin Uhl",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/649/10804"
+      },
+      {
+        "id": "gbs-session-10805",
+        "date": "2027-02-02",
+        "start": "14:00",
+        "end": "16:00",
+        "room": "🖥️",
+        "tutor": "Martin Uhl",
+        "status": "scheduled",
+        "source": "https://gbs.cm.in.tum.de/tutorials/sessions/649/10805"
+      }
+    ]
+  }
+]
