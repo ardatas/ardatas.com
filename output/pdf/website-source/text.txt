@@ -1,0 +1,58 @@
+Arda Tas
+ardatas.com
+LinkedIn
+GitHub
+1 / 2
+arda@ardatas.com
+whoami
+I'm Arda, a Computer Science student at TUM and a student assistant at the Institute of Automation and Information Systems in Munich.
+I build AI-assisted workflows, full-stack applications, and visual tools for data processing. I am also interested in parallel programming and high-performance computing.
+<b>What to look for:</b> practical products, user control, reliable software, and clear interfaces.
+ls ~/projects.md
+larpyourresume
+Resume editing and PDF generation
+I built a resume workspace with form and LaTeX editing, customizable layouts, autosave, and PDF export. I also developed Sisyphus, its AI assistant for tailoring resume content.
+<b>Focus:</b> Full-stack product development and interface design.
+larpyourresume.com
+Werkio
+AI-assisted job application workflows
+I built a job platform and browser extension that use Gemini to map profile data to application forms and draft cover letters. Users review proposed changes and submit applications themselves.
+<b>Focus:</b> User control, validation, and end-to-end testing.
+getwerkio.com
+CHECK24 MCP App
+One endpoint for four mocked product services
+I built a TypeScript proxy that connects ChatGPT to hotel, flight, package-holiday, and insurance tools. It validates requests, withholds invalid tools, and shows errors and call traces in a dashboard.
+<b>Focus:</b> API integration and clear error handling. All product data is mocked.
+GitHub: ardatas/check24-chatgpt-app
+Arda Tas
+ardatas.com
+LinkedIn
+GitHub
+2 / 2
+arda@ardatas.com
+ls ~/projects.md
+Industrial data pipeline at TUM AIS
+Visual workflows for industrial time-series processing
+As a student assistant, I develop a Python desktop application for building and running data-processing workflows. It connects a visual editor to CSV import, signal processing, and HDF5 data storage.
+<b>Focus:</b> Making processing steps visible and configurable.
+Read project details
+Header
+Frontend overhaul for the startup joinheader
+I redesigned the frontend for joinheader, an agentic coding startup.
+<b>Focus:</b> Frontend development and visual design.
+Project and preview link (preview requires access)
+Julia Set Explorer
+Interactive fractals built with C and WebAssembly
+In this team project, I focused on SIMD profiling, correctness fixes, and performance experiments. The interactive version is available on my website.
+<b>Focus:</b> performance optimization backed by correctness checks.
+Try the explorer
+GitHub repository
+cat ~/skills.md
+<b>Product engineering</b> &nbsp; React, Next.js, TypeScript, Java, Spring Boot, PostgreSQL
+<b>AI workflows and testing</b> &nbsp; Gemini, MCP, structured outputs, Playwright
+<b>Scientific computing</b> &nbsp; Python, NumPy, SciPy, PySide6, HDF5, C, SIMD
+cat ~/links.md
+Website
+GitHub
+LinkedIn
+arda@ardatas.com
