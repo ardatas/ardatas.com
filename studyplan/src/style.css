@@ -102,31 +102,49 @@
  .month-cell .event-card strong{font-size:10px;overflow-wrap:anywhere}
  .month-cell .more{font-size:10px;overflow-wrap:anywhere}
 }
+/* Keep navigation and view controls together without squeezing their labels. */
+.mobile-course-name{display:none}
+.calendar-toolbar{flex-wrap:wrap}
+.date-controls{min-width:0;flex:1;justify-content:space-between}
+.date-nav{flex-shrink:0}
+.calendar-view-controls{display:flex;align-items:center;gap:8px;min-width:0}
+.today-button{flex-shrink:0;min-height:41px}
 @media(max-width:700px){
- .site-header{padding:8px 10px;flex-wrap:nowrap;align-items:center;gap:6px}
+ .site-header{padding:8px 10px;flex-wrap:nowrap;align-items:center;gap:8px}
  .identity{gap:6px;flex:1}.identity>svg{display:none}
  .identity h1{font-size:13px;line-height:1.35}.identity p{font-size:9px;line-height:1.3}
- .main-actions{width:auto;margin:0;gap:4px}
- .main-actions button{min-width:40px;min-height:44px;padding:8px}
+ .main-actions{width:auto;margin:0;gap:6px}
+ .main-actions button{min-width:44px;min-height:44px;padding:8px;line-height:1.2}
  .main-actions button>span{display:none}
- main{padding:6px 4px 0;gap:5px}
- .filter-bar{gap:4px;grid-template-columns:minmax(0,1fr) 100px 44px}
- .mode-switch{padding:2px;gap:2px}
- .mode-switch button{min-height:40px;padding:6px;font-size:12px}
- .course-select{min-height:40px;padding:6px 9px;font-size:16px}
- .filter-bar>select:not(.course-select){width:100px;font-size:16px;min-height:44px;padding:4px}
- .search input{padding:8px 0}.search{padding:0 7px}
- .slots-toggle,.range-button{min-height:44px}
- .course-legend{grid-template-columns:repeat(5,minmax(0,1fr));gap:3px}
- .course-legend button{min-height:36px;font-size:9px;padding:4px 2px;gap:3px}
- .course-count{font-size:9px}
+ main{padding:6px 6px 0;gap:6px}
+ .filter-bar{gap:6px;grid-template-columns:minmax(0,1fr) minmax(0,1fr) 44px}
+ .mode-switch{grid-column:1/3;grid-row:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding:2px;gap:2px;min-width:0}
+ .mode-switch button{min-width:0;min-height:44px;padding:6px 3px;font-size:12px;line-height:1.2;gap:4px}
+ .range-button{grid-column:3;grid-row:1;min-height:50px;width:44px;padding:0}
+ .filter-bar select{appearance:none;-webkit-appearance:none;height:44px;min-height:44px;line-height:normal;padding:0 28px 0 10px;font-size:16px;border-radius:6px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23a7b9d2' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center}
+ .course-select{grid-column:1/3;grid-row:2;width:100%}
+ .slots-toggle{grid-column:3;grid-row:2;width:44px;min-height:44px;padding:0}
+ .search{grid-column:1;grid-row:3;min-width:0;height:44px;padding:0 8px;gap:5px}
+ .search input{height:42px;padding:0;font-size:16px;min-width:0}
+ .search button{min-width:24px;min-height:40px}
+ .filter-bar>select:not(.course-select){grid-column:2/4;grid-row:3;width:100%;height:44px;padding:0 28px 0 10px;font-size:16px}
+ .course-legend{grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}
+ .course-legend button{min-width:0;min-height:44px;font-size:11px;padding:4px 2px;gap:3px;line-height:1.2}
+ .course-legend .course-name{display:none}.mobile-course-name{display:inline}
+ .course-count{font-size:10px}.course-dot{width:4px;height:4px}
  .calendar-panel{padding:0;border-radius:8px}
- .calendar-toolbar{padding:5px;gap:4px}
- .date-nav button{min-height:40px;min-width:36px}
- .calendar-toolbar h2{font-size:12px}
- .view-switch button{min-height:40px;font-size:11px}
+ .calendar-toolbar{padding:6px;gap:6px}
+ .date-controls{width:100%;flex:auto;gap:6px}
+ .date-nav{gap:4px}
+ .date-nav button{height:44px;min-height:44px;width:44px;padding:0}
+ .calendar-toolbar h2{font-size:13px;text-align:left;line-height:1.3;white-space:normal}
+ .calendar-view-controls{display:grid;grid-template-columns:56px minmax(0,1fr);width:100%;gap:6px}
+ .today-button{height:50px;min-height:44px;padding:0 6px;font-size:12px;line-height:1.2}
+ .view-switch{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:100%;min-width:0;padding:2px;gap:2px}
+ .view-switch button{min-width:0;height:44px;min-height:44px;padding:0 2px;font-size:12px;line-height:1.2;gap:0}
+ .view-switch svg{display:none}
  .time-scroll{border-left:0;border-right:0;border-radius:0}
- .selection-key{padding:0 5px 4px;font-size:9px}
+ .selection-key{padding:0 6px 4px;font-size:10px}
  .calendar-empty{padding:6px;font-size:11px}
  footer{padding:2px 8px max(2px,env(safe-area-inset-bottom));min-height:26px}
 }

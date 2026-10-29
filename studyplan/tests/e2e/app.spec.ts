@@ -154,3 +154,27 @@ test('selected tutorials stay as translucent context across filters without cove
  await page.getByRole('combobox',{name:'Courses',exact:true}).selectOption('its');await expect(saved).toHaveCount(1);
  await page.getByRole('button',{name:/My plan/}).click();await expect(saved).not.toHaveClass(/selected-context/);await expect(page.locator('.event-card')).toHaveCount(1);
 });
+
+test('mobile controls keep Today beside the views and provide full touch targets',async({page},info)=>{
+ for(const width of [320,390,430,768]){
+  await page.setViewportSize({width,height:844});
+  const today=page.getByRole('button',{name:'Today',exact:true});
+  const month=page.getByRole('button',{name:'Month',exact:true});
+  const a=(await today.boundingBox())!,b=(await month.boundingBox())!;
+  expect(a.x+a.width).toBeLessThanOrEqual(b.x);
+  expect(Math.abs(a.y+a.height/2-b.y-b.height/2)).toBeLessThan(1);
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(width);
+  if(width<=700){
+   for(const button of await page.locator('.main-actions button,.mode-switch button,.course-legend button,.calendar-toolbar button,.range-button,.slots-toggle').all()){
+    const box=(await button.boundingBox())!;expect(box.width).toBeGreaterThanOrEqual(44);expect(box.height).toBeGreaterThanOrEqual(44);expect(box.x+box.width).toBeLessThanOrEqual(width);
+    expect(await button.evaluate(e=>e.scrollWidth<=e.clientWidth)).toBe(true);
+   }
+   const select=page.getByRole('combobox',{name:'Session type'});await select.selectOption('Help session');
+   expect(await select.evaluate(e=>{const el=e as HTMLSelectElement,s=getComputedStyle(el),ctx=document.createElement('canvas').getContext('2d')!;ctx.font=`${s.fontSize} ${s.fontFamily}`;return ctx.measureText(el.selectedOptions[0].text).width+parseFloat(s.paddingLeft)+parseFloat(s.paddingRight)<=el.clientWidth;})).toBe(true);
+   await select.selectOption('all');
+  }
+  await page.getByRole('button',{name:'Next period'}).click();await today.click();
+  await expect(page.getByRole('heading',{name:'2 Nov – 8 Nov 2026',exact:true})).toBeVisible();
+  if(width===320||width===390)await page.screenshot({path:`artifacts/${info.project.name}-controls-${width}.png`});
+ }
+});

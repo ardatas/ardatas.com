@@ -28,7 +28,17 @@ export function EventManager({events,browsing=false,today,now,onEventClick,initi
  const monthStart=monday(date.slice(0,7)+'-01');
  const gridDays=dateList.map(d=>({date:d,groups:groupOverlapping(events.filter(e=>e.date===d))}));
  return <><section className="calendar-panel" aria-label="Study timetable">
- <div className="calendar-toolbar"><div className="date-controls"><div className="date-nav"><button aria-label="Previous period" onClick={()=>navigate(-1)}><ChevronLeft size={18}/></button><button onClick={()=>setDate(today)}>Today</button><button aria-label="Next period" onClick={()=>navigate(1)}><ChevronRight size={18}/></button></div><h2>{title}</h2></div><div className="view-switch" aria-label="Calendar view">{([['month',CalendarDays],['week',Rows3],['day',Clock3],['list',List]] as const).map(([v,Icon])=><button key={v} aria-pressed={view===v} onClick={()=>setView(v)}><Icon size={15}/>{v[0].toUpperCase()+v.slice(1)}</button>)}</div><span className="timezone">Europe/Berlin</span></div>
+ <div className="calendar-toolbar">
+  <div className="date-controls">
+   <h2>{title}</h2>
+   <div className="date-nav"><button aria-label="Previous period" onClick={()=>navigate(-1)}><ChevronLeft size={18}/></button><button aria-label="Next period" onClick={()=>navigate(1)}><ChevronRight size={18}/></button></div>
+  </div>
+  <div className="calendar-view-controls">
+   <button className="today-button" onClick={()=>setDate(today)}>Today</button>
+   <div className="view-switch" role="group" aria-label="Calendar view">{([['month',CalendarDays],['week',Rows3],['day',Clock3],['list',List]] as const).map(([v,Icon])=><button key={v} aria-pressed={view===v} onClick={()=>setView(v)}><Icon size={15}/>{v[0].toUpperCase()+v.slice(1)}</button>)}</div>
+  </div>
+  <span className="timezone">Europe/Berlin</span>
+ </div>
  {browsing&&events.some(e=>e.context)&&<div className="selection-key"><span><i aria-hidden="true">✓</i> Shaded = in my plan</span><span><b aria-hidden="true">!</b> Overlaps my plan · tap for details</span></div>}
  {within.length===0&&view!=='month'&&<div className="calendar-empty">No sessions in this period. Choose a course, add a slot, or move to another week.</div>}
  {(view==='week'||view==='day')&&<><p className={`week-scroll-hint ${view==='week'?'visible':''}`}>Tap a date or a crowded slot to see the full day</p><div className={`time-scroll ${view==='week'?'week-scroll':''}`} tabIndex={0} aria-label="Full-day timetable, 07:00 to 20:00"><div className="time-grid" style={{gridTemplateColumns:`var(--time-gutter, 52px) repeat(${dateList.length},minmax(0,1fr))`}}>
