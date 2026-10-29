@@ -1,0 +1,60 @@
+/* The controls scroll independently so the timetable keeps the full viewport. */
+.planner-workspace { display: flex; flex: 1; min-height: 0; }
+.planner-workspace > main { min-width: 0; padding: 14px 16px 0; }
+.planner-sidebar { display: flex; flex-direction: column; gap: 18px; width: 260px; flex-shrink: 0; padding: 22px 16px 16px; overflow: hidden; background: #0c1e32; border-right: 1px solid var(--line); }
+.sidebar-scroll-content { display: flex; flex: 1; min-height: 0; flex-direction: column; gap: 16px; overflow-y: auto; scrollbar-width: thin; padding: 3px; margin: -3px; }
+.sidebar-section-title { display: flex; align-items: center; justify-content: space-between; margin: 0 8px 10px; color: var(--muted); font-size: 11px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; }
+.sidebar-section-title > span { font-size: 9px; letter-spacing: 0; text-transform: none; font-weight: 400; }
+.sidebar-nav-row { display: flex; align-items: center; position: relative; border-radius: 7px; margin: 3px 0; }
+.sidebar-nav-row[data-dragging=true] { z-index: 2; background: var(--panel); box-shadow: 0 5px 18px #0006; }
+.planner-sidebar .sidebar-nav-link { flex: 1; min-width: 0; justify-content: flex-start; min-height: 44px; padding: 10px; gap: 10px; background: transparent; border: 1px solid transparent; border-radius: 7px; font-size: 14px; color: #c3d4e8; }
+.planner-sidebar .sidebar-nav-link:hover { background: #193450; }
+.planner-sidebar .sidebar-nav-link[aria-pressed=true] { background: #203e5c; border-color: #3b6286; color: #b4ddff; }
+.sidebar-count { display: inline-flex; align-items: center; justify-content: center; margin-left: auto; min-width: 24px; height: 22px; padding: 0 6px; border: 1px solid #456486; border-radius: 5px; font-size: 11px; }
+.sidebar-grip { flex-shrink: 0; width: 24px; min-height: 44px; padding: 0; background: transparent; border: 0; color: var(--muted); opacity: 0; touch-action: none; cursor: grab; }
+.sidebar-nav-row:hover .sidebar-grip, .sidebar-nav-row:focus-within .sidebar-grip { opacity: 1; }
+.sidebar-grip:active { cursor: grabbing; }
+.sidebar-filters { display: flex; flex-direction: column; gap: 10px; padding-top: 16px; border-top: 1px solid var(--line); }
+.sidebar-filters .sidebar-section-title { margin-bottom: 0; }
+.sidebar-field { display: flex; flex-direction: column; gap: 7px; min-width: 0; font-size: 11px; color: var(--muted); }
+.sidebar-field > span:first-child { padding-left: 2px; }
+.planner-sidebar select, .planner-sidebar .search { width: 100%; min-width: 0; min-height: 44px; font-size: 13px; }
+.planner-sidebar select { padding: 10px 28px 10px 10px; }
+.planner-sidebar .search { flex: none; padding: 0 10px; gap: 7px; }
+.planner-sidebar .search input { height: 42px; font-size: 13px; }
+.planner-sidebar .search button { min-width: 24px; }
+.sidebar-courses { padding-top: 16px; border-top: 1px solid var(--line); }
+.planner-sidebar .course-legend { display: flex; flex-direction: column; flex-wrap: nowrap; gap: 4px; }
+.planner-sidebar .course-legend button { width: 100%; justify-content: flex-start; min-height: 34px; padding: 7px 10px; gap: 9px; font-size: 12px; border-color: transparent; background: transparent; }
+.planner-sidebar .course-legend button:hover, .planner-sidebar .course-legend button[aria-pressed=true] { border-color: color-mix(in srgb,var(--event-color) 30%,var(--panel)); background: color-mix(in srgb,var(--event-color) 9%,var(--panel)); }
+.planner-sidebar .course-name { display: inline; }
+.planner-sidebar .course-dot { width: 6px; height: 6px; }
+.planner-sidebar .course-count { display: inline-flex; margin-left: auto; font: 11px var(--mono); }
+.sidebar-bottom { display: flex; flex-shrink: 0; flex-direction: column; gap: 14px; padding-top: 18px; border-top: 1px solid var(--line); }
+.planner-sidebar .range-button { justify-content: flex-start; min-height: 54px; padding: 9px 10px; text-align: left; }
+.planner-sidebar .range-button span { display: block; font-size: 12px; }
+.range-button small { display: block; margin-top: 4px; font-size: 10px; color: var(--muted); font-weight: 400; }
+.planner-sidebar .main-actions { display: flex; flex-direction: column; align-items: stretch; width: 100%; margin: 0; gap: 8px; }
+.planner-sidebar .main-actions button { min-height: 44px; font-size: 12px; padding: 10px; }
+.planner-sidebar .main-actions button > span { display: inline; }
+.sidebar-toggle { display: none; }
+@media (max-width: 1000px) {
+  .sidebar-toggle { display: inline-flex; min-width: 44px; min-height: 44px; flex-shrink: 0; }
+  .planner-workspace > main { padding: 8px 8px 0; }
+  .sidebar-drawer { position: fixed; display: flex; top: 0; left: 0; width: min(320px, calc(100vw - 24px)); max-width: none; height: 100dvh; max-height: 100dvh; transform: none; translate: none; border: 0; border-right: 1px solid var(--line); border-radius: 0; padding: 20px 16px; gap: 22px; animation: none; }
+  .sidebar-drawer-heading { flex-shrink: 0; width: 100%; min-width: 0; padding-right: 32px; text-align: left; }
+  .sidebar-drawer-heading h2 { font-size: 18px; }
+  .sidebar-drawer-heading p { font-size: 11px; margin-top: 6px; white-space: normal; overflow-wrap: anywhere; }
+  .sidebar-drawer-content { display: flex; flex: 1; min-height: 0; flex-direction: column; gap: 18px; }
+  .sidebar-grip { opacity: 1; width: 44px; }
+  .planner-sidebar .course-legend button { min-height: 44px; }
+  .planner-sidebar select, .planner-sidebar .search input { font-size: 16px; }
+  .planner-sidebar .slots-toggle { width: auto; overflow: visible; font-size: 14px; }
+  .planner-sidebar .range-button { width: auto; }
+  .sidebar-drawer > button:last-child { min-width: 44px; min-height: 44px; }
+}
+@media (max-width: 700px) {
+  .planner-workspace > main { padding: 6px 6px 0; }
+  .sidebar-toggle { padding: 9px; }
+  .sidebar-toggle > span { display: none; }
+}
