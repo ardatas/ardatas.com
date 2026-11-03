@@ -7,7 +7,7 @@
       <div class="grid items-center gap-6 md:grid-cols-[minmax(0,1fr)_240px] md:gap-8 lg:grid-cols-[minmax(0,1fr)_280px]">
         <article class="min-w-0 text-black prose-p:m-0 flex flex-col gap-3">
           <p>
-            Heyy!! I'm Arda, a CS student at TUM in my 3rd semester and currently a research assistant at <a href="https://www.mec.ed.tum.de/en/ais/homepage/"><strong>TUM AIS</strong></a>.
+            Heyy!! I'm Arda, a CS student at TUM in my 3rd semester. I'm a working student software engineer at <strong>Uhrwerk.AI</strong>, building AI workflows, and a research assistant at <a href="https://www.mec.ed.tum.de/en/ais/homepage/"><strong>TUM AIS</strong></a>.
           </p>
           <p>
             Most of my spare time goes into building stuff (like this website 😝)
@@ -38,6 +38,23 @@
       {% call fieldset("cat ~/experience.md") %}
         <p class="mb-3 text-lg font-bold text-neutral-800">Research, engineering, and community work.</p>
         <div class="flex flex-col gap-3">
+          <div class="profile-row">
+            <div class="profile-logo">
+              <img src="/assets/logo-uhrwerk.png" alt="Uhrwerk.AI" />
+            </div>
+            <div class="min-w-0 flex-1">
+              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
+                <div>
+                  <h3 class="profile-title">Uhrwerk.AI</h3>
+                  <p class="font-medium">Working Student Software Engineer, AI Workflows</p>
+                </div>
+                <time class="profile-date" datetime="2026-11">11/2026 - present</time>
+              </div>
+              <p class="profile-meta">Munich</p>
+              <p class="mt-2">AI startup automating business processes across ERP, CRM, and enterprise systems for German mid-sized companies.</p>
+            </div>
+          </div>
+
           <div class="profile-row">
             <div class="profile-logo profile-logo-tum" aria-label="TUM AIS">
               <img src="/assets/logo-tum.png" alt="Technical University of Munich" />

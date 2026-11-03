@@ -34,6 +34,7 @@ static() {
         logo-tbc.png
         logo-tum.png
         logo-tum-education.svg
+        logo-uhrwerk.png
         logo-werkio.png
         logo-zarm.png
         portfolio-systems.svg
