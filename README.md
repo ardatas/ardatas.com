@@ -4,20 +4,34 @@ My portfolio website, built with a custom static site generator
 
 ## Dependencies
 ```sh
-yarn install
-poetry install
+pnpm install --frozen-lockfile
+uv sync
 ```
 
 ## Development
 ```sh
-poetry shell
-yarn dev
+pnpm dev
 ```
 
 ## Production
 ```sh
-yarn build
+pnpm build
 ```
+
+## Homepage portrait
+
+The homepage renders `components/ui/starry-nights.tsx` to static HTML during
+the build. A local animated WebP loops automatically over a 240 × 320 tile grid.
+To update the artwork, replace
+`public/assets/arda-portrait.jpg`, run `node scripts/render-starry-portrait.mjs`
+with FFmpeg and img2webp installed, then run `pnpm build`.
+
+The portfolio uses TypeScript and Tailwind CSS 3. Its stylesheet is
+`src/index.css`. The root `components.json` sets the shadcn UI destination to
+`components/ui`, so the CLI and imports such as `@/components/ui/starry-nights`
+resolve to the same folder. To add a registry component, run
+`pnpm dlx shadcn@latest add <component>` from the repository root. Run
+`pnpm typecheck` to check the React components and their aliases.
 
 ## Running stats
 

@@ -88,11 +88,16 @@ article {
 }
 
 .whoami-portrait {
+  display: block;
   width: 100%;
   max-width: 280px;
-  height: auto;
+  aspect-ratio: 3 / 4;
   margin-inline: auto;
   border: 1px solid #8f8d86;
+  background: #08090b;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
 }
 
 .profile-row {

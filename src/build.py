@@ -2,6 +2,7 @@ import os
 import json
 import argparse
 import hashlib
+import subprocess
 from shutil import rmtree
 from urllib.parse import urljoin
 
@@ -218,7 +219,12 @@ running = load_running_stats(os.path.join(script_path, "data", "running.json"))
 with open(os.path.join(script_path, "data", "travel.json"), encoding="utf-8") as f:
     travel = json.load(f)
 travel["countries"].sort(key=lambda country: len(country["cities"]), reverse=True)
+portrait_html = subprocess.check_output(
+    ["node", "--import", "tsx", "src/render-portrait.tsx"],
+    cwd=os.path.dirname(script_path), text=True,
+)
 rendered = index.render(lists=lists, name=name, title=name, running=running, travel=travel,
+                        portrait_html=portrait_html,
                         exploration=build_exploration_stats(travel["countries"]))
 soup = bs(rendered)
 for item in seotags:

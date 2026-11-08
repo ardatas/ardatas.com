@@ -24,14 +24,7 @@
             ><strong>arda (at) ardatas (dot) com</strong></a>
           </p>
         </article>
-        <img
-          class="whoami-portrait"
-          src="/assets/arda-portrait.jpg"
-          alt="Arda sitting in the sunshine in front of a historic building"
-          width="960"
-          height="1280"
-          fetchpriority="high"
-        />
+        {{ portrait_html | safe }}
       </div>
     {% endcall %}
     <section id="experience">
