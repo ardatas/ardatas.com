@@ -8,5 +8,5 @@
     "noEmit": true,
     "paths": { "@/*": ["./*"] }
   },
-  "include": ["components", "lib", "src/render-portrait.tsx"]
+  "include": ["components", "lib", "src/render-portrait.tsx", "src/footer-plane.tsx"]
 }

@@ -13,8 +13,8 @@
 <title>Arda Tas | AI Systems at TUM AIS</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&amp;family=Instrument+Sans:wdth,wght@75..100,400..600&amp;display=swap" rel="stylesheet"/>
-<link href="/index.css?v=70d6087604d1" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&amp;family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&amp;family=Instrument+Sans:wdth,wght@75..100,400..600&amp;display=swap" rel="stylesheet"/>
+<link href="/index.css?v=f689b0369ed7" rel="stylesheet"/>
 <script defer="" src="/link-conversion.js?v=33de9b6de076"></script>
 <script>
       /*to prevent Firefox FOUC, this must be here*/
@@ -22,7 +22,7 @@
     </script>
 <meta content="https://ardatas.com/projects/tum-ais" property="og:url"/><meta content="Arda Tas | AI Systems at TUM AIS" property="og:title"/><meta content="Context-aware LLMs, RAG, and ontologies" property="og:description"/><meta content="https://ardatas.com/assets/experience.svg" property="og:image"/><meta content="website" property="og:type"/><meta content="Context-aware LLMs, RAG, and ontologies" name="description"/><meta content="ardatas.com" property="twitter:domain"/><meta content="summary_large_image" name="twitter:card"/><meta content="https://ardatas.com/projects/tum-ais" property="twitter:url"/><meta content="Arda Tas | AI Systems at TUM AIS" name="twitter:title"/><meta content="Context-aware LLMs, RAG, and ontologies" name="twitter:description"/><meta content="https://ardatas.com/assets/experience.svg" name="twitter:image"/></head>
 <body class="text-[#101114]">
-<main class="flex min-h-screen flex-col max-w-5xl mx-auto px-4 py-4 sm:py-8 text-[15px] leading-5 font-normal tracking-[-0.005em] antialiased font-sans">
+<div class="flex min-h-screen flex-col max-w-5xl mx-auto px-4 py-4 sm:py-8 text-[15px] leading-5 font-normal tracking-[-0.005em] antialiased font-sans">
 <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-3 mb-3">
 <a href="/">
 <h1 class="site-name font-mono tracking-tight">Arda Tas</h1>
@@ -44,7 +44,8 @@
 </a>
 </nav>
 </div>
-<fieldset class="border-t md:border border-solid border-[#8f8d86] min-w-0 p-1 md:p-4 pt-2">
+<main class="flex flex-col">
+<fieldset class="border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
 <legend class="ms-4 md:ms-0">
 <h2 class="section-title mx-2 font-mono italic tracking-tight px-1">cat ~/projects/tum-ais.html</h2>
 </legend>
@@ -59,13 +60,14 @@
 (RAG), and ontologies.</p>
 </article>
 </fieldset>
-<div class="h-3"></div>
-<section id="links">
-<fieldset class="border-t md:border border-solid border-[#8f8d86] min-w-0 p-1 md:p-4 pt-2">
+</main>
+<footer class="links-footer mt-3" id="links">
+<fieldset class="border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
 <legend class="ms-4 md:ms-0">
 <h2 class="section-title mx-2 font-mono italic tracking-tight px-1">cat ~/links.md</h2>
 </legend>
-<ul class="list-disc pl-5 space-y-2 text-sm">
+<div aria-hidden="true" id="footer-plane"></div>
+<ul class="relative flex flex-wrap gap-x-6 gap-y-2 px-3 pt-2 text-sm md:px-0 md:pt-0">
 <li>
 <a class="social-link" href="https://linkedin.com/in/arda-tas" rel="noopener noreferrer" target="_blank">LinkedIn</a>
 </li>
@@ -74,8 +76,18 @@
 </li>
 </ul>
 </fieldset>
-</section>
-</main>
+</footer>
+</div>
+<script type="module">
+      const plane = document.getElementById("footer-plane");
+      const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          observer.disconnect();
+          import("/footer-plane.js?v=99d0aae3c945");
+        }
+      });
+      observer.observe(plane);
+    </script>
 <script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>

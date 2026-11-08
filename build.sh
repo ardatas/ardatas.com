@@ -63,6 +63,9 @@ static() {
     echo "Copying public/link-conversion.js to dist/link-conversion.js"
     cp public/link-conversion.js dist/link-conversion.js || fail
 
+    echo "Copying public/whoami-handwriting.js to dist/whoami-handwriting.js"
+    cp public/whoami-handwriting.js dist/whoami-handwriting.js || fail
+
     echo "Copying the self-contained travel globe to dist/travel"
     cp -R public/travel dist/travel || fail
 

@@ -47,7 +47,7 @@ with open(os.path.join(args.output, "index.css"), "rb") as stylesheet:
 public_path = os.path.join(script_path, "..", "public")
 env.globals["asset_versions"] = {}
 for asset in ("favicon.svg", "favicon.ico", "favicon.png", "apple-touch-icon.png",
-              "link-conversion.js", "travel/globe.js", "travel/globe.css",
+              "link-conversion.js", "whoami-handwriting.js", "travel/globe.js", "travel/globe.css",
               "julia/explorer.js", "julia/explorer.css", "julia/manifest.json"):
     with open(os.path.join(public_path, asset), "rb") as source:
         env.globals["asset_versions"][asset] = hashlib.sha256(source.read()).hexdigest()[:12]
@@ -72,6 +72,17 @@ def write_output(content, *path):
 
     with open(os.path.join(args.output, *path), "w") as f:
         f.write(content)
+
+
+# The portfolio is static HTML. Only the decorative footer loads React in the browser.
+footer_bundle = os.path.abspath(os.path.join(args.output, "footer-plane.js"))
+subprocess.run(
+    ["pnpm", "exec", "esbuild", "src/footer-plane.tsx", "--bundle", "--minify",
+     "--format=esm", "--target=es2020", f"--outfile={footer_bundle}"],
+    cwd=os.path.dirname(script_path), check=True,
+)
+with open(footer_bundle, "rb") as source:
+    env.globals["asset_versions"]["footer-plane.js"] = hashlib.sha256(source.read()).hexdigest()[:12]
 
 
 make_html: mistune.Markdown = mistune.create_markdown(

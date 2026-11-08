@@ -3,11 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --notebook-paper: #fff8d9;
-  --notebook-grid: rgba(173, 143, 66, 0.18);
-  --notebook-card: #fff3c4;
-  --notebook-inset: #fff9e6;
-  --notebook-border: #c8b67d;
+  --notebook-paper: #edf3f8;
+  --notebook-grid: rgba(91, 123, 153, 0.16);
+  --notebook-card: #e2ebf3;
+  --notebook-inset: #f4f8fc;
+  --notebook-border: #9fb4c7;
+  --notebook-frame: #73899c;
+  --notebook-muted: #52677a;
 }
 
 html {
@@ -87,13 +89,110 @@ article {
   @apply prose prose-sm sm:prose-base max-w-none prose-neutral dark:prose-invert prose-headings:font-semibold prose-p:leading-6 prose-li:leading-6;
 }
 
+.whoami-note {
+  font-family: "Caveat", "Bradley Hand", "Segoe Print", cursive;
+  font-size: clamp(1.625rem, 2.25vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.36;
+  letter-spacing: 0;
+  color: #101114;
+}
+
+.whoami-note p {
+  line-height: inherit;
+}
+
+.whoami-note strong {
+  font-weight: 600;
+}
+
+.whoami-note a:focus-visible {
+  outline: 2px solid #315f87;
+  outline-offset: 4px;
+}
+
+.handwritten-highlight,
+.handwritten-circle {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.handwritten-highlight {
+  isolation: isolate;
+}
+
+.handwritten-highlight::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: -0.2em;
+  bottom: 0.12em;
+  left: -0.2em;
+  height: 0.6em;
+  border-radius: 48% 20% 38% 22%;
+  background: #f5e1a8;
+  transform: rotate(-1deg);
+  pointer-events: none;
+}
+
+.handwritten-word {
+  display: inline-block;
+  white-space: pre;
+}
+
+.handwritten-ring {
+  position: absolute;
+  top: 0.04em;
+  left: -0.26em;
+  width: calc(100% + 0.52em);
+  height: calc(100% - 0.08em);
+  overflow: visible;
+  pointer-events: none;
+}
+
+.whoami-note.is-writing .handwritten-word {
+  animation: whoami-write var(--ink-duration) linear var(--ink-delay) both;
+}
+
+.whoami-note.is-writing a {
+  text-decoration: none;
+}
+
+.whoami-note.is-writing a .handwritten-word {
+  text-decoration: underline;
+  text-underline-offset: 0.1em;
+}
+
+.whoami-note.is-writing .handwritten-highlight::before {
+  animation: whoami-write var(--highlight-duration) linear var(--highlight-delay) both;
+}
+
+.whoami-note.is-writing [data-handwritten-draw] {
+  animation: whoami-draw var(--ink-duration) ease-out var(--ink-delay) both;
+}
+
+@keyframes whoami-write {
+  from {
+    clip-path: inset(-0.4em calc(100% + 0.25em) -0.4em -0.25em);
+  }
+  to {
+    clip-path: inset(-0.4em -0.25em -0.4em -0.25em);
+  }
+}
+
+@keyframes whoami-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
 .whoami-portrait {
   display: block;
   width: 100%;
   max-width: 280px;
   aspect-ratio: 3 / 4;
   margin-inline: auto;
-  border: 1px solid #8f8d86;
+  border: 1px solid var(--notebook-frame);
   background: #08090b;
   object-fit: cover;
   pointer-events: none;
@@ -141,11 +240,11 @@ article {
 }
 
 .profile-date {
-  @apply whitespace-nowrap font-mono text-[11px] text-neutral-600;
+  @apply whitespace-nowrap font-mono text-[11px] text-[var(--notebook-muted)];
 }
 
 .profile-meta {
-  @apply mt-0.5 text-xs text-neutral-500;
+  @apply mt-0.5 text-xs text-[var(--notebook-muted)];
 }
 
 .skill-panel {
@@ -187,7 +286,7 @@ article {
 }
 
 .running-card dt {
-  @apply mb-1 text-xs text-neutral-500 sm:text-sm;
+  @apply mb-1 text-xs text-[var(--notebook-muted)] sm:text-sm;
 }
 
 .running-main-stats dd {
@@ -195,7 +294,7 @@ article {
 }
 
 .running-main-stats dd span {
-  @apply text-sm font-normal text-neutral-500 sm:text-lg;
+  @apply text-sm font-normal text-[var(--notebook-muted)] sm:text-lg;
 }
 
 .running-best-times {
@@ -223,19 +322,55 @@ article {
 }
 
 .running-secondary-stats dd span {
-  @apply text-sm font-normal text-neutral-500;
+  @apply text-sm font-normal text-[var(--notebook-muted)];
 }
 
 .running-footer {
-  @apply flex flex-wrap items-center justify-between gap-2 border-t border-neutral-200 px-4 py-3 text-xs text-neutral-500 sm:px-6;
+  @apply flex flex-wrap items-center justify-between gap-2 border-t border-[var(--notebook-border)] px-4 py-3 text-xs text-[var(--notebook-muted)] sm:px-6;
 }
 
 .social-link {
   @apply underline underline-offset-2 hover:text-[#315f87] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#315f87];
 }
 
+.links-footer {
+  position: relative;
+  isolation: isolate;
+}
+
+.links-footer fieldset {
+  min-height: clamp(9.5rem, 15vw, 12rem);
+}
+
+#footer-plane {
+  position: absolute;
+  inset: 0.9rem 1px 1px;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* The same perspective floor stays visible before WebGL starts or if it is unavailable. */
+#footer-plane::before {
+  content: "";
+  position: absolute;
+  inset: -20% -100% 0;
+  background: repeating-conic-gradient(var(--notebook-card) 0 25%, var(--notebook-border) 0 50%) center bottom / 96px 96px;
+  transform-origin: center bottom;
+  transform: perspective(180px) rotateX(56deg);
+  mask-image: linear-gradient(to bottom, transparent, black 85%);
+}
+
+#footer-plane:has(canvas[data-ready])::before {
+  visibility: hidden;
+}
+
 .resource-link {
   @apply flex h-full items-center justify-between gap-4 border border-[var(--notebook-border)] bg-[var(--notebook-card)] p-4 transition-colors hover:border-[#315f87] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#315f87];
+}
+
+.resource-link p {
+  color: var(--notebook-muted);
 }
 
 .resource-arrow {
@@ -249,6 +384,14 @@ article {
 
   * {
     transition: none !important;
+  }
+
+  .whoami-note.is-writing .handwritten-word,
+  .whoami-note.is-writing .handwritten-highlight::before,
+  .whoami-note.is-writing [data-handwritten-draw] {
+    animation: none !important;
+    clip-path: none !important;
+    stroke-dashoffset: 0 !important;
   }
 }
 

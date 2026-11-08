@@ -1,9 +1,9 @@
 .julia-section {
-  --j-paper: #f6f4ee;
+  --j-paper: var(--notebook-paper, #edf3f8);
   --j-ink: #101114;
   --j-blue: #315f87;
-  --j-line: #b7b5ae;
-  --j-muted: #62625e;
+  --j-line: var(--notebook-border, #9fb4c7);
+  --j-muted: var(--notebook-muted, #52677a);
   color: var(--j-ink);
   scroll-margin-top: 24px;
 }
@@ -11,7 +11,7 @@
 .julia-heading h3 { font-size: 20px; font-weight: 600; line-height: 1.25; letter-spacing: -.035em; }
 .julia-heading p { font-size: 13px; margin-top: 6px; color: var(--j-muted); }
 .julia-equation { font: 16px 'IBM Plex Mono', monospace; white-space: nowrap; }
-.julia-workbench { display: grid; grid-template-columns: minmax(0, 1fr) 232px; border: 1px solid var(--j-line); background: #fff; }
+.julia-workbench { display: grid; grid-template-columns: minmax(0, 1fr) 232px; border: 1px solid var(--j-line); background: var(--notebook-card, #e2ebf3); }
 .julia-display { min-width: 0; padding: 12px; border-right: 1px solid var(--j-line); }
 .julia-stage { position: relative; overflow: hidden; background: #101114; aspect-ratio: 4 / 3; display: flex; align-items: center; justify-content: center; }
 .julia-stage canvas { display: block; width: 100%; height: 100%; object-fit: contain; cursor: grab; touch-action: pan-y; }
@@ -22,8 +22,8 @@
 .julia-loading[hidden] { display: none; }
 .julia-imagebar { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 10px; }
 .julia-imagebar > span { font: 10px 'IBM Plex Mono', monospace; color: var(--j-muted); font-variant-numeric: tabular-nums; }
-.julia-section button, .julia-actions > a { border: 1px solid var(--j-line); padding: 7px 10px; background: #fff; font: 11px 'IBM Plex Mono', monospace; color: var(--j-ink); cursor: pointer; text-decoration: none; line-height: 1.4; }
-.julia-section button:hover, .julia-actions > a:hover { border-color: var(--j-blue); color: var(--j-blue); background: #f0f4f7; }
+.julia-section button, .julia-actions > a { border: 1px solid var(--j-line); padding: 7px 10px; background: var(--notebook-inset, #f4f8fc); font: 11px 'IBM Plex Mono', monospace; color: var(--j-ink); cursor: pointer; text-decoration: none; line-height: 1.4; }
+.julia-section button:hover, .julia-actions > a:hover { border-color: var(--j-blue); color: var(--j-blue); background: var(--j-paper); }
 .julia-section button:disabled { opacity: .5; cursor: wait; }
 .julia-section :is(button, input, a, summary, canvas):focus-visible { outline: 2px solid var(--j-blue); outline-offset: 3px; }
 .julia-zoom { display: flex; gap: 4px; }

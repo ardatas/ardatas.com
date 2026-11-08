@@ -1,7 +1,7 @@
 {
   "version": 1,
   "project": {
-    "name": "ardatas-portrait-publish.YhZpZ4",
+    "name": "ardatas.com",
     "productType": null,
     "stack": [
       "react",
@@ -25,7 +25,11 @@
     "colorMode": "light",
     "colors": {
       "--notebook-border": {
-        "value": "#c8b67d",
+        "value": "#9fb4c7",
+        "source": "src/index.css"
+      },
+      "--notebook-muted": {
+        "value": "#52677a",
         "source": "src/index.css"
       }
     },
@@ -81,5 +85,5 @@
       "source": "package.json"
     }
   ],
-  "generatedAt": "2026-11-08T15:05:47.118Z"
+  "generatedAt": "2026-11-08T14:39:01.620Z"
 }

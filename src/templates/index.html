@@ -5,15 +5,15 @@
   <div class="flex flex-col gap-3">
     {% call fieldset("whoami") %}
       <div class="grid items-center gap-6 md:grid-cols-[minmax(0,1fr)_240px] md:gap-8 lg:grid-cols-[minmax(0,1fr)_280px]">
-        <article class="min-w-0 text-black prose-p:m-0 flex flex-col gap-3">
+        <article class="whoami-note min-w-0 text-black prose-p:m-0 flex flex-col gap-3" data-handwritten>
           <p>
-            Heyy!! I'm Arda, a CS student at TUM in my 3rd semester. I'm a working student software engineer at <strong>Uhrwerk.AI</strong>, building AI workflows, and a research assistant at <a href="https://www.mec.ed.tum.de/en/ais/homepage/"><strong>TUM AIS</strong></a>.
+            Heyy!! I'm Arda, a CS student at TUM in my 3rd semester. I'm a working student software engineer at <strong class="handwritten-highlight">Uhrwerk.AI</strong>, building AI workflows, and a research assistant at <a href="https://www.mec.ed.tum.de/en/ais/homepage/"><strong class="handwritten-highlight">TUM AIS</strong></a>.
           </p>
           <p>
             Most of my spare time goes into building stuff (like this website 😝)
           </p>
           <p>
-            Based in Munich.
+            Based in <span class="handwritten-circle">Munich<svg class="handwritten-ring" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M8 54 C6 26 30 8 52 7 C76 6 95 20 95 46 C95 74 72 93 48 93 C24 93 7 78 6 52 C6 34 16 20 34 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke" pathLength="1" stroke-dasharray="1" data-handwritten-draw /></svg></span>.
           </p>
           <p id="contact">
             Reach me at
@@ -27,6 +27,7 @@
         {{ portrait_html | safe }}
       </div>
     {% endcall %}
+    <script src="/whoami-handwriting.js?v={{ asset_versions['whoami-handwriting.js'] }}" defer></script>
     <section id="experience">
       {% call fieldset("cat ~/experience.md") %}
         <p class="mb-3 text-lg font-bold text-neutral-800">Research, engineering, and community work.</p>
@@ -96,10 +97,30 @@
                 <time class="profile-date">05/2026 - present</time>
               </div>
               <p class="profile-meta">Munich</p>
-              <p class="mt-2">Web3 events and organization of the TUM Blockchain Hackathon 2026.</p>
+              <p class="mt-2">Web3 events in Munich.</p>
             </div>
           </div>
 
+        </div>
+      {% endcall %}
+    </section>
+    <section id="achievements">
+      {% call fieldset("cat ~/achievements.md") %}
+        <div class="profile-row">
+          <div class="profile-logo profile-logo-square">
+            <img src="/assets/logo-tbc.png" alt="TUM Blockchain &amp; AI Hackathon" />
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
+              <div>
+                <h3 class="profile-title">TUM Blockchain &amp; AI Hackathon</h3>
+                <p class="font-medium">3rd place · BSV Association</p>
+              </div>
+              <span class="profile-date">2026</span>
+            </div>
+            <p class="profile-meta">DeFi Rails for Agentic Payments track</p>
+            <p class="mt-2">Awarded for <a class="social-link" href="https://github.com/ardatas/mercaTUM-" target="_blank" rel="noopener noreferrer">MercaTUM</a>, an on-demand LLM marketplace prototype with BSV micropayments and MCP integration for external AI agents.</p>
+          </div>
         </div>
       {% endcall %}
     </section>
