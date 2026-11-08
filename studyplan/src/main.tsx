@@ -27,9 +27,10 @@ function readPreferences():{value:Preferences;notice:string}{
   return {value,notice:''};
  }catch{return {value:defaultPreferences,notice:'Saved filters could not be loaded. Default filters are shown.'};}
 }
-const loadedPreferences=readPreferences();
-const loaded=initial();
-function App(){
+function App({loaded, loadedPreferences}: {
+  loaded: ReturnType<typeof initial>;
+  loadedPreferences: ReturnType<typeof readPreferences>;
+}){
  const [plan,setPlan]=useState(loaded.plan);const [notice,setNotice]=useState(loaded.notice||loadedPreferences.notice);const [saved,setSaved]=useState(!loaded.shared);const [shared,setShared]=useState(loaded.shared);
  const [showSlots,setShowSlots]=useState(false);const [course,setCourse]=useState(loadedPreferences.value.course);const [query,setQuery]=useState(loadedPreferences.value.query);const [kind,setKind]=useState(loadedPreferences.value.kind);const [mode,setMode]=useState<'browse'|'mine'>(loadedPreferences.value.mode);const [now,setNow]=useState(berlinNow());
  const [sidebarOpen,setSidebarOpen]=useState(false);
@@ -57,7 +58,24 @@ function App(){
  const total=slots.filter(s=>plan.selected.includes(s.id)).reduce((n,s)=>n+activeOccurrences(s,plan,false).length,0);
  const titleFor=(s:Slot)=>`${courses.find(c=>c.id===s.course)!.short} · ${s.label}`;
  const shareURL=location.origin+location.pathname+encodePlan(plan);
- const exportFile=()=>{if(!total)return;const blob=new Blob([exportICS(slots,plan)],{type:'text/calendar;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='studyplan-2026-27.ics';a.click();setTimeout(()=>URL.revokeObjectURL(url),10000);setNotice(`Downloaded ${total} dated sessions. Import the file into your calendar.`);};
+ function exportFile() {
+  if (!total) return;
+  let calendar: string;
+  try {
+   calendar = exportICS(slots, plan);
+  } catch {
+   setPanel(null);
+   setNotice('Calendar export failed because the selected schedule contains invalid event data.');
+   return;
+  }
+  const url = URL.createObjectURL(new Blob([calendar], {type:'text/calendar;charset=utf-8'}));
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'studyplan-2026-27.ics';
+  link.click();
+  setTimeout(() => URL.revokeObjectURL(url), 10000);
+  setNotice(`Downloaded ${total} dated sessions. Import the file into your calendar.`);
+ }
  function openPanel(next:NonNullable<typeof panel>){const trigger=document.activeElement;utilityTrigger.current=trigger instanceof HTMLElement?(trigger.closest('.planner-sidebar')&&window.matchMedia('(max-width: 1000px)').matches?document.getElementById('planner-controls-toggle'):trigger):null;setSidebarOpen(false);setPanel(next);}
  function saveCopy(){setShared(false);history.replaceState(null,'',location.pathname);setNotice('Your copy is now saved on this device.');}
  return <div className="app-shell"><header className="site-header"><div className="identity"><CalendarDays size={24}/><div><h1>TUM Computer Science · Semester 3</h1><p>Technical University of Munich · Winter 2026/27 · Independent, unofficial planner</p></div></div><button id="planner-controls-toggle" className="sidebar-toggle" aria-label="Open planner controls" aria-expanded={sidebarOpen} aria-controls="planner-controls" onClick={()=>setSidebarOpen(true)}><PanelLeft size={19}/><span>Controls</span></button></header>
@@ -98,4 +116,9 @@ function App(){
  {panel==='sources'&&<><p>Independent planning tool, not affiliated with TUM. For information only: check official sources for changes. No guarantee of completeness or accuracy. Mandatory legal liability remains unaffected.</p><p>Schedule snapshot checked on 28 October 2026. Source links may require a TUM login. Times are Europe/Berlin.</p>{courses.map(c=><div className="source-row" key={c.id}><a href={c.source} target="_blank" rel="noreferrer">{c.short} ↗</a><p>{c.coverage}</p></div>)}<p>Analysis and GDB lectures have not been imported. GDB dates follow the published weekly sequence through 5 February 2027, excluding university holidays and teaching breaks. Missing tutor names are marked “Not published”.</p><p>University holiday conflicts and Garching sessions overlapping the FVV/SVV teaching suspensions (28 October and 10 November, 10:00–11:30) are retained in details but excluded from the timetable and exports. Check the course for replacement or shortened sessions.</p><a href={termSource} target="_blank" rel="noreferrer">TUM teaching period and holidays ↗</a><p>Dates after 5 February remain editable for planning; only sourced sessions are exported. Course-specific changes can occur after this snapshot.</p><p>Your plan is saved in this browser. No account, analytics, or server upload is used. Sharing is a link you choose to send.</p></>}
  </DialogContent></Dialog></div>;
 }
-createRoot(document.getElementById('app')!).render(<App/>);
+const root = createRoot(document.getElementById('app')!);
+if (window.self === window.top) {
+  root.render(<App loaded={initial()} loadedPreferences={readPreferences()} />);
+} else {
+  root.render(<main><a href={location.href} target="_blank" rel="noopener noreferrer">Open Studyplan in a new tab</a></main>);
+}

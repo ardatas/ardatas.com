@@ -29,6 +29,22 @@ test('GDB follows the weekly sequence by default with date bounds, exclusions an
 test('ICS round-trips Unicode, escaping, UTF8 byte folding and CRLF',()=>{
  const slot={...slots[0],id:'fixture',label:'Ä'.repeat(90)+', ; \\ \n text',occurrences:[{...slots[0].occurrences[0],id:'fixture-event',date:'2026-10-28',room:'Room, 1; Ä\\B\nNext'}]};const ics=exportICS([slot],plan(['fixture']));assert.ok(!/(.)(?<!\r)\n/.test(ics));for(const line of ics.split('\r\n'))assert.ok(Buffer.byteLength(line)<=75);const event=new ICAL.Component(ICAL.parse(ics)).getFirstSubcomponent('vevent');assert.equal(event.getFirstPropertyValue('location'),slot.occurrences[0].room);assert.equal(event.getFirstPropertyValue('summary'),slot.course.toUpperCase()+' · '+slot.label);assert.equal(escapeICS('a,b;c\\d\ne'),'a\\,b\\;c\\\\d\\ne');assert.ok(foldLine('😀'.repeat(80)).includes('\r\n '));
 });
+test('calendar export refuses malformed UID and URL fields before returning a file', () => {
+ const slot = slots.find(s => s.id === 'gbs-624');
+ const event = {...slot.occurrences[0], date:'2026-11-04', status:'scheduled'};
+ const render = (...events) => exportICS([{...slot, occurrences:events}], plan([slot.id]));
+ const parsed = new ICAL.Component(ICAL.parse(render(event))).getFirstSubcomponent('vevent');
+ assert.equal(parsed.getFirstPropertyValue('url'), event.source);
+ assert.equal(parsed.getFirstPropertyValue('uid'), event.id + '@studyplan.ardatas.com');
+ for (const id of ['', event.id + '\r\nsecond-line', event.id + '\n', 'gbs-session-01']) {
+  assert.throws(() => render({...event, id}), /event ID|session reference/);
+ }
+ assert.throws(() => render(event, event), /duplicate/);
+ for (const source of [event.source + '\r\nsecond-line', event.source + '/other',
+  'https://outside.invalid/', 'http://gbs.cm.in.tum.de/', 'https://name@gbs.cm.in.tum.de/']) {
+  assert.throws(() => render({...event, source}), /calendar source|session reference/);
+ }
+});
 test('overlaps use actual dates, not just weekdays, and exclude skipped sessions',()=>{
  const a=slots.find(s=>s.id==='its-16'),b=slots.find(s=>s.id==='its-17');const p=plan([a.id,b.id]);assert.ok(conflicts(slots,p).length>0);const excluded=b.occurrences.map(e=>e.id);assert.equal(conflicts(slots,{...p,excluded}).length,0);
 });

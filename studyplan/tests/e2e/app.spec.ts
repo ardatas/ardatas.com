@@ -37,6 +37,35 @@ test('shared previews do not replace saved plan or filters until saved',async({p
  expect(JSON.parse((await second.evaluate(()=>localStorage.getItem('studyplan:preferences:v1')))! ).course).toBe('gbs');
  await controls(second,()=>second.getByRole('button',{name:'Save a copy'}).click());await second.reload();await controls(second,()=>expect(second.getByRole('button',{name:/^My plan/})).toContainText('2'));await expect(second).not.toHaveURL(/#plan=/);await controls(second,()=>expect(second.getByRole('combobox',{name:'Courses',exact:true})).toHaveValue('ana'));
 });
+test('embedded schedules never open device storage or mount save controls', async ({page, context}) => {
+ const snapshot = await page.evaluate(() => JSON.stringify(localStorage));
+ await context.addInitScript(() => {
+  if (window.self !== window.top) {
+   Object.defineProperty(window, 'localStorage', {get() {
+    document.documentElement.setAttribute('data-storage-accessed', 'yes');
+    throw new Error('Embedded planner requested storage');
+   }});
+  }
+ });
+ const shared = new URL(page.url());
+ shared.hash = 'plan=' + encodeURIComponent(JSON.stringify({
+  version:1, selected:['its-16'], excluded:[], from:'2026-11-01', to:'2026-11-08',
+ }));
+ for (const href of [page.url(), shared.href]) {
+  await page.evaluate(src => {
+   document.querySelector('#test-frame')?.remove();
+   const frame = document.createElement('iframe');
+   frame.id = 'test-frame';
+   frame.src = src;
+   document.body.append(frame);
+  }, href);
+  const frame = page.frameLocator('#test-frame');
+  await expect(frame.getByRole('link',{name:'Open Studyplan in a new tab'})).toHaveAttribute('href', href);
+  await expect(frame.locator('.app-shell')).toHaveCount(0);
+  await expect(frame.locator('html')).not.toHaveAttribute('data-storage-accessed','yes');
+ }
+ expect(await page.evaluate(() => JSON.stringify(localStorage))).toBe(snapshot);
+});
 test('calendar views, live line and no horizontal week scrolling',async({page},info)=>{
  await page.getByRole('button',{name:'Day',exact:true}).click();await expect(page.getByTestId('now-line')).toBeVisible();await page.clock.fastForward(60000);await expect(page.getByTestId('now-line')).toContainText('11:31');
  await page.getByRole('button',{name:'Next period'}).click();await expect(page.getByRole('heading',{name:/Thursday.*5 November/})).toBeVisible();await page.getByRole('button',{name:'Today',exact:true}).click();
