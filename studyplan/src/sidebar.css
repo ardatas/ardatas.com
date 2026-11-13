@@ -2,7 +2,7 @@
 .planner-workspace { display: flex; flex: 1; min-height: 0; }
 .planner-workspace > main { min-width: 0; padding: 14px 16px 0; }
 .planner-sidebar { display: flex; flex-direction: column; gap: 18px; width: 260px; flex-shrink: 0; padding: 22px 16px 16px; overflow: hidden; background: #0c1e32; border-right: 1px solid var(--line); }
-.sidebar-scroll-content { display: flex; flex: 1; min-height: 0; flex-direction: column; gap: 16px; overflow-y: auto; scrollbar-width: thin; padding: 3px; margin: -3px; }
+.sidebar-scroll-content { display: flex; flex: 1; min-height: 0; flex-direction: column; gap: 16px; overflow-y: auto; overflow-x: hidden; scrollbar-width: thin; padding: 3px; min-width: 0; }
 .sidebar-section-title { display: flex; align-items: center; justify-content: space-between; margin: 0 8px 10px; color: var(--muted); font-size: 11px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; }
 .sidebar-section-title > span { font-size: 9px; letter-spacing: 0; text-transform: none; font-weight: 400; }
 .sidebar-nav-row { display: flex; align-items: center; position: relative; border-radius: 7px; margin: 3px 0; }
@@ -58,3 +58,14 @@
   .sidebar-toggle { padding: 9px; }
   .sidebar-toggle > span { display: none; }
 }
+
+/* Shrink nested flex items to the sidebar, including native selects and search. */
+.sidebar-drawer-content,.sidebar-navigation,.sidebar-filters,.sidebar-courses,.sidebar-bottom{min-width:0;max-width:100%}
+.sidebar-scroll-content>*{flex-shrink:0;min-width:0;max-width:100%}
+.planner-sidebar .search input{flex:1;width:0;min-width:0}
+.planner-sidebar .search button{flex-shrink:0}
+.planner-sidebar select{max-width:100%;text-overflow:ellipsis}
+.planner-sidebar .sidebar-nav-link>span:not(.sidebar-count){min-width:0;overflow-wrap:anywhere;text-align:left}
+.planner-sidebar .sidebar-nav-link .sidebar-count{flex-shrink:0}
+.planner-sidebar .range-button{min-width:0;white-space:normal}
+@media(max-height:760px){.planner-sidebar{gap:12px;padding-top:16px;padding-bottom:12px}.sidebar-bottom{gap:8px;padding-top:10px}.sidebar-scroll-content{gap:12px}.sidebar-drawer{gap:14px}.sidebar-drawer-content{gap:12px}}

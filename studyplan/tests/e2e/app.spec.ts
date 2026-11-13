@@ -273,7 +273,11 @@ test('single dated visits persist privately, appear only once, and expire on Mon
 test('wheel supports spin, details, exclusions, empty state and mobile layout',async({page},info)=>{
  await page.getByRole('button',{name:'Open tutor spin wheel'}).click();
  await page.getByRole('button',{name:'Spin for Tutors Now',exact:true}).click();
- await expect(page.getByRole('button',{name:'View chosen session'})).toBeVisible();
+ await expect(page.getByRole('button',{name:'View chosen session'})).toHaveCount(0);
+ await expect(page.getByRole('button',{name:'Spin for Tutors Now',exact:true})).toBeDisabled();
+ await expect(page.locator('.wheel-stage')).toHaveClass(/is-spinning/);
+ await expect(page.getByRole('button',{name:'View chosen session'})).toBeVisible({timeout:10000});
+ await expect(page.locator('.wheel-stage')).not.toHaveClass(/is-spinning/);
  await page.screenshot({path:`artifacts/${info.project.name}-tutor-wheel.png`});
  await page.getByRole('button',{name:'View chosen session'}).click();await expect(page.getByRole('button',{name:'Add this session · mark visited'})).toBeEnabled();
  await page.keyboard.press('Escape');await expect(page.getByRole('button',{name:'Open tutor spin wheel'})).toBeFocused();
@@ -286,4 +290,14 @@ test('wheel supports spin, details, exclusions, empty state and mobile layout',a
  await page.clock.setSystemTime(new Date('2026-11-04T22:00:00Z'));await page.clock.runFor(1000);
  await expect(page.getByRole('button',{name:'Spin for Tutors Now',exact:true})).toBeDisabled();
  await page.setViewportSize({width:320,height:800});expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(320);
+});
+
+
+test('reduced motion reveals the wheel result without waiting for animation',async({page})=>{
+ await page.emulateMedia({reducedMotion:'reduce'});
+ await page.getByRole('button',{name:'Open tutor spin wheel'}).click();
+ await page.getByRole('button',{name:'Spin for Tutors Now',exact:true}).click();
+ await expect(page.getByRole('button',{name:'View chosen session'})).toBeVisible();
+ await expect(page.locator('.wheel-stage')).not.toHaveClass(/is-spinning/);
+ await expect(page.getByRole('button',{name:'Spin for Tutors Now',exact:true})).toBeEnabled();
 });
