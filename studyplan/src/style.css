@@ -148,3 +148,10 @@
  .calendar-empty{padding:6px;font-size:11px}
  footer{padding:2px 8px max(2px,env(safe-area-inset-bottom));min-height:26px}
 }
+
+/* Private weekly visits and the on-demand tutor picker reuse course colours. */
+.visit-date{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12px}.visit-date select{min-width:0;max-width:70%;font-size:12px}
+.wheel-trigger{position:fixed;right:20px;bottom:42px;z-index:40;width:52px;height:52px;border-radius:50%;font-size:28px;box-shadow:0 4px 18px #0006;background:var(--panel);border:1px solid var(--line)}
+.tutor-wheel-dialog{max-width:460px!important;max-height:88dvh;overflow:auto}.tutor-wheel-dialog p{font-size:12px}.wheel-stage{position:relative;width:230px;height:240px;margin:0 auto;flex-shrink:0}.tutor-wheel{position:absolute;top:10px;width:230px;height:230px;border:4px solid var(--line);border-radius:50%;transition:transform 1.4s cubic-bezier(.15,.7,.15,1);overflow:hidden}.tutor-wheel>span{position:absolute;left:50%;top:50%;font-weight:700;font-size:12px;color:#081728;white-space:nowrap}.wheel-pointer{position:absolute;left:50%;top:-1px;transform:translateX(-50%);z-index:2;color:var(--text);font-size:26px;line-height:28px;text-shadow:0 2px 3px #000}.wheel-hub{position:absolute;top:125px;left:50%;transform:translate(-50%,-50%);border-radius:50%;width:44px;height:44px;display:grid;place-items:center;background:var(--panel);font-size:23px}.wheel-modules{display:grid;gap:8px}.wheel-module{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:8px}.wheel-module small{display:block;color:var(--muted);font-size:11px}.wheel-module button{min-height:40px;font-size:12px}.wheel-result{padding:12px;border:1px solid var(--line);border-radius:8px}.wheel-result button{margin-top:8px}.tutor-wheel-dialog .primary{min-height:44px}
+@media(max-width:700px){.wheel-trigger{right:14px;bottom:38px}.tutor-wheel-dialog{padding:20px!important}.tutor-wheel-dialog button{min-height:44px}}
+.tutor-wheel-dialog .wheel-heading{padding-inline:24px}.tutor-wheel-dialog h2{padding-inline:26px}.wheel-pointer{color:var(--ink)}

@@ -19,7 +19,7 @@ test('course dropdown, readable compact details, selection and persistence',asyn
  await page.reload();await controls(page,()=>expect(page.getByRole('button',{name:/^My plan/})).toContainText('1'));
  await controls(page,()=>expect(page.getByRole('combobox',{name:'Courses',exact:true})).toHaveValue('its'));await controls(page,()=>expect(page.getByRole('button',{name:/^My plan/})).toHaveAttribute('aria-pressed','true'));
  await page.locator('.event-card').first().click();const dialog=page.getByRole('dialog');await expect(dialog).toContainText('Official source');await expect(dialog).toContainText('Andreas Wilhelmer');
- const size=await dialog.boundingBox();expect(size!.width).toBeLessThanOrEqual(430);expect(size!.height).toBeLessThan(450);
+ const size=await dialog.boundingBox();expect(size!.width).toBeLessThanOrEqual(430);expect(size!.height).toBeLessThan(560);
  await page.mouse.click(3,3);await expect(dialog).not.toBeVisible();await expect(page.locator('.event-card').first()).toBeFocused();await page.locator('.event-card').first().press('Enter');await expect(dialog).toBeVisible();
  await page.getByRole('button',{name:'Remove from my timetable'}).click();await page.keyboard.press('Escape');await expect(dialog).not.toBeVisible();await controls(page,()=>expect(page.getByRole('button',{name:/^My plan/})).toContainText('0'));
 });
@@ -248,4 +248,42 @@ test('sidebar keeps controls on the left, supports keyboard sorting and restores
  await toggle.click();await page.getByRole('button',{name:'Share',exact:true}).click();
  await expect(page.getByRole('dialog',{name:'Share your schedule'})).toBeVisible();
  await page.keyboard.press('Escape');await expect(toggle).toBeFocused();
+});
+
+test('single dated visits persist privately, appear only once, and expire on Monday',async({page})=>{
+ await list(page,'gbs');await page.locator('.slot-summary').filter({hasText:'GBS · Mi-1400-A'}).click();
+ const select=page.getByRole('combobox',{name:'Single session date'});
+ await expect(select.locator('option:checked')).toContainText('4 Nov');
+ await page.getByRole('button',{name:'Add this session · mark visited'}).click();
+ await expect(page.getByRole('button',{name:'Remove this visit'})).toBeVisible();
+ const record=await page.evaluate(()=>JSON.parse(localStorage.getItem('studyplan:tutor-week:v1')!));expect(record.visited).toHaveLength(1);
+ expect(JSON.parse((await page.evaluate(()=>localStorage.getItem('studyplan:v1')))! ).selected).toEqual([]);
+ await select.selectOption({label:'Wed 11 Nov · 14:00'});await expect(page.getByRole('button',{name:'Add this session · mark visited'})).toBeDisabled();
+ await page.keyboard.press('Escape');await controls(page,()=>page.getByRole('button',{name:/^My plan/}).click());
+ await page.getByRole('button',{name:'List',exact:true}).click();await expect(page.locator('.event-card')).toHaveCount(1);await expect(page.locator('.event-card')).toContainText('Visited');
+ await page.reload();await page.getByRole('button',{name:'List',exact:true}).click();await expect(page.locator('.event-card')).toHaveCount(1);
+ await page.getByRole('button',{name:'Open tutor spin wheel'}).click();await expect(page.getByRole('button',{name:'Restore GBS to wheel'})).toBeVisible();
+ await page.getByRole('button',{name:'Restore GBS to wheel'}).click();await expect(page.getByRole('button',{name:'Remove GBS from wheel'})).toBeVisible();
+ expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('studyplan:tutor-week:v1')!).visited.length)).toBe(1);
+ await page.keyboard.press('Escape');await page.clock.setSystemTime(new Date('2026-11-08T23:00:00Z'));await page.clock.runFor(1000);
+ await expect.poll(()=>page.evaluate(()=>JSON.parse(localStorage.getItem('studyplan:tutor-week:v1')!).visited)).toEqual([]);
+ await expect(page.locator('.event-card')).toHaveCount(0);
+});
+
+test('wheel supports spin, details, exclusions, empty state and mobile layout',async({page},info)=>{
+ await page.getByRole('button',{name:'Open tutor spin wheel'}).click();
+ await page.getByRole('button',{name:'Spin for Tutors Now',exact:true}).click();
+ await expect(page.getByRole('button',{name:'View chosen session'})).toBeVisible();
+ await page.screenshot({path:`artifacts/${info.project.name}-tutor-wheel.png`});
+ await page.getByRole('button',{name:'View chosen session'}).click();await expect(page.getByRole('button',{name:'Add this session · mark visited'})).toBeEnabled();
+ await page.keyboard.press('Escape');await expect(page.getByRole('button',{name:'Open tutor spin wheel'})).toBeFocused();
+ await page.getByRole('button',{name:'Open tutor spin wheel'}).click();
+ for(const name of ['GBS','GDB','IT Security','Analysis','NumProg']){
+   const button=page.getByRole('button',{name:`Remove ${name} from wheel`,exact:true});if(await button.count())await button.click();
+ }
+ await expect(page.getByRole('button',{name:'Spin for Tutors Now',exact:true})).toBeDisabled();
+ await page.getByRole('button',{name:'Restore GBS to wheel'}).click();await expect(page.getByRole('button',{name:'Spin for Tutors Now',exact:true})).toBeEnabled();
+ await page.clock.setSystemTime(new Date('2026-11-04T22:00:00Z'));await page.clock.runFor(1000);
+ await expect(page.getByRole('button',{name:'Spin for Tutors Now',exact:true})).toBeDisabled();
+ await page.setViewportSize({width:320,height:800});expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(320);
 });
