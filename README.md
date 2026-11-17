@@ -18,6 +18,19 @@ pnpm dev
 pnpm build
 ```
 
+Preview the generated site at `http://127.0.0.1:4173` with `pnpm preview`.
+This uses Python's local HTTP server and does not download a preview package.
+
+The decorative footer is a deferred, standalone WebGL script in
+`public/footer-plane.js`; it does not load React. Image conversion uses at most
+four encoders and fails the build before rewriting HTML if any conversion fails.
+Focused regressions can be run with:
+
+```sh
+node --test tests/footer-plane.test.mjs
+PYTHONPATH=src python3 -m unittest discover -s tests -p 'test_*.py'
+```
+
 ## Homepage portrait
 
 The homepage renders `components/ui/starry-nights.tsx` to static HTML during

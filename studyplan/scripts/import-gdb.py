@@ -2,7 +2,7 @@
 import re,json,subprocess,datetime as dt,pathlib
 root=pathlib.Path(__file__).resolve().parents[1]
 url='https://erdbtutor.db.in.tum.de/schedule?course_id=19'
-html=subprocess.check_output(['curl','-fsS',url]).decode()
+html=subprocess.check_output(['curl','-fsS','--connect-timeout','10','--max-time','30','--max-filesize','5242880',url]).decode()
 rows=json.loads(re.search(r'groups\s*=\s*(\[.*?\]);',html,re.S).group(1))
 checked=dt.datetime.now(dt.timezone.utc).isoformat()
 calendar=json.loads((root/'src/academic-calendar.json').read_text())

@@ -1,15 +1,4 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-
-export interface InfinitePlaneBgProps {
-  planeHeight?: number;
-  epsilon?: number;
-  speed?: number;
-  className?: string;
-  ariaLabel?: string;
-}
-
+// Decorative footer renderer; no framework runtime is needed.
 const vertexSource = `#version 300 es
 void main() {
   // One oversized triangle covers the canvas without a vertex buffer.
@@ -41,13 +30,13 @@ void main() {
   fragColor = vec4(mix(u_light, u_dark, checker), opacity);
 }`;
 
-function createProgram(gl: WebGL2RenderingContext) {
+function createProgram(gl) {
   const program = gl.createProgram();
   if (!program) return null;
   for (const [type, source] of [
     [gl.VERTEX_SHADER, vertexSource],
     [gl.FRAGMENT_SHADER, fragmentSource],
-  ] as const) {
+  ]) {
     const shader = gl.createShader(type);
     if (!shader) {
       gl.deleteProgram(program);
@@ -65,7 +54,7 @@ function createProgram(gl: WebGL2RenderingContext) {
 }
 
 // Notebook colors are six-digit hex tokens in src/index.css.
-function tokenColor(style: CSSStyleDeclaration, token: string) {
+function tokenColor(style, token) {
   const rgb = parseInt(style.getPropertyValue(token).trim().slice(1), 16);
   return [(rgb >> 16) & 255, (rgb >> 8) & 255, rgb & 255].map(
     (channel) => channel / 255,
@@ -73,20 +62,20 @@ function tokenColor(style: CSSStyleDeclaration, token: string) {
 }
 
 function observePlane(
-  canvas: HTMLCanvasElement,
-  gl: WebGL2RenderingContext,
-  planeHeight: number,
-  epsilon: number,
-  speed: number,
+  canvas,
+  gl,
+  planeHeight,
+  epsilon,
+  speed,
 ) {
   const motion = matchMedia("(prefers-reduced-motion: reduce)");
   let visible = false;
-  let program: WebGLProgram | null = null;
-  let resolution: WebGLUniformLocation | null = null;
-  let time: WebGLUniformLocation | null = null;
+  let program = null;
+  let resolution = null;
+  let time = null;
   let frame = 0;
   let elapsed = 0;
-  let previous: number | undefined;
+  let previous;
 
   function initialize() {
     program = createProgram(gl);
@@ -108,7 +97,7 @@ function observePlane(
     schedule();
   }
 
-  function draw(now: number) {
+  function draw(now) {
     const ratio = Math.min(window.devicePixelRatio || 1, 2);
     const width = Math.round(canvas.clientWidth * ratio);
     const height = Math.round(canvas.clientHeight * ratio);
@@ -134,7 +123,7 @@ function observePlane(
       frame = requestAnimationFrame(draw);
   }
 
-  function contextLost(event: Event) {
+  function contextLost(event) {
     event.preventDefault();
     program = null;
     delete canvas.dataset.ready;
@@ -167,35 +156,16 @@ function observePlane(
   };
 }
 
-export default function InfinitePlaneBg({
-  planeHeight = 0,
-  epsilon = 0.001,
-  speed = 1,
-  className,
-  ariaLabel,
-}: InfinitePlaneBgProps) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const gl = canvas.getContext("webgl2", {
-      antialias: false,
-      depth: false,
-      premultipliedAlpha: false,
-    });
-    if (!gl) return;
-
-    return observePlane(canvas, gl, planeHeight, epsilon, speed);
-  }, [planeHeight, epsilon, speed]);
-
-  return (
-    <canvas
-      ref={canvasRef}
-      className={`block h-full w-full ${className ?? ""}`}
-      role={ariaLabel ? "img" : undefined}
-      aria-label={ariaLabel}
-      aria-hidden={ariaLabel ? undefined : true}
-    />
-  );
+const host = document.getElementById("footer-plane");
+if (host) {
+  const canvas = document.createElement("canvas");
+  canvas.className = "block h-full w-full";
+  canvas.setAttribute("aria-hidden", "true");
+  host.append(canvas);
+  const gl = canvas.getContext("webgl2", {
+    antialias: false,
+    depth: false,
+    premultipliedAlpha: false,
+  });
+  if (gl) observePlane(canvas, gl, 0, 0.001, 0.42);
 }

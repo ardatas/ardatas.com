@@ -9,7 +9,7 @@ def provider_id(value):
     return identifier
 
 def get(path):
-    return json.loads(subprocess.check_output(['curl', '--fail', '--silent', '--show-error', '--max-time', '30', 'https://gbs.cm.in.tum.de/api/' + path]))
+    return json.loads(subprocess.check_output(['curl', '--fail', '--silent', '--show-error', '--connect-timeout', '10', '--max-time', '30', '--max-filesize', '5242880', 'https://gbs.cm.in.tum.de/api/' + path]))
 checked = dt.datetime.now(dt.timezone.utc).isoformat()
 calendar = json.loads((ROOT/'src/academic-calendar.json').read_text())
 capacity = {provider_id(t['id']): t for t in get('tutorials/get_capacity/')}

@@ -2,13 +2,13 @@
 
 import os
 import subprocess
-from threading import Thread
+from concurrent.futures import ThreadPoolExecutor
 from glob import glob
 
 
 def is_img(fname: str):
     ext = os.path.splitext(fname)[1].lower()
-    return ext in [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff", ".webp"]
+    return ext in [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff"]
 
 
 def optimized_name(fname: str):
@@ -19,19 +19,7 @@ def optimize_image(fname: str):
     outname = optimized_name(fname)
     subprocess.run(["cwebp", "-q", "80", fname, "-o", outname, "-quiet"], check=True)
 
-    os.remove(fname)
-
     print(f"Optimized {fname}")
-
-
-imgs = [f for f in glob("dist/assets/*", recursive=True) if is_img(f)]
-threads = []
-
-for img in imgs:
-    t = Thread(target=optimize_image, args=(img,))
-    t.start()
-
-    threads.append(t)
 
 
 def replace_in_html(html: str, img_basenames: list):
@@ -47,14 +35,19 @@ def replace_in_html(html: str, img_basenames: list):
     print(f"Replaced in {html}")
 
 
-htmls = [f for f in glob("dist/**/*.html", recursive=True)]
-img_basenames = [os.path.basename(img) for img in imgs]
+def main():
+    imgs = [f for f in glob("dist/assets/*") if is_img(f)]
+    # Wait for every conversion and propagate failures before changing any HTML
+    # or deleting originals. Bound parallel encoder memory/CPU consumption.
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        list(executor.map(optimize_image, imgs))
 
-for html in htmls:
-    t = Thread(target=replace_in_html, args=(html, img_basenames))
-    t.start()
+    img_basenames = [os.path.basename(img) for img in imgs]
+    for html in glob("dist/**/*.html", recursive=True):
+        replace_in_html(html, img_basenames)
+    for img in imgs:
+        os.remove(img)
 
-    threads.append(t)
 
-for t in threads:
-    t.join()
+if __name__ == "__main__":
+    main()
