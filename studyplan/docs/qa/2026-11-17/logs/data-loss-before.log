@@ -1,0 +1,80 @@
+
+> studyplan-organizer@0.1.0 test:e2e
+> playwright test tests/e2e/overnight-qa.spec.ts -g second tab --workers=2
+
+
+Running 2 tests using 2 workers
+
+(node:86288) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:86289) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [webkit-mobile] › tests/e2e/overnight-qa.spec.ts:46:1 › edits in a second tab do not erase slots saved in the first (5.7s)
+  ✘  1 [chromium] › tests/e2e/overnight-qa.spec.ts:46:1 › edits in a second tab do not erase slots saved in the first (7.4s)
+
+
+  1) [chromium] › tests/e2e/overnight-qa.spec.ts:46:1 › edits in a second tab do not erase slots saved in the first
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 0
+
+      Array [
+    -   "its-16",
+        "its-17",
+      ]
+
+      53 |  await second.getByRole('button', {name: 'Add IT Security · Group 17', exact: true}).click();
+      54 |  await page.reload();
+    > 55 |  expect(await page.evaluate(() => JSON.parse(localStorage.getItem('studyplan:v1')!).selected)).toEqual(['its-16','its-17']);
+         |                                                                                                ^
+      56 |  await second.close();
+      57 | });
+      58 |
+        at /Users/ardatas/Desktop/Projects/ardatas-studyplan-qa/studyplan/tests/e2e/overnight-qa.spec.ts:55:96
+
+    Error Context: test-results/overnight-qa-edits-in-a-se-72a90-se-slots-saved-in-the-first-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/overnight-qa-edits-in-a-se-72a90-se-slots-saved-in-the-first-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/overnight-qa-edits-in-a-se-72a90-se-slots-saved-in-the-first-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [webkit-mobile] › tests/e2e/overnight-qa.spec.ts:46:1 › edits in a second tab do not erase slots saved in the first
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 0
+
+      Array [
+    -   "its-16",
+        "its-17",
+      ]
+
+      53 |  await second.getByRole('button', {name: 'Add IT Security · Group 17', exact: true}).click();
+      54 |  await page.reload();
+    > 55 |  expect(await page.evaluate(() => JSON.parse(localStorage.getItem('studyplan:v1')!).selected)).toEqual(['its-16','its-17']);
+         |                                                                                                ^
+      56 |  await second.close();
+      57 | });
+      58 |
+        at /Users/ardatas/Desktop/Projects/ardatas-studyplan-qa/studyplan/tests/e2e/overnight-qa.spec.ts:55:96
+
+    Error Context: test-results/overnight-qa-edits-in-a-se-72a90-se-slots-saved-in-the-first-webkit-mobile/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/overnight-qa-edits-in-a-se-72a90-se-slots-saved-in-the-first-webkit-mobile/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/overnight-qa-edits-in-a-se-72a90-se-slots-saved-in-the-first-webkit-mobile/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [chromium] › tests/e2e/overnight-qa.spec.ts:46:1 › edits in a second tab do not erase slots saved in the first
+    [webkit-mobile] › tests/e2e/overnight-qa.spec.ts:46:1 › edits in a second tab do not erase slots saved in the first

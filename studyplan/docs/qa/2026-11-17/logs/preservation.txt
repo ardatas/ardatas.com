@@ -1,0 +1,16 @@
+Original checkout: /Users/ardatas/Desktop/Projects/ardatas.com
+Original branch: main
+QA worktree: /Users/ardatas/Desktop/Projects/ardatas-studyplan-qa
+QA branch: codex/studyplan-overnight-qa
+Starting commit: a964a37
+
+Original modified files (SHA-256 unchanged after QA):
+64bb48e74580baea6f7e570c9f545a6dda056eeda08dd81cdb708882d6824fa0  dist/index.html
+45efbcd2fe5a9a65993c46474c8512be1a78c91b65658260ebc63745067772cd  dist/projects/header.html
+f8ccb19d7d4a3a0fb2f212b06de1ff1976a65136fb6a60ab2f7b1c0cbc373930  posts/projects/header.md
+
+Complete git diff --binary captured before and after QA: cmp exit 0.
+No Git or GitHub configuration was changed.
+GitHub API /user returned login ardatas, ID 85059535.
+Commit author/committer identity selected: 85059535+ardatas@users.noreply.github.com via command environment only.
+No push or deployment commands were run.

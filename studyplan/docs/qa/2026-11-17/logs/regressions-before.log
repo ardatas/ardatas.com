@@ -1,0 +1,165 @@
+
+> studyplan-organizer@0.1.0 test:e2e
+> playwright test tests/e2e/overnight-qa.spec.ts --workers=2
+
+
+Running 6 tests using 2 workers
+
+(node:85338) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:85337) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/e2e/overnight-qa.spec.ts:20:1 › removing the last selected event restores focus to a visible control (1.6s)
+  ✘  2 [chromium] › tests/e2e/overnight-qa.spec.ts:34:1 › storage failure notice can be dismissed and returns after another failed save (6.4s)
+(node:85428) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 [chromium] › tests/e2e/overnight-qa.spec.ts:46:1 › edits in a second tab do not erase slots saved in the first (6.5s)
+(node:85458) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  4 [webkit-mobile] › tests/e2e/overnight-qa.spec.ts:20:1 › removing the last selected event restores focus to a visible control (1.5s)
+  ✘  5 [webkit-mobile] › tests/e2e/overnight-qa.spec.ts:34:1 › storage failure notice can be dismissed and returns after another failed save (5.8s)
+  ✘  6 [webkit-mobile] › tests/e2e/overnight-qa.spec.ts:46:1 › edits in a second tab do not erase slots saved in the first (6.3s)
+
+
+  1) [chromium] › tests/e2e/overnight-qa.spec.ts:34:1 › storage failure notice can be dismissed and returns after another failed save
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('.notice')
+    Expected: 0
+    Received: 1
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveCount" locator('.notice') with timeout 5000ms
+      - waiting for locator('.notice')
+        14 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      37 |  await expect(page.locator('.notice')).toContainText('storage is unavailable');
+      38 |  await page.getByRole('button', {name: 'Dismiss notice'}).click();
+    > 39 |  await expect(page.locator('.notice')).toHaveCount(0);
+         |                                        ^
+      40 |  await catalogue(page);
+      41 |  await page.getByRole('button', {name: 'Add IT Security · Group 16', exact: true}).click();
+      42 |  await expect(page.locator('.notice')).toContainText('storage is unavailable');
+        at /Users/ardatas/Desktop/Projects/ardatas-studyplan-qa/studyplan/tests/e2e/overnight-qa.spec.ts:39:40
+
+    Error Context: test-results/overnight-qa-storage-failu-387a6-s-after-another-failed-save-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/overnight-qa-storage-failu-387a6-s-after-another-failed-save-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/overnight-qa-storage-failu-387a6-s-after-another-failed-save-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/e2e/overnight-qa.spec.ts:46:1 › edits in a second tab do not erase slots saved in the first
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('button', { name: 'Remove IT Security · Group 16', exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('button', { name: 'Remove IT Security · Group 16', exact: true }) with timeout 5000ms
+      - waiting for getByRole('button', { name: 'Remove IT Security · Group 16', exact: true })
+
+
+      51 |  await catalogue(second);
+      52 |  await page.getByRole('button', {name: 'Add IT Security · Group 16', exact: true}).click();
+    > 53 |  await expect(second.getByRole('button', {name: 'Remove IT Security · Group 16', exact: true})).toBeVisible();
+         |                                                                                                 ^
+      54 |  await second.getByRole('button', {name: 'Add IT Security · Group 17', exact: true}).click();
+      55 |  await expect(page.getByRole('button', {name: 'Remove IT Security · Group 17', exact: true})).toBeVisible();
+      56 |  await page.reload();
+        at /Users/ardatas/Desktop/Projects/ardatas-studyplan-qa/studyplan/tests/e2e/overnight-qa.spec.ts:53:97
+
+    Error Context: test-results/overnight-qa-edits-in-a-se-72a90-se-slots-saved-in-the-first-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/overnight-qa-edits-in-a-se-72a90-se-slots-saved-in-the-first-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/overnight-qa-edits-in-a-se-72a90-se-slots-saved-in-the-first-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [webkit-mobile] › tests/e2e/overnight-qa.spec.ts:34:1 › storage failure notice can be dismissed and returns after another failed save
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('.notice')
+    Expected: 0
+    Received: 1
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveCount" locator('.notice') with timeout 5000ms
+      - waiting for locator('.notice')
+        14 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      37 |  await expect(page.locator('.notice')).toContainText('storage is unavailable');
+      38 |  await page.getByRole('button', {name: 'Dismiss notice'}).click();
+    > 39 |  await expect(page.locator('.notice')).toHaveCount(0);
+         |                                        ^
+      40 |  await catalogue(page);
+      41 |  await page.getByRole('button', {name: 'Add IT Security · Group 16', exact: true}).click();
+      42 |  await expect(page.locator('.notice')).toContainText('storage is unavailable');
+        at /Users/ardatas/Desktop/Projects/ardatas-studyplan-qa/studyplan/tests/e2e/overnight-qa.spec.ts:39:40
+
+    Error Context: test-results/overnight-qa-storage-failu-387a6-s-after-another-failed-save-webkit-mobile/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/overnight-qa-storage-failu-387a6-s-after-another-failed-save-webkit-mobile/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/overnight-qa-storage-failu-387a6-s-after-another-failed-save-webkit-mobile/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [webkit-mobile] › tests/e2e/overnight-qa.spec.ts:46:1 › edits in a second tab do not erase slots saved in the first
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('button', { name: 'Remove IT Security · Group 16', exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('button', { name: 'Remove IT Security · Group 16', exact: true }) with timeout 5000ms
+      - waiting for getByRole('button', { name: 'Remove IT Security · Group 16', exact: true })
+
+
+      51 |  await catalogue(second);
+      52 |  await page.getByRole('button', {name: 'Add IT Security · Group 16', exact: true}).click();
+    > 53 |  await expect(second.getByRole('button', {name: 'Remove IT Security · Group 16', exact: true})).toBeVisible();
+         |                                                                                                 ^
+      54 |  await second.getByRole('button', {name: 'Add IT Security · Group 17', exact: true}).click();
+      55 |  await expect(page.getByRole('button', {name: 'Remove IT Security · Group 17', exact: true})).toBeVisible();
+      56 |  await page.reload();
+        at /Users/ardatas/Desktop/Projects/ardatas-studyplan-qa/studyplan/tests/e2e/overnight-qa.spec.ts:53:97
+
+    Error Context: test-results/overnight-qa-edits-in-a-se-72a90-se-slots-saved-in-the-first-webkit-mobile/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/overnight-qa-edits-in-a-se-72a90-se-slots-saved-in-the-first-webkit-mobile/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/overnight-qa-edits-in-a-se-72a90-se-slots-saved-in-the-first-webkit-mobile/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    [chromium] › tests/e2e/overnight-qa.spec.ts:34:1 › storage failure notice can be dismissed and returns after another failed save
+    [chromium] › tests/e2e/overnight-qa.spec.ts:46:1 › edits in a second tab do not erase slots saved in the first
+    [webkit-mobile] › tests/e2e/overnight-qa.spec.ts:34:1 › storage failure notice can be dismissed and returns after another failed save
+    [webkit-mobile] › tests/e2e/overnight-qa.spec.ts:46:1 › edits in a second tab do not erase slots saved in the first
+  2 passed (17.2s)

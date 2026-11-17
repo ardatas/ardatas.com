@@ -1,0 +1,134 @@
+
+> studyplan-organizer@0.1.0 test
+> node --import tsx --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: browsing retains filtered-out selections exactly once and separates overlapping lanes
+ok 1 - browsing retains filtered-out selections exactly once and separates overlapping lanes
+  ---
+  duration_ms: 6.884541
+  type: 'test'
+  ...
+# Subtest: skipped, cancelled, source-conflict and out-of-range selections add neither context nor conflicts
+ok 2 - skipped, cancelled, source-conflict and out-of-range selections add neither context nor conflicts
+  ---
+  duration_ms: 0.231375
+  type: 'test'
+  ...
+# Subtest: all 125 sourced slots have valid, unique dated occurrences
+ok 3 - all 125 sourced slots have valid, unique dated occurrences
+  ---
+  duration_ms: 1.218791
+  type: 'test'
+  ...
+# Subtest: Berlin times stay correct across DST and independent of host timezone
+ok 4 - Berlin times stay correct across DST and independent of host timezone
+  ---
+  duration_ms: 11.643291
+  type: 'test'
+  ...
+# Subtest: GBS online lectures, missing Wednesdays, and last lecture are exact
+ok 5 - GBS online lectures, missing Wednesdays, and last lecture are exact
+  ---
+  duration_ms: 0.122125
+  type: 'test'
+  ...
+# Subtest: IT replacement Friday only, cancelled group and published times preserved
+ok 6 - IT replacement Friday only, cancelled group and published times preserved
+  ---
+  duration_ms: 0.207833
+  type: 'test'
+  ...
+# Subtest: holiday source conflicts never exported, even with provisional opted in
+ok 7 - holiday source conflicts never exported, even with provisional opted in
+  ---
+  duration_ms: 635.94075
+  type: 'test'
+  ...
+# Subtest: GDB follows the weekly sequence by default with date bounds, exclusions and stable UIDs
+ok 8 - GDB follows the weekly sequence by default with date bounds, exclusions and stable UIDs
+  ---
+  duration_ms: 11.464208
+  type: 'test'
+  ...
+# Subtest: ICS round-trips Unicode, escaping, UTF8 byte folding and CRLF
+ok 9 - ICS round-trips Unicode, escaping, UTF8 byte folding and CRLF
+  ---
+  duration_ms: 0.667875
+  type: 'test'
+  ...
+# Subtest: calendar export refuses malformed UID and URL fields before returning a file
+ok 10 - calendar export refuses malformed UID and URL fields before returning a file
+  ---
+  duration_ms: 1.134333
+  type: 'test'
+  ...
+# Subtest: overlaps use actual dates, not just weekdays, and exclude skipped sessions
+ok 11 - overlaps use actual dates, not just weekdays, and exclude skipped sessions
+  ---
+  duration_ms: 0.307625
+  type: 'test'
+  ...
+# Subtest: interval lane layout handles partial and transitive overlaps
+ok 12 - interval lane layout handles partial and transitive overlaps
+  ---
+  duration_ms: 0.783416
+  type: 'test'
+  ...
+# Subtest: share roundtrip preserves skipped dates and rejects malformed/unbounded content
+ok 13 - share roundtrip preserves skipped dates and rejects malformed/unbounded content
+  ---
+  duration_ms: 0.938666
+  type: 'test'
+  ...
+# Subtest: assembly suspension excludes only overlapping known Garching sessions, retaining source facts
+ok 14 - assembly suspension excludes only overlapping known Garching sessions, retaining source facts
+  ---
+  duration_ms: 657.095167
+  type: 'test'
+  ...
+# Subtest: overlap groups retain every option and split adjacent sessions
+ok 15 - overlap groups retain every option and split adjacent sessions
+  ---
+  duration_ms: 3.337292
+  type: 'test'
+  ...
+# Subtest: NumProg uses Moodle corrections, split groups and online options without cancelled groups
+ok 16 - NumProg uses Moodle corrections, split groups and online options without cancelled groups
+  ---
+  duration_ms: 21.300209
+  type: 'test'
+  ...
+# Subtest: official holiday calendar excludes every course and retains both break boundaries
+ok 17 - official holiday calendar excludes every course and retains both break boundaries
+  ---
+  duration_ms: 736.845875
+  type: 'test'
+  ...
+# Subtest: only this Berlin week can be visited, and stale or malformed storage is pruned
+ok 18 - only this Berlin week can be visited, and stale or malformed storage is pruned
+  ---
+  duration_ms: 17.413208
+  type: 'test'
+  ...
+# Subtest: one visit renders once in my plan without adding future occurrences; recurrence deduplicates
+ok 19 - one visit renders once in my plan without adding future occurrences; recurrence deduplicates
+  ---
+  duration_ms: 0.339917
+  type: 'test'
+  ...
+# Subtest: wheel takes each module’s next start today, includes tied tutors, and moves on with time
+ok 20 - wheel takes each module’s next start today, includes tied tutors, and moves on with time
+  ---
+  duration_ms: 0.213917
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3314.764083

@@ -1,0 +1,73 @@
+
+> studyplan-organizer@0.1.0 test:e2e
+> playwright test --workers=2
+
+[WebServer] (node:89086) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 54 tests using 2 workers
+
+(node:89120) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:89119) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 [chromium] › tests/e2e/app.spec.ts:14:1 › course dropdown, readable compact details, selection and persistence (10.8s)
+  ✓   1 [chromium] › tests/e2e/app.spec.ts:26:1 › overlap options, search, skipped dates and ICS download contents (11.0s)
+  ✓   4 [chromium] › tests/e2e/app.spec.ts:40:1 › embedded schedules never open device storage or mount save controls (349ms)
+  ✓   3 [chromium] › tests/e2e/app.spec.ts:32:1 › shared previews do not replace saved plan or filters until saved (5.4s)
+  ✓   6 [chromium] › tests/e2e/app.spec.ts:83:1 › GDB exports by default without holidays; cancelled groups and malformed links (2.2s)
+  ✓   5 [chromium] › tests/e2e/app.spec.ts:69:1 › calendar views, live line and no horizontal week scrolling (6.6s)
+  ✓   7 [chromium] › tests/e2e/app.spec.ts:87:1 › 320px layout, root assets and malformed initial share preserve saved plan (757ms)
+  ✓   8 [chromium] › tests/e2e/app.spec.ts:92:1 › range updates calendar and assembly-conflict details remain accessible (1.6s)
+  ✓   9 [chromium] › tests/e2e/app.spec.ts:96:1 › course, search and type filters restore on a later visit; reset is guarded (1.6s)
+  ✓  10 [chromium] › tests/e2e/app.spec.ts:102:1 › corrupt storage and unavailable storage leave the planner usable (1.1s)
+  ✓  12 [chromium] › tests/e2e/app.spec.ts:131:1 › desktop keeps the full day fitted; mobile Day has readable vertical spacing (891ms)
+  ✓  13 [chromium] › tests/e2e/app.spec.ts:142:1 › mobile month fits the screen and opens a day (1.0s)
+  ✓  11 [chromium] › tests/e2e/app.spec.ts:107:1 › portrait week fits five aligned weekdays and scrolls vertically with sticky dates (2.3s)
+  ✓  15 [chromium] › tests/e2e/app.spec.ts:160:1 › NumProg options preserve split groups and selections across courses (1.5s)
+  ✓  16 [chromium] › tests/e2e/app.spec.ts:173:1 › selected tutorials stay as translucent context across filters without covering candidates (868ms)
+  ✓  14 [chromium] › tests/e2e/app.spec.ts:148:1 › overlapping sessions have separate clickable lanes inside their time box (2.7s)
+  ✓  18 [chromium] › tests/e2e/app.spec.ts:220:1 › sidebar keeps controls on the left, supports keyboard sorting and restores drawer focus (1.1s)
+  ✓  19 [chromium] › tests/e2e/app.spec.ts:253:1 › single dated visits persist privately, appear only once, and expire on Monday (1.8s)
+  ✓  17 [chromium] › tests/e2e/app.spec.ts:193:1 › mobile controls keep Today beside the views and provide full touch targets (3.2s)
+  ✓  21 [chromium] › tests/e2e/app.spec.ts:296:1 › reduced motion reveals the wheel result without waiting for animation (420ms)
+  ✓  22 [chromium] › tests/e2e/overnight-qa.spec.ts:20:1 › removing the last selected event restores focus to a visible control (684ms)
+  ✓  23 [chromium] › tests/e2e/overnight-qa.spec.ts:34:1 › storage failure notice can be dismissed and returns after another failed save (510ms)
+  ✓  24 [chromium] › tests/e2e/overnight-qa.spec.ts:46:1 › edits in a second tab do not erase slots saved in the first (679ms)
+  ✓  25 [chromium] › tests/e2e/overnight-qa.spec.ts:59:1 › the last catalogue action is not covered by the floating tutor wheel (439ms)
+  ✓  26 [chromium] › tests/e2e/overnight-qa.spec.ts:68:1 › live saved-plan updates leave a shared preview unchanged until Save a copy (1.0s)
+  ✓  20 [chromium] › tests/e2e/app.spec.ts:273:1 › wheel supports spin, details, exclusions, empty state and mobile layout (6.4s)
+  ✓  27 [chromium] › tests/e2e/overnight-qa.spec.ts:89:1 › current-date layout supports portrait, landscape, tablet and desktop views (3.3s)
+(node:89551) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:89566) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  28 [webkit-mobile] › tests/e2e/app.spec.ts:14:1 › course dropdown, readable compact details, selection and persistence (2.5s)
+  ✓  29 [webkit-mobile] › tests/e2e/app.spec.ts:26:1 › overlap options, search, skipped dates and ICS download contents (2.6s)
+  ✓  31 [webkit-mobile] › tests/e2e/app.spec.ts:40:1 › embedded schedules never open device storage or mount save controls (561ms)
+  ✓  32 [webkit-mobile] › tests/e2e/app.spec.ts:69:1 › calendar views, live line and no horizontal week scrolling (1.7s)
+  ✓  30 [webkit-mobile] › tests/e2e/app.spec.ts:32:1 › shared previews do not replace saved plan or filters until saved (2.6s)
+  ✓  33 [webkit-mobile] › tests/e2e/app.spec.ts:83:1 › GDB exports by default without holidays; cancelled groups and malformed links (1.3s)
+  ✓  34 [webkit-mobile] › tests/e2e/app.spec.ts:87:1 › 320px layout, root assets and malformed initial share preserve saved plan (1.2s)
+  ✓  35 [webkit-mobile] › tests/e2e/app.spec.ts:92:1 › range updates calendar and assembly-conflict details remain accessible (1.1s)
+  ✓  37 [webkit-mobile] › tests/e2e/app.spec.ts:102:1 › corrupt storage and unavailable storage leave the planner usable (1.9s)
+  ✓  36 [webkit-mobile] › tests/e2e/app.spec.ts:96:1 › course, search and type filters restore on a later visit; reset is guarded (3.6s)
+  ✓  39 [webkit-mobile] › tests/e2e/app.spec.ts:131:1 › desktop keeps the full day fitted; mobile Day has readable vertical spacing (1.4s)
+  ✓  40 [webkit-mobile] › tests/e2e/app.spec.ts:142:1 › mobile month fits the screen and opens a day (535ms)
+  ✓  38 [webkit-mobile] › tests/e2e/app.spec.ts:107:1 › portrait week fits five aligned weekdays and scrolls vertically with sticky dates (3.1s)
+  ✓  42 [webkit-mobile] › tests/e2e/app.spec.ts:160:1 › NumProg options preserve split groups and selections across courses (1.9s)
+  ✓  41 [webkit-mobile] › tests/e2e/app.spec.ts:148:1 › overlapping sessions have separate clickable lanes inside their time box (3.8s)
+  ✓  43 [webkit-mobile] › tests/e2e/app.spec.ts:173:1 › selected tutorials stay as translucent context across filters without covering candidates (2.2s)
+  ✓  45 [webkit-mobile] › tests/e2e/app.spec.ts:220:1 › sidebar keeps controls on the left, supports keyboard sorting and restores drawer focus (2.1s)
+  ✓  44 [webkit-mobile] › tests/e2e/app.spec.ts:193:1 › mobile controls keep Today beside the views and provide full touch targets (2.9s)
+  ✓  46 [webkit-mobile] › tests/e2e/app.spec.ts:253:1 › single dated visits persist privately, appear only once, and expire on Monday (1.2s)
+  ✓  48 [webkit-mobile] › tests/e2e/app.spec.ts:296:1 › reduced motion reveals the wheel result without waiting for animation (522ms)
+  ✓  49 [webkit-mobile] › tests/e2e/overnight-qa.spec.ts:20:1 › removing the last selected event restores focus to a visible control (1.1s)
+  ✓  50 [webkit-mobile] › tests/e2e/overnight-qa.spec.ts:34:1 › storage failure notice can be dismissed and returns after another failed save (978ms)
+  ✓  51 [webkit-mobile] › tests/e2e/overnight-qa.spec.ts:46:1 › edits in a second tab do not erase slots saved in the first (1.4s)
+  ✓  52 [webkit-mobile] › tests/e2e/overnight-qa.spec.ts:59:1 › the last catalogue action is not covered by the floating tutor wheel (978ms)
+  ✓  47 [webkit-mobile] › tests/e2e/app.spec.ts:273:1 › wheel supports spin, details, exclusions, empty state and mobile layout (6.5s)
+  ✓  53 [webkit-mobile] › tests/e2e/overnight-qa.spec.ts:68:1 › live saved-plan updates leave a shared preview unchanged until Save a copy (2.2s)
+  ✓  54 [webkit-mobile] › tests/e2e/overnight-qa.spec.ts:89:1 › current-date layout supports portrait, landscape, tablet and desktop views (5.0s)
+
+  54 passed (1.4m)

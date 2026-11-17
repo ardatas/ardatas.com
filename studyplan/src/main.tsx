@@ -49,6 +49,21 @@ function App({loaded, loadedPreferences}: {
  const [storageError,setStorageError]=useState('');const [preferenceError,setPreferenceError]=useState('');const [confirmReset,setConfirmReset]=useState(false);
  useEffect(()=>{const onHash=()=>{if(!location.hash.startsWith('#plan='))return;try{const next=parsePlan(decodeURIComponent(location.hash.slice(6)),slots);setShared(true);setSaved(false);setPlan(next);setNotice('Shared schedule opened. Save a copy to keep it on this device.');}catch{setNotice('This schedule link is invalid or uses a different data version. Your saved schedule is unchanged.');}};window.addEventListener('hashchange',onHash);return()=>window.removeEventListener('hashchange',onHash);},[]);
  useEffect(()=>{const refresh=()=>{const next=berlinNow();setNow(previous=>previous.date===next.date&&previous.time===next.time?previous:next);};const timer=setInterval(refresh,1000);window.addEventListener('focus',refresh);document.addEventListener('visibilitychange',refresh);return()=>{clearInterval(timer);window.removeEventListener('focus',refresh);document.removeEventListener('visibilitychange',refresh);};},[]);
+ // Keep ordinary tabs on the latest saved plan; shared previews remain independent.
+ useEffect(()=>{
+  if(shared)return;
+  const sync=(event:StorageEvent)=>{
+   if(event.key!==storageKey&&event.key!==null)return;
+   try{
+    // Read current storage instead of replaying an older queued storage event.
+    const raw=localStorage.getItem(storageKey);
+    const next=raw?parsePlan(raw,slots):structuredClone(DEFAULT_PLAN);
+    setPlan(previous=>JSON.stringify(previous)===JSON.stringify(next)?previous:next);
+   }catch{setNotice('The schedule saved in another tab could not be loaded. Your current plan is unchanged.');}
+  };
+  window.addEventListener('storage',sync);
+  return()=>window.removeEventListener('storage',sync);
+ },[shared]);
  useEffect(()=>{if(shared)return;try{localStorage.setItem(storageKey,JSON.stringify(plan));setSaved(true);setStorageError('');}catch{setSaved(false);setStorageError('Device storage is unavailable. Use Share to keep a copy of your schedule.');}},[plan,shared]);
  useEffect(()=>{if(shared)return;try{localStorage.setItem(preferencesKey,JSON.stringify({course,query,kind,mode}));setPreferenceError('');}catch{setPreferenceError('Filters could not be saved on this device.');}},[course,query,kind,mode,shared]);
  function resetSavedPlan(){let failed=false;try{localStorage.removeItem(storageKey);localStorage.removeItem(preferencesKey);}catch{failed=true;}
@@ -117,7 +132,7 @@ function App({loaded, loadedPreferences}: {
   </div>
  </PlannerSidebar>
  <main>
- {(notice||storageError||preferenceError||weekError)&&<div className="notice" role="status"><span>{storageError||preferenceError||weekError||notice}</span><button aria-label="Dismiss notice" onClick={()=>setNotice('')}><X size={16}/></button></div>}
+ {(notice||storageError||preferenceError||weekError)&&<div className="notice" role="status"><span>{storageError||preferenceError||weekError||notice}</span><button aria-label="Dismiss notice" onClick={()=>{setNotice('');setStorageError('');setPreferenceError('');setWeekError('');}}><X size={16}/></button></div>}
  {clashes.length>0&&<div className="conflict" role="status"><strong>{clashDays.size} dates with overlaps</strong><span>{titleFor(clashes[0].a.slot)} and {titleFor(clashes[0].b.slot)} · {formatDate(clashes[0].a.event.date)}</span><button onClick={()=>{setMode('mine');setQuery('');setKind('all');setShowSlots(false);}}>Review my timetable</button></div>}
  <div className="calendar-area"><div className="calendar-host" hidden={showSlots}><EventManager rangeFrom={plan.from} rangeTo={plan.to} events={events} browsing={mode==='browse'} today={now.date} now={now.time} initialDate={now.date>=plan.from&&now.date<=plan.to?now.date:plan.from} onEventClick={(e:CalendarEvent,returnTarget?:HTMLElement)=>{detailTrigger.current=returnTarget||null;setDetail({slot:e.slot,date:e.date});}}/></div>
  {showSlots&&<section className="catalogue"><div className="catalogue-heading"><div><p className="eyebrow">{mode==='mine'?'SELECTED SLOTS':'AVAILABLE SLOTS'}</p><h2>{mode==='mine'?'Your selection':course==='all'?'All courses':courses.find(c=>c.id===course)!.name}</h2></div><span>{shown.length} options</span></div>{!shown.length&&<p className="empty-state">No matching slots. Clear your search or choose another course.</p>}<div className="slot-list">{shown.map(s=>{const o=s.occurrences.find(o=>o.status==='scheduled'||o.status==='provisional')||s.occurrences[0];const cancelled=s.occurrences.every(o=>o.status==='cancelled');return <article key={s.id} className={`slot-row ${plan.selected.includes(s.id)?'selected-slot':''}`} data-kind={s.kind} style={courseStyle(s.course,s.kind)}><button className="slot-summary" onClick={click=>{detailTrigger.current=click.currentTarget;setDetail({slot:s});}}><span className="slot-day">{days[weekday(o.date)]}<b>{o.start}</b></span><span><strong>{titleFor(s)}</strong><span>{o.start}–{o.end} · {o.tutor}</span><small>{o.room} · {s.kind}{cancelled?' · Cancelled':o.status==='provisional'?' · Provisional dates':''}</small></span></button><button className={`add-slot ${plan.selected.includes(s.id)?'is-added':''}`} disabled={cancelled} aria-label={`${plan.selected.includes(s.id)?'Remove':'Add'} ${titleFor(s)}`} onClick={()=>toggle(s.id)}>{plan.selected.includes(s.id)?<Check size={17}/>:<Plus size={17}/>}<span>{cancelled?'Cancelled':plan.selected.includes(s.id)?'Added':'Add'}</span></button></article>;})}</div></section>}
