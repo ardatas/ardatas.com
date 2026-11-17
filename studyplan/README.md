@@ -19,6 +19,7 @@ Production preview: `npm run build && npm run preview`. The app runs at `/`, inc
 
 - Month, week, day, and list calendars with Berlin time, today highlighting, and a live time line.
 - Course, tutor, room, and session-type filters; detailed date and official source links.
+- Clear selections by date, Monday–Sunday week, or the whole plan, with an explicit confirmation. Daily and weekly clearing skips recurring dates and removes single visits; other weeks and filters stay unchanged.
 - Device-local saved plans and course/search/type filters, guarded reset, shared URL previews, manual date exclusions, and actual-date overlap warnings.
 - ICS export with explicit UTC events, stable IDs, UTF-8 line folding, escaped text, semester bounds, cancellations, and holiday exceptions. GDB follows its published weekly sequence and is included by default, excluding university holidays and teaching breaks.
 - Responsive controls and readable concurrent tutorial blocks; five weekdays fit the viewport on phones and desktops. Mobile calendars scroll vertically with sticky dates; crowded week slots open Day view for individual tutorial selection.

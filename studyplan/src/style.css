@@ -167,3 +167,10 @@
 @keyframes wheel-tick{from{transform:translateX(-50%) rotate(-8deg)}to{transform:translateX(-50%) rotate(8deg)}}
 @keyframes wheel-busy{to{transform:rotate(360deg)}}
 @keyframes wheel-reveal{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.clear-selections{display:flex;flex-direction:column;gap:12px;min-width:0}
+.clear-selections p{margin:0}.clear-selections select{width:100%}
+.clear-actions{display:flex;flex-wrap:wrap;gap:8px}
+.clear-actions button{flex:1;min-height:44px}
+.clear-selections select,.clear-selections input{min-height:44px;font-size:16px}
+.clear-selections select{appearance:none;-webkit-appearance:none;height:44px;padding-right:32px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23a7b9d2' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center}
