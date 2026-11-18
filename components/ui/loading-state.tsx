@@ -29,26 +29,27 @@ function useElapsed(enabled: boolean) {
   return total < 60 ? `${total.toFixed(1)}s` : `${Math.floor(total / 60)}m ${(total % 60).toFixed(1)}s`;
 }
 
-export default function LoadingState({ label = "Churning", variant = "Drive", showElapsed = true }: {
+export default function LoadingState({ label = "Churning", variant = "Drive", showElapsed = true, size = "default" }: {
   label?: string;
   variant?: string;
   showElapsed?: boolean;
+  size?: "default" | "large";
 }) {
   const elapsed = useElapsed(showElapsed);
   const { delays, dur, round } = PATTERNS[variant] ?? PATTERNS.Drive;
   return (
-    <div className="loading-state flex w-fit items-center gap-2.5">
+    <div className={`loading-state flex w-fit items-center gap-2.5 ${size === "large" ? "text-lg sm:text-2xl" : "text-[13px]"}`}>
       <span aria-hidden="true" className="grid shrink-0 grid-cols-[repeat(3,4px)] gap-[1.5px]">
         {delays.map((d, i) => (
           <span key={i} className={`loading-pixel size-[4px] bg-foreground ${round ? "rounded-full" : "rounded-[1px]"}`}
             style={{ opacity: d === null ? 0.07 : 0.15, animation: d === null ? "none" : `pixel-on ${dur}ms ease-in-out ${d}ms infinite` }} />
         ))}
       </span>
-      <span className="loading-label bg-clip-text text-[13px] font-medium text-transparent"
+      <span className="loading-label bg-clip-text font-medium text-transparent"
         style={{ backgroundImage: "linear-gradient(90deg, var(--muted-foreground) 35%, var(--foreground) 50%, var(--muted-foreground) 65%)", backgroundSize: "200% 100%", animation: "shimmer-text 1.4s linear infinite" }}>
         {label}
       </span>
-      {showElapsed && <span className="font-mono text-[12px] text-muted-foreground tabular-nums" aria-live="off">{elapsed}</span>}
+      {showElapsed && <span className="whitespace-nowrap font-mono text-[0.923em] text-muted-foreground tabular-nums" aria-live="off">{elapsed}</span>}
     </div>
   );
 }
