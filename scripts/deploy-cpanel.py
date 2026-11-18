@@ -110,8 +110,13 @@ def deploy(api, root, expected, timeout):
             return False
         if current.get('last_update', {}).get('identifier') != expected:
             return False
-        if current.get('branch') != 'main' or current.get('deployable') != 1:
-            raise DeployError('Updated repository is not deployable on main.')
+        if current.get('branch') != 'main' or current.get('deployable') not in (1, '1'):
+            raise DeployError(
+                f"cPanel blocked deployment: branch={current.get('branch')!r}, "
+                f"deployable={current.get('deployable')!r}. "
+                'Check cPanel > Git Version Control > Manage > Pull or Deploy for the reason. '
+                'The server checkout needs a clean working tree and a valid checked-in .cpanel.yml. '
+                'Use --status for a read-only diagnostic; no deployment was queued.')
         return current
 
     wait_for(updated, timeout, 'the expected commit')
@@ -142,6 +147,7 @@ def deploy(api, root, expected, timeout):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument('--status', action='store_true', help='Read-only: show the selected server repository status')
     parser.add_argument('--list-repositories', action='store_true', help='Read-only: list checkout paths and branches')
     parser.add_argument('--repository-root', default=os.getenv('CPANEL_REPOSITORY_ROOT'))
     parser.add_argument('--timeout', type=int, default=300, help='Maximum seconds per server phase (default: 300)')
@@ -155,6 +161,17 @@ def main():
     if args.list_repositories:
         for repo in api.call('VersionControl', 'retrieve') or []:
             print(f'{repo.get("repository_root")}  branch={repo.get("branch")}')
+        return
+    if args.status:
+        repo = repository(api, args.repository_root)
+        # Only expose deployment metadata, never source URLs or credentials.
+        print(json.dumps({
+            'repository_root': repo.get('repository_root'),
+            'branch': repo.get('branch'),
+            'deployable': repo.get('deployable'),
+            'commit': (repo.get('last_update') or {}).get('identifier'),
+            'pending_tasks': len(repo.get('tasks') or []),
+        }, indent=2))
         return
     expected = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
     remote = subprocess.check_output(['git', 'ls-remote', 'https://github.com/ardatas/ardatas.com.git',

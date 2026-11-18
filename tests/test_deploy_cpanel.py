@@ -40,6 +40,31 @@ class DeploymentTests(unittest.TestCase):
         self.assertIn(('VersionControl', 'update', {'repository_root': ROOT, 'branch': 'main'}), api.calls)
         self.assertTrue(api.created)
 
+    def test_text_deployable_flag(self):
+        api = FakeAPI()
+        original = api.call
+        def call(module, function, **params):
+            data = original(module, function, **params)
+            if module == 'VersionControl' and function == 'retrieve':
+                data[0]['deployable'] = '1'
+            return data
+        api.call = call
+        m.deploy(api, ROOT, SHA, 1)
+        self.assertTrue(api.created)
+
+    def test_blocked_flag_reports_status_without_deploying(self):
+        api = FakeAPI()
+        original = api.call
+        def call(module, function, **params):
+            data = original(module, function, **params)
+            if module == 'VersionControl' and function == 'retrieve':
+                data[0]['deployable'] = 0
+            return data
+        api.call = call
+        with self.assertRaisesRegex(m.DeployError, 'deployable=0'):
+            m.deploy(api, ROOT, SHA, 1)
+        self.assertFalse(api.created)
+
     def test_failed_and_canceled_deployments_fail(self):
         for outcome in ('failed', 'canceled'):
             with self.subTest(outcome=outcome), self.assertRaises(m.DeployError):
