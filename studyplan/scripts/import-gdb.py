@@ -1,5 +1,6 @@
 """Import the public GDB weekly pattern without contact details."""
 import re,json,subprocess,datetime as dt,pathlib
+from gdb_schedule_changes import apply_schedule_changes
 root=pathlib.Path(__file__).resolve().parents[1]
 url='https://erdbtutor.db.in.tum.de/schedule?course_id=19'
 html=subprocess.check_output(['curl','-fsS','--connect-timeout','10','--max-time','30','--max-filesize','5242880',url]).decode()
@@ -17,5 +18,7 @@ for r in rows:
    events.append(dict(id=id+'-'+d,date=d,start=time,end=end,room=r['room'],tutor=r['user']['firstname']+' '+r['user']['lastname'],status='scheduled',source=url))
   date+=dt.timedelta(days=7)
  slots.append(dict(id=id,course='gdb',kind='Tutorial',label=r['name'],source=url,checkedAt=checked,note='Published weekly pattern (90 minutes), assumed to run each week through 5 February 2027. TUM holidays, teaching breaks and applicable assembly exclusions are omitted. Included in calendar export by default; check the course for later changes.',occurrences=events))
+for slot in slots:
+ apply_schedule_changes(slot,calendar)
 (root/'src/gdb.json').write_text(json.dumps(slots,ensure_ascii=False,indent=2)+'\n')
 print(len(slots),'GDB groups')
