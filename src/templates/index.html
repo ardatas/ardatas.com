@@ -26,6 +26,8 @@
         </article>
         {{ portrait_html | safe }}
       </div>
+      <div id="building-status">{{ loading_state_html | safe }}</div>
+      <script src="/loading-state.js?v={{ loading_state_version }}" defer></script>
     {% endcall %}
     <script src="/whoami-handwriting.js?v={{ asset_versions['whoami-handwriting.js'] }}" defer></script>
     <section id="experience">

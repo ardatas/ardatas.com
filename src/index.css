@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 :root {
+  --foreground: #101114;
+  --muted-foreground: #52677a;
   --notebook-paper: #edf3f8;
   --notebook-grid: rgba(91, 123, 153, 0.16);
   --notebook-card: #e2ebf3;
@@ -404,4 +406,19 @@ article {
   mask-repeat: no-repeat;
 
   background-color: currentColor;
+}
+
+@keyframes pixel-on {
+  0%, 100% { opacity: 0.12; }
+  50% { opacity: 1; }
+}
+
+@keyframes shimmer-text {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-pixel, .loading-label { animation: none !important; }
+  .loading-label { background-image: none !important; color: var(--muted-foreground); }
 }

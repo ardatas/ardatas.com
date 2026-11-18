@@ -223,7 +223,19 @@ portrait_html = subprocess.check_output(
     ["node", "--import", "tsx", "src/render-portrait.tsx"],
     cwd=os.path.dirname(script_path), text=True,
 )
-rendered = index.render(lists=lists, name=name, title=name, running=running, travel=travel,
+loading_state_html = subprocess.check_output(
+    ["node", "--import", "tsx", "src/render-loading-state.tsx"],
+    cwd=os.path.dirname(script_path), text=True,
+)
+loading_bundle = os.path.abspath(os.path.join(args.output, "loading-state.js"))
+subprocess.run(
+    ["pnpm", "exec", "esbuild", "src/loading-state.tsx", "--bundle", "--minify",
+     "--define:process.env.NODE_ENV=\"production\"", "--outfile=" + loading_bundle],
+    cwd=os.path.dirname(script_path), check=True,
+)
+with open(loading_bundle, "rb") as source:
+    loading_state_version = hashlib.sha256(source.read()).hexdigest()[:12]
+rendered = index.render(loading_state_html=loading_state_html, loading_state_version=loading_state_version, lists=lists, name=name, title=name, running=running, travel=travel,
                         portrait_html=portrait_html,
                         exploration=build_exploration_stats(travel["countries"]))
 soup = bs(rendered)
