@@ -59,7 +59,7 @@ export default function GitHubActivity() {
       period={period}
       selectedDate={selected}
       onSelectDate={setSelected}
-      actions={<a className="social-link font-mono text-xs" href="https://github.com/ardatas">@ardatas ↗</a>}
+      actions={<a className="social-link text-xs" href="https://github.com/ardatas">@ardatas ↗</a>}
     />
   );
 }

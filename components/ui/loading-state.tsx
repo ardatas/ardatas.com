@@ -49,7 +49,7 @@ export default function LoadingState({ label = "Churning", variant = "Drive", sh
         style={{ backgroundImage: "linear-gradient(90deg, var(--muted-foreground) 35%, var(--foreground) 50%, var(--muted-foreground) 65%)", backgroundSize: "200% 100%", animation: "shimmer-text 1.4s linear infinite" }}>
         {label}
       </span>
-      {showElapsed && <span className="whitespace-nowrap font-mono text-[0.923em] text-muted-foreground tabular-nums" aria-live="off">{elapsed}</span>}
+      {showElapsed && <span className="whitespace-nowrap text-[0.923em] text-muted-foreground tabular-nums" aria-live="off">{elapsed}</span>}
     </div>
   );
 }

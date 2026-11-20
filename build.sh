@@ -45,6 +45,9 @@ static() {
         workshops.svg
     )
 
+    mkdir -p dist/fonts || fail
+    cp -R public/fonts/young-serif dist/fonts/ || fail
+
     mkdir -p dist/assets || fail
 
     for asset in "${assets[@]}"; do
