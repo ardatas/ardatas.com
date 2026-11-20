@@ -235,7 +235,9 @@ subprocess.run(
 )
 with open(loading_bundle, "rb") as source:
     loading_state_version = hashlib.sha256(source.read()).hexdigest()[:12]
-rendered = index.render(loading_state_html=loading_state_html, loading_state_version=loading_state_version, lists=lists, name=name, title=name, running=running, travel=travel,
+with open(loading_bundle.removesuffix(".js") + ".css", "rb") as source:
+    homepage_style_version = hashlib.sha256(source.read()).hexdigest()[:12]
+rendered = index.render(homepage_style_version=homepage_style_version, loading_state_html=loading_state_html, loading_state_version=loading_state_version, lists=lists, name=name, title=name, running=running, travel=travel,
                         portrait_html=portrait_html,
                         exploration=build_exploration_stats(travel["countries"]))
 soup = bs(rendered)

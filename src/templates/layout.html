@@ -24,6 +24,9 @@
     />
 
     <link rel="stylesheet" href="/index.css?v={{ css_version }}" />
+    {% if homepage_style_version %}
+    <link rel="stylesheet" href="/loading-state.css?v={{ homepage_style_version }}" />
+    {% endif %}
     <script src="/link-conversion.js?v={{ asset_versions['link-conversion.js'] }}" defer></script>
     <script>
       /*to prevent Firefox FOUC, this must be here*/

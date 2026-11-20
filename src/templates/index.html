@@ -132,6 +132,13 @@
         {{ lists["projects"]|safe }}
       {% endcall %}
     </section>
+    <section id="github-activity">
+      {% call fieldset("git log · GitHub activity") %}
+        <div id="github-calendar">
+          <a class="social-link" href="https://github.com/ardatas">View @ardatas’s contribution calendar on GitHub</a>
+        </div>
+      {% endcall %}
+    </section>
     <section id="education">
       {% call fieldset("cat ~/education.md") %}
         <div class="flex flex-col gap-3">
