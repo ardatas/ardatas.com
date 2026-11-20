@@ -23,6 +23,7 @@ import {
   useInView,
   useMotionValue,
   useReducedMotion,
+  useSpring,
 } from "motion/react";
 import type { Variants } from "motion/react";
 import { motionTokens } from "@/components/ui/activity-heatmap-utils/motion-tokens";
@@ -77,15 +78,8 @@ type Model = {
   /** How many days in the range sit at each level. */
   perLevel: number[];
 };
-type Tip = {
-  key: string;
-  primary: string;
-  secondary: string;
-  value: number;
-  anchor: HTMLElement;
-};
-/** How the tooltip text changes: rolls up or down with the count, crossfades on a tie, or appears at once when the bubble opens. */
-type Change = 1 | -1 | 0 | "instant";
+type Tip = { index: number; anchor: HTMLElement };
+const trackingSpring = { stiffness: 1300, damping: 65, mass: 0.7 };
 
 const DAY = 86_400_000;
 const LEVELS = [0, 1, 2, 3, 4] as const;
@@ -191,29 +185,6 @@ function useReducedMotionSafe() {
   const reduced = useReducedMotion();
   return hydrated && !!reduced;
 }
-
-const tipText = (reduced: boolean): Variants => ({
-  from: (change: Change) =>
-    change === "instant"
-      ? { opacity: 1, y: "0em", filter: "blur(0px)" }
-      : reduced
-        ? { opacity: 0 }
-        : {
-            opacity: 0,
-            y: `${0.3 * (change || 1)}em`,
-            filter: `blur(${change ? motionTokens.blur.soft : motionTokens.blur.subtle}px)`,
-          },
-  to: { opacity: 1, y: "0em", filter: "blur(0px)" },
-  gone: (change: Change) =>
-    change === "instant" || reduced
-      ? { opacity: 0, transition: { duration: 0 } }
-      : {
-          opacity: 0,
-          y: `${-0.3 * (change || 1)}em`,
-          filter: `blur(${motionTokens.blur.subtle}px)`,
-          transition: { duration: 0.12, ease: standard },
-        },
-});
 
 /** A total that rolls digit by digit in the direction it moved. Places keep their identity, so only changed digits turn,
  *  and when the number gains or loses a digit the width follows on a spring instead of shifting the sentence in one frame. */
@@ -390,7 +361,7 @@ export function ActivityHeatmap({
   const gridRef = useRef<HTMLDivElement>(null);
   const scrollerRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLSpanElement>(null);
-  const measureRef = useRef<HTMLSpanElement>(null);
+  const bubbleRef = useRef<HTMLDivElement>(null);
   const inView = useInView(plotRef, { once: true, amount: 0.35 });
 
   const model = useMemo(
@@ -474,26 +445,13 @@ export function ActivityHeatmap({
   // Tooltip: one bubble for the whole grid. It jumps into place when it opens and glides on a spring between cells after that.
   const [tip, setTip] = useState<Tip | null>(null);
   const [open, setOpen] = useState(false);
-  const [change, setChange] = useState<Change>("instant");
   const openRef = useRef(false);
   const hideTimer = useRef(0);
-  const tipX = useMotionValue(0),
-    tipY = useMotionValue(0),
-    tipWidth = useMotionValue<number | "auto">("auto");
-
-  function contentFor(index: number, anchor: HTMLElement): Tip {
-    const count = model.counts[index];
-    const date = new Date(model.start + index * DAY);
-    return {
-      key: `day-${toIso(date.getTime())}`,
-      primary: count
-        ? `${formats.number.format(count)} ${noun(count, unit)}`
-        : `No ${unit.other}`,
-      secondary: formats.short.format(date),
-      value: count,
-      anchor,
-    };
-  }
+  const tipX = useSpring(0, trackingSpring);
+  const tipY = useSpring(0, trackingSpring);
+  const count = tip ? model.counts[tip.index] : undefined;
+  const tipCount = count === undefined ? "" : `${count ? formats.number.format(count) : "No"} ${noun(count, unit)}`;
+  const tipDate = tip && count !== undefined ? formats.short.format(model.start + tip.index * DAY) : "";
   const [a, b, c] = model.thresholds;
   const activityLevels = ["no activity", "low activity", "moderate activity", "high activity", "very high activity"];
   const ranges = model.sourceLevels ? activityLevels : [
@@ -516,14 +474,9 @@ export function ActivityHeatmap({
       : `${formats.number.format(model.perLevel[highlight])} ${model.perLevel[highlight] === 1 ? "day" : "days"}`;
   const caption =
     highlight === null ? "" : `${dayCount} with ${shortRanges[highlight]}`;
-  function show(next: Tip) {
+  function show(index: number, anchor: HTMLElement) {
     window.clearTimeout(hideTimer.current);
-    setChange(
-      tip && openRef.current
-        ? (Math.sign(next.value - tip.value) as Change)
-        : "instant",
-    );
-    setTip(next);
+    setTip(previous => previous?.index === index && previous.anchor === anchor ? previous : { index, anchor });
     setOpen(true);
   }
   function hideSoon(delay = 110) {
@@ -533,38 +486,38 @@ export function ActivityHeatmap({
   useEffect(() => () => window.clearTimeout(hideTimer.current), []);
 
   useLayoutEffect(() => {
-    const root = rootRef.current,
-      measure = measureRef.current;
-    if (!tip || !root || !measure) return;
+    const root = rootRef.current;
+    const bubble = bubbleRef.current;
+    if (!open || !tip || !root || !bubble || !tip.anchor.isConnected) {
+      openRef.current = false;
+      return;
+    }
     const place = (glide: boolean) => {
-      const box = root.getBoundingClientRect(),
-        cell = tip.anchor.getBoundingClientRect();
-      const width = Math.ceil(measure.getBoundingClientRect().width);
-      const half = width / 2 + 13;
-      const x = Math.min(
-        Math.max(cell.left - box.left + cell.width / 2, half + 2),
-        box.width - half - 2,
-      );
+      const box = root.getBoundingClientRect();
+      const cell = tip.anchor.getBoundingClientRect();
+      const half = bubble.offsetWidth / 2;
+      const x = Math.min(Math.max(cell.left - box.left + cell.width / 2, half), box.width - half);
       const y = cell.top - box.top;
-      if (glide) {
-        animate(tipX, x, motionTokens.spring.snappy);
-        animate(tipY, y, motionTokens.spring.snappy);
-        animate(tipWidth, width, motionTokens.spring.morph);
+      // A long jump should land on the new day immediately. Short moves share a spring.
+      if (glide && Math.hypot(tipX.get() - x, tipY.get() - y) < cell.width * 4) {
+        tipX.set(x);
+        tipY.set(y);
       } else {
         tipX.jump(x);
         tipY.jump(y);
-        tipWidth.jump(width);
       }
     };
-    place(open && openRef.current && !reduced);
-    openRef.current = open;
-    if (!open) return;
-    // The grid scrolls sideways on narrow screens; the bubble stays pinned to its cell while it does.
+    place(openRef.current && !reduced);
+    openRef.current = true;
     const scroller = scrollerRef.current;
     const follow = () => place(false);
     scroller?.addEventListener("scroll", follow, { passive: true });
-    return () => scroller?.removeEventListener("scroll", follow);
-  }, [tip, open, reduced, tipX, tipY, tipWidth]);
+    window.addEventListener("resize", follow);
+    return () => {
+      scroller?.removeEventListener("scroll", follow);
+      window.removeEventListener("resize", follow);
+    };
+  }, [tip, tipCount, tipDate, open, reduced, tipX, tipY]);
 
   const indexOf = (element: Element | null) => {
     const cell = element?.closest<HTMLElement>("[data-index]");
@@ -579,21 +532,22 @@ export function ActivityHeatmap({
 
   function onGridPointerOver(event: PointerEvent<HTMLDivElement>) {
     const hit = indexOf(event.target as Element);
-    if (hit) show(contentFor(hit.index, hit.cell));
+    if (hit) show(hit.index, hit.cell);
+    else hideSoon();
   }
   function onGridPointerLeave(event: PointerEvent<HTMLDivElement>) {
     // A keyboard user keeps their bubble on the focused day. A tap focuses its day too, so the bubble stays until focus moves on;
     // where a tap does not focus, it lingers long enough to read.
     const focused = indexOf(document.activeElement);
     if (focused?.cell.matches(":focus-visible"))
-      show(contentFor(focused.index, focused.cell));
+      show(focused.index, focused.cell);
     else hideSoon(event.pointerType === "touch" ? 2400 : 110);
   }
   function onGridFocus(event: FocusEvent<HTMLDivElement>) {
     const hit = indexOf(event.target);
     if (!hit) return;
     setFocusIndex(hit.index);
-    show(contentFor(hit.index, hit.cell));
+    show(hit.index, hit.cell);
   }
   function onGridBlur(event: FocusEvent<HTMLDivElement>) {
     if (!gridRef.current?.contains(event.relatedTarget as Node | null))
@@ -868,11 +822,12 @@ export function ActivityHeatmap({
         aria-hidden="true"
       >
         <motion.div
+          ref={bubbleRef}
           className={styles.bubble}
           style={{ x: "-50%" }}
           initial={false}
           animate={
-            open && tip
+            open && tipDate
               ? { opacity: 1, scale: 1 }
               : { opacity: 0, scale: reduced ? 1 : 0.96 }
           }
@@ -890,29 +845,8 @@ export function ActivityHeatmap({
                 : { duration: 0.12, ease: standard }
           }
         >
-          <motion.span className={styles.tipBody} style={{ width: tipWidth }}>
-            <span ref={measureRef} className={styles.tipMeasure}>
-              <span className={styles.tipPrimary}>{tip?.primary}</span>
-              <span className={styles.tipSecondary}>{tip?.secondary}</span>
-            </span>
-            <AnimatePresence mode="popLayout" initial={false} custom={change}>
-              {tip && (
-                <motion.span
-                  key={tip.key}
-                  className={styles.tipLines}
-                  custom={change}
-                  variants={tipText(reduced)}
-                  initial="from"
-                  animate="to"
-                  exit="gone"
-                  transition={{ duration: reduced ? 0.15 : 0.22, ease: enter }}
-                >
-                  <span className={styles.tipPrimary}>{tip.primary}</span>
-                  <span className={styles.tipSecondary}>{tip.secondary}</span>
-                </motion.span>
-              )}
-            </AnimatePresence>
-          </motion.span>
+          <span className={styles.tipPrimary}>{tipCount}</span>
+          <span className={styles.tipSecondary}>{tipDate}</span>
         </motion.div>
       </motion.div>
     </div>
