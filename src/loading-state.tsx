@@ -1,3 +1,4 @@
+import "./site-path";
 import { createRoot } from "react-dom/client";
 import GitHubActivity from "@/components/github-activity";
 import BuildingStatus from "@/components/building-status";

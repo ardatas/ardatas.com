@@ -1,0 +1,27 @@
+{% from "components/icon.html" import icon %}
+{% if post or julia_page %}
+  {% set path = [
+    ('Home', '/', 'home-01', 'glow'),
+    ('Projects', '/#projects', 'dashboard-square-01', 'spin'),
+    (post.title if post else 'Julia Set Explorer', '/projects/' ~ post.slug ~ '.html' if post else '/julia/', 'file-02', 'pop')
+  ] %}
+{% else %}
+  {% set path = [
+    ('Home', '#top', 'home-01', 'glow'),
+    ('Experience', '#experience', 'briefcase-01', 'pop'),
+    ('Projects', '#projects', 'dashboard-square-01', 'spin'),
+    ('Education', '#education', 'mortarboard-01', 'drop'),
+    ('Skills', '#skills', 'tools', 'wave')
+  ] %}
+{% endif %}
+<div id="portfolio-path">
+  <nav class="nimbus-nav" data-compact="false" aria-label="Portfolio path">
+    <span class="nimbus-glass" aria-hidden="true"></span>
+    {% for label, href, glyph, fx in path %}
+      <a class="nimbus-item" href="{{ href }}" data-fx="{{ fx }}"
+         {% if (post or julia_page) and loop.last or not (post or julia_page) and loop.first %}aria-current="page"{% endif %}>
+        {{ icon(glyph, '18') }}<span class="nimbus-label">{{ label }}</span>
+      </a>
+    {% endfor %}
+  </nav>
+</div>

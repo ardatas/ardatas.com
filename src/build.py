@@ -47,7 +47,7 @@ with open(os.path.join(args.output, "index.css"), "rb") as stylesheet:
 public_path = os.path.join(script_path, "..", "public")
 env.globals["asset_versions"] = {}
 for asset in ("favicon.svg", "favicon.ico", "favicon.png", "apple-touch-icon.png",
-              "link-conversion.js", "whoami-handwriting.js", "travel/globe.js", "travel/globe.css",
+              "link-conversion.js", "site-path.css", "whoami-handwriting.js", "travel/globe.js", "travel/globe.css",
               "julia/explorer.js", "julia/explorer.css", "julia/manifest.json", "footer-plane.js"):
     with open(os.path.join(public_path, asset), "rb") as source:
         env.globals["asset_versions"][asset] = hashlib.sha256(source.read()).hexdigest()[:12]
@@ -62,6 +62,20 @@ if not args.no_clean:
 
         for dir in dirs:
             rmtree(os.path.join(root, dir))
+
+
+def bundle_entry(name):
+    path = os.path.abspath(os.path.join(args.output, name + ".js"))
+    subprocess.run(
+        ["pnpm", "exec", "esbuild", f"src/{name}.tsx", "--bundle", "--minify",
+         '--define:process.env.NODE_ENV="production"', "--outfile=" + path],
+        cwd=os.path.dirname(script_path), check=True,
+    )
+    with open(path, "rb") as source:
+        return path, hashlib.sha256(source.read()).hexdigest()[:12]
+
+
+_, env.globals["site_path_version"] = bundle_entry("site-path")
 
 
 def write_output(content, *path):
@@ -227,14 +241,7 @@ loading_state_html = subprocess.check_output(
     ["node", "--import", "tsx", "src/render-loading-state.tsx"],
     cwd=os.path.dirname(script_path), text=True,
 )
-loading_bundle = os.path.abspath(os.path.join(args.output, "loading-state.js"))
-subprocess.run(
-    ["pnpm", "exec", "esbuild", "src/loading-state.tsx", "--bundle", "--minify",
-     "--define:process.env.NODE_ENV=\"production\"", "--outfile=" + loading_bundle],
-    cwd=os.path.dirname(script_path), check=True,
-)
-with open(loading_bundle, "rb") as source:
-    loading_state_version = hashlib.sha256(source.read()).hexdigest()[:12]
+loading_bundle, loading_state_version = bundle_entry("loading-state")
 with open(loading_bundle.removesuffix(".js") + ".css", "rb") as source:
     homepage_style_version = hashlib.sha256(source.read()).hexdigest()[:12]
 rendered = index.render(homepage_style_version=homepage_style_version, loading_state_html=loading_state_html, loading_state_version=loading_state_version, lists=lists, name=name, title=name, running=running, travel=travel,

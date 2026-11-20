@@ -25,6 +25,10 @@
     />
 
     <link rel="stylesheet" href="/index.css?v={{ css_version }}" />
+    <link rel="stylesheet" href="/site-path.css?v={{ asset_versions['site-path.css'] }}" />
+    {% if not homepage_style_version %}
+    <script src="/site-path.js?v={{ site_path_version }}" defer></script>
+    {% endif %}
     {% if homepage_style_version %}
     <link rel="stylesheet" href="/loading-state.css?v={{ homepage_style_version }}" />
     {% endif %}
@@ -34,31 +38,26 @@
       let FF_FOUC_FIX;
     </script>
   </head>
-  <body class="text-[#101114]">
+  <body id="top" class="text-[#101114]">
     <div
       class="flex min-h-screen flex-col max-w-5xl mx-auto px-4 py-4 sm:py-8 text-[15px] leading-5 font-normal tracking-[-0.005em] antialiased font-sans"
     >
-      <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-3 mb-3">
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
         <a href="/">
           <h1 class="site-name font-mono tracking-tight">{{ name }}</h1>
         </a>
-        <nav class="grid grid-cols-2 sm:flex gap-2" aria-label="Primary links">
-          {% call button("https://linkedin.com/in/arda-tas", "min-w-32 sm:w-32", "linkedin") %}
+        <nav class="flex gap-2" aria-label="Social links">
+          {% call button("https://linkedin.com/in/arda-tas", "sm:w-32", "linkedin") %}
             {{ icon('linkedin-01', '20') }}
             <span>LinkedIn</span>
           {% endcall %}
-          {% call button("https://github.com/ardatas", "min-w-32 sm:w-32") %}
+          {% call button("https://github.com/ardatas", "sm:w-32") %}
             {{ icon('github', '20') }}
             <span>GitHub</span>
           {% endcall %}
-          {% call button("/#experience" if julia_page else "#experience", "min-w-32 sm:w-32") %}
-            <span>Experience</span>
-          {% endcall %}
-          {% call button("/#projects" if julia_page else "#projects", "min-w-32 sm:w-32") %}
-            <span>Projects</span>
-          {% endcall %}
         </nav>
       </div>
+      {% include "components/site-path.html" %}
       <main class="flex flex-col">
         {% block content %}{% endblock %}
       </main>

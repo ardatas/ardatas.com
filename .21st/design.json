@@ -54,6 +54,11 @@
   },
   "decisions": [
     {
+      "id": "portfolio-path",
+      "decision": "Use the liquid-glass pill for section navigation and project paths, with animated reflections, tap ripples, and Hugeicons.",
+      "source": "components/ui/liquid-glass-navbar.tsx"
+    },
+    {
       "id": "github-activity",
       "decision": "Show GitHub’s daily contribution levels using a light-to-dark blue scale.",
       "source": "components/ui/activity-heatmap-utils/activity-heatmap.module.css"
