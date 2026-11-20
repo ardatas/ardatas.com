@@ -45,6 +45,8 @@
 .julia-animation { padding-top: 14px; border-top: 1px solid var(--j-line); display: grid; grid-template-columns: 1fr; gap: 8px; }
 .julia-section .julia-primary { background: var(--j-blue); border-color: var(--j-blue); color: #fff; padding: 9px; }
 .julia-section .julia-primary:hover { background: #234762; color: #fff; }
+.julia-primary[aria-pressed="false"] .julia-pause,
+.julia-primary[aria-pressed="true"] .julia-play { display: none; }
 .julia-animation label { display: flex; justify-content: space-between; font-size: 11px; margin-top: 3px; }
 .julia-animation output { font-family: 'IBM Plex Mono', monospace; }
 .julia-animation p, .julia-advanced > p { font-size: 11px; color: var(--j-muted); line-height: 1.5; }

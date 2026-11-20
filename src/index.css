@@ -51,6 +51,12 @@ h3 {
   @apply text-lg font-semibold tracking-tight;
 }
 
+.ui-icon {
+  display: inline-block;
+  flex: none;
+  vertical-align: -0.125em;
+}
+
 .site-name {
   @apply text-2xl sm:text-3xl font-bold;
 }

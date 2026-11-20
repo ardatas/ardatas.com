@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% from "components/icon.html" import icon %}
 {% from "components/fieldset.html" import fieldset %}
 
 {% block content %}
@@ -217,7 +218,7 @@
                 <h3 class="profile-title">learn agentic coding with Header:</h3>
                 <p class="mt-2 font-mono text-xs text-neutral-500 break-words">joinheader.com</p>
               </div>
-              <span class="resource-arrow" aria-hidden="true">↗</span>
+              <span class="resource-arrow" aria-hidden="true">{{ icon('arrow-up-right-01') }}</span>
             </a>
           </li>
           <li>
@@ -231,7 +232,7 @@
                 <h3 class="profile-title">best resume template ever:</h3>
                 <p class="mt-2 font-mono text-xs text-neutral-500 break-words">github.com/ardatas/ResumeTemplate</p>
               </div>
-              <span class="resource-arrow" aria-hidden="true">↗</span>
+              <span class="resource-arrow" aria-hidden="true">{{ icon('arrow-up-right-01') }}</span>
             </a>
           </li>
         </ul>

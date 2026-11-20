@@ -59,7 +59,9 @@ export default function GitHubActivity() {
       period={period}
       selectedDate={selected}
       onSelectDate={setSelected}
-      actions={<a className="social-link font-mono text-xs" href="https://github.com/ardatas">@ardatas ↗</a>}
+      actions={<a className="social-link font-mono text-xs" href="https://github.com/ardatas">
+        @ardatas <svg className="ui-icon" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="/assets/hugeicons.svg#arrow-up-right-01" /></svg>
+      </a>}
     />
   );
 }

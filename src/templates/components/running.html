@@ -1,12 +1,10 @@
+{% from "components/icon.html" import icon %}
 <section id="running">
   {% call fieldset("cat ~/running.md") %}
     <div class="running-card">
       <div class="running-header">
         <div class="flex items-center gap-3">
-          <svg class="running-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="15" cy="4" r="2" />
-            <path d="m12 8 3 3 4 1M8 11l3-3 3 1-2 5 4 3v4M12 14l-4 2-4 5M8 16l-3-2" />
-          </svg>
+          {{ icon('workout-run', '36', 'running-icon') }}
           <div>
             <h3 class="running-title">Running</h3>
           </div>
@@ -54,7 +52,7 @@
       {% if running.updated_at or running.profile_url %}
         <div class="running-footer">
           {% if running.updated_at %}<p>As of <time datetime="{{ running.updated_at }}">{{ running.updated_label }}</time></p>{% endif %}
-          {% if running.profile_url %}<a href="{{ running.profile_url }}" target="_blank" rel="noopener noreferrer" class="social-link">View on Strava <span aria-hidden="true">↗</span></a>{% endif %}
+          {% if running.profile_url %}<a href="{{ running.profile_url }}" target="_blank" rel="noopener noreferrer" class="social-link">View on Strava {{ icon('arrow-up-right-01') }}</a>{% endif %}
         </div>
       {% endif %}
     </div>

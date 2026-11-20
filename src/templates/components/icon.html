@@ -1,0 +1,3 @@
+{% macro icon(name, size="1em", class_name="") -%}
+  <svg aria-hidden="true" focusable="false" class="ui-icon {{ class_name }}" width="{{ size }}" height="{{ size }}" viewBox="0 0 24 24"><use href="/assets/hugeicons.svg#{{ name }}"></use></svg>
+{%- endmacro %}

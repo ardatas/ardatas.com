@@ -1,3 +1,4 @@
+{% from "components/icon.html" import icon %}
 <section id="travel" aria-labelledby="travel-heading">
   {% call fieldset("cd ~/world") %}
     <div class="travel-heading">
@@ -47,20 +48,20 @@
       </div>
       <div class="travel-tooltip" id="travel-tooltip" role="status" hidden></div>
       <div class="travel-zoom" aria-label="Globe zoom">
-        <button type="button" id="travel-zoom-in" aria-label="Zoom in" disabled>+</button>
+        <button type="button" id="travel-zoom-in" aria-label="Zoom in" disabled>{{ icon('plus-sign', '16') }}</button>
         <span id="travel-zoom-level" aria-hidden="true">1×</span>
-        <button type="button" id="travel-zoom-out" aria-label="Zoom out" disabled>−</button>
+        <button type="button" id="travel-zoom-out" aria-label="Zoom out" disabled>{{ icon('minus-sign', '16') }}</button>
       </div>
       <div class="travel-stage-bottom">
         <div class="travel-bases" aria-label="Home bases">
-          <button type="button" data-base="home" disabled><span class="travel-star" aria-hidden="true">★</span><span>Munich<small>current base</small></span></button>
+          <button type="button" data-base="home" disabled><span class="travel-star" aria-hidden="true">{{ icon('star') }}</span><span>Munich<small>current base</small></span></button>
           <button type="button" data-base="second" disabled><span class="travel-second-dot" aria-hidden="true">●</span><span>Istanbul<small>Second home base</small></span></button>
         </div>
       </div>
     </div>
     <div class="travel-caption">
       <p id="travel-help"><span class="travel-desktop-help">Scroll to zoom · Drag to explore · Select a pin</span><span class="travel-mobile-help">Choose a country and city, or tap Explore globe to drag and pinch. Tap Done to scroll again.</span></p>
-      <a href="https://science.nasa.gov/earth/earth-observatory/blue-marble-next-generation/base-map/" target="_blank" rel="noopener noreferrer">Imagery: NASA Blue Marble ↗</a>
+      <a href="https://science.nasa.gov/earth/earth-observatory/blue-marble-next-generation/base-map/" target="_blank" rel="noopener noreferrer">Imagery: NASA Blue Marble {{ icon('arrow-up-right-01') }}</a>
     </div>
     <nav class="travel-countries" aria-label="Explore visited countries">
       {% for country in travel.countries %}

@@ -1,3 +1,4 @@
+{% from "components/icon.html" import icon %}
 <section id="julia" class="julia-section" data-julia
   data-manifest="/julia/manifest.json?v={{ asset_versions['julia/manifest.json'] }}">
   {% call fieldset("./julia") %}
@@ -18,9 +19,9 @@
         <div class="julia-imagebar">
           <span data-render-status aria-live="off">800 × 600 · grayscale</span>
           <div class="julia-zoom" role="group" aria-label="View controls">
-            <button type="button" data-action="zoom-out" aria-label="Zoom out">−</button>
-            <button type="button" data-action="home" aria-label="Reset view">⌂</button>
-            <button type="button" data-action="zoom-in" aria-label="Zoom in">+</button>
+            <button type="button" data-action="zoom-out" aria-label="Zoom out">{{ icon('minus-sign', '16') }}</button>
+            <button type="button" data-action="home" aria-label="Reset view">{{ icon('home-01', '16') }}</button>
+            <button type="button" data-action="zoom-in" aria-label="Zoom in">{{ icon('plus-sign', '16') }}</button>
           </div>
         </div>
         <p id="julia-navigation" class="julia-hint">Click, then scroll to zoom · drag to pan · Esc releases scrolling</p>
@@ -44,7 +45,7 @@
         </div>
         <label class="julia-checkbox"><input data-param="color" type="checkbox" /> Color palette</label>
         <div class="julia-animation">
-          <button type="button" data-action="animate" aria-pressed="false" class="julia-primary">▶ Animate</button>
+          <button type="button" data-action="animate" aria-pressed="false" class="julia-primary"><span class="julia-play">{{ icon('play') }} Animate</span><span class="julia-pause">{{ icon('pause') }} Pause</span></button>
           <label for="julia-speed">Speed <output data-speed-label>1×</output></label>
           <input id="julia-speed" type="range" min="0.25" max="3" step="0.25" value="1" aria-label="Animation speed" />
           <p>A small orbit around your chosen <i>c</i>.</p>
@@ -69,7 +70,7 @@
         <button type="button" data-action="fullscreen">Fullscreen</button>
         <button type="button" data-action="download">Download PNG</button>
         <button type="button" data-action="share">Copy link</button>
-        {% if not julia_page %}<a href="/julia/">Open explorer ↗</a>{% endif %}
+        {% if not julia_page %}<a href="/julia/">Open explorer {{ icon('arrow-up-right-01') }}</a>{% endif %}
       </div>
       <div class="julia-project-note">
         <p class="julia-project-lead">I like seeing how much performance I can squeeze out of a program.</p>
@@ -78,7 +79,7 @@
           <strong>3.1× faster</strong> than the scalar version. Profiling the code and chipping away at those
           milliseconds was my favourite part of the project.</p>
         <p class="julia-project-benchmark">Native C benchmark · AMD Ryzen 9 5950X · 800 × 600, 100 iterations ·
-          <a href="https://github.com/ardatas/gra26capsproject#performance-and-correctness-analysis" target="_blank" rel="noopener noreferrer">Code &amp; benchmarks ↗</a></p>
+          <a href="https://github.com/ardatas/gra26capsproject#performance-and-correctness-analysis" target="_blank" rel="noopener noreferrer">Code &amp; benchmarks {{ icon('arrow-up-right-01') }}</a></p>
       </div>
     </div>
   {% endcall %}

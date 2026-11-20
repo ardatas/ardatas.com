@@ -1,3 +1,4 @@
+{% from "components/icon.html" import icon %}
 {% from "components/button.html" import button %}
 {%
   from
@@ -43,11 +44,11 @@
         </a>
         <nav class="grid grid-cols-2 sm:flex gap-2" aria-label="Primary links">
           {% call button("https://linkedin.com/in/arda-tas", "min-w-32 sm:w-32", "linkedin") %}
-            <img class="h-5 w-5" src="/assets/logo-linkedin.svg" alt="" aria-hidden="true" />
+            {{ icon('linkedin-01', '20') }}
             <span>LinkedIn</span>
           {% endcall %}
           {% call button("https://github.com/ardatas", "min-w-32 sm:w-32") %}
-            <img class="h-5 w-5 group-hover:brightness-0 group-hover:invert" src="/assets/logo-github.svg" alt="" aria-hidden="true" />
+            {{ icon('github', '20') }}
             <span>GitHub</span>
           {% endcall %}
           {% call button("/#experience" if julia_page else "#experience", "min-w-32 sm:w-32") %}

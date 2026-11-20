@@ -25,10 +25,11 @@ static() {
         fundraising.svg
         julia.svg
         linux-hpc.svg
+        hugeicons.svg
         logo-github.svg
+        logo-linkedin.svg
         logo-header.png
         logo-istanbul-erkek.png
-        logo-linkedin.svg
         logo-larpyourresume.svg
         logo-strava.svg
         logo-tbc.png

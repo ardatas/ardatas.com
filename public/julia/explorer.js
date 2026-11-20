@@ -86,7 +86,6 @@ async function initialize(root) {
   function pause(refine = true) {
     playing = false;
     cancelAnimationFrame(animationRAF);
-    animationButton.textContent = '▶ Animate';
     animationButton.setAttribute('aria-pressed', 'false');
     if (refine) requestRender();
   }
@@ -225,7 +224,6 @@ async function initialize(root) {
             lastAnimationTime = 0;
             nextFrameTime = performance.now();
             clearTimeout(settleTimer);
-            animationButton.textContent = 'Ⅱ Pause';
             animationButton.setAttribute('aria-pressed', 'true');
             animationRAF = requestAnimationFrame(animate);
           }
