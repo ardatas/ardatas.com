@@ -10,7 +10,8 @@ module.exports = {
         background: "var(--notebook-paper)",
       },
       fontFamily: {
-        serif: ["Young Serif", "Georgia", "serif"],
+        sans: ["Instrument Sans", "ui-sans-serif", "sans-serif"],
+        mono: ["IBM Plex Mono", "monospace"],
       },
     },
   },

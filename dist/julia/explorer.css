@@ -10,7 +10,7 @@
 .julia-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 18px; }
 .julia-heading h3 { font-size: 20px; font-weight: 600; line-height: 1.25; letter-spacing: -.035em; }
 .julia-heading p { font-size: 13px; margin-top: 6px; color: var(--j-muted); }
-.julia-equation { font-size: 16px; white-space: nowrap; }
+.julia-equation { font: 16px 'IBM Plex Mono', monospace; white-space: nowrap; }
 .julia-workbench { display: grid; grid-template-columns: minmax(0, 1fr) 232px; border: 1px solid var(--j-line); background: var(--notebook-card, #e2ebf3); }
 .julia-display { min-width: 0; padding: 12px; border-right: 1px solid var(--j-line); }
 .julia-stage { position: relative; overflow: hidden; background: #101114; aspect-ratio: 4 / 3; display: flex; align-items: center; justify-content: center; }
@@ -18,11 +18,11 @@
 .julia-stage canvas:active { cursor: grabbing; }
 .julia-stage canvas.is-exploring { touch-action: none; }
 .julia-stage canvas:focus-visible { outline-offset: -3px; }
-.julia-loading, .julia-noscript { position: absolute; inset: 0; display: grid; place-content: center; color: #fff; padding: 24px; text-align: center; font-size: 12px; pointer-events: none; }
+.julia-loading, .julia-noscript { position: absolute; inset: 0; display: grid; place-content: center; color: #fff; padding: 24px; text-align: center; font: 12px 'IBM Plex Mono', monospace; pointer-events: none; }
 .julia-loading[hidden] { display: none; }
 .julia-imagebar { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 10px; }
-.julia-imagebar > span { font-size: 10px; color: var(--j-muted); font-variant-numeric: tabular-nums; }
-.julia-section button, .julia-actions > a { border: 1px solid var(--j-line); padding: 7px 10px; background: var(--notebook-inset, #f4f8fc); font-size: 11px; color: var(--j-ink); cursor: pointer; text-decoration: none; line-height: 1.4; }
+.julia-imagebar > span { font: 10px 'IBM Plex Mono', monospace; color: var(--j-muted); font-variant-numeric: tabular-nums; }
+.julia-section button, .julia-actions > a { border: 1px solid var(--j-line); padding: 7px 10px; background: var(--notebook-inset, #f4f8fc); font: 11px 'IBM Plex Mono', monospace; color: var(--j-ink); cursor: pointer; text-decoration: none; line-height: 1.4; }
 .julia-section button:hover, .julia-actions > a:hover { border-color: var(--j-blue); color: var(--j-blue); background: var(--j-paper); }
 .julia-section button:disabled { opacity: .5; cursor: wait; }
 .julia-section :is(button, input, a, summary, canvas):focus-visible { outline: 2px solid var(--j-blue); outline-offset: 3px; }
@@ -31,11 +31,11 @@
 .julia-hint { color: var(--j-muted); font-size: 11px; line-height: 1.5; margin-top: 10px; }
 .julia-section .julia-touch-toggle { display: none; margin-top: 10px; }
 .julia-controls { padding: 16px; display: flex; flex-direction: column; gap: 15px; }
-.julia-control-title { font-size: 11px; color: var(--j-blue); text-transform: uppercase; letter-spacing: .06em; }
+.julia-control-title { font: 11px 'IBM Plex Mono', monospace; color: var(--j-blue); text-transform: uppercase; letter-spacing: .06em; }
 .julia-parameter { display: grid; grid-template-columns: 1fr 91px; gap: 8px; align-items: center; }
 .julia-parameter label, .julia-pair label, .julia-checkbox { font-size: 12px; }
-.julia-parameter label span { display: block; font-size: 10px; color: var(--j-muted); margin-top: 2px; }
-.julia-section input[type=number] { min-width: 0; width: 100%; padding: 7px 5px; border: 1px solid var(--j-line); background: var(--j-paper); border-radius: 0; color: var(--j-ink); font-size: 11px; font-variant-numeric: tabular-nums; }
+.julia-parameter label span { display: block; font: 10px 'IBM Plex Mono', monospace; color: var(--j-muted); margin-top: 2px; }
+.julia-section input[type=number] { min-width: 0; width: 100%; padding: 7px 5px; border: 1px solid var(--j-line); background: var(--j-paper); border-radius: 0; color: var(--j-ink); font: 11px 'IBM Plex Mono', monospace; font-variant-numeric: tabular-nums; }
 .julia-section input[aria-invalid=true] { border-color: #a42d2d; }
 .julia-section input[type=range] { width: 100%; accent-color: var(--j-blue); cursor: pointer; min-height: 22px; }
 .julia-parameter input[type=range] { grid-column: 1 / -1; }
@@ -46,10 +46,10 @@
 .julia-section .julia-primary { background: var(--j-blue); border-color: var(--j-blue); color: #fff; padding: 9px; }
 .julia-section .julia-primary:hover { background: #234762; color: #fff; }
 .julia-animation label { display: flex; justify-content: space-between; font-size: 11px; margin-top: 3px; }
-.julia-animation output { font-family: inherit; }
+.julia-animation output { font-family: 'IBM Plex Mono', monospace; }
 .julia-animation p, .julia-advanced > p { font-size: 11px; color: var(--j-muted); line-height: 1.5; }
 .julia-advanced { margin-top: 12px; border-bottom: 1px solid var(--j-line); padding-bottom: 12px; }
-.julia-advanced summary { width: fit-content; cursor: pointer; font-size: 11px; padding: 4px 0; }
+.julia-advanced summary { width: fit-content; cursor: pointer; font: 11px 'IBM Plex Mono', monospace; padding: 4px 0; }
 .julia-advanced-grid { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 12px; padding: 12px 0; }
 .julia-advanced-grid label { font-size: 11px; display: grid; gap: 5px; align-content: start; }
 .julia-feedback { font-size: 12px; color: var(--j-blue); overflow-wrap: anywhere; }
