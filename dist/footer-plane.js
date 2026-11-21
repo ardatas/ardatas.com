@@ -14,7 +14,7 @@ uniform vec3 u_light, u_dark;
 out vec4 fragColor;
 
 void main() {
-  vec2 uv = (gl_FragCoord.xy - vec2(0.5, 0.76) * u_resolution) / u_resolution.y;
+  vec2 uv = (gl_FragCoord.xy - vec2(0.5, 1.12) * u_resolution) / u_resolution.y;
   fragColor = vec4(0.0);
   if (uv.y >= -u_epsilon) return;
 

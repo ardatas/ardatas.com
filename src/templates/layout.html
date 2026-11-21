@@ -3,6 +3,12 @@
   "components/fieldset.html" import fieldset
 %}
 
+{% from "components/icon.html" import icon %}
+{% set profiles = [
+  ('LinkedIn', 'https://linkedin.com/in/arda-tas', 'linkedin-01', 'pop'),
+  ('GitHub', 'https://github.com/ardatas', 'github', 'pop')
+] %}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -46,8 +52,15 @@
         {% block content %}{% endblock %}
       </main>
       <footer id="links" class="links-footer mt-3">
+        <div id="footer-plane" aria-hidden="true"></div>
         {% call fieldset("cat ~/links.md") %}
-          <div id="footer-plane" aria-hidden="true"></div>
+          <ul class="flex flex-wrap gap-x-6 gap-y-1 px-3 text-sm md:px-0">
+            {% for label, href, glyph, fx in profiles %}
+              <li><a class="social-link inline-flex min-h-8 items-center gap-1.5" href="{{ href }}" target="_blank" rel="noopener noreferrer">
+                {{ icon(glyph, '16') }} {{ label }}
+              </a></li>
+            {% endfor %}
+          </ul>
           {% if loading_state_html %}
             <div id="building-status" class="relative mt-2 px-3 font-mono md:px-0">{{ loading_state_html | safe }}</div>
           {% endif %}

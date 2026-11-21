@@ -1,5 +1,8 @@
 
 
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -19,7 +22,7 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="/index.css?v=5caec2ee0b9b" />
+    <link rel="stylesheet" href="/index.css?v=413e818040d0" />
     <link rel="stylesheet" href="/site-path.css?v=224457820392" />
 
     <script src="/site-path.js?v=ccac3088c3db" defer></script>
@@ -35,7 +38,6 @@
     <div
       class="flex min-h-screen flex-col max-w-5xl mx-auto px-4 py-4 sm:py-8 text-[15px] leading-5 font-normal tracking-[-0.005em] antialiased font-sans"
     >
-
 
 
 
@@ -179,6 +181,7 @@
 
       </main>
       <footer id="links" class="links-footer mt-3">
+        <div id="footer-plane" aria-hidden="true"></div>
 
   <fieldset
     class="notebook-panel border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2"
@@ -187,7 +190,17 @@
       <h2 class="section-title mx-2 font-mono italic tracking-tight px-1">cat ~/links.md</h2>
     </legend>
 
-          <div id="footer-plane" aria-hidden="true"></div>
+          <ul class="flex flex-wrap gap-x-6 gap-y-1 px-3 text-sm md:px-0">
+
+              <li><a class="social-link inline-flex min-h-8 items-center gap-1.5" href="https://linkedin.com/in/arda-tas" target="_blank" rel="noopener noreferrer">
+                <svg aria-hidden="true" focusable="false" class="ui-icon " width="16" height="16" viewBox="0 0 24 24"><use href="/assets/hugeicons.svg#linkedin-01"></use></svg> LinkedIn
+              </a></li>
+
+              <li><a class="social-link inline-flex min-h-8 items-center gap-1.5" href="https://github.com/ardatas" target="_blank" rel="noopener noreferrer">
+                <svg aria-hidden="true" focusable="false" class="ui-icon " width="16" height="16" viewBox="0 0 24 24"><use href="/assets/hugeicons.svg#github"></use></svg> GitHub
+              </a></li>
+
+          </ul>
 
 
   </fieldset>
@@ -199,7 +212,7 @@
       const observer = new IntersectionObserver(([entry]) => {
         if (entry.isIntersecting) {
           observer.disconnect();
-          import("/footer-plane.js?v=d5a119d91aaa");
+          import("/footer-plane.js?v=6438e1fd0a05");
         }
       });
       observer.observe(plane);

@@ -14,7 +14,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&amp;family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&amp;family=Instrument+Sans:wdth,wght@75..100,400..600&amp;display=swap" rel="stylesheet"/>
-<link href="/index.css?v=5caec2ee0b9b" rel="stylesheet"/>
+<link href="/index.css?v=413e818040d0" rel="stylesheet"/>
 <link href="/site-path.css?v=224457820392" rel="stylesheet"/>
 <script defer="" src="/site-path.js?v=ccac3088c3db"></script>
 <script defer="" src="/link-conversion.js?v=33de9b6de076"></script>
@@ -68,11 +68,19 @@ experiments from the ZARM drop tower.</p>
 </fieldset>
 </main>
 <footer class="links-footer mt-3" id="links">
+<div aria-hidden="true" id="footer-plane"></div>
 <fieldset class="notebook-panel border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
 <legend class="ms-4 md:ms-0">
 <h2 class="section-title mx-2 font-mono italic tracking-tight px-1">cat ~/links.md</h2>
 </legend>
-<div aria-hidden="true" id="footer-plane"></div>
+<ul class="flex flex-wrap gap-x-6 gap-y-1 px-3 text-sm md:px-0">
+<li><a class="social-link inline-flex min-h-8 items-center gap-1.5" href="https://linkedin.com/in/arda-tas" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" class="ui-icon" focusable="false" height="16" viewbox="0 0 24 24" width="16"><use href="/assets/hugeicons.svg#linkedin-01"></use></svg> LinkedIn
+              </a></li>
+<li><a class="social-link inline-flex min-h-8 items-center gap-1.5" href="https://github.com/ardatas" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" class="ui-icon" focusable="false" height="16" viewbox="0 0 24 24" width="16"><use href="/assets/hugeicons.svg#github"></use></svg> GitHub
+              </a></li>
+</ul>
 </fieldset>
 </footer>
 </div>
@@ -81,7 +89,7 @@ experiments from the ZARM drop tower.</p>
       const observer = new IntersectionObserver(([entry]) => {
         if (entry.isIntersecting) {
           observer.disconnect();
-          import("/footer-plane.js?v=d5a119d91aaa");
+          import("/footer-plane.js?v=6438e1fd0a05");
         }
       });
       observer.observe(plane);

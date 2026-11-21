@@ -381,7 +381,14 @@ article {
 .links-footer {
   position: relative;
   isolation: isolate;
+  --foreground: #f2f9ff;
+  --muted-foreground: #d8eafa;
+  color: var(--foreground);
+  background-color: rgb(9 29 57 / 76%);
 }
+.links-footer fieldset, .links-footer .section-title { background: transparent; }
+.links-footer .social-link:hover { color: #c3f4ff; }
+.links-footer .social-link:focus-visible { outline-color: currentColor; }
 
 .links-footer fieldset {
   isolation: isolate;
@@ -391,8 +398,8 @@ article {
 
 #footer-plane {
   position: absolute;
-  inset: 0 1px 1px;
-  opacity: .6;
+  inset: 0;
+  opacity: .28;
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
