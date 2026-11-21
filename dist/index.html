@@ -14,10 +14,10 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&amp;family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&amp;family=Instrument+Sans:wdth,wght@75..100,400..600&amp;display=swap" rel="stylesheet"/>
-<link href="/index.css?v=1425f8c92703" rel="stylesheet"/>
-<link href="/site-path.css?v=2351d4d139bf" rel="stylesheet"/>
-<script defer="" src="/loading-state.js?v=0e39fd1a1f09"></script>
-<link href="/loading-state.css?v=b3e431022d62" rel="stylesheet"/>
+<link href="/index.css?v=eaf1a97e8152" rel="stylesheet"/>
+<link href="/site-path.css?v=5d67614367dc" rel="stylesheet"/>
+<script defer="" src="/loading-state.js?v=77b658332f36"></script>
+<link href="/loading-state.css?v=4dabf3db5d6a" rel="stylesheet"/>
 <script defer="" src="/link-conversion.js?v=33de9b6de076"></script>
 <script>
       /*to prevent Firefox FOUC, this must be here*/
@@ -49,9 +49,9 @@
 </a>
 </nav>
 </div>
-<main class="flex flex-col bg-[var(--notebook-paper)]">
+<main class="flex flex-col">
 <div class="flex flex-col gap-3">
-<fieldset class="border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
+<fieldset class="notebook-panel border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
 <legend class="ms-4 md:ms-0">
 <h2 class="section-title mx-2 font-mono italic tracking-tight px-1">whoami</h2>
 </legend>
@@ -78,7 +78,7 @@
 </fieldset>
 <script defer="" src="/whoami-handwriting.js?v=d133d67c425d"></script>
 <section id="experience">
-<fieldset class="border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
+<fieldset class="notebook-panel border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
 <legend class="ms-4 md:ms-0">
 <h2 class="section-title mx-2 font-mono italic tracking-tight px-1">cat ~/experience.md</h2>
 </legend>
@@ -152,7 +152,7 @@
 </fieldset>
 </section>
 <section id="achievements">
-<fieldset class="border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
+<fieldset class="notebook-panel border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
 <legend class="ms-4 md:ms-0">
 <h2 class="section-title mx-2 font-mono italic tracking-tight px-1">cat ~/achievements.md</h2>
 </legend>
@@ -175,7 +175,7 @@
 </fieldset>
 </section>
 <section id="projects">
-<fieldset class="border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
+<fieldset class="notebook-panel border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
 <legend class="ms-4 md:ms-0">
 <h2 class="section-title mx-2 font-mono italic tracking-tight px-1">ls ~/projects.md</h2>
 </legend>
@@ -382,7 +382,7 @@ WebAssembly renderer built from the original C project.</p>
 </a>
 </aside>
 <section id="macbook">
-<fieldset class="border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
+<fieldset class="notebook-panel border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
 <legend class="ms-4 md:ms-0">
 <h2 class="section-title mx-2 font-mono italic tracking-tight px-1">Arda’s MacBook</h2>
 </legend>
@@ -391,7 +391,7 @@ WebAssembly renderer built from the original C project.</p>
 </fieldset>
 </section>
 <section id="github-activity">
-<fieldset class="border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
+<fieldset class="notebook-panel border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
 <legend class="ms-4 md:ms-0">
 <h2 class="section-title mx-2 font-mono italic tracking-tight px-1">git log · GitHub activity</h2>
 </legend>
@@ -401,7 +401,7 @@ WebAssembly renderer built from the original C project.</p>
 </fieldset>
 </section>
 <section id="education">
-<fieldset class="border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
+<fieldset class="notebook-panel border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
 <legend class="ms-4 md:ms-0">
 <h2 class="section-title mx-2 font-mono italic tracking-tight px-1">cat ~/education.md</h2>
 </legend>
@@ -437,7 +437,7 @@ WebAssembly renderer built from the original C project.</p>
 </fieldset>
 </section>
 <section aria-label="Agentic coding, LLMs and AI" id="agentic-coding">
-<fieldset class="border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
+<fieldset class="notebook-panel border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
 <legend class="ms-4 md:ms-0">
 <h2 class="section-title mx-2 font-mono italic tracking-tight px-1">Agentic coding, LLMs and AI</h2>
 </legend>
@@ -492,7 +492,7 @@ WebAssembly renderer built from the original C project.</p>
 </fieldset>
 </section>
 <section id="resources">
-<fieldset class="border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
+<fieldset class="notebook-panel border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
 <legend class="ms-4 md:ms-0">
 <h2 class="section-title mx-2 font-mono italic tracking-tight px-1">cat ~/resources.md</h2>
 </legend>
@@ -511,7 +511,7 @@ WebAssembly renderer built from the original C project.</p>
 </fieldset>
 </section>
 <section id="running">
-<fieldset class="border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
+<fieldset class="notebook-panel border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
 <legend class="ms-4 md:ms-0">
 <h2 class="section-title mx-2 font-mono italic tracking-tight px-1">cat ~/running.md</h2>
 </legend>
@@ -573,12 +573,12 @@ WebAssembly renderer built from the original C project.</p>
 </fieldset>
 </section>
 <section class="mx-auto w-full max-w-3xl" id="appointments">
-<fieldset class="border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
+<fieldset class="notebook-panel border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
 <legend class="ms-4 md:ms-0">
 <h2 class="section-title mx-2 font-mono italic tracking-tight px-1">Book to talk to me</h2>
 </legend>
 <div id="appointment-picker">
-<iframe class="block h-[520px] w-full rounded-md border border-input bg-white sm:h-[560px]" loading="lazy" src="https://calendly.com/ardatas/30min?embed_domain=ardatas.com&amp;embed_type=Inline&amp;primary_color=284d6d" title="Book a 30-minute meeting with Arda Taş"></iframe>
+<iframe class="block h-[520px] w-full rounded-md border border-input bg-[var(--inset-surface)] sm:h-[560px]" loading="lazy" src="https://calendly.com/ardatas/30min?embed_domain=ardatas.com&amp;embed_type=Inline&amp;background_color=edf3f8&amp;primary_color=284d6d" title="Book a 30-minute meeting with Arda Taş"></iframe>
 <script>
             (() => {
               const frame = document.querySelector("#appointment-picker iframe");
@@ -598,8 +598,8 @@ WebAssembly renderer built from the original C project.</p>
 </section>
 </div>
 </main>
-<footer class="links-footer mt-3 bg-[var(--notebook-paper)]" id="links">
-<fieldset class="border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
+<footer class="links-footer mt-3" id="links">
+<fieldset class="notebook-panel border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
 <legend class="ms-4 md:ms-0">
 <h2 class="section-title mx-2 font-mono italic tracking-tight px-1">cat ~/links.md</h2>
 </legend>

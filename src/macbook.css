@@ -168,7 +168,7 @@
 .mac-menu-items p { padding: 4px 8px; color: #edeaf1; }
 .mac-finder-window {
   position: absolute; inset: 12% 5% 19%; display: flex; flex-direction: column; color: #f2f1f5;
-  background: #27262c; border: 1px solid #ffffff4d; border-radius: 8px; overflow: hidden;
+  background: rgb(32 31 39 / 90%); border: 1px solid #ffffff4d; border-radius: 8px; overflow: hidden;
   box-shadow: 0 8px 22px #110d3180;
   font: 400 clamp(10px, 2.1cqw, 14px)/1.4 -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
@@ -189,7 +189,7 @@
   .mac-finder-window { inset: 23px 1.5% max(39px, 16%); }
 }
 .mac-terminal { position: absolute; inset: 13% 5% 19%; display: flex; flex-direction: column;
-  background: #19191df7; color: #f0f0f3; border: 1px solid #706f77; border-radius: 8px; overflow: hidden;
+  background: rgb(20 20 27 / 91%); color: #f0f0f3; border: 1px solid #706f77; border-radius: 8px; overflow: hidden;
   box-shadow: 0 8px 22px #110d3180; }
 .mac-terminal[hidden] { display: none; }
 .mac-terminal-title { position: relative; text-align: center; flex: none; background: #343339;
@@ -221,7 +221,7 @@
 .mac-preview-tools {
   position: absolute; bottom: 8px; left: 50%; translate: -50% 0;
   display: flex; align-items: center; gap: 2px; padding: 3px; border-radius: 8px;
-  background: #27272a; box-shadow: 0 2px 6px #0003;
+  background: rgb(30 30 34 / 92%); box-shadow: 0 2px 6px #0003;
 }
 @media (hover: hover) {
   .mac-preview-tools { opacity: 0; }

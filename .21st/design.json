@@ -29,7 +29,7 @@
         "source": "src/index.css"
       },
       "--notebook-muted": {
-        "value": "#52677a",
+        "value": "#344b60",
         "source": "src/index.css"
       }
     },
@@ -53,6 +53,11 @@
     "avoid": []
   },
   "decisions": [
+    {
+      "id": "ribbon-surfaces",
+      "decision": "Show the ribbon through individually tinted notebook sections and lighter nested cards. Use a denser tint for floating labels and controls, and solid notebook colors for reduced transparency.",
+      "source": "src/index.css"
+    },
     {
       "id": "project-stack",
       "decision": "Use the supplied glass-folder design for the large Projects folder and the individual project folders. Keep each project name on one line and expand its details within the homepage.",

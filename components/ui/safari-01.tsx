@@ -16,8 +16,8 @@ interface Safari01Props {
 
 export default function Safari_01({ image, className, children, onClose, headerProps }: Safari01Props) {
   return (
-    <div className={cn("min-w-[700px] rounded-xl border border-zinc-200 dark:border-zinc-800 bg-muted shadow-md overflow-hidden", className)}>
-      <header {...headerProps} className="flex items-center justify-between px-4 py-2 bg-gray-100 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
+    <div className={cn("min-w-[700px] rounded-xl border border-zinc-200 dark:border-zinc-800 bg-[var(--floating-surface)] dark:bg-zinc-900/90 backdrop-blur-md shadow-md overflow-hidden", className)}>
+      <header {...headerProps} className="flex items-center justify-between px-4 py-2 bg-gray-100/50 dark:bg-zinc-900/60 border-b border-zinc-200 dark:border-zinc-800">
         <div className="flex items-center space-x-2">
           {onClose
             ? <button type="button" className="mac-preview-close w-3 h-3 rounded-full bg-red-400" aria-label="Close document" title="Close document" onClick={onClose} />
@@ -28,7 +28,7 @@ export default function Safari_01({ image, className, children, onClose, headerP
         <div aria-hidden="true" className="flex-1 mx-4 bg-gray-200 dark:bg-zinc-800 rounded-md h-5 max-w-md" />
         <div aria-hidden="true" className="w-4 h-4" />
       </header>
-      <div className="bg-gray-100 dark:bg-zinc-800 aspect-video flex items-center justify-center">
+      <div className="bg-gray-100/30 dark:bg-zinc-800/50 aspect-video flex items-center justify-center">
         {children ?? (image
           ? <Image unoptimized src={image} alt="Preview" width={800} height={450} className="object-contain max-h-full max-w-full" />
           : <span className="text-sm text-gray-500 dark:text-gray-400">No preview image</span>)}

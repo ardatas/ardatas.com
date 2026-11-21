@@ -11,7 +11,20 @@
   --notebook-inset: #f4f8fc;
   --notebook-border: #9fb4c7;
   --notebook-frame: #73899c;
-  --notebook-muted: #52677a;
+  --notebook-muted: #344b60;
+  --panel-surface: rgb(242 248 255 / 72%);
+  --card-surface: rgb(234 244 255 / 42%);
+  --inset-surface: rgb(247 251 255 / 68%);
+  --floating-surface: rgb(247 251 255 / 91%);
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --panel-surface: var(--notebook-paper);
+    --card-surface: var(--notebook-card);
+    --inset-surface: var(--notebook-inset);
+    --floating-surface: var(--notebook-inset);
+  }
 }
 
 html {
@@ -37,8 +50,12 @@ body::before {
   body::before { background-image: url("/assets/ribbon-field-portrait.webp"); }
 }
 
+.notebook-panel {
+  background-color: var(--panel-surface);
+}
+
 .section-title {
-  background-color: var(--notebook-paper);
+  background-color: var(--floating-surface);
 }
 
 a {
@@ -214,7 +231,7 @@ article {
 }
 
 .profile-row {
-  @apply flex gap-3 border border-[var(--notebook-border)] bg-[var(--notebook-card)] p-3;
+  @apply flex gap-3 border border-[var(--notebook-border)] bg-[var(--card-surface)] p-3;
 }
 
 .compact-row {
@@ -222,7 +239,7 @@ article {
 }
 
 .profile-logo {
-  @apply flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden border border-[var(--notebook-border)] bg-[var(--notebook-inset)] p-1;
+  @apply flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden border border-[var(--notebook-border)] bg-[var(--inset-surface)] p-1;
 }
 
 .profile-logo img {
@@ -258,7 +275,7 @@ article {
 }
 
 .skill-panel {
-  @apply border border-[var(--notebook-border)] bg-[var(--notebook-card)] p-3 text-sm leading-5;
+  @apply border border-[var(--notebook-border)] bg-[var(--card-surface)] p-3 text-sm leading-5;
 }
 
 .skill-title {
@@ -266,7 +283,7 @@ article {
 }
 
 .running-card {
-  @apply border border-[var(--notebook-border)] border-t-[3px] border-t-[#fc4c02] bg-[var(--notebook-card)];
+  @apply border border-[var(--notebook-border)] border-t-[3px] border-t-[#fc4c02] bg-[var(--card-surface)];
 }
 
 .running-header {
@@ -349,12 +366,15 @@ article {
 }
 
 .links-footer fieldset {
+  isolation: isolate;
+  position: relative;
   min-height: clamp(9.5rem, 15vw, 12rem);
 }
 
 #footer-plane {
   position: absolute;
-  inset: 0.9rem 1px 1px;
+  inset: 0 1px 1px;
+  opacity: .6;
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
@@ -376,7 +396,7 @@ article {
 }
 
 .resource-link {
-  @apply flex h-full items-center justify-between gap-4 border border-[var(--notebook-border)] bg-[var(--notebook-card)] p-4 transition-colors hover:border-[#315f87] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#315f87];
+  @apply flex h-full items-center justify-between gap-4 border border-[var(--notebook-border)] bg-[var(--card-surface)] p-4 transition-colors hover:border-[#315f87] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#315f87];
 }
 
 .resource-link p {
@@ -438,7 +458,7 @@ article {
   padding: 32px clamp(16px, 4vw, 48px);
   border: 1px solid var(--notebook-border);
   border-radius: 8px;
-  background: #e9f2f8;
+  background: var(--card-surface);
 }
 #project-backdrop { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
 .project-ghost-track { position: absolute; inset: 24px; }
@@ -486,7 +506,7 @@ article {
   max-width: 52rem;
   margin: 20px auto 0;
 }
-.project-entry { overflow-wrap: anywhere; border-radius: 7px; background: #f8fbfd; }
+.project-entry { overflow-wrap: anywhere; border-radius: 7px; background: var(--inset-surface); }
 .project-name {
   display: flex; align-items: center; gap: 9px; min-height: 44px; padding: 5px 12px;
   list-style: none; cursor: pointer; border-radius: inherit; color: white; background: #304e67;
@@ -530,7 +550,7 @@ article {
   display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
   position: relative; isolation: isolate; overflow: hidden;
   padding: clamp(20px, 3vw, 34px); border: 1px solid var(--notebook-border);
-  background: white; color: #142957; text-decoration: none;
+  background: var(--panel-surface); color: #142957; text-decoration: none;
 }
 .resume-promo:focus-visible { outline: 3px solid var(--resume-blue); outline-offset: 3px; }
 .resume-promo-brand { display: inline-flex; align-items: center; color: #111; font: 400 14px/1 "Resume Caesar", sans-serif; }
@@ -573,6 +593,6 @@ article {
 .project-glass-grid > li { min-width: 0; }
 .project-glass-entry .gf-label { max-width: 290px; text-align: left; }
 .project-glass-grid .project-description {
-  margin-top: 14px; text-align: left; background: var(--notebook-inset);
+  margin-top: 14px; text-align: left; background: var(--inset-surface);
   border: 1px solid var(--notebook-border); border-radius: 8px;
 }

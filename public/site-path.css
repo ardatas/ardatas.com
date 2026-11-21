@@ -57,7 +57,8 @@ html { scroll-padding-top: 78px; }
   margin-bottom: 12px;
 }
 #portfolio-path .nimbus-nav {
-  --n-tint: rgba(237, 246, 253, .58);
+  --n-tint: var(--panel-surface);
+  --n-fg-soft: #30455c;
   max-width: 100%;
 }
 #portfolio-path .nimbus-nav:not([data-gl]) [aria-current] {

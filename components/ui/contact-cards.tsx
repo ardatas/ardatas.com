@@ -186,7 +186,7 @@ export default function ContactCards({
 						aria-label={item.label}
 						onMouseEnter={() => handleEnter(itemIndex)}
 						onFocus={() => handleEnter(itemIndex)}
-						className="z-10 p-2 text-zinc-500 transition-colors hover:text-zinc-900 dark:hover:text-zinc-100"
+						className="z-10 p-2 text-[var(--notebook-muted)] transition-colors hover:text-zinc-900 dark:hover:text-zinc-100"
 					>
 						{item.icon}
 					</a>
@@ -198,7 +198,7 @@ export default function ContactCards({
 					// with a blur filter, and without it Chrome lets the filtered layer paint
 					// outside the rounded corners while the container is morphing.
 					style={{ left: box.left, width: box.width, height: box.height, contain: 'paint' }}
-					className={`absolute bottom-[calc(100%+0.5rem)] flex origin-bottom items-end overflow-hidden rounded-3xl bg-white shadow-2xl ring ring-zinc-900/10 dark:bg-zinc-900 dark:ring-zinc-100/10
+					className={`absolute bottom-[calc(100%+0.5rem)] flex origin-bottom items-end overflow-hidden rounded-3xl bg-[var(--floating-surface)] backdrop-blur-md shadow-2xl ring ring-zinc-900/10 dark:bg-zinc-900 dark:ring-zinc-100/10
 						${
 							morphing
 								? 'transition-[left,width,height,opacity,transform] duration-[400ms] ease-[cubic-bezier(0.32,0.72,0,1)]'
