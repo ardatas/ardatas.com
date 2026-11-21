@@ -198,5 +198,3 @@ pyrightconfig.json
 # End of https://www.toptal.com/developers/gitignore/api/python,visualstudiocode
 
 node_modules/
-
-/track/dist/

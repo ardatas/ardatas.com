@@ -17,8 +17,7 @@
     "tailwind-merge": "^2.6.1",
     "tailwindcss": "^3.4.17",
     "tsx": "^4.23.15",
-    "typescript": "~5.9.3",
-    "vite": "^8.3.8"
+    "typescript": "~5.9.3"
   },
   "scripts": {
     "watch:tailwind": "tailwindcss -i ./src/index.css -o ./dist/index.css --watch",
@@ -27,19 +26,14 @@
     "dev": "concurrently \"pnpm watch:html\" \"pnpm watch:tailwind\" \"pnpm flask-dev\"",
     "build": "./build.sh",
     "typecheck": "tsc --noEmit",
-    "preview": "python3 -m http.server 4173 --bind 127.0.0.1 --directory dist",
-    "dev:track": "vite track --config track/vite.config.mts",
-    "build:track": "tsc -p track/tsconfig.json && vite build track --config track/vite.config.mts",
-    "test:track": "tsx --test track/model.test.ts"
+    "preview": "python3 -m http.server 4173 --bind 127.0.0.1 --directory dist"
   },
   "dependencies": {
     "@radix-ui/react-scroll-area": "^1.4.0",
     "@radix-ui/react-separator": "^1.2.0",
     "@radix-ui/react-slot": "^1.5.0",
-    "@supabase/supabase-js": "^2.119.2",
     "class-variance-authority": "^0.7.1",
     "date-fns": "^4.4.0",
-    "framer-motion": "^14.14.0",
     "lucide-react": "^1.77.0",
     "next": "^16.4.6",
     "react-day-picker": "^9.14.0"

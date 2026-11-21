@@ -1,6 +1,0 @@
-{
-  "extends": "../tsconfig.json",
-  "compilerOptions": { "types": ["vite/client"], "skipLibCheck": true },
-  "include": ["*.ts", "*.tsx", "../components/ui/flip-clock.tsx"],
-  "exclude": ["*.test.ts", "vite.config.mts"]
-}
