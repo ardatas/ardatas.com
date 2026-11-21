@@ -214,6 +214,19 @@
             title="Book a 30-minute meeting with Arda Taş"
             loading="lazy"
           ></iframe>
+          <script>
+            (() => {
+              const frame = document.querySelector("#appointment-picker iframe");
+              const origin = new URL(frame.src).origin;
+              window.addEventListener("message", ({ origin: sender, source, data }) => {
+                if (sender !== origin || source !== frame.contentWindow || data?.event !== "calendly.page_height") return;
+                const value = data.payload?.height;
+                if (typeof value !== "string" || !/^\d+px$/.test(value)) return;
+                // Calendly briefly reports an empty frame while a booking step loads.
+                if (parseInt(value, 10) >= 100) frame.style.height = value;
+              });
+            })();
+          </script>
           <a class="social-link mt-2 inline-block text-sm" href="{{ booking_url }}" target="_blank" rel="noopener noreferrer">Open in Calendly ↗</a>
         </div>
       {% endcall %}
