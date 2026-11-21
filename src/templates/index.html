@@ -219,24 +219,11 @@
         </div>
       {% endcall %}
     </section>
+    {% include "components/agentic-coding.html" %}
     <section id="resources">
       {% call fieldset("cat ~/resources.md") %}
         <p class="mb-3 text-lg font-bold text-neutral-800">some resources I think you should check out</p>
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <li>
-            <a
-              class="resource-link group"
-              href="https://joinheader.com/topics/bf25c29e-de97-46f2-9c46-47e4e9d75e40?subscribe=1"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div class="min-w-0">
-                <h3 class="profile-title">learn agentic coding with Header:</h3>
-                <p class="mt-2 font-mono text-xs text-neutral-500 break-words">joinheader.com</p>
-              </div>
-              <span class="resource-arrow" aria-hidden="true">{{ icon('arrow-up-right-01') }}</span>
-            </a>
-          </li>
           <li>
             <a
               class="resource-link group"

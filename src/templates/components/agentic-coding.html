@@ -1,0 +1,30 @@
+{% set groups = [
+  ("Recommended tools", [
+    ("Header Skill", "Audits a coding agent’s instructions, model choice, and dependencies. Run it when you want to tune your setup.", "https://github.com/Header-inc/Header-skill"),
+    ("Liman", "An experimental fork of the Nashi file converter. Its macOS security patches cover downloads, archives, and subprocesses.", "https://github.com/egemenbaha/liman")
+  ]),
+  ("Reading and blogs", [
+    ("Header’s agentic coding briefing", "Follow Header’s coverage of coding agents and their tools.", "https://joinheader.com/topics/bf25c29e-de97-46f2-9c46-47e4e9d75e40?subscribe=1"),
+    ("Building effective agents", "Anthropic explains when a fixed LLM workflow is enough and when to let a model choose its next tool.", "https://www.anthropic.com/research/building-effective-agents")
+  ])
+] %}
+<section id="agentic-coding" aria-label="Agentic coding, LLMs and AI">
+  {% call fieldset("Agentic coding, LLMs and AI") %}
+    {% for heading, entries in groups %}
+      <h3 class="mb-2 {% if not loop.first %}mt-4{% endif %}">{{ heading }}</h3>
+      <ul class="grid grid-cols-1 gap-3 md:grid-cols-2">
+        {% for title, description, url in entries %}
+          <li>
+            <a class="resource-link group" href="{{ url }}" target="_blank" rel="noopener noreferrer">
+              <div class="min-w-0">
+                <h4 class="profile-title">{{ title }}</h4>
+                <p class="mt-2 text-sm">{{ description }}</p>
+              </div>
+              <span class="resource-arrow" aria-hidden="true">{{ icon('arrow-up-right-01') }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  {% endcall %}
+</section>
