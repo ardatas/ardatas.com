@@ -14,7 +14,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&amp;family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&amp;family=Instrument+Sans:wdth,wght@75..100,400..600&amp;display=swap" rel="stylesheet"/>
-<link href="/index.css?v=e03b92b1fcad" rel="stylesheet"/>
+<link href="/index.css?v=4cc4c119966c" rel="stylesheet"/>
 <link href="/site-path.css?v=224457820392" rel="stylesheet"/>
 <script defer="" src="/loading-state.js?v=6647103555bf"></script>
 <link href="/loading-state.css?v=7409d90aec6a" rel="stylesheet"/>
@@ -565,9 +565,17 @@ WebAssembly renderer built from the original C project.</p>
 <legend class="ms-4 md:ms-0">
 <h2 class="section-title mx-2 font-mono italic tracking-tight px-1">Book to talk to me</h2>
 </legend>
-<div id="appointment-picker">
-<div class="rounded-md border border-input bg-[var(--inset-surface)]">
-<iframe class="block h-[520px] w-full rounded-[inherit] sm:h-[560px]" loading="lazy" src="https://calendly.com/ardatas/30min?embed_domain=ardatas.com&amp;embed_type=Inline&amp;background_color=edf3f8&amp;primary_color=284d6d" title="Book a 30-minute meeting with Arda Taş"></iframe>
+<details class="group" id="appointment-picker">
+<summary class="flex min-h-11 cursor-pointer list-none flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded px-2 text-sm focus-visible:outline focus-visible:outline-2 [&amp;::-webkit-details-marker]:hidden">
+<span class="font-medium">30-minute call</span>
+<span class="inline-flex items-center gap-2 underline underline-offset-2">
+<span class="group-open:hidden">Choose a time</span>
+<span class="hidden group-open:inline">Hide calendar</span>
+<span aria-hidden="true" class="inline-block size-2 rotate-45 border-b border-r border-current group-open:rotate-[225deg]"></span>
+</span>
+</summary>
+<div class="mx-auto mt-1 w-full max-w-2xl rounded-md border border-input bg-[var(--inset-surface)]">
+<iframe class="block h-[min(32rem,75svh)] w-full rounded-[inherit]" loading="lazy" src="https://calendly.com/ardatas/30min?embed_domain=ardatas.com&amp;embed_type=Inline&amp;hide_event_type_details=1&amp;background_color=edf3f8&amp;primary_color=284d6d" title="Book a 30-minute meeting with Arda Taş"></iframe>
 </div>
 <script>
             (() => {
@@ -583,7 +591,7 @@ WebAssembly renderer built from the original C project.</p>
             })();
           </script>
 <a class="social-link mt-2 inline-block text-sm" href="https://calendly.com/ardatas/30min" rel="noopener noreferrer" target="_blank">Open in Calendly ↗</a>
-</div>
+</details>
 </fieldset>
 </section>
 </div>
