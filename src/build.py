@@ -237,6 +237,10 @@ portrait_html = subprocess.check_output(
     ["node", "--import", "tsx", "src/render-portrait.tsx"],
     cwd=os.path.dirname(script_path), text=True,
 )
+macbook_html = subprocess.check_output(
+    ["node", "--import", "tsx", "src/render-macbook.tsx"],
+    cwd=os.path.dirname(script_path), text=True,
+)
 loading_state_html = subprocess.check_output(
     ["node", "--import", "tsx", "src/render-loading-state.tsx"],
     cwd=os.path.dirname(script_path), text=True,
@@ -245,7 +249,7 @@ loading_bundle, loading_state_version = bundle_entry("loading-state")
 with open(loading_bundle.removesuffix(".js") + ".css", "rb") as source:
     homepage_style_version = hashlib.sha256(source.read()).hexdigest()[:12]
 rendered = index.render(homepage_style_version=homepage_style_version, loading_state_html=loading_state_html, loading_state_version=loading_state_version, lists=lists, name=name, title=name, running=running, travel=travel,
-                        portrait_html=portrait_html,
+                        portrait_html=portrait_html, macbook_html=macbook_html,
                         exploration=build_exploration_stats(travel["countries"]))
 soup = bs(rendered)
 for item in seotags:

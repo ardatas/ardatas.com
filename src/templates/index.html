@@ -136,6 +136,11 @@
         {{ lists["projects"]|safe }}
       {% endcall %}
     </section>
+    <section id="macbook">
+      {% call fieldset("Arda’s MacBook") %}
+        <div id="macbook-desktop">{{ macbook_html | safe }}</div>
+      {% endcall %}
+    </section>
     <section id="github-activity">
       {% call fieldset("git log · GitHub activity") %}
         <div id="github-calendar">
