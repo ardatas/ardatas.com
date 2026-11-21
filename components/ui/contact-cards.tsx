@@ -61,14 +61,6 @@ type Props = {
 
 const API = 'https://github-contributions-api.jogruber.de/v4';
 
-const LEVELS = [
-	'bg-zinc-900/10 dark:bg-zinc-100/10',
-	'bg-green-600/20 dark:bg-green-400/20',
-	'bg-green-600/40 dark:bg-green-400/40',
-	'bg-green-600/[.65] dark:bg-green-400/[.65]',
-	'bg-green-600/90 dark:bg-green-400/90',
-];
-
 const KEYFRAMES = `
 @media (prefers-reduced-motion: no-preference) {
 @keyframes cc-in {
@@ -198,7 +190,7 @@ export default function ContactCards({
 					// with a blur filter, and without it Chrome lets the filtered layer paint
 					// outside the rounded corners while the container is morphing.
 					style={{ left: box.left, width: box.width, height: box.height, contain: 'paint' }}
-					className={`absolute bottom-[calc(100%+0.5rem)] flex origin-bottom items-end overflow-hidden rounded-3xl bg-[var(--floating-surface)] backdrop-blur-md shadow-2xl ring ring-zinc-900/10 dark:bg-zinc-900 dark:ring-zinc-100/10
+					className={`absolute bottom-[calc(100%+0.5rem)] flex origin-bottom items-end overflow-hidden rounded-3xl ${github && index === 0 ? 'github-contact-surface' : 'bg-[var(--floating-surface)] dark:bg-zinc-900'} backdrop-blur-md shadow-2xl ring ring-zinc-900/10 dark:ring-zinc-100/10
 						${
 							morphing
 								? 'transition-[left,width,height,opacity,transform] duration-[400ms] ease-[cubic-bezier(0.32,0.72,0,1)]'
@@ -367,7 +359,7 @@ function GithubCard({
 				)}
 				<div className="flex flex-col">
 					<span className="font-medium">{github.username}</span>
-					<span className="text-sm text-zinc-500">
+					<span className="text-sm text-[var(--github-muted)]">
 						{total.toLocaleString(locale)} {contributionsLabel}
 					</span>
 				</div>
@@ -447,9 +439,8 @@ export function ContributionGraph({
 								key={dayIndex}
 								data-date={day?.date}
 								data-count={day?.count}
-								className={`aspect-square w-full rounded-[1.5px] ${
-									day ? LEVELS[day.level ?? levelOf(day.count)] : ''
-								}`}
+								className="aspect-square w-full rounded-[1.5px]"
+								style={day ? { backgroundColor: `var(--github-level-${day.level ?? levelOf(day.count)})` } : undefined}
 							/>
 						))}
 					</Fragment>
