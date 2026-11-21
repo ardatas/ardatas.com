@@ -55,7 +55,7 @@
   "decisions": [
     {
       "id": "document-preview",
-      "decision": "Display PDFs in the Safari-01 frame with a blank address bar and a 16:9 preview. Overlay reading controls on the document.",
+      "decision": "Display PDFs in the Safari-01 frame with a blank address bar and a resizable portrait reading area. Overlay reading controls on the document.",
       "source": "components/ui/safari-01.tsx"
     },
     {

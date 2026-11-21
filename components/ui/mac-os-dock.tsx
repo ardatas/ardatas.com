@@ -10,7 +10,9 @@ export interface DockApp {
   utility?: boolean;
 }
 
-export default function MacOSDock({ apps, onFinder }: { apps: DockApp[]; onFinder?: () => void }) {
+export default function MacOSDock({ apps, launch, terminalOpen }: {
+  apps: DockApp[]; launch: Partial<Record<string, () => void>>; terminalOpen: boolean;
+}) {
   const [running, setRunning] = useState(() => new Set(apps.filter(app => app.running).map(app => app.id)));
   const [pointerPosition, setPointerPosition] = useState<number | null>(null);
   const [focused, setFocused] = useState<string | null>(null);
@@ -44,11 +46,16 @@ export default function MacOSDock({ apps, onFinder }: { apps: DockApp[]; onFinde
             const scale = 1 + 0.22 * (1 + Math.cos(distance * Math.PI / 2));
             return (
               <button type="button" key={app.id} className="mac-dock-item" aria-label={app.name}
-                aria-pressed={running.has(app.id)} data-utility={app.utility || undefined}
+                aria-pressed={app.id === "terminal" ? terminalOpen : running.has(app.id)} data-utility={app.utility || undefined}
                 style={{ "--dock-scale": scale } as CSSProperties}
                 onPointerEnter={event => trackPointer(event, index)} onPointerMove={event => trackPointer(event, index)}
                 onFocus={() => setFocused(app.id)} onBlur={() => setFocused(null)}
-                onClick={() => { setFocused(app.id); if (app.id === "finder" && onFinder) onFinder(); else toggleApp(app.id); }}>
+                onClick={() => {
+                  setFocused(app.id);
+                  const open = launch[app.id];
+                  if (open) open();
+                  else toggleApp(app.id);
+                }}>
                 <span className="mac-dock-icon">
                   <img src={`/macbook/icons/${app.id}.webp`} alt="" loading="lazy" decoding="async" draggable={false} />
                   {app.badge && <span className="mac-dock-badge" aria-hidden="true">{app.badge}</span>}

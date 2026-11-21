@@ -234,3 +234,15 @@
 .mac-preview-pages { flex: 1; min-height: 0; overflow: auto; padding: 14px 14px 48px; overscroll-behavior: contain; }
 .mac-preview-paper { margin-inline: auto; display: grid; gap: 12px; }
 .mac-preview-paper img { display: block; width: 100%; height: auto; background: white; box-shadow: 0 2px 9px #0005; }
+
+.mac-preview-resize {
+  position: absolute; right: 0; bottom: 0; width: 30px; height: 30px;
+  cursor: nwse-resize; touch-action: none; color: #63636c;
+}
+.mac-preview-resize::after {
+  content: ""; position: absolute; right: 5px; bottom: 5px; width: 14px; height: 14px;
+  background: repeating-linear-gradient(135deg, transparent 0 2px, currentColor 2px 3.5px);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+.dark .mac-preview-resize { color: #c6c6ce; }
+.mac-preview-resize:focus-visible { outline: 2px solid #4384ba; outline-offset: -3px; }

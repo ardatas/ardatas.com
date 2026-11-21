@@ -11,6 +11,7 @@ import MacOSDock, { type DockApp } from "@/components/ui/mac-os-dock";
 // Set running or badge to reproduce the starting Dock. utility separates the trailing items.
 const apps: DockApp[] = [
   { id: "finder", name: "Finder", running: true },
+  { id: "terminal", name: "Terminal" },
   { id: "launchpad", name: "Launchpad" },
   { id: "safari", name: "Safari", running: true },
   { id: "notion", name: "Notion", running: true },
@@ -90,7 +91,7 @@ export function MacbookDesktop({ files = [] }: { files?: HomeEntry[] }) {
             lock={() => { setFile(null); setLocked(true); requestAnimationFrame(() => enter.current?.focus({ preventScroll: true })); }} />
           <Terminal files={files} visible={visible && !finder} onActivate={() => setApp("Terminal")} onHide={closeWindow} onOpen={setFile} />
           {finder && <MacbookFinder location={finder} files={files} icons={icons} go={go} open={setFile} close={closeWindow} />}
-          <MacOSDock apps={apps} onFinder={() => go("/")} />
+          <MacOSDock apps={apps} launch={{ finder: () => go("/"), terminal: showTerminal }} terminalOpen={visible} />
         </>}
       </div>
       {file && <DocumentWindow key={file.path} file={file} onClose={() => {
