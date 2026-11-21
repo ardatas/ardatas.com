@@ -72,17 +72,6 @@ body::before {
 #github-activity .social-link:hover { color: var(--github-level-4); }
 #github-activity .social-link:focus-visible { outline-color: var(--github-level-4); }
 
-/* Reserve space for the sticky navigation, fieldset legend, and panel padding. */
-#appointment-picker {
-  display: flex;
-  flex-direction: column;
-  max-height: calc(100vh - var(--portfolio-nav-clearance) - 4.5rem);
-  max-height: calc(100dvh - var(--portfolio-nav-clearance) - 4.5rem);
-}
-/* Scroll the full booking step so Calendly's sticky header cannot cover its time slots. */
-.booking-viewport { min-height: 0; overflow: auto; }
-#appointment-picker > a { flex: none; align-self: flex-start; }
-
 .section-title {
   background-color: var(--floating-surface);
 }
