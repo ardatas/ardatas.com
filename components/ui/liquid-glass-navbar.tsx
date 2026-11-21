@@ -17,6 +17,7 @@ export type NimbusFx = "plane" | "drop" | "spin" | "glow" | "wave" | "pop" | "no
 export type LiquidNavItem = {
   label: string
   href?: string
+  newTab?: boolean
   icon?: React.ReactNode
   /** the little scene the icon plays when tapped */
   fx?: NimbusFx
@@ -487,7 +488,7 @@ export function LiquidNavbar({
           className: "nimbus-item",
           "aria-current": i === current ? (it.href?.startsWith("#") && it.href !== "#top" ? "location" as const : "page" as const) : undefined,
           onClick: (event: React.MouseEvent) => {
-            if (!event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) select(i)
+            if (!it.newTab && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) select(i)
           },
         }
         const content = (
@@ -501,7 +502,9 @@ export function LiquidNavbar({
           </>
         )
         return it.href ? (
-          <a key={it.label + i} {...props} href={it.href} aria-label={it.label}>{content}</a>
+          <a key={it.label + i} {...props} href={it.href} target={it.newTab ? "_blank" : undefined}
+            rel={it.newTab ? "noopener noreferrer" : undefined}
+            aria-label={it.newTab ? `${it.label} (opens in a new tab)` : it.label}>{content}</a>
         ) : (
           <button key={it.label + i} {...props} type="button" aria-label={it.label}>{content}</button>
         )
