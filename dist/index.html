@@ -14,7 +14,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&amp;family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&amp;family=Instrument+Sans:wdth,wght@75..100,400..600&amp;display=swap" rel="stylesheet"/>
-<link href="/index.css?v=76fae9a24ee9" rel="stylesheet"/>
+<link href="/index.css?v=97cceb70b598" rel="stylesheet"/>
 <link href="/site-path.css?v=2351d4d139bf" rel="stylesheet"/>
 <script defer="" src="/loading-state.js?v=1f97d3fdb710"></script>
 <link href="/loading-state.css?v=a5592ca2af07" rel="stylesheet"/>
@@ -182,88 +182,183 @@
 <div aria-hidden="true" id="project-backdrop"></div>
 <details class="project-drawer">
 <summary class="project-folder">
-<img alt="" decoding="async" height="72" loading="lazy" src="/macbook/icons/folder.webp" width="72"/>
-<span><strong>Projects</strong><small>9 folders</small></span>
-<span aria-hidden="true" class="drawer-chevron"></span>
+<span aria-hidden="true" class="project-folder-back"></span>
+<span aria-hidden="true" class="project-folder-paper"></span>
+<span class="project-folder-front">
+<span class="project-folder-title">Projects</span>
+<span class="project-folder-meta">9 projects <span aria-hidden="true">/</span>
+<span class="folder-open-label">Open folder</span><span class="folder-close-label">Close folder</span>
+</span>
+</span>
 </summary>
-<ul aria-label="Project folders" class="project-files">
-<li class="project-file" style="--order: 0">
-<a class="project-file-link" href="/projects/larpyourresume.html">
-<img alt="" decoding="async" height="44" loading="lazy" src="/macbook/icons/folder.webp" width="44"/>
+<ul aria-label="Projects" class="project-files">
+<li>
+<details class="project-entry" name="portfolio-project">
+<summary class="project-name">
+<img alt="" decoding="async" height="32" loading="lazy" src="/macbook/icons/folder.webp" width="32"/>
 <span>larpyourresume</span>
-</a>
-<a aria-label="Open website · larpyourresume" class="project-destination" href="https://larpyourresume.com" rel="noopener noreferrer" target="_blank" title="Open website · larpyourresume">
-<svg aria-hidden="true" class="ui-icon" focusable="false" height="18" viewbox="0 0 24 24" width="18"><use href="/assets/hugeicons.svg#arrow-up-right-01"></use></svg>
-</a>
+</summary>
+<article class="project-description">
+<p>AI-assisted résumé builder that turns existing résumés into tailored applications with LaTeX-quality PDF output.</p>
+<p>Key features include the Sisyphus AI assistant, job-specific tailoring, form and LaTeX editing, customizable layouts, autosave, and PDF export.</p>
+<p>Tech stack: Next.js, React, TypeScript, Gemini, Supabase/PostgreSQL, Stripe, Docker, LuaLaTeX.</p>
+<p><a href="https://larpyourresume.com">Visit larpyourresume</a>.</p>
+<details class="project-highlights">
+<summary>Highlights</summary>
+<ul><li>Sisyphus AI assistant, job-specific tailoring, form and LaTeX editing, customizable layouts, autosave, and PDF export.</li><li>Tech stack: Next.js, React, TypeScript, Gemini, Supabase/PostgreSQL, Stripe, Docker, LuaLaTeX.</li></ul>
+</details>
+</article>
+</details>
 </li>
-<li class="project-file" style="--order: 1">
-<a class="project-file-link" href="/projects/purus.html">
-<img alt="" decoding="async" height="44" loading="lazy" src="/macbook/icons/folder.webp" width="44"/>
+<li>
+<details class="project-entry" name="portfolio-project">
+<summary class="project-name">
+<img alt="" decoding="async" height="32" loading="lazy" src="/macbook/icons/folder.webp" width="32"/>
 <span>Purus</span>
-</a>
-<a aria-label="Open website · Purus" class="project-destination" href="https://purusmobiledetailing.com" rel="noopener noreferrer" target="_blank" title="Open website · Purus">
-<svg aria-hidden="true" class="ui-icon" focusable="false" height="18" viewbox="0 0 24 24" width="18"><use href="/assets/hugeicons.svg#arrow-up-right-01"></use></svg>
-</a>
+</summary>
+<article class="project-description">
+<p>Full-stack booking and customer-management platform for a mobile detailing business.</p>
+<p>Built with Next.js, React, TypeScript, and PostgreSQL, with Supabase authentication, role-based dashboards, automated email notifications, and calendar exports.</p>
+<p>Structured as a monorepo with independently deployable frontend and backend apps on Google Cloud Run.</p>
+<p><strong>Website:</strong> <a href="https://purusmobiledetailing.com">purusmobiledetailing.com</a></p>
+<details class="project-highlights">
+<summary>Highlights</summary>
+<ul><li>Built with Next.js, React, TypeScript, and PostgreSQL, with Supabase authentication, role-based dashboards, automated email notifications, and calendar exports.</li><li>Structured as a monorepo with independently deployable frontend and backend apps on Google Cloud Run.</li></ul>
+</details>
+</article>
+</details>
 </li>
-<li class="project-file" style="--order: 2">
-<a class="project-file-link" href="/projects/mercatum.html">
-<img alt="" decoding="async" height="44" loading="lazy" src="/macbook/icons/folder.webp" width="44"/>
+<li>
+<details class="project-entry" name="portfolio-project">
+<summary class="project-name">
+<img alt="" decoding="async" height="32" loading="lazy" src="/macbook/icons/folder.webp" width="32"/>
 <span>MercaTUM</span>
-</a>
-<a aria-label="Source code · MercaTUM" class="project-destination" href="https://github.com/ardatas/mercaTUM-" rel="noopener noreferrer" target="_blank" title="Source code · MercaTUM">
-<svg aria-hidden="true" class="ui-icon" focusable="false" height="18" viewbox="0 0 24 24" width="18"><use href="/assets/hugeicons.svg#github"></use></svg>
-</a>
+</summary>
+<article class="project-description">
+<p>I built MercaTUM at the TUM Blockchain &amp; AI Hackathon: an on-demand LLM
+marketplace prototype with BSV micropayments and MCP integration for external
+AI agents.</p>
+<p>The project was awarded 3rd place in BSV Association’s DeFi Rails for Agentic
+Payments track.</p>
+<p><a href="https://github.com/ardatas/mercaTUM-">View the source code on GitHub</a>.</p>
+<details class="project-highlights">
+<summary>Highlights</summary>
+<ul><li>Built at the TUM Blockchain &amp; AI Hackathon.</li><li>Awarded 3rd place in BSV Association’s DeFi Rails for Agentic Payments track.</li></ul>
+</details>
+</article>
+</details>
 </li>
-<li class="project-file" style="--order: 3">
-<a class="project-file-link" href="/projects/amogus.html">
-<img alt="" decoding="async" height="44" loading="lazy" src="/macbook/icons/folder.webp" width="44"/>
+<li>
+<details class="project-entry" name="portfolio-project">
+<summary class="project-name">
+<img alt="" decoding="async" height="32" loading="lazy" src="/macbook/icons/folder.webp" width="32"/>
 <span>Werkio</span>
-</a>
-<a aria-label="Open website · Werkio" class="project-destination" href="https://getwerkio.com" rel="noopener noreferrer" target="_blank" title="Open website · Werkio">
-<svg aria-hidden="true" class="ui-icon" focusable="false" height="18" viewbox="0 0 24 24" width="18"><use href="/assets/hugeicons.svg#arrow-up-right-01"></use></svg>
-</a>
+</summary>
+<article class="project-description">
+<p>I built Werkio, a full-stack web app for finding student jobs and academic roles,
+and developed its AI-assisted application workflows across a TypeScript browser
+extension, React frontend, and Spring Boot backend.</p>
+<p>The Copilot uses Gemini to map profile data to application forms and draft
+cover letters from approved facts and job context. I added structured JSON
+validation and evidence checks, with review steps for uncertain or sensitive
+fields. Users review the proposed changes and submit applications themselves.</p>
+<p>I implemented workflow state and error handling so the extension can explain
+failures and invalidate stale plans when the active page changes. Access checks,
+CSRF protection, and feature flags control when actions are available.</p>
+<p>I wrote Playwright end-to-end tests that load the browser extension against
+controlled application forms. They cover multi-step forms, sensitive fields,
+provider and network failures, preserving user edits, and manual submission.
+Backend unit, integration, and security tests cover the API and persistence
+boundaries; GitHub Actions runs the checks before integration.</p>
+<p>The platform uses PostgreSQL and Flyway behind a REST API, with Docker Compose
+and Caddy on AWS EC2. Job matching and email digests support the core job-search
+product.</p>
+<p><a href="https://getwerkio.com">Visit Werkio</a>.</p>
+<details class="project-highlights">
+<summary>Highlights</summary>
+<ul><li>Built Gemini-based form mapping and cover-letter drafting across a TypeScript browser extension, React frontend, and Spring Boot backend.</li><li>Added structured-output validation, evidence checks, and review steps for uncertain or sensitive fields. Users stay in control of form submission.</li><li>Wrote Playwright end-to-end tests for browser workflows and failure cases, plus backend integration and security tests.</li></ul>
+</details>
+</article>
+</details>
 </li>
-<li class="project-file" style="--order: 4">
-<a class="project-file-link" href="/projects/check24-mcp.html">
-<img alt="" decoding="async" height="44" loading="lazy" src="/macbook/icons/folder.webp" width="44"/>
+<li>
+<details class="project-entry" name="portfolio-project">
+<summary class="project-name">
+<img alt="" decoding="async" height="32" loading="lazy" src="/macbook/icons/folder.webp" width="32"/>
 <span>CHECK24 MCP App</span>
-</a>
-<a aria-label="Source code · CHECK24 MCP App" class="project-destination" href="https://github.com/ardatas/check24-chatgpt-app" rel="noopener noreferrer" target="_blank" title="Source code · CHECK24 MCP App">
-<svg aria-hidden="true" class="ui-icon" focusable="false" height="18" viewbox="0 0 24 24" width="18"><use href="/assets/hugeicons.svg#github"></use></svg>
-</a>
+</summary>
+<article class="project-description">
+<p>I built this MCP app for the CHECK24 GenDev scholarship task. It gives ChatGPT
+one endpoint for tools across hotel, flight, package-holiday, and insurance
+services, using mock data and adapters.</p>
+<p>The TypeScript and Node.js proxy namespaces tools, validates inputs and declared
+outputs with AJV, and withholds tools that fail conformance checks. Scoped QA
+endpoints let each service be tested separately. A dashboard displays validation
+findings, call traces, durations, and errors.</p>
+<p>The project uses Express, the MCP SDK, Vitest, and Docker Compose.</p>
+<p><a href="https://github.com/ardatas/check24-chatgpt-app">View the project on GitHub</a>.</p>
+<details class="project-highlights">
+<summary>Highlights</summary>
+<ul><li>Built a TypeScript and Node.js proxy that combines four mock product services into one MCP endpoint, with namespaced tools and schema validation.</li><li>Added conformance checks, scoped QA endpoints, and a dashboard for tool errors and call traces.</li></ul>
+</details>
+</article>
+</details>
 </li>
-<li class="project-file" style="--order: 5">
-<a class="project-file-link" href="/projects/tum-ais.html">
-<img alt="" decoding="async" height="44" loading="lazy" src="/macbook/icons/folder.webp" width="44"/>
+<li>
+<details class="project-entry" name="portfolio-project">
+<summary class="project-name">
+<img alt="" decoding="async" height="32" loading="lazy" src="/macbook/icons/folder.webp" width="32"/>
 <span>AI Systems at TUM AIS</span>
-</a>
+</summary>
+<article class="project-description">
+<p>I build AI systems with context-aware LLMs, retrieval-augmented generation
+(RAG), and ontologies.</p>
+<details class="project-highlights">
+<summary>Highlights</summary>
+<ul><li>Building AI systems with context-aware LLMs, retrieval-augmented generation (RAG), and ontologies.</li></ul>
+</details>
+</article>
+</details>
 </li>
-<li class="project-file" style="--order: 6">
-<a class="project-file-link" href="/projects/header.html">
-<img alt="" decoding="async" height="44" loading="lazy" src="/macbook/icons/folder.webp" width="44"/>
+<li>
+<details class="project-entry" name="portfolio-project">
+<summary class="project-name">
+<img alt="" decoding="async" height="32" loading="lazy" src="/macbook/icons/folder.webp" width="32"/>
 <span>Header</span>
-</a>
-<a aria-label="Open website · Header" class="project-destination" href="https://header-ui-ux-overhaul.vercel.app" rel="noopener noreferrer" target="_blank" title="Open website · Header">
-<svg aria-hidden="true" class="ui-icon" focusable="false" height="18" viewbox="0 0 24 24" width="18"><use href="/assets/hugeicons.svg#arrow-up-right-01"></use></svg>
-</a>
+</summary>
+<article class="project-description">
+<p>I did a frontend overhaul for the agentic startup joinheader.</p>
+<p><a href="https://header-ui-ux-overhaul.vercel.app">Explore the frontend overhaul</a>.</p>
+</article>
+</details>
 </li>
-<li class="project-file" style="--order: 7">
-<a class="project-file-link" href="/projects/purdue-course-monitor.html">
-<img alt="" decoding="async" height="44" loading="lazy" src="/macbook/icons/folder.webp" width="44"/>
+<li>
+<details class="project-entry" name="portfolio-project">
+<summary class="project-name">
+<img alt="" decoding="async" height="32" loading="lazy" src="/macbook/icons/folder.webp" width="32"/>
 <span>TUM Blockchain Hackathon</span>
-</a>
-<a aria-label="Open website · TUM Blockchain Hackathon" class="project-destination" href="https://hackathon.tum-blockchain.com" rel="noopener noreferrer" target="_blank" title="Open website · TUM Blockchain Hackathon">
-<svg aria-hidden="true" class="ui-icon" focusable="false" height="18" viewbox="0 0 24 24" width="18"><use href="/assets/hugeicons.svg#arrow-up-right-01"></use></svg>
-</a>
+</summary>
+<article class="project-description">
+<p>I have been an active member of TUM Blockchain Club since May 2026. I take part
+in Web3 events and help organize the TUM Blockchain Hackathon 2026.</p>
+<p>I also built the event website at
+<a href="https://hackathon.tum-blockchain.com">hackathon.tum-blockchain.com</a>. The work
+combines web development with the coordination needed to run a student-led
+technical event.</p>
+</article>
+</details>
 </li>
-<li class="project-file" style="--order: 8">
-<a class="project-file-link" href="/projects/julia.html">
-<img alt="" decoding="async" height="44" loading="lazy" src="/macbook/icons/folder.webp" width="44"/>
+<li>
+<details class="project-entry" name="portfolio-project">
+<summary class="project-name">
+<img alt="" decoding="async" height="32" loading="lazy" src="/macbook/icons/folder.webp" width="32"/>
 <span>Julia Set Explorer</span>
-</a>
-<a aria-label="Open website · Julia Set Explorer" class="project-destination" href="/julia/" title="Open website · Julia Set Explorer">
-<svg aria-hidden="true" class="ui-icon" focusable="false" height="18" viewbox="0 0 24 24" width="18"><use href="/assets/hugeicons.svg#arrow-up-right-01"></use></svg>
-</a>
+</summary>
+<article class="project-description">
+<p><a href="/julia/">Explore the Julia set</a> with adjustable parameters, animation, and a
+WebAssembly renderer built from the original C project.</p>
+</article>
+</details>
 </li>
 </ul>
 </details>

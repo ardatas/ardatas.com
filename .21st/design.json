@@ -55,7 +55,7 @@
   "decisions": [
     {
       "id": "project-stack",
-      "decision": "Open Projects as a low, desktop-first Finder stack with blue folders, dark name labels, and separate destination icons.",
+      "decision": "Use the large layered Projects folder. Keep each project name on one line and expand its details within the homepage.",
       "source": "src/templates/posts/projects/list.html"
     },
     {
