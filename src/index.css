@@ -559,3 +559,20 @@ article {
   .resume-promo-figure { right: -9%; width: 115%; max-width: none; height: auto; bottom: 2%; }
   .resume-promo-sun { top: 11%; left: 13%; }
 }
+
+.project-glass-catalog { container-type: inline-size; text-align: center; padding-block: 38px 12px; }
+.project-glass-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px 16px;
+  margin-top: 28px;
+}
+@container (min-width: 35rem) {
+  .project-glass-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.project-glass-grid > li { min-width: 0; }
+.project-glass-entry .gf-label { max-width: 290px; text-align: left; }
+.project-glass-grid .project-description {
+  margin-top: 14px; text-align: left; background: var(--notebook-inset);
+  border: 1px solid var(--notebook-border); border-radius: 8px;
+}

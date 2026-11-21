@@ -32,3 +32,20 @@ if (macbook) hydrateRoot(macbook, <MacbookDesktop files={JSON.parse(macbook.data
 
 const projects = document.getElementById("project-backdrop");
 if (projects) createRoot(projects).render(<ProjectBackdrop />);
+
+const catalog = document.getElementById("project-catalog");
+if (catalog) {
+  const observer = new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting) return;
+    observer.disconnect();
+    import("@/components/project-folders").then(({ ProjectFolders, readProjects }) => {
+      const items = readProjects(catalog);
+      const initiallyOpen = catalog.querySelector<HTMLDetailsElement>(".project-drawer")?.open ?? false;
+      const selected = Array.from(catalog.querySelectorAll<HTMLDetailsElement>(".project-entry")).findIndex(entry => entry.open);
+      createRoot(catalog).render(
+        <ProjectFolders projects={items} initiallyOpen={initiallyOpen} initialProject={selected < 0 ? null : selected} />
+      );
+    });
+  }, { rootMargin: "400px" });
+  observer.observe(catalog);
+}

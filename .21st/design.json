@@ -55,7 +55,7 @@
   "decisions": [
     {
       "id": "project-stack",
-      "decision": "Use the large layered Projects folder. Keep each project name on one line and expand its details within the homepage.",
+      "decision": "Use the supplied glass-folder design for the large Projects folder and the individual project folders. Keep each project name on one line and expand its details within the homepage.",
       "source": "src/templates/posts/projects/list.html"
     },
     {
