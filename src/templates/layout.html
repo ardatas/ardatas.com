@@ -28,6 +28,7 @@
     <script src="/site-path.js?v={{ site_path_version }}" defer></script>
     {% endif %}
     {% if homepage_style_version %}
+    <script src="/loading-state.js?v={{ loading_state_version }}" defer></script>
     <link rel="stylesheet" href="/loading-state.css?v={{ homepage_style_version }}" />
     {% endif %}
     <script src="/link-conversion.js?v={{ asset_versions['link-conversion.js'] }}" defer></script>
@@ -41,12 +42,6 @@
       class="flex min-h-screen flex-col max-w-5xl mx-auto px-4 py-4 sm:py-8 text-[15px] leading-5 font-normal tracking-[-0.005em] antialiased font-sans"
     >
       {% include "components/site-path.html" %}
-      {%- block page_top %}{% endblock %}
-      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-        <a href="/">
-          <h1 class="site-name font-mono tracking-tight">{{ name }}</h1>
-        </a>
-      </div>
       <main class="flex flex-col">
         {% block content %}{% endblock %}
       </main>
@@ -61,6 +56,9 @@
               <a class="social-link" href="https://github.com/ardatas" target="_blank" rel="noopener noreferrer">GitHub</a>
             </li>
           </ul>
+          {% if loading_state_html %}
+            <div id="building-status" class="relative mt-2 px-3 font-mono md:px-0">{{ loading_state_html | safe }}</div>
+          {% endif %}
         {% endcall %}
       </footer>
     </div>

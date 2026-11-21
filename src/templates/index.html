@@ -2,11 +2,6 @@
 {% from "components/icon.html" import icon %}
 {% from "components/fieldset.html" import fieldset %}
 
-{% block page_top %}
-      <div id="building-status">{{ loading_state_html | safe }}</div>
-      <script src="/loading-state.js?v={{ loading_state_version }}" defer></script>
-{% endblock %}
-
 {% block content %}
   <div class="flex flex-col gap-3">
     {% call fieldset("whoami") %}

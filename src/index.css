@@ -57,10 +57,6 @@ h3 {
   vertical-align: -0.125em;
 }
 
-.site-name {
-  @apply text-2xl sm:text-3xl font-bold;
-}
-
 .section-title {
   @apply text-lg sm:text-xl font-bold;
 }
