@@ -18,18 +18,18 @@ export default function CalendarThree() {
   const [selectedTime, setSelectedTime] = useState<string | null>(null)
 
   return (
-    <div className="mx-auto grid w-full max-w-[526px] overflow-hidden rounded-md border border-input bg-background sm:grid-cols-[1fr_249px]">
+    <div className="mx-auto grid w-full max-w-[860px] overflow-hidden rounded-md border border-input bg-background sm:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
       <Calendar mode="single" required fixedWeeks selected={date} onSelect={day => {
         setDate(day)
         setSelectedTime(null)
       }} />
       <div className="flex min-h-0 flex-col border-t border-input sm:relative sm:border-l sm:border-t-0">
-        <div className="flex min-h-0 flex-col gap-3 py-4 sm:absolute sm:inset-0">
-          <p className="text-center text-sm font-medium">Available Times</p>
-          <ScrollArea className="h-44 sm:h-auto sm:min-h-0 sm:flex-1">
-            <div role="group" aria-label="Available times" className="grid gap-2 px-4 pb-1">
+        <div className="flex min-h-0 flex-col gap-4 py-5 sm:py-6 sm:absolute sm:inset-0">
+          <p className="text-center text-base font-medium">Available Times</p>
+          <ScrollArea className="h-52 sm:h-auto sm:min-h-0 sm:flex-1">
+            <div role="group" aria-label="Available times" className="grid gap-3 px-4 pb-1 sm:px-6">
               {availableTimes.map(time => (
-                <Button key={time} type="button" size="sm" aria-pressed={selectedTime === time}
+                <Button key={time} type="button" className="h-11 text-base" aria-pressed={selectedTime === time}
                   variant={selectedTime === time ? "default" : "outline"} onClick={() => setSelectedTime(time)}>
                   {time}
                 </Button>
