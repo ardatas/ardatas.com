@@ -14,7 +14,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&amp;family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&amp;family=Instrument+Sans:wdth,wght@75..100,400..600&amp;display=swap" rel="stylesheet"/>
-<link href="/index.css?v=35d2c5d7a719" rel="stylesheet"/>
+<link href="/index.css?v=93fbd9f017d7" rel="stylesheet"/>
 <link href="/site-path.css?v=2351d4d139bf" rel="stylesheet"/>
 <script defer="" src="/loading-state.js?v=38380992856b"></script>
 <link href="/loading-state.css?v=a5592ca2af07" rel="stylesheet"/>
@@ -409,10 +409,12 @@
 <section id="appointments">
 <fieldset class="border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
 <legend class="ms-4 md:ms-0">
-<h2 class="section-title mx-2 font-mono italic tracking-tight px-1">Appointment picker demo</h2>
+<h2 class="section-title mx-2 font-mono italic tracking-tight px-1">Book a 30-minute meeting</h2>
 </legend>
-<div id="appointment-picker"></div>
-<script defer="" src="/appointment-picker.js?v=4305834157b2"></script>
+<div class="mx-auto w-full max-w-[960px]" id="appointment-picker">
+<iframe class="block h-[720px] w-full rounded-md border border-input bg-white sm:h-[760px]" loading="lazy" src="https://calendly.com/ardatas/30min?embed_domain=ardatas.com&amp;embed_type=Inline&amp;primary_color=284d6d" title="Book a 30-minute meeting with Arda Taş"></iframe>
+<a class="social-link mt-2 inline-block text-sm" href="https://calendly.com/ardatas/30min" rel="noopener noreferrer" target="_blank">Open in Calendly ↗</a>
+</div>
 </fieldset>
 </section>
 <section id="resources">

@@ -230,7 +230,6 @@ og = og_tags(
 twitter = twitter_tags({**seo_common, "card": "summary"})
 seotags = og + twitter
 
-_, env.globals["appointment_picker_version"] = bundle_entry("appointment-picker")
 index = env.get_template("index.html")
 running = load_running_stats(os.path.join(script_path, "data", "running.json"))
 with open(os.path.join(script_path, "data", "travel.json"), encoding="utf-8") as f:
