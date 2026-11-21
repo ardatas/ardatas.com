@@ -66,11 +66,11 @@ if not args.no_clean:
             rmtree(os.path.join(root, dir))
 
 
-def bundle_entry(name):
+def bundle_entry(name, *, defines=()):
     path = os.path.abspath(os.path.join(args.output, name + ".js"))
     subprocess.run(
         ["pnpm", "exec", "esbuild", f"src/{name}.tsx", "--bundle", "--minify",
-         '--define:process.env.NODE_ENV="production"', "--outfile=" + path],
+         '--define:process.env.NODE_ENV="production"', *defines, "--outfile=" + path],
         cwd=os.path.dirname(script_path), check=True,
     )
     with open(path, "rb") as source:
@@ -247,7 +247,8 @@ loading_state_html = subprocess.check_output(
     ["node", "--import", "tsx", "src/render-loading-state.tsx"],
     cwd=os.path.dirname(script_path), text=True,
 )
-loading_bundle, loading_state_version = bundle_entry("loading-state")
+# next/image reads optional configuration from process.env in this browser bundle.
+loading_bundle, loading_state_version = bundle_entry("loading-state", defines=("--define:process.env={}",))
 with open(loading_bundle.removesuffix(".js") + ".css", "rb") as source:
     homepage_style_version = hashlib.sha256(source.read()).hexdigest()[:12]
 rendered = index.render(homepage_style_version=homepage_style_version, loading_state_html=loading_state_html, loading_state_version=loading_state_version, lists=lists, name=name, title=name, running=running, travel=travel,

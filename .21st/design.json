@@ -54,6 +54,11 @@
   },
   "decisions": [
     {
+      "id": "document-preview",
+      "decision": "Display PDFs in the Safari-01 frame with a blank address bar and a 16:9 preview. Overlay reading controls on the document.",
+      "source": "components/ui/safari-01.tsx"
+    },
+    {
       "id": "portfolio-path",
       "decision": "Use the liquid-glass pill for section navigation and project paths, with animated reflections, tap ripples, and Hugeicons.",
       "source": "components/ui/liquid-glass-navbar.tsx"

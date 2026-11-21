@@ -206,16 +206,22 @@
 .mac-preview-frame { height: 100%; display: flex; flex-direction: column; }
 .mac-preview-frame > header { flex: none; touch-action: none; cursor: grab; user-select: none; }
 .mac-preview-frame > header:active { cursor: grabbing; }
-.mac-preview-frame > .aspect-video { flex: 1; min-height: 0; flex-direction: column; align-items: stretch; }
+.mac-preview-frame > .aspect-video { position: relative; flex: 1; min-height: 0; flex-direction: column; align-items: stretch; }
 .mac-preview-close { position: relative; cursor: pointer; }
 .mac-preview-close::after { content: ""; position: absolute; inset: -5px; border-radius: inherit; }
-.mac-preview-footer { display: flex; align-items: center; justify-content: space-between; flex: none;
-  gap: 8px; padding: 4px 12px; border-top: 1px solid #ffffff15; }
-.mac-preview-filename { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.mac-preview-tools { display: flex; align-items: center; gap: 2px; }
+.mac-preview-tools {
+  position: absolute; bottom: 8px; left: 50%; translate: -50% 0;
+  display: flex; align-items: center; gap: 2px; padding: 3px; border-radius: 8px;
+  background: #27272a; box-shadow: 0 2px 6px #0003;
+}
+@media (hover: hover) {
+  .mac-preview-tools { opacity: 0; }
+  .mac-preview-frame > .aspect-video:hover .mac-preview-tools,
+  .mac-preview-tools:focus-within { opacity: 1; }
+}
 .mac-preview-tools > * { display: grid; place-items: center; min-width: 26px; height: 28px; padding: 0 4px;
   border-radius: 4px; color: white; background: #ffffff12; font-variant-numeric: tabular-nums; }
 .mac-preview-tools button:disabled { opacity: .45; }
-.mac-preview-pages { flex: 1; min-height: 0; overflow: auto; padding: 14px; overscroll-behavior: contain; }
+.mac-preview-pages { flex: 1; min-height: 0; overflow: auto; padding: 14px 14px 48px; overscroll-behavior: contain; }
 .mac-preview-paper { margin-inline: auto; display: grid; gap: 12px; }
 .mac-preview-paper img { display: block; width: 100%; height: auto; background: white; box-shadow: 0 2px 9px #0005; }

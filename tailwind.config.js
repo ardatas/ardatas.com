@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       colors: {
         foreground: "var(--foreground)",
+        muted: "#f4f4f5",
         "muted-foreground": "var(--muted-foreground)",
         background: "var(--notebook-paper)",
       },

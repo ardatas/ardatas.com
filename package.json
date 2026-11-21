@@ -27,5 +27,8 @@
     "build": "./build.sh",
     "typecheck": "tsc --noEmit",
     "preview": "python3 -m http.server 4173 --bind 127.0.0.1 --directory dist"
+  },
+  "dependencies": {
+    "next": "^16.4.6"
   }
 }
