@@ -80,7 +80,8 @@ export function MacbookDesktop({ files = [] }: { files?: HomeEntry[] }) {
         {locked ? <div className="mac-lock">
           <div className="mac-lock-clock"><span>{now && dateFormat.format(now)}</span><strong>{time}</strong></div>
           <button ref={enter} className="mac-unlock" onClick={() => { setApp("Finder"); setFinder(null); setVisible(true); setLocked(false); }}>
-            <span className="mac-avatar" style={{ backgroundImage: "url(/portrait/arda-tiles.webp)" }} /><b>Arda Taş</b><span>Press Enter to unlock ↵</span>
+            <b>Arda Taş</b>
+            <span>Press Enter to unlock ↵</span>
           </button>
         </div> : <>
           <MacOSMenuBar app={app} clock={now ? menuDate.format(now).replace(/,/g, "") + "  " + time : time}

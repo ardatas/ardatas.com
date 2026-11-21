@@ -119,8 +119,6 @@
 .mac-lock-clock strong { font-size: 12.5cqw; font-weight: 600; letter-spacing: -.06em; }
 .mac-unlock { display: grid; justify-items: center; gap: .65cqw; border-radius: 8px; padding: 3px 9px; }
 .mac-unlock:focus-visible { outline: 2px solid white; }
-.mac-avatar { width: 7.5cqw; aspect-ratio: 1; border-radius: 50%; border: 1px solid #ffffff99;
-  background-color: #2f3144; background-position: 27% 33%; background-size: 410%; }
 .mac-unlock b { font-size: clamp(11px, 2.65cqw, 18px); line-height: 1.2; }
 .mac-unlock > span:last-child { font-size: clamp(9px, 1.9cqw, 12px); line-height: 1.4; }
 .mac-menu-bar {
