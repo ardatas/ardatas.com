@@ -381,13 +381,15 @@ article {
 .links-footer {
   @apply relative min-w-0 overflow-hidden border border-[var(--notebook-frame)] px-4 py-3;
   isolation: isolate;
-  --foreground: #f2f9ff;
-  --muted-foreground: #d8eafa;
+  --foreground: #102d4a;
+  --muted-foreground: #254665;
+  --notebook-card: #f2fcff;
+  --notebook-border: #68acd4;
   color: var(--foreground);
-  background-color: rgb(9 29 57 / 76%);
+  background-color: rgb(184 228 250 / 88%);
 }
 .links-footer .section-title { background: transparent; }
-.links-footer .social-link:hover { color: #c3f4ff; }
+.links-footer .social-link:hover { color: #064c79; }
 .links-footer .social-link:focus-visible { outline-color: currentColor; }
 
 #footer-plane {
