@@ -1,8 +1,7 @@
-import { useLayoutEffect, useRef, useState } from "react";
-import GlassFolder, { type ArtPreset, type FolderFile } from "@/components/ui/glass-folder-cards";
+import { useId, useRef, useState } from "react";
+import GlassFolder, { type FolderFile } from "@/components/ui/glass-folder-cards";
 
 type Project = { name: string; description: string; highlights: boolean };
-const artwork: ArtPreset[] = ["aurora", "ember", "glacier", "verdant", "dusk"];
 
 type ProjectFoldersProps = {
   projects: Project[];
@@ -13,19 +12,8 @@ type ProjectFoldersProps = {
 export function ProjectFolders({ projects, initiallyOpen, initialProject }: ProjectFoldersProps) {
   const [open, setOpen] = useState(initiallyOpen);
   const [active, setActive] = useState(initialProject);
-  const container = useRef<HTMLDivElement>(null);
+  const catalogId = useId();
   const articles = useRef<(HTMLElement | null)[]>([]);
-  const [width, setWidth] = useState(280);
-
-  useLayoutEffect(() => {
-    const node = container.current!;
-    const measure = () => setWidth(node.clientWidth);
-    measure();
-    const observer = new ResizeObserver(measure);
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
-
   function read(index: number, highlights = false) {
     setActive(index);
     requestAnimationFrame(() => {
@@ -38,12 +26,12 @@ export function ProjectFolders({ projects, initiallyOpen, initialProject }: Proj
     });
   }
 
-  const files = projects.map((project, index) => ({ name: project.name, art: artwork[index % artwork.length] }));
+  const files = projects.map(({ name }) => ({ name }));
   return (
-    <div ref={container} className="project-glass-catalog">
+    <div className="project-glass-catalog">
       <GlassFolder
         label="Projects" meta={projects.length + " projects"} action="none"
-        art="aurora" width={Math.min(410, width * .8)} files={files} open={open}
+        art="none" width={192} files={files} open={open}
         dismissOnOutsidePress={false}
         onOpenChange={next => { setOpen(next); if (!next) setActive(null); }}
         onFileSelect={(_, index) => read(index)}
@@ -51,18 +39,21 @@ export function ProjectFolders({ projects, initiallyOpen, initialProject }: Proj
       {open && (
         <ul className="project-glass-grid" aria-label="Projects">
           {projects.map((project, index) => {
-            const art = artwork[index % artwork.length];
-            const sheets: FolderFile[] = [{ name: "Overview", art }];
-            if (project.highlights) sheets.push({ name: "Highlights", art: "glacier" });
+            const buttonId = catalogId + "-project-" + index;
+            const sheets: FolderFile[] = [{ name: "Overview" }];
+            if (project.highlights) sheets.push({ name: "Highlights" });
             return (
               <li key={project.name}>
-                <GlassFolder
-                  label={project.name} art={art} files={sheets} action="none" tone={index % 3 === 1 ? "dark" : "light"}
-                  width={Math.min(265, width * .8)} className="project-glass-entry"
-                  open={active === index} dismissOnOutsidePress={false}
-                  onOpenChange={next => setActive(next ? index : null)}
-                  onFileSelect={(_, sheet) => read(index, sheet === 1)}
-                />
+                <div className="project-folder-row">
+                  <GlassFolder
+                    buttonId={buttonId} label={project.name} art="none" files={sheets} action="none"
+                    width={72} className="project-glass-entry"
+                    open={active === index} dismissOnOutsidePress={false}
+                    onOpenChange={next => setActive(next ? index : null)}
+                    onFileSelect={(_, sheet) => read(index, sheet === 1)}
+                  />
+                  <label className="project-row-name" htmlFor={buttonId}>{project.name}</label>
+                </div>
                 {active === index && (
                   <article className="project-description" aria-label={project.name} tabIndex={-1}
                     ref={node => { articles.current[index] = node; }}

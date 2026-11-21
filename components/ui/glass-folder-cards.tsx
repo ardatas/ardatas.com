@@ -69,6 +69,8 @@ export type FolderMenuItem = {
 }
 
 export type GlassFolderProps = {
+  /** Connect an external visible label to the folder toggle. */
+  buttonId?: string
   label?: string
   /** The second line. Defaults to the number of files, which rolls as you add. */
   meta?: string
@@ -530,6 +532,7 @@ const SAMPLE_FILES: FolderFile[] = [
 ]
 
 export default function GlassFolder({
+  buttonId,
   label = "My Files",
   meta,
   tone = "light",
@@ -758,6 +761,7 @@ export default function GlassFolder({
               <path d={FRONT_PATH} stroke={"url(#gf-rim-" + uid + ")"} />
             </svg>
             <button
+              id={buttonId}
               ref={hitRef}
               type="button"
               className="gf-hit"

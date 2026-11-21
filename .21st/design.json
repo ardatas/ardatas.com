@@ -60,7 +60,7 @@
     },
     {
       "id": "project-stack",
-      "decision": "Use the supplied glass-folder design for the large Projects folder and the individual project folders. Keep each project name on one line and expand its details within the homepage.",
+      "decision": "Pair the slate-blue folder tab and plain paper inserts with the glass hinge and file fan. Show compact project rows with single-line names and inline details.",
       "source": "src/templates/posts/projects/list.html"
     },
     {
