@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { MacOSMenuBar } from "@/components/ui/mac-os-menu-bar";
 import { Terminal } from "@/components/ui/terminal";
-import DocumentWindow from "@/components/ui/safari-01";
+import { DocumentWindow } from "@/components/ui/safari-01";
 import type { DocumentFile, HomeEntry } from "@/lib/macbook-shell";
 import { MacbookPro } from "@/components/ui/macbook-pro";
 import MacOSDock, { type DockApp } from "@/components/ui/mac-os-dock";
