@@ -12,4 +12,4 @@ const calendar = document.getElementById("github-calendar");
 if (calendar) createRoot(calendar).render(<GitHubActivity />);
 
 const macbook = document.getElementById("macbook-desktop");
-if (macbook) hydrateRoot(macbook, <MacbookDesktop />);
+if (macbook) hydrateRoot(macbook, <MacbookDesktop files={JSON.parse(macbook.dataset.files || "[]")} />);

@@ -8,6 +8,8 @@ pnpm install --frozen-lockfile
 uv sync
 ```
 
+The MacBook PDF previews use Poppler (`brew install poppler` on macOS or `apt install poppler-utils` on Debian/Ubuntu). Place published PDFs in `macbook-home/` and rebuild to update the terminal.
+
 ## Development
 ```sh
 pnpm dev

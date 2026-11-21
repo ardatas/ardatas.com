@@ -3,6 +3,8 @@ import json
 import argparse
 import hashlib
 import subprocess
+from pathlib import Path
+from macbook_files import publish_home
 from shutil import rmtree
 from urllib.parse import urljoin
 
@@ -250,6 +252,7 @@ with open(loading_bundle.removesuffix(".js") + ".css", "rb") as source:
     homepage_style_version = hashlib.sha256(source.read()).hexdigest()[:12]
 rendered = index.render(homepage_style_version=homepage_style_version, loading_state_html=loading_state_html, loading_state_version=loading_state_version, lists=lists, name=name, title=name, running=running, travel=travel,
                         portrait_html=portrait_html, macbook_html=macbook_html,
+                        macbook_files=publish_home(Path(script_path).parent / "macbook-home", Path(args.output)),
                         exploration=build_exploration_stats(travel["countries"]))
 soup = bs(rendered)
 for item in seotags:
