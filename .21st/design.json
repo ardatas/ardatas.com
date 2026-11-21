@@ -74,6 +74,11 @@
       "source": "components/ui/liquid-glass-navbar.tsx"
     },
     {
+      "id": "resume-builder",
+      "decision": "Use the GitHub activity palette for the résumé builder card. Layer the landing page’s typographic globe behind its floating figure, with a static globe for reduced motion.",
+      "source": "src/templates/index.html"
+    },
+    {
       "id": "github-activity",
       "decision": "Use translucent navy behind GitHub activity and a shared slate-blue to ice-cyan contribution scale for the calendar and contact preview.",
       "source": "components/ui/activity-heatmap-utils/activity-heatmap.module.css"

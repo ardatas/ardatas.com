@@ -135,11 +135,13 @@
           <span class="resume-promo-action">Open the builder {{ icon('arrow-up-right-01', '16') }}</span>
         </div>
         <div class="resume-promo-art" aria-hidden="true">
+          <canvas class="resume-promo-world"></canvas>
           <img class="resume-promo-sun" src="/resume-builder/sun.webp" alt="" />
           <img class="resume-promo-figure" src="/resume-builder/figure.webp" alt="" />
         </div>
       </a>
     </aside>
+    <script type="module" src="/resume-builder/globe.js?v={{ asset_versions['resume-builder/globe.js'] }}"></script>
     <section id="macbook">
       {% call fieldset("Arda’s MacBook") %}
         <div id="macbook-desktop" data-files='{{ macbook_files | tojson }}'>{{ macbook_html | safe }}</div>
