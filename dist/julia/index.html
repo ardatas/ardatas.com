@@ -19,7 +19,7 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="/index.css?v=93fbd9f017d7" />
+    <link rel="stylesheet" href="/index.css?v=7ba4d5fdfdee" />
     <link rel="stylesheet" href="/site-path.css?v=2351d4d139bf" />
 
     <script src="/site-path.js?v=ccac3088c3db" defer></script>
@@ -187,7 +187,7 @@
       <h2 class="section-title mx-2 font-mono italic tracking-tight px-1">cat ~/links.md</h2>
     </legend>
 
-          <div id="footer-plane" aria-hidden="true"></div>
+          <div id="footer-plane" class="checker-plane" aria-hidden="true"></div>
           <ul class="relative flex flex-wrap gap-x-6 gap-y-2 px-3 pt-2 text-sm md:px-0 md:pt-0">
             <li>
               <a class="social-link" href="https://linkedin.com/in/arda-tas" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -202,15 +202,17 @@
 
       </footer>
     </div>
+    <div class="checker-plane screen-floor" aria-hidden="true"></div>
     <script type="module">
-      const plane = document.getElementById("footer-plane");
-      const observer = new IntersectionObserver(([entry]) => {
-        if (entry.isIntersecting) {
-          observer.disconnect();
-          import("/footer-plane.js?v=d5a119d91aaa");
+      const observer = new IntersectionObserver(entries => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          observer.unobserve(entry.target);
+          import("/footer-plane.js?v=c9d2ff78ec83")
+            .then(({ mountPlane }) => mountPlane(entry.target));
         }
       });
-      observer.observe(plane);
+      document.querySelectorAll(".checker-plane").forEach(plane => observer.observe(plane));
     </script>
   </body>
 </html>

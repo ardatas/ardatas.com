@@ -1,3 +1,4 @@
+import { ProjectBackdrop } from "@/components/project-backdrop";
 import "./site-path";
 import { createRoot, hydrateRoot } from "react-dom/client";
 import { MacbookDesktop } from "@/components/macbook-desktop";
@@ -13,3 +14,6 @@ if (calendar) createRoot(calendar).render(<GitHubActivity />);
 
 const macbook = document.getElementById("macbook-desktop");
 if (macbook) hydrateRoot(macbook, <MacbookDesktop files={JSON.parse(macbook.dataset.files || "[]")} />);
+
+const projects = document.getElementById("project-backdrop");
+if (projects) createRoot(projects).render(<ProjectBackdrop />);

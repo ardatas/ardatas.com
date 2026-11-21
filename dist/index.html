@@ -14,9 +14,9 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&amp;family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&amp;family=Instrument+Sans:wdth,wght@75..100,400..600&amp;display=swap" rel="stylesheet"/>
-<link href="/index.css?v=93fbd9f017d7" rel="stylesheet"/>
+<link href="/index.css?v=7ba4d5fdfdee" rel="stylesheet"/>
 <link href="/site-path.css?v=2351d4d139bf" rel="stylesheet"/>
-<script defer="" src="/loading-state.js?v=38380992856b"></script>
+<script defer="" src="/loading-state.js?v=b56f4684ab4d"></script>
 <link href="/loading-state.css?v=a5592ca2af07" rel="stylesheet"/>
 <script defer="" src="/link-conversion.js?v=33de9b6de076"></script>
 <script>
@@ -102,9 +102,8 @@
 </div>
 </div>
 <div class="profile-row">
-<div aria-label="TUM AIS" class="profile-logo profile-logo-tum">
-<img alt="Technical University of Munich" decoding="async" loading="lazy" src="/assets/logo-tum.png.webp"/>
-<span>AIS</span>
+<div class="profile-logo profile-logo-tum">
+<img alt="Technical University of Munich" decoding="async" loading="lazy" src="/assets/logo-tum-education.svg"/>
 </div>
 <div class="min-w-0 flex-1">
 <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
@@ -182,139 +181,136 @@
 <h2 class="section-title mx-2 font-mono italic tracking-tight px-1">ls ~/projects.md</h2>
 </legend>
 <p class="mb-3 text-lg font-bold text-neutral-800">AI workflows, industrial data tools, and interactive projects.</p>
-<div class="flex flex-col gap-3">
-<a class="group block bg-[var(--notebook-card)] border border-[var(--notebook-border)] p-3 transition-[border-color,transform] hover:border-[#315f87] hover:-translate-y-px focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#315f87]" href="https://larpyourresume.com" rel="noopener noreferrer" target="_blank">
-<div class="grid grid-cols-[48px_1fr] sm:grid-cols-[48px_1fr_auto] gap-3 items-center">
-<div class="h-12 w-12 overflow-hidden border border-[var(--notebook-border)] bg-[var(--notebook-inset)] p-1">
-<img alt="larpyourresume logo" class="h-full w-full object-contain" decoding="async" loading="eager" src="/assets/logo-larpyourresume.svg"/>
-</div>
-<div class="min-w-0">
-<div class="font-semibold text-base mb-1 leading-5 tracking-tight">larpyourresume</div>
-<p class="text-sm leading-5 text-neutral-700 dark:text-neutral-300">AI-assisted résumé builder that turns existing résumés into tailored applications with LaTeX-quality PDF output.</p>
-</div>
-<span class="col-start-2 justify-self-start sm:col-start-auto sm:justify-self-end border border-black px-3 py-1 font-mono text-[11px] group-hover:bg-[#315f87] group-hover:text-white group-hover:border-[#315f87]">Visit <svg aria-hidden="true" class="ui-icon" focusable="false" height="1em" viewbox="0 0 24 24" width="1em"><use href="/assets/hugeicons.svg#arrow-up-right-01"></use></svg></span>
-</div>
-<ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-5 text-neutral-700">
-<li>Sisyphus AI assistant, job-specific tailoring, form and LaTeX editing, customizable layouts, autosave, and PDF export.</li>
-<li>Tech stack: Next.js, React, TypeScript, Gemini, Supabase/PostgreSQL, Stripe, Docker, LuaLaTeX.</li>
+<div class="project-cabinet">
+<div aria-hidden="true" id="project-backdrop"></div>
+<details class="project-drawer">
+<summary class="project-folder">
+<span aria-hidden="true" class="project-folder-back"></span>
+<span aria-hidden="true" class="project-folder-paper"></span>
+<span class="project-folder-front">
+<span class="project-folder-title">Projects</span>
+<span class="project-folder-meta">9 projects <span aria-hidden="true">/</span>
+<span class="folder-open-label">Open folder</span><span class="folder-close-label">Close folder</span>
+</span>
+</span>
+</summary>
+<ul class="project-files">
+<li class="project-file">
+<a class="project-file-link" href="https://larpyourresume.com" rel="noopener noreferrer" target="_blank">
+<span class="project-file-top">
+<img alt="" decoding="async" loading="lazy" src="/assets/logo-larpyourresume.svg"/>
+<svg aria-hidden="true" class="ui-icon" focusable="false" height="18" viewbox="0 0 24 24" width="18"><use href="/assets/hugeicons.svg#arrow-up-right-01"></use></svg>
+</span>
+<h3>larpyourresume</h3>
+<p>AI-assisted résumé builder that turns existing résumés into tailored applications with LaTeX-quality PDF output.</p>
+</a>
+<details class="project-highlights">
+<summary>Highlights</summary>
+<ul><li>Sisyphus AI assistant, job-specific tailoring, form and LaTeX editing, customizable layouts, autosave, and PDF export.</li><li>Tech stack: Next.js, React, TypeScript, Gemini, Supabase/PostgreSQL, Stripe, Docker, LuaLaTeX.</li></ul>
+</details>
+</li>
+<li class="project-file">
+<a class="project-file-link" href="https://purusmobiledetailing.com" rel="noopener noreferrer" target="_blank">
+<span class="project-file-top">
+<img alt="" decoding="async" loading="lazy" src="/assets/projects.svg"/>
+<svg aria-hidden="true" class="ui-icon" focusable="false" height="18" viewbox="0 0 24 24" width="18"><use href="/assets/hugeicons.svg#arrow-up-right-01"></use></svg>
+</span>
+<h3>Purus</h3>
+<p>Full-stack booking and customer-management platform for a mobile detailing business.</p>
+</a>
+<details class="project-highlights">
+<summary>Highlights</summary>
+<ul><li>Built with Next.js, React, TypeScript, and PostgreSQL, with Supabase authentication, role-based dashboards, automated email notifications, and calendar exports.</li><li>Structured as a monorepo with independently deployable frontend and backend apps on Google Cloud Run.</li></ul>
+</details>
+</li>
+<li class="project-file">
+<a class="project-file-link" href="https://github.com/ardatas/mercaTUM-" rel="noopener noreferrer" target="_blank">
+<span class="project-file-top">
+<img alt="" decoding="async" loading="lazy" src="/assets/logo-github.svg"/>
+<svg aria-hidden="true" class="ui-icon" focusable="false" height="18" viewbox="0 0 24 24" width="18"><use href="/assets/hugeicons.svg#arrow-up-right-01"></use></svg>
+</span>
+<h3>MercaTUM</h3>
+<p>On-demand LLM marketplace prototype with BSV micropayments and MCP integration for external AI agents.</p>
+</a>
+<details class="project-highlights">
+<summary>Highlights</summary>
+<ul><li>Built at the TUM Blockchain &amp; AI Hackathon.</li><li>Awarded 3rd place in BSV Association’s DeFi Rails for Agentic Payments track.</li></ul>
+</details>
+</li>
+<li class="project-file">
+<a class="project-file-link" href="https://getwerkio.com" rel="noopener noreferrer" target="_blank">
+<span class="project-file-top">
+<img alt="" decoding="async" loading="lazy" src="/assets/logo-werkio.png.webp"/>
+<svg aria-hidden="true" class="ui-icon" focusable="false" height="18" viewbox="0 0 24 24" width="18"><use href="/assets/hugeicons.svg#arrow-up-right-01"></use></svg>
+</span>
+<h3>Werkio</h3>
+<p>Full-stack job platform with AI-assisted application workflows</p>
+</a>
+<details class="project-highlights">
+<summary>Highlights</summary>
+<ul><li>Built Gemini-based form mapping and cover-letter drafting across a TypeScript browser extension, React frontend, and Spring Boot backend.</li><li>Added structured-output validation, evidence checks, and review steps for uncertain or sensitive fields. Users stay in control of form submission.</li><li>Wrote Playwright end-to-end tests for browser workflows and failure cases, plus backend integration and security tests.</li></ul>
+</details>
+</li>
+<li class="project-file">
+<a class="project-file-link" href="https://github.com/ardatas/check24-chatgpt-app" rel="noopener noreferrer" target="_blank">
+<span class="project-file-top">
+<img alt="" decoding="async" loading="lazy" src="/assets/logo-github.svg"/>
+<svg aria-hidden="true" class="ui-icon" focusable="false" height="18" viewbox="0 0 24 24" width="18"><use href="/assets/hugeicons.svg#arrow-up-right-01"></use></svg>
+</span>
+<h3>CHECK24 MCP App</h3>
+<p>A ChatGPT-facing MCP proxy for the CHECK24 GenDev scholarship task</p>
+</a>
+<details class="project-highlights">
+<summary>Highlights</summary>
+<ul><li>Built a TypeScript and Node.js proxy that combines four mock product services into one MCP endpoint, with namespaced tools and schema validation.</li><li>Added conformance checks, scoped QA endpoints, and a dashboard for tool errors and call traces.</li></ul>
+</details>
+</li>
+<li class="project-file">
+<a class="project-file-link" href="/projects/tum-ais.html">
+<span class="project-file-top">
+<img alt="" decoding="async" loading="lazy" src="/assets/experience.svg"/>
+<svg aria-hidden="true" class="ui-icon" focusable="false" height="18" viewbox="0 0 24 24" width="18"><use href="/assets/hugeicons.svg#arrow-up-right-01"></use></svg>
+</span>
+<h3>AI Systems at TUM AIS</h3>
+<p>Context-aware LLMs, RAG, and ontologies</p>
+</a>
+<details class="project-highlights">
+<summary>Highlights</summary>
+<ul><li>Building AI systems with context-aware LLMs, retrieval-augmented generation (RAG), and ontologies.</li></ul>
+</details>
+</li>
+<li class="project-file">
+<a class="project-file-link" href="https://header-ui-ux-overhaul.vercel.app" rel="noopener noreferrer" target="_blank">
+<span class="project-file-top">
+<img alt="" decoding="async" loading="lazy" src="/assets/logo-header.png.webp"/>
+<svg aria-hidden="true" class="ui-icon" focusable="false" height="18" viewbox="0 0 24 24" width="18"><use href="/assets/hugeicons.svg#arrow-up-right-01"></use></svg>
+</span>
+<h3>Header</h3>
+<p>I did a frontend overhaul for the agentic startup joinheader.</p>
+</a>
+</li>
+<li class="project-file">
+<a class="project-file-link" href="https://hackathon.tum-blockchain.com" rel="noopener noreferrer" target="_blank">
+<span class="project-file-top">
+<img alt="" decoding="async" loading="lazy" src="/assets/logo-tbc.png.webp"/>
+<svg aria-hidden="true" class="ui-icon" focusable="false" height="18" viewbox="0 0 24 24" width="18"><use href="/assets/hugeicons.svg#arrow-up-right-01"></use></svg>
+</span>
+<h3>TUM Blockchain Hackathon</h3>
+<p>Event website at hackathon.tum-blockchain.com</p>
+</a>
+</li>
+<li class="project-file">
+<a class="project-file-link" href="/julia/">
+<span class="project-file-top">
+<img alt="" decoding="async" loading="lazy" src="/assets/julia.svg"/>
+<svg aria-hidden="true" class="ui-icon" focusable="false" height="18" viewbox="0 0 24 24" width="18"><use href="/assets/hugeicons.svg#arrow-up-right-01"></use></svg>
+</span>
+<h3>Julia Set Explorer</h3>
+<p>Interactive fractals powered by C, WebAssembly, and SIMD</p>
+</a>
+</li>
 </ul>
-</a>
-<a class="group block bg-[var(--notebook-card)] border border-[var(--notebook-border)] p-3 transition-[border-color,transform] hover:border-[#315f87] hover:-translate-y-px focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#315f87]" href="https://purusmobiledetailing.com" rel="noopener noreferrer" target="_blank">
-<div class="grid grid-cols-[48px_1fr] sm:grid-cols-[48px_1fr_auto] gap-3 items-center">
-<div class="h-12 w-12 overflow-hidden border border-[var(--notebook-border)] bg-[var(--notebook-inset)] p-1">
-<img alt="Purus logo" class="h-full w-full object-contain" decoding="async" loading="eager" src="/assets/projects.svg"/>
-</div>
-<div class="min-w-0">
-<div class="font-semibold text-base mb-1 leading-5 tracking-tight">Purus</div>
-<p class="text-sm leading-5 text-neutral-700 dark:text-neutral-300">Full-stack booking and customer-management platform for a mobile detailing business.</p>
-</div>
-<span class="col-start-2 justify-self-start sm:col-start-auto sm:justify-self-end border border-black px-3 py-1 font-mono text-[11px] group-hover:bg-[#315f87] group-hover:text-white group-hover:border-[#315f87]">Visit <svg aria-hidden="true" class="ui-icon" focusable="false" height="1em" viewbox="0 0 24 24" width="1em"><use href="/assets/hugeicons.svg#arrow-up-right-01"></use></svg></span>
-</div>
-<ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-5 text-neutral-700">
-<li>Built with Next.js, React, TypeScript, and PostgreSQL, with Supabase authentication, role-based dashboards, automated email notifications, and calendar exports.</li>
-<li>Structured as a monorepo with independently deployable frontend and backend apps on Google Cloud Run.</li>
-</ul>
-</a>
-<a class="group block bg-[var(--notebook-card)] border border-[var(--notebook-border)] p-3 transition-[border-color,transform] hover:border-[#315f87] hover:-translate-y-px focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#315f87]" href="https://github.com/ardatas/mercaTUM-" rel="noopener noreferrer" target="_blank">
-<div class="grid grid-cols-[48px_1fr] sm:grid-cols-[48px_1fr_auto] gap-3 items-center">
-<div class="h-12 w-12 overflow-hidden border border-[var(--notebook-border)] bg-[var(--notebook-inset)] p-1">
-<img alt="MercaTUM logo" class="h-full w-full object-contain" decoding="async" loading="eager" src="/assets/logo-github.svg"/>
-</div>
-<div class="min-w-0">
-<div class="font-semibold text-base mb-1 leading-5 tracking-tight">MercaTUM</div>
-<p class="text-sm leading-5 text-neutral-700 dark:text-neutral-300">On-demand LLM marketplace prototype with BSV micropayments and MCP integration for external AI agents.</p>
-</div>
-<span class="col-start-2 justify-self-start sm:col-start-auto sm:justify-self-end border border-black px-3 py-1 font-mono text-[11px] group-hover:bg-[#315f87] group-hover:text-white group-hover:border-[#315f87]">Visit <svg aria-hidden="true" class="ui-icon" focusable="false" height="1em" viewbox="0 0 24 24" width="1em"><use href="/assets/hugeicons.svg#arrow-up-right-01"></use></svg></span>
-</div>
-<ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-5 text-neutral-700">
-<li>Built at the TUM Blockchain &amp; AI Hackathon.</li>
-<li>Awarded 3rd place in BSV Association’s DeFi Rails for Agentic Payments track.</li>
-</ul>
-</a>
-<a class="group block bg-[var(--notebook-card)] border border-[var(--notebook-border)] p-3 transition-[border-color,transform] hover:border-[#315f87] hover:-translate-y-px focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#315f87]" href="https://getwerkio.com" rel="noopener noreferrer" target="_blank">
-<div class="grid grid-cols-[48px_1fr] sm:grid-cols-[48px_1fr_auto] gap-3 items-center">
-<div class="h-12 w-12 overflow-hidden border border-[var(--notebook-border)] bg-[var(--notebook-inset)] p-1">
-<img alt="Werkio logo" class="h-full w-full object-contain" decoding="async" loading="eager" src="/assets/logo-werkio.png.webp"/>
-</div>
-<div class="min-w-0">
-<div class="font-semibold text-base mb-1 leading-5 tracking-tight">Werkio</div>
-<p class="text-sm leading-5 text-neutral-700 dark:text-neutral-300">Full-stack job platform with AI-assisted application workflows</p>
-</div>
-<span class="col-start-2 justify-self-start sm:col-start-auto sm:justify-self-end border border-black px-3 py-1 font-mono text-[11px] group-hover:bg-[#315f87] group-hover:text-white group-hover:border-[#315f87]">Visit <svg aria-hidden="true" class="ui-icon" focusable="false" height="1em" viewbox="0 0 24 24" width="1em"><use href="/assets/hugeicons.svg#arrow-up-right-01"></use></svg></span>
-</div>
-<ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-5 text-neutral-700">
-<li>Built Gemini-based form mapping and cover-letter drafting across a TypeScript browser extension, React frontend, and Spring Boot backend.</li>
-<li>Added structured-output validation, evidence checks, and review steps for uncertain or sensitive fields. Users stay in control of form submission.</li>
-<li>Wrote Playwright end-to-end tests for browser workflows and failure cases, plus backend integration and security tests.</li>
-</ul>
-</a>
-<a class="group block bg-[var(--notebook-card)] border border-[var(--notebook-border)] p-3 transition-[border-color,transform] hover:border-[#315f87] hover:-translate-y-px focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#315f87]" href="https://github.com/ardatas/check24-chatgpt-app" rel="noopener noreferrer" target="_blank">
-<div class="grid grid-cols-[48px_1fr] sm:grid-cols-[48px_1fr_auto] gap-3 items-center">
-<div class="h-12 w-12 overflow-hidden border border-[var(--notebook-border)] bg-[var(--notebook-inset)] p-1">
-<img alt="CHECK24 MCP App logo" class="h-full w-full object-contain" decoding="async" loading="eager" src="/assets/logo-github.svg"/>
-</div>
-<div class="min-w-0">
-<div class="font-semibold text-base mb-1 leading-5 tracking-tight">CHECK24 MCP App</div>
-<p class="text-sm leading-5 text-neutral-700 dark:text-neutral-300">A ChatGPT-facing MCP proxy for the CHECK24 GenDev scholarship task</p>
-</div>
-<span class="col-start-2 justify-self-start sm:col-start-auto sm:justify-self-end border border-black px-3 py-1 font-mono text-[11px] group-hover:bg-[#315f87] group-hover:text-white group-hover:border-[#315f87]">Visit <svg aria-hidden="true" class="ui-icon" focusable="false" height="1em" viewbox="0 0 24 24" width="1em"><use href="/assets/hugeicons.svg#arrow-up-right-01"></use></svg></span>
-</div>
-<ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-5 text-neutral-700">
-<li>Built a TypeScript and Node.js proxy that combines four mock product services into one MCP endpoint, with namespaced tools and schema validation.</li>
-<li>Added conformance checks, scoped QA endpoints, and a dashboard for tool errors and call traces.</li>
-</ul>
-</a>
-<a class="group block bg-[var(--notebook-card)] border border-[var(--notebook-border)] p-3 transition-[border-color,transform] hover:border-[#315f87] hover:-translate-y-px focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#315f87]" href="/projects/tum-ais.html">
-<div class="grid grid-cols-[48px_1fr] sm:grid-cols-[48px_1fr_auto] gap-3 items-center">
-<div class="h-12 w-12 overflow-hidden border border-[var(--notebook-border)] bg-[var(--notebook-inset)] p-1">
-<img alt="AI Systems at TUM AIS logo" class="h-full w-full object-contain" decoding="async" loading="eager" src="/assets/experience.svg"/>
-</div>
-<div class="min-w-0">
-<div class="font-semibold text-base mb-1 leading-5 tracking-tight">AI Systems at TUM AIS</div>
-<p class="text-sm leading-5 text-neutral-700 dark:text-neutral-300">Context-aware LLMs, RAG, and ontologies</p>
-</div>
-<span class="col-start-2 justify-self-start sm:col-start-auto sm:justify-self-end border border-black px-3 py-1 font-mono text-[11px] group-hover:bg-[#315f87] group-hover:text-white group-hover:border-[#315f87]">Visit <svg aria-hidden="true" class="ui-icon" focusable="false" height="1em" viewbox="0 0 24 24" width="1em"><use href="/assets/hugeicons.svg#arrow-up-right-01"></use></svg></span>
-</div>
-<ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-5 text-neutral-700">
-<li>Building AI systems with context-aware LLMs, retrieval-augmented generation (RAG), and ontologies.</li>
-</ul>
-</a>
-<a class="group block bg-[var(--notebook-card)] border border-[var(--notebook-border)] p-3 transition-[border-color,transform] hover:border-[#315f87] hover:-translate-y-px focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#315f87]" href="https://header-ui-ux-overhaul.vercel.app" rel="noopener noreferrer" target="_blank">
-<div class="grid grid-cols-[48px_1fr] sm:grid-cols-[48px_1fr_auto] gap-3 items-center">
-<div class="h-12 w-12 overflow-hidden border border-[var(--notebook-border)] bg-[var(--notebook-inset)] p-1">
-<img alt="Header logo" class="h-full w-full object-contain" decoding="async" loading="eager" src="/assets/logo-header.png.webp"/>
-</div>
-<div class="min-w-0">
-<div class="font-semibold text-base mb-1 leading-5 tracking-tight">Header</div>
-<p class="text-sm leading-5 text-neutral-700 dark:text-neutral-300">I did a frontend overhaul for the agentic startup joinheader.</p>
-</div>
-<span class="col-start-2 justify-self-start sm:col-start-auto sm:justify-self-end border border-black px-3 py-1 font-mono text-[11px] group-hover:bg-[#315f87] group-hover:text-white group-hover:border-[#315f87]">Visit <svg aria-hidden="true" class="ui-icon" focusable="false" height="1em" viewbox="0 0 24 24" width="1em"><use href="/assets/hugeicons.svg#arrow-up-right-01"></use></svg></span>
-</div>
-</a>
-<a class="group block bg-[var(--notebook-card)] border border-[var(--notebook-border)] p-3 transition-[border-color,transform] hover:border-[#315f87] hover:-translate-y-px focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#315f87]" href="https://hackathon.tum-blockchain.com" rel="noopener noreferrer" target="_blank">
-<div class="grid grid-cols-[48px_1fr] sm:grid-cols-[48px_1fr_auto] gap-3 items-center">
-<div class="h-12 w-12 overflow-hidden border border-[var(--notebook-border)] bg-[var(--notebook-inset)] p-1">
-<img alt="TUM Blockchain Hackathon logo" class="h-full w-full object-contain" decoding="async" loading="eager" src="/assets/logo-tbc.png.webp"/>
-</div>
-<div class="min-w-0">
-<div class="font-semibold text-base mb-1 leading-5 tracking-tight">TUM Blockchain Hackathon</div>
-<p class="text-sm leading-5 text-neutral-700 dark:text-neutral-300">Event website at hackathon.tum-blockchain.com</p>
-</div>
-<span class="col-start-2 justify-self-start sm:col-start-auto sm:justify-self-end border border-black px-3 py-1 font-mono text-[11px] group-hover:bg-[#315f87] group-hover:text-white group-hover:border-[#315f87]">Visit <svg aria-hidden="true" class="ui-icon" focusable="false" height="1em" viewbox="0 0 24 24" width="1em"><use href="/assets/hugeicons.svg#arrow-up-right-01"></use></svg></span>
-</div>
-</a>
-<a class="group block bg-[var(--notebook-card)] border border-[var(--notebook-border)] p-3 transition-[border-color,transform] hover:border-[#315f87] hover:-translate-y-px focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#315f87]" href="/julia/">
-<div class="grid grid-cols-[48px_1fr] sm:grid-cols-[48px_1fr_auto] gap-3 items-center">
-<div class="h-12 w-12 overflow-hidden border border-[var(--notebook-border)] bg-[var(--notebook-inset)] p-1">
-<img alt="Julia Set Explorer logo" class="h-full w-full object-contain" decoding="async" loading="eager" src="/assets/julia.svg"/>
-</div>
-<div class="min-w-0">
-<div class="font-semibold text-base mb-1 leading-5 tracking-tight">Julia Set Explorer</div>
-<p class="text-sm leading-5 text-neutral-700 dark:text-neutral-300">Interactive fractals powered by C, WebAssembly, and SIMD</p>
-</div>
-<span class="col-start-2 justify-self-start sm:col-start-auto sm:justify-self-end border border-black px-3 py-1 font-mono text-[11px] group-hover:bg-[#315f87] group-hover:text-white group-hover:border-[#315f87]">Visit <svg aria-hidden="true" class="ui-icon" focusable="false" height="1em" viewbox="0 0 24 24" width="1em"><use href="/assets/hugeicons.svg#arrow-up-right-01"></use></svg></span>
-</div>
-</a>
+</details>
 </div>
 </fieldset>
 </section>
@@ -514,7 +510,7 @@
 <legend class="ms-4 md:ms-0">
 <h2 class="section-title mx-2 font-mono italic tracking-tight px-1">cat ~/links.md</h2>
 </legend>
-<div aria-hidden="true" id="footer-plane"></div>
+<div aria-hidden="true" class="checker-plane" id="footer-plane"></div>
 <ul class="relative flex flex-wrap gap-x-6 gap-y-2 px-3 pt-2 text-sm md:px-0 md:pt-0">
 <li>
 <a class="social-link" href="https://linkedin.com/in/arda-tas" rel="noopener noreferrer" target="_blank">LinkedIn</a>
@@ -528,15 +524,17 @@
 </fieldset>
 </footer>
 </div>
+<div aria-hidden="true" class="checker-plane screen-floor"></div>
 <script type="module">
-      const plane = document.getElementById("footer-plane");
-      const observer = new IntersectionObserver(([entry]) => {
-        if (entry.isIntersecting) {
-          observer.disconnect();
-          import("/footer-plane.js?v=d5a119d91aaa");
+      const observer = new IntersectionObserver(entries => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          observer.unobserve(entry.target);
+          import("/footer-plane.js?v=c9d2ff78ec83")
+            .then(({ mountPlane }) => mountPlane(entry.target));
         }
       });
-      observer.observe(plane);
+      document.querySelectorAll(".checker-plane").forEach(plane => observer.observe(plane));
     </script>
 </body>
 </html>

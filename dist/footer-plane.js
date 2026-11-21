@@ -156,8 +156,7 @@ function observePlane(
   };
 }
 
-const host = document.getElementById("footer-plane");
-if (host) {
+export function mountPlane(host) {
   const canvas = document.createElement("canvas");
   canvas.className = "block h-full w-full";
   canvas.setAttribute("aria-hidden", "true");

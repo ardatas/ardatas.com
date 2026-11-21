@@ -220,15 +220,11 @@ article {
 }
 
 .profile-logo-tum {
-  @apply flex-col gap-0.5 border-[#0065bd] bg-[#0065bd] p-1;
+  @apply border-[#0065bd] bg-[#0065bd] p-1;
 }
 
 .profile-logo-tum img {
   @apply h-[22px] w-auto;
-}
-
-.profile-logo-tum span {
-  @apply font-mono text-[8px] font-semibold leading-none tracking-[0.16em] text-white;
 }
 
 .profile-logo-wide {
@@ -350,12 +346,25 @@ article {
   position: absolute;
   inset: 0.9rem 1px 1px;
   z-index: -1;
+}
+
+.checker-plane {
   overflow: hidden;
   pointer-events: none;
 }
 
+.screen-floor {
+  position: fixed;
+  z-index: 5;
+  inset: auto 0 0;
+  height: clamp(32px, 6vh, 64px);
+  opacity: .67;
+}
+
+body:has(.screen-floor) { padding-bottom: clamp(32px, 6vh, 64px); }
+
 /* The same perspective floor stays visible before WebGL starts or if it is unavailable. */
-#footer-plane::before {
+.checker-plane::before {
   content: "";
   position: absolute;
   inset: -20% -100% 0;
@@ -365,7 +374,7 @@ article {
   mask-image: linear-gradient(to bottom, transparent, black 85%);
 }
 
-#footer-plane:has(canvas[data-ready])::before {
+.checker-plane:has(canvas[data-ready])::before {
   visibility: hidden;
 }
 
@@ -423,4 +432,87 @@ article {
 @media (prefers-reduced-motion: reduce) {
   .loading-pixel, .loading-label { animation: none !important; }
   .loading-label { background-image: none !important; color: var(--muted-foreground); }
+}
+
+.project-cabinet {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid var(--notebook-border);
+  background: var(--notebook-inset);
+  padding: clamp(18px, 3vw, 36px);
+}
+#project-backdrop { position: absolute; inset: 0; pointer-events: none; z-index: -1; }
+#project-backdrop:empty {
+  background-image: linear-gradient(var(--notebook-grid) 1px, transparent 1px), linear-gradient(90deg, var(--notebook-grid) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+#project-backdrop > svg { fill: #b0c6d938; stroke: #829db649; }
+.project-ghost-track { position: absolute; inset: 11px; }
+.project-ghost { position: absolute; top: 0; left: 0; width: 19px; height: 19px; translate: -50% -50%; }
+.project-ghost-eyes { transform: translate(var(--look-x, 0px), var(--look-y, 0px)); }
+
+.project-folder {
+  position: relative; display: block; list-style: none; cursor: pointer;
+  width: min(100%, 28rem); height: clamp(150px, 22vw, 215px);
+  margin: clamp(8px, 2vw, 18px) auto; border-radius: 14px;
+}
+.project-folder::-webkit-details-marker { display: none; }
+.project-folder:focus-visible, .project-file-link:focus-visible, .project-highlights summary:focus-visible {
+  outline: 3px solid #225e94; outline-offset: 3px;
+}
+.project-folder-back, .project-folder-paper, .project-folder-front { position: absolute; border-radius: 12px; }
+.project-folder-back { inset: 17px 0 0; background: #234158; box-shadow: 0 8px 14px -9px #1a334d90; }
+.project-folder-back::before {
+  content: ""; position: absolute; left: 0; top: -15px; width: 43%; height: 28px;
+  border-radius: 12px 15px 0 0; background: inherit;
+}
+.project-folder-paper {
+  inset: 15% 5% 6%; background: #fbfcfd; border: 1px solid #aabbc8;
+  box-shadow: 0 -4px 0 -1px #d5e2ea; transition: transform .32s ease-out;
+}
+.project-folder-front {
+  inset: 24% 0 0; display: flex; flex-direction: column; justify-content: flex-end;
+  padding: clamp(18px, 3.4vw, 34px); color: white; background: linear-gradient(155deg, #476b87, #304e67 75%);
+  border: 1px solid #34526b; box-shadow: 0 -4px 12px #162b402e;
+  transform: perspective(640px) rotateX(-9deg); transform-origin: center bottom;
+  transition: transform .36s cubic-bezier(.2,.8,.3,1);
+}
+.project-folder-title { font-size: clamp(26px, 4vw, 40px); line-height: 1.1; font-weight: 650; letter-spacing: -.045em; }
+.project-folder-meta { margin-top: 8px; font: 12px/1.5 "IBM Plex Mono", monospace; color: #e2edf4; }
+.project-folder-meta > [aria-hidden] { margin-inline: 4px; opacity: .6; }
+.folder-close-label, .project-drawer[open] .folder-open-label { display: none; }
+.project-drawer[open] .folder-close-label { display: inline; }
+.project-drawer[open] .project-folder-front { transform: perspective(640px) rotateX(-28deg); }
+.project-drawer[open] .project-folder-paper { transform: translateY(-12px); }
+.project-files {
+  max-width: 50rem; margin: clamp(14px, 3vw, 32px) auto 0; display: grid;
+  --file-gap: clamp(8px, 2vw, 20px); container-type: inline-size;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--file-gap);
+}
+.project-file {
+  min-width: 0; min-height: calc((100cqw - var(--file-gap)) / 2); display: flex; flex-direction: column;
+  border: 1px solid var(--notebook-border); border-radius: 7px;
+  background: #fafdff; box-shadow: 0 3px 0 #d5e0e9; overflow-wrap: anywhere;
+}
+.project-file:focus-within, .project-file:hover { border-color: #42637d; }
+.project-file-link {
+  flex: 1; display: flex; flex-direction: column; align-items: stretch;
+  padding: clamp(10px, 2.5vw, 28px); color: inherit; text-decoration: none;
+}
+.project-file-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 4px; flex: 1; margin-bottom: 12px; color: #49647a; }
+.project-file-top img {
+  width: clamp(32px, 6vw, 70px); height: clamp(32px, 6vw, 70px); padding: 5px; object-fit: contain;
+  border: 1px solid #d1dee8; border-radius: 6px; background: var(--notebook-inset);
+}
+.project-file h3 { font-size: clamp(15px, 2.5vw, 28px); font-weight: 650; line-height: 1.15; letter-spacing: -.035em; }
+.project-file p, .project-highlights li { margin-top: 8px; font-size: clamp(12px, 1.5vw, 15px); line-height: 1.45; color: #3e5261; }
+.project-highlights { margin: 0 clamp(10px, 2.5vw, 28px) clamp(10px, 2vw, 20px); }
+.project-highlights summary { cursor: pointer; color: #375a78; font: 500 clamp(11px, 1.3vw, 13px)/1.5 "IBM Plex Mono", monospace; }
+.project-highlights ul { padding-left: 1em; list-style: disc; }
+@media (prefers-reduced-motion: no-preference) {
+  .project-drawer[open] .project-files { animation: drawer-reveal .3s ease-out; }
+  @keyframes drawer-reveal { from { opacity: 0; transform: translateY(-10px); } }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-folder-front, .project-folder-paper { transition: none; }
 }
