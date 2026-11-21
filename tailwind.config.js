@@ -6,6 +6,13 @@ module.exports = {
     extend: {
       colors: {
         foreground: "var(--foreground)",
+        primary: { DEFAULT: "#284d6d", foreground: "#ffffff" },
+        secondary: { DEFAULT: "#e2ebf3", foreground: "#101114" },
+        destructive: { DEFAULT: "#b42318", foreground: "#ffffff" },
+        accent: { DEFAULT: "#dce7f0", foreground: "#19364c" },
+        input: "var(--notebook-border)",
+        border: "var(--notebook-border)",
+        ring: "#315f87",
         muted: "#f4f4f5",
         "muted-foreground": "var(--muted-foreground)",
         background: "var(--notebook-paper)",

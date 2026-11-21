@@ -211,6 +211,12 @@
         </div>
       {% endcall %}
     </section>
+    <section id="appointments">
+      {% call fieldset("Appointment picker demo") %}
+        <div id="appointment-picker"></div>
+        <script defer src="/appointment-picker.js?v={{ appointment_picker_version }}"></script>
+      {% endcall %}
+    </section>
     <section id="resources">
       {% call fieldset("cat ~/resources.md") %}
         <p class="mb-3 text-lg font-bold text-neutral-800">some resources I think you should check out</p>

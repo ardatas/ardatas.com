@@ -30,29 +30,37 @@
 }
 .mac-dock {
   --icon-size: clamp(25px, 4.65cqw, 34px);
-  pointer-events: auto;
-  display: flex;
+  --dot-space: max(4px, .9cqw);
+  position: relative;
+  display: grid;
+  grid-template-rows: max-content;
+  align-content: end;
   max-width: 100%;
-  align-items: end;
-  gap: .62cqw;
-  padding: max(6px, 1.15cqw) .95cqw .3cqw;
-  transition: padding-top 140ms ease-out;
-  overflow-x: auto;
-  scrollbar-width: thin;
+  height: calc(var(--icon-size) + var(--dot-space) + max(6px, 1.15cqw) + .3cqw + 2px);
   background: rgb(26 25 37 / 86%);
   border: 1px solid rgb(255 255 255 / 29%);
   border-radius: 1.55cqw;
   box-shadow: 0 2px 8px #10082a66;
   backdrop-filter: blur(8px);
 }
-.mac-dock[data-expanded] { padding-top: calc(var(--icon-size) * .45); }
+/* The scroll viewport extends above the fixed shelf to fit magnified icons and badges. */
+.mac-dock-scroll {
+  display: flex;
+  min-width: 0;
+  align-items: end;
+  gap: .62cqw;
+  padding: calc(var(--icon-size) * .28) .95cqw .3cqw;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.mac-dock-scroll::-webkit-scrollbar { display: none; }
 .mac-dock-item {
   position: relative;
   flex: none;
   display: grid;
   place-items: center;
   width: calc(var(--icon-size) * var(--dock-scale));
-  padding-bottom: max(4px, .9cqw);
+  padding-bottom: var(--dot-space);
   border: 0;
   background: transparent;
   cursor: pointer;
@@ -93,7 +101,7 @@
 }
 .mac-dock-name {
   position: absolute;
-  bottom: calc(100% + 4px);
+  bottom: calc(100% + 3.5cqw + 4px);
   max-width: 100%;
   padding: 2px 8px;
   border-radius: 5px;
@@ -102,7 +110,8 @@
   font: 500 clamp(10px, 2cqw, 13px)/1.5 system-ui, sans-serif;
 }
 @container (max-width: 440px) {
-  .mac-dock { border-radius: 9px; padding-inline: 6px; padding-bottom: 1px; }
+  .mac-dock { border-radius: 9px; }
+  .mac-dock-scroll { padding-inline: 6px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .mac-dock, .mac-dock-item { transition: none; }
