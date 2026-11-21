@@ -123,16 +123,62 @@
   background-color: #2f3144; background-position: 27% 33%; background-size: 410%; }
 .mac-unlock b { font-size: clamp(11px, 2.65cqw, 18px); line-height: 1.2; }
 .mac-unlock > span:last-child { font-size: clamp(9px, 1.9cqw, 12px); line-height: 1.4; }
-.mac-menu-bar { position: absolute; inset: 0 0 auto; z-index: 3; display: flex; gap: 2.5cqw; align-items: center;
-  padding: 0 2%; height: max(19px, 4.4cqw); color: white; background: #251953e8; font-size: clamp(10px, 2.05cqw, 13px); }
-.mac-menu-status { margin-left: auto; display: flex; gap: 1.2cqw; align-items: center; }
-.mac-menu-bar time { font-variant-numeric: tabular-nums; }
-.mac-menu-bar summary { list-style: none; cursor: pointer; }
-.mac-menu-bar summary::-webkit-details-marker { display: none; }
-.mac-menu-items { display: grid; position: absolute; top: 100%; background: #302d3c; padding: 4px; border: 1px solid #777380;
-  border-radius: 5px; min-width: 110px; box-shadow: 0 4px 10px #0004; }
-.mac-menu-items button { text-align: left; padding: 2px 5px; border-radius: 3px; }
-.mac-menu-items button:is(:hover,:focus-visible) { background: #555180; }
+.mac-menu-bar {
+  position: absolute; inset: 0 0 auto; z-index: 3;
+  color: #fff; background: rgb(30 9 185 / 96%);
+  font: 500 clamp(7px, 1.12cqw, 13px)/1 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased; letter-spacing: normal;
+}
+.mac-menu-strip {
+  height: max(18px, 2.45cqw); display: flex; align-items: stretch; justify-content: space-between;
+  gap: 1.2em; padding-inline: .75em; overflow-x: auto; scrollbar-width: none;
+}
+.mac-menu-strip::-webkit-scrollbar { display: none; }
+.mac-menu-group { display: flex; flex: none; align-items: center; }
+.mac-menu-group > button {
+  display: flex; align-items: center; justify-content: center; gap: .25em;
+  height: 90%; padding: 0 .42em; border-radius: .28em; white-space: nowrap;
+  font: inherit; color: inherit; background: transparent;
+}
+.mac-menu-group .mac-menu-app { font-weight: 700; }
+.mac-menu-group button[aria-expanded="true"], .mac-menu-group button:focus-visible { background: #ffffff35; }
+.mac-menu-group button:focus-visible { outline: 1px solid white; outline-offset: -1px; }
+.mac-menu-glyph { display: block; height: auto; max-width: none; }
+.mac-menu-status { gap: .3em; }
+.mac-menu-status > button { padding-inline: .23em; }
+.mac-menu-status time { white-space: pre; font-variant-numeric: tabular-nums; }
+.mac-menu-items {
+  position: absolute; top: 100%; display: grid; width: min(200px, calc(100% - 4px));
+  max-height: 43cqw; overflow-y: auto; padding: 4px; border-radius: 8px; border: 1px solid #ffffff30;
+  background: rgb(40 40 40 / 90%); backdrop-filter: blur(12px); box-shadow: 0 5px 16px #16102f50;
+  font-size: clamp(11px, 2.1cqw, 14px); line-height: 1.4;
+}
+.mac-menu-items button { display: flex; align-items: center; padding: 3px 5px; text-align: left; border-radius: 4px; }
+.mac-menu-items button span { width: 1.2em; }
+.mac-menu-items button:is(:hover,:focus-visible) { background: #4262bd; outline: 0; }
+.mac-menu-items p { padding: 4px 8px; color: #edeaf1; }
+.mac-finder-window {
+  position: absolute; inset: 12% 5% 19%; display: flex; flex-direction: column; color: #f2f1f5;
+  background: #27262c; border: 1px solid #ffffff4d; border-radius: 8px; overflow: hidden;
+  box-shadow: 0 8px 22px #110d3180;
+  font: 400 clamp(10px, 2.1cqw, 14px)/1.4 -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+.mac-finder-window header { display: flex; align-items: center; gap: .75em; background: #35343b; padding: .35em .7em; }
+.mac-finder-close { display: grid; place-content: center; width: 1em; height: 1em; border-radius: 50%; background: #ff655f; color: #431a16; }
+.mac-finder-window input { margin: .35em .5em; padding: .2em .6em; border-radius: 4px; background: #494851; color: white; }
+.mac-finder-files { overflow: auto; padding: .3em; }
+.mac-finder-files button { display: flex; align-items: center; gap: .6em; width: 100%; padding: .25em .65em; text-align: left; }
+.mac-finder-files button:is(:hover,:focus-visible) { background: #405892; border-radius: 3px; }
+.mac-finder-files img { width: 1.5em; }
+.mac-file-icon { background: #eee; color: #922b2f; padding: .2em; border-radius: 2px; font-size: .7em; font-weight: 700; }
+.mac-finder-files[data-icons="true"] { display: grid; grid-template-columns: repeat(auto-fill,minmax(7em,1fr)); align-content: start; }
+.mac-finder-files[data-icons="true"] button { flex-direction: column; text-align: center; }
+.mac-finder-files[data-icons="true"] img { width: 3em; }
+@container (max-width: 440px) {
+  .mac-menu-bar { font-size: 10px; }
+  .mac-menu-strip { gap: 1em; height: 21px; }
+  .mac-finder-window { inset: 23px 1.5% max(39px, 16%); }
+}
 .mac-terminal { position: absolute; inset: 13% 5% 19%; display: flex; flex-direction: column;
   background: #19191df7; color: #f0f0f3; border: 1px solid #706f77; border-radius: 8px; overflow: hidden;
   box-shadow: 0 8px 22px #110d3180; }

@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { execute, initialShell, promptFor, type DocumentFile, type HomeEntry } from "@/lib/macbook-shell";
 
-export function Terminal({ files, visible, onHide, onOpen }: {
-  files: HomeEntry[]; visible: boolean; onHide: () => void; onOpen: (file: DocumentFile) => void;
+export function Terminal({ files, visible, onActivate, onHide, onOpen }: {
+  files: HomeEntry[]; visible: boolean; onActivate: () => void; onHide: () => void; onOpen: (file: DocumentFile) => void;
 }) {
   const [state, setState] = useState(initialShell);
   const [lines, setLines] = useState<string[]>([]);
@@ -29,7 +29,7 @@ export function Terminal({ files, visible, onHide, onOpen }: {
     if (result.document) onOpen(result.document);
   }
 
-  return <section className="mac-terminal" aria-label="Terminal" hidden={!visible}>
+  return <section className="mac-terminal" aria-label="Terminal" hidden={!visible} onPointerDown={onActivate} onKeyDown={onActivate}>
     <header className="mac-terminal-title">
       <span className="mac-lights"><button aria-label="Hide Terminal" onClick={onHide} /><i /><i /></span>
       <span>{state.cwd === "/" ? "~" : state.cwd.split("/").pop()} — zsh</span>

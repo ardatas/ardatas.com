@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { MacbookFinder, type FinderLocation } from "@/components/macbook-finder";
 import { MacOSMenuBar } from "@/components/ui/mac-os-menu-bar";
 import { Terminal } from "@/components/ui/terminal";
 import { DocumentWindow } from "@/components/ui/safari-01";
@@ -25,10 +26,14 @@ const apps: DockApp[] = [
 ];
 
 const dateFormat = new Intl.DateTimeFormat("en-US", { timeZone: "Europe/Berlin", weekday: "long", month: "long", day: "numeric" });
+const menuDate = new Intl.DateTimeFormat("en-US", { timeZone: "Europe/Berlin", weekday: "short", month: "short", day: "numeric" });
 const timeFormat = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Berlin", hour: "2-digit", minute: "2-digit" });
 
 export function MacbookDesktop({ files = [] }: { files?: HomeEntry[] }) {
   const [locked, setLocked] = useState(true);
+  const [app, setApp] = useState<"Finder" | "Terminal">("Finder");
+  const [finder, setFinder] = useState<FinderLocation | null>(null);
+  const [icons, setIcons] = useState(false);
   const [visible, setVisible] = useState(true);
   const [now, setNow] = useState<Date | null>(null);
   const [file, setFile] = useState<DocumentFile | null>(null);
@@ -53,24 +58,44 @@ export function MacbookDesktop({ files = [] }: { files?: HomeEntry[] }) {
     return () => window.removeEventListener("keydown", keydown);
   }, [locked]);
 
+  function go(path: string, searching = false) {
+    setApp("Finder");
+    setFinder({ path, searching });
+  }
+  function showTerminal() {
+    setFinder(null);
+    setVisible(true);
+    setApp("Terminal");
+    requestAnimationFrame(() => document.getElementById("mac-command")?.focus({ preventScroll: true }));
+  }
+  function closeWindow() {
+    if (finder) { setFinder(null); setApp(visible ? "Terminal" : "Finder"); }
+    else { setVisible(false); setApp("Finder"); }
+  }
+
   return (
     <div className="macbook-desktop">
       <MacbookPro src="/macbook/wallpaper.webp" role="img" aria-label="Arda’s MacBook Pro with the wallpaper “do first, perfect later.”" />
       <div className="macbook-screen">
         {locked ? <div className="mac-lock">
           <div className="mac-lock-clock"><span>{now && dateFormat.format(now)}</span><strong>{time}</strong></div>
-          <button ref={enter} className="mac-unlock" onClick={() => { setVisible(true); setLocked(false); }}>
+          <button ref={enter} className="mac-unlock" onClick={() => { setApp("Finder"); setFinder(null); setVisible(true); setLocked(false); }}>
             <span className="mac-avatar" style={{ backgroundImage: "url(/portrait/arda-tiles.webp)" }} /><b>Arda Taş</b><span>Press Enter to unlock ↵</span>
           </button>
         </div> : <>
-          <MacOSMenuBar time={time} visible={visible} toggleTerminal={() => setVisible(v => !v)}
+          <MacOSMenuBar app={app} clock={now ? menuDate.format(now).replace(/,/g, "") + "  " + time : time}
+            files={files} icons={icons} go={go} search={() => go("/", true)} showTerminal={showTerminal}
+            setView={value => { setIcons(value); go(finder?.path ?? "/"); }} closeWindow={closeWindow}
             lock={() => { setFile(null); setLocked(true); requestAnimationFrame(() => enter.current?.focus({ preventScroll: true })); }} />
-          <Terminal files={files} visible={visible} onHide={() => setVisible(false)} onOpen={setFile} />
-          <MacOSDock apps={apps} />
+          <Terminal files={files} visible={visible && !finder} onActivate={() => setApp("Terminal")} onHide={closeWindow} onOpen={setFile} />
+          {finder && <MacbookFinder location={finder} files={files} icons={icons} go={go} open={setFile} close={closeWindow} />}
+          <MacOSDock apps={apps} onFinder={() => go("/")} />
         </>}
       </div>
       {file && <DocumentWindow key={file.path} file={file} onClose={() => {
-        setFile(null); document.getElementById("mac-command")?.focus({ preventScroll: true });
+        setFile(null);
+        if (finder) document.querySelector<HTMLElement>(".mac-finder-files button")?.focus({ preventScroll: true });
+        else document.getElementById("mac-command")?.focus({ preventScroll: true });
       }} />}
     </div>
   );

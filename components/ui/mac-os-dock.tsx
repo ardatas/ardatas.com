@@ -10,7 +10,7 @@ export interface DockApp {
   utility?: boolean;
 }
 
-export default function MacOSDock({ apps }: { apps: DockApp[] }) {
+export default function MacOSDock({ apps, onFinder }: { apps: DockApp[]; onFinder?: () => void }) {
   const [running, setRunning] = useState(() => new Set(apps.filter(app => app.running).map(app => app.id)));
   const [pointed, setPointed] = useState<string | null>(null);
   const [focused, setFocused] = useState<string | null>(null);
@@ -38,7 +38,7 @@ export default function MacOSDock({ apps }: { apps: DockApp[] }) {
               style={{ "--dock-scale": scale } as CSSProperties}
               onPointerEnter={event => { if (event.pointerType !== "touch") setPointed(app.id); }}
               onFocus={() => setFocused(app.id)} onBlur={() => setFocused(null)}
-              onClick={() => { setFocused(app.id); toggleApp(app.id); }}>
+              onClick={() => { setFocused(app.id); if (app.id === "finder" && onFinder) onFinder(); else toggleApp(app.id); }}>
               <span className="mac-dock-icon">
                 <img src={`/macbook/icons/${app.id}.webp`} alt="" loading="lazy" decoding="async" draggable={false} />
                 {app.badge && <span className="mac-dock-badge" aria-hidden="true">{app.badge}</span>}

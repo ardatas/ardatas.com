@@ -38,9 +38,10 @@ export default function Safari_01({ image, className, children, onClose, headerP
 
 function bounds() {
   const width = Math.min(700, window.innerWidth - 16);
+  const minY = Math.max(8, Math.ceil(document.getElementById("portfolio-path")?.getBoundingClientRect().bottom ?? 0) + 8);
   // Keep the supplied 16:9 preview on desktop and leave room to read pages on phones.
-  const height = Math.min(window.innerHeight - 16, width < 500 ? Math.round(window.innerHeight * .78) : Math.round((width - 2) * 9 / 16) + 39);
-  return { width, height, maxX: window.innerWidth - width - 8, maxY: window.innerHeight - height - 8 };
+  const height = Math.min(window.innerHeight - minY - 8, width < 500 ? Math.round(window.innerHeight * .78) : Math.round((width - 2) * 9 / 16) + 39);
+  return { width, height, minY, maxX: window.innerWidth - width - 8, maxY: window.innerHeight - height - 8 };
 }
 
 const clamp = (value: number, max: number) => Math.max(8, Math.min(value, max));
@@ -49,7 +50,7 @@ export function DocumentWindow({ file, onClose }: { file: DocumentFile; onClose:
   const title = file.path.split("/").pop()!;
   const [size, setSize] = useState(bounds);
   const [position, setPosition] = useState(() => ({
-    x: 8 + Math.random() * (size.maxX - 8), y: 8 + Math.random() * (size.maxY - 8),
+    x: 8 + Math.random() * (size.maxX - 8), y: size.minY + Math.random() * (size.maxY - size.minY),
   }));
   const [zoom, setZoom] = useState(100);
   const drag = useRef<{ x: number; y: number } | null>(null);
@@ -58,7 +59,7 @@ export function DocumentWindow({ file, onClose }: { file: DocumentFile; onClose:
     windowRef.current?.focus({ preventScroll: true });
     function resize() {
       const next = bounds(); setSize(next);
-      setPosition(p => ({ x: clamp(p.x, next.maxX), y: clamp(p.y, next.maxY) }));
+      setPosition(p => ({ x: clamp(p.x, next.maxX), y: Math.max(next.minY, clamp(p.y, next.maxY)) }));
     }
     window.addEventListener("resize", resize);
     return () => window.removeEventListener("resize", resize);
