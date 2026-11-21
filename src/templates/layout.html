@@ -1,8 +1,3 @@
-{%
-  from
-  "components/fieldset.html" import fieldset
-%}
-
 {% from "components/icon.html" import icon %}
 {% set profiles = [
   ('LinkedIn', 'https://linkedin.com/in/arda-tas', 'linkedin-01', 'pop'),
@@ -51,20 +46,19 @@
       <main class="flex flex-col">
         {% block content %}{% endblock %}
       </main>
-      <footer id="links" class="links-footer mt-3">
+      <footer id="links" class="links-footer mt-3" aria-labelledby="links-title">
         <div id="footer-plane" aria-hidden="true"></div>
-        {% call fieldset("cat ~/links.md") %}
-          <ul class="flex flex-wrap gap-x-6 gap-y-1 px-3 text-sm md:px-0">
-            {% for label, href, glyph, fx in profiles %}
-              <li><a class="social-link inline-flex min-h-8 items-center gap-1.5" href="{{ href }}" target="_blank" rel="noopener noreferrer">
-                {{ icon(glyph, '16') }} {{ label }}
-              </a></li>
-            {% endfor %}
-          </ul>
-          {% if loading_state_html %}
-            <div id="building-status" class="relative mt-2 px-3 font-mono md:px-0">{{ loading_state_html | safe }}</div>
-          {% endif %}
-        {% endcall %}
+        <h2 id="links-title" class="section-title font-mono italic tracking-tight">cat ~/links.md</h2>
+        <ul class="mt-1 flex flex-wrap gap-x-6 gap-y-1 text-sm">
+          {% for label, href, glyph, fx in profiles %}
+            <li><a class="social-link inline-flex min-h-8 items-center gap-1.5" href="{{ href }}" target="_blank" rel="noopener noreferrer">
+              {{ icon(glyph, '16') }} {{ label }}
+            </a></li>
+          {% endfor %}
+        </ul>
+        {% if loading_state_html %}
+          <div id="building-status" class="relative mt-2 font-mono">{{ loading_state_html | safe }}</div>
+        {% endif %}
       </footer>
     </div>
     <script type="module">

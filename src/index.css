@@ -379,22 +379,16 @@ article {
 }
 
 .links-footer {
-  position: relative;
+  @apply relative min-w-0 overflow-hidden border border-[var(--notebook-frame)] px-4 py-3;
   isolation: isolate;
   --foreground: #f2f9ff;
   --muted-foreground: #d8eafa;
   color: var(--foreground);
   background-color: rgb(9 29 57 / 76%);
 }
-.links-footer fieldset, .links-footer .section-title { background: transparent; }
+.links-footer .section-title { background: transparent; }
 .links-footer .social-link:hover { color: #c3f4ff; }
 .links-footer .social-link:focus-visible { outline-color: currentColor; }
-
-.links-footer fieldset {
-  isolation: isolate;
-  position: relative;
-  min-height: clamp(9.5rem, 15vw, 12rem);
-}
 
 #footer-plane {
   position: absolute;
@@ -409,11 +403,11 @@ article {
 #footer-plane::before {
   content: "";
   position: absolute;
-  inset: -20% -100% 0;
+  inset: 0;
   background: repeating-conic-gradient(var(--notebook-card) 0 25%, var(--notebook-border) 0 50%) center bottom / 96px 96px;
-  transform-origin: center bottom;
-  transform: perspective(180px) rotateX(56deg);
-  mask-image: linear-gradient(to bottom, transparent, black 85%);
+  transform-origin: center top;
+  transform: perspective(180px) rotateX(45deg) scaleY(1.42);
+  mask-image: linear-gradient(to bottom, rgb(0 0 0 / 50%), black 85%);
 }
 
 #footer-plane:has(canvas[data-ready])::before {
