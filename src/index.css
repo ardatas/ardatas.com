@@ -61,7 +61,8 @@ body::before {
   max-height: calc(100vh - var(--portfolio-nav-clearance) - 4.5rem);
   max-height: calc(100dvh - var(--portfolio-nav-clearance) - 4.5rem);
 }
-#appointment-picker iframe { min-height: 0; }
+/* Scroll the full booking step so Calendly's sticky header cannot cover its time slots. */
+.booking-viewport { min-height: 0; overflow: auto; }
 #appointment-picker > a { flex: none; align-self: flex-start; }
 
 .section-title {
