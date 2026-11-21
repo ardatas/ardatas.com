@@ -219,6 +219,32 @@
       {% endcall %}
     </section>
     #}
+    {% include "components/agentic-coding.html" %}
+    <section id="resources">
+      {% call fieldset("cat ~/resources.md") %}
+        <p class="mb-3 text-lg font-bold text-neutral-800">some resources I think you should check out</p>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <li>
+            <a
+              class="resource-link group"
+              href="https://github.com/ardatas/ResumeTemplate"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="min-w-0">
+                <h3 class="profile-title">best resume template ever:</h3>
+                <p class="mt-2 font-mono text-xs text-neutral-500 break-words">github.com/ardatas/ResumeTemplate</p>
+              </div>
+              <span class="resource-arrow" aria-hidden="true">{{ icon('arrow-up-right-01') }}</span>
+            </a>
+          </li>
+        </ul>
+      {% endcall %}
+    </section>
+    {% include "components/running.html" %}
+    {# Disabled: "lore so far" travel component.
+    {% include "components/travel.html" %}
+    #}
     <section id="appointments" class="mx-auto w-full max-w-3xl">
       {% set booking_url = "https://calendly.com/ardatas/30min" %}
       {% call fieldset("Book to talk to me") %}
@@ -246,31 +272,5 @@
         </div>
       {% endcall %}
     </section>
-    {% include "components/agentic-coding.html" %}
-    <section id="resources">
-      {% call fieldset("cat ~/resources.md") %}
-        <p class="mb-3 text-lg font-bold text-neutral-800">some resources I think you should check out</p>
-        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <li>
-            <a
-              class="resource-link group"
-              href="https://github.com/ardatas/ResumeTemplate"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div class="min-w-0">
-                <h3 class="profile-title">best resume template ever:</h3>
-                <p class="mt-2 font-mono text-xs text-neutral-500 break-words">github.com/ardatas/ResumeTemplate</p>
-              </div>
-              <span class="resource-arrow" aria-hidden="true">{{ icon('arrow-up-right-01') }}</span>
-            </a>
-          </li>
-        </ul>
-      {% endcall %}
-    </section>
-    {% include "components/running.html" %}
-    {# Disabled: "lore so far" travel component.
-    {% include "components/travel.html" %}
-    #}
   </div>
 {% endblock %}
