@@ -7,18 +7,40 @@ const root = fileURLToPath(new URL("../", import.meta.url));
 
 export default defineConfig(({ mode }) => {
   const env = { ...loadEnv(mode, root + "track"), ...process.env };
-  if (
-    Boolean(env.VITE_SUPABASE_URL) !==
-    Boolean(env.VITE_SUPABASE_PUBLISHABLE_KEY)
-  ) {
-    throw new Error("Configure both Supabase variables together.");
-  }
-  if (env.VERCEL_ENV === "production" && !env.VITE_SUPABASE_URL) {
+  if (!env.VITE_SUPABASE_URL || !env.VITE_SUPABASE_PUBLISHABLE_KEY) {
     throw new Error(
-      "Production requires VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY.",
+      "Track requires VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY.",
     );
   }
+  const apiOrigin = new URL(env.VITE_SUPABASE_URL).origin;
   return {
+    plugins: [
+      {
+        name: "track-content-security-policy",
+        apply: "build",
+        transformIndexHtml() {
+          return [
+            {
+              tag: "meta",
+              attrs: {
+                "http-equiv": "Content-Security-Policy",
+                content: [
+                  "default-src 'none'",
+                  "script-src 'self'",
+                  "style-src 'self' 'unsafe-inline'",
+                  "img-src 'self' data:",
+                  "font-src 'self'",
+                  "connect-src 'self' " + apiOrigin,
+                  "base-uri 'none'",
+                  "form-action 'none'",
+                ].join("; "),
+              },
+              injectTo: "head-prepend",
+            },
+          ];
+        },
+      },
+    ],
     resolve: { alias: { "@": root }, dedupe: ["react", "react-dom"] },
     server: { fs: { allow: [root] } },
     css: {

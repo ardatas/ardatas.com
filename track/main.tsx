@@ -43,13 +43,7 @@ import {
   type Session,
   type Tag,
 } from "./model";
-import {
-  addTag,
-  cloud,
-  readNotebook,
-  saveSession,
-  storageMode,
-} from "./storage";
+import { addTag, cloud, readNotebook, saveSession } from "./storage";
 import "./style.css";
 
 type Page = "Tracker" | "Overview" | "Tags";
@@ -72,17 +66,13 @@ function Brand() {
   );
 }
 function Entry() {
-  const [owner, setOwner] = useState<string | null | undefined>(
-    cloud ? undefined : "local",
-  );
-  const [email, setEmail] = useState("");
+  const [owner, setOwner] = useState<string | null | undefined>(undefined);
   const [notice, setNotice] = useState("");
   const [sending, setSending] = useState(false);
   useEffect(() => {
-    if (!cloud) return;
-    const { data } = cloud.auth.onAuthStateChange((_, session) =>
-      setOwner(session?.user.id ?? null),
-    );
+    const { data } = cloud.auth.onAuthStateChange((_, session) => {
+      setOwner(session?.user.id ?? null);
+    });
     return () => data.subscription.unsubscribe();
   }, []);
   if (owner) return <Tracker key={owner} owner={owner} />;
@@ -98,41 +88,58 @@ function Entry() {
             className="form"
             onSubmit={async (e) => {
               e.preventDefault();
+              if (sending) return;
+              const fields = new FormData(e.currentTarget);
+              const username = String(fields.get("username"))
+                .trim()
+                .toLowerCase();
+              const password = String(fields.get("password"));
               setSending(true);
+              setNotice("");
               try {
-                const { error } = await cloud!.auth.signInWithOtp({
-                  email,
-                  options: {
-                    shouldCreateUser: false,
-                    emailRedirectTo: location.origin,
-                  },
+                const { error } = await cloud.auth.signInWithPassword({
+                  email: username + "@track.invalid",
+                  password,
                 });
-                setNotice(
-                  error
-                    ? error.message
-                    : "Check your email for a sign-in link.",
-                );
-              } catch (e) {
-                setNotice(message(e));
+                if (error)
+                  setNotice(
+                    error.status === 429
+                      ? "Too many attempts. Try again later."
+                      : "Could not sign in with those credentials.",
+                  );
+              } catch {
+                setNotice("Could not reach the sign-in service. Try again.");
               } finally {
                 setSending(false);
               }
             }}
           >
             <label>
-              Email address
+              Username
               <input
-                autoComplete="email"
-                type="email"
+                name="username"
+                autoComplete="username"
+                autoCapitalize="none"
+                spellCheck={false}
+                maxLength={64}
+                pattern="[A-Za-z0-9_\-]+"
+                title="Use letters, numbers, underscores or hyphens."
                 required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+              />
+            </label>
+            <label>
+              Password
+              <input
+                name="password"
+                type="password"
+                autoComplete="current-password"
+                required
               />
             </label>
             <button className="primary" disabled={sending}>
-              Send sign-in link
+              {sending ? "Signing in…" : "Sign in"}
             </button>
-            <p role="status">{notice}</p>
+            {notice && <p role="alert">{notice}</p>}
           </form>
         )}
       </div>
@@ -296,20 +303,18 @@ function Tracker({ owner }: { owner: string }) {
           </button>
           <div className="storage">
             <Database />
-            {storageMode}
-            {cloud && (
-              <button
-                className="icon"
-                aria-label="Sign out"
-                onClick={() =>
-                  cloud!.auth.signOut().then(({ error }) => {
-                    if (error) setError(error.message);
-                  })
-                }
-              >
-                <LogOut />
-              </button>
-            )}
+            Private cloud
+            <button
+              className="icon"
+              aria-label="Sign out"
+              onClick={() =>
+                cloud.auth.signOut({ scope: "local" }).then(({ error }) => {
+                  if (error) setError(error.message);
+                })
+              }
+            >
+              <LogOut />
+            </button>
           </div>
         </div>
       </aside>
@@ -674,5 +679,16 @@ function Stats({
       </dl>
     </section>
   );
+}
+const systemTheme = matchMedia("(prefers-color-scheme: dark)").matches
+  ? "dark"
+  : "light";
+document.documentElement.dataset.theme = systemTheme;
+try {
+  const saved = localStorage.getItem("track.theme");
+  if (saved === "dark" || saved === "light")
+    document.documentElement.dataset.theme = saved;
+} catch {
+  // The system theme also works when browser storage is unavailable.
 }
 createRoot(document.getElementById("root")!).render(<Entry />);

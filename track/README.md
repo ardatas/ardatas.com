@@ -1,14 +1,16 @@
 # Track
 
-A private study notebook for track.ardatas.com. From the repository root, run `pnpm install --frozen-lockfile` and `pnpm dev:track`. Run `pnpm test:track` for timer and calendar checks and `pnpm build:track` for type checking and the production bundle in `track/dist`.
+A private study notebook for track.ardatas.com. From the repository root, run `pnpm install --frozen-lockfile` and configure `track/.env.local` as described below before running `pnpm dev:track`. Run `pnpm test:track` for timer and calendar checks and `pnpm build:track` for type checking and the production bundle in `track/dist`.
 
 ## Storage
 
-For local development, leaving both Supabase settings empty selects IndexedDB. The sidebar indicates “This browser”. These records belong to that browser origin. Cloud mode uses a separate notebook associated with the signed-in user.
-
 Apply [the database migration](supabase/001_study_tracker.sql) to the intended Supabase project. It creates two owner-scoped tables with row-level security. Each session records its tag, original IANA time zone, UTC epoch timestamps in milliseconds, worked intervals, optional productivity score from 1 to 5, and a revision used to reject stale writes. The database permits one unfinished session per owner. Compute study time by summing intervals, clipping each interval at local day boundaries for daily reports.
 
-For a dedicated project, disable new user signups and create the owner under Authentication → Users. Enable email magic links, set the Site URL to `https://track.ardatas.com`, and allow the exact development origin if needed. The sign-in form requests links only for existing users. For local cloud development copy `track/.env.example` to `track/.env.local` and set the project URL and publishable key. The browser needs only the public client key.
+## Owner login
+
+In Supabase Authentication → Sign In / Providers, enable Email and disable “Allow new users to sign up”. In Authentication → Users → Add user → Create new user, enter `<username>@track.invalid` as the email, set your password, and select **Auto Confirm User**. The username is case-insensitive and can contain 1–64 ASCII letters, digits, hyphens, or underscores. Enter only the username and password on the tracker. The reserved domain is an internal identifier. Create and reset the owner's credentials in the Supabase dashboard.
+
+Both development and production require the Supabase URL and publishable key. Copy `track/.env.example` to `track/.env.local` for development. Supabase Auth verifies the password and issues a session held in tab memory. Reloading requires signing in again. Study blocks and running timers persist in PostgreSQL. Owner-only row-level policies protect the records independently of the login screen.
 
 ## Vercel
 
