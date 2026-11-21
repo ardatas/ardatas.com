@@ -1,8 +1,3 @@
-{%
-  from
-  "components/fieldset.html" import fieldset
-%}
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -45,34 +40,6 @@
       <main class="flex flex-col">
         {% block content %}{% endblock %}
       </main>
-      <footer id="links" class="links-footer mt-3">
-        {% call fieldset("cat ~/links.md") %}
-          <div id="footer-plane" class="checker-plane" aria-hidden="true"></div>
-          <ul class="relative flex flex-wrap gap-x-6 gap-y-2 px-3 pt-2 text-sm md:px-0 md:pt-0">
-            <li>
-              <a class="social-link" href="https://linkedin.com/in/arda-tas" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </li>
-            <li>
-              <a class="social-link" href="https://github.com/ardatas" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </li>
-          </ul>
-          {% if loading_state_html %}
-            <div id="building-status" class="relative mt-2 px-3 font-mono md:px-0">{{ loading_state_html | safe }}</div>
-          {% endif %}
-        {% endcall %}
-      </footer>
     </div>
-    <div class="checker-plane screen-floor" aria-hidden="true"></div>
-    <script type="module">
-      const observer = new IntersectionObserver(entries => {
-        for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
-          observer.unobserve(entry.target);
-          import("/footer-plane.js?v={{ asset_versions['footer-plane.js'] }}")
-            .then(({ mountPlane }) => mountPlane(entry.target));
-        }
-      });
-      document.querySelectorAll(".checker-plane").forEach(plane => observer.observe(plane));
-    </script>
   </body>
 </html>

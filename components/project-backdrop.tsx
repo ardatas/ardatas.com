@@ -22,9 +22,28 @@ export function ProjectBackdrop() {
       const distance = x === toX ? track.clientHeight : track.clientWidth
       sprite.style.setProperty("--look-x", String(Math.sign(toX - x)) + "px")
       sprite.style.setProperty("--look-y", String(Math.sign(toY - y)) + "px")
-      leg = sprite.animate([
-        { left: x + "%", top: y + "%" }, { left: toX + "%", top: toY + "%" },
-      ], { duration: Math.max(800, distance / 65 * 1000), easing: "linear", fill: "forwards" })
+      // Hop toward the inside of each edge so the sprite stays inside the cabinet.
+      const inwardX = x === toX ? (x === 0 ? 1 : -1) : 0
+      const inwardY = y === toY ? (y === 0 ? 1 : -1) : 0
+      const strides = Math.max(1, Math.round(distance / 90))
+      const frames: Keyframe[] = []
+      function pose(progress: number, lift: number) {
+        frames.push({
+          offset: progress,
+          left: (x + (toX - x) * progress) + "%",
+          top: (y + (toY - y) * progress) + "%",
+          transform: `translate(${inwardX * lift}px, ${inwardY * lift}px)`,
+        })
+      }
+      pose(0, 0)
+      for (let stride = 0; stride < strides; stride++) {
+        const height = Math.random() < .42 ? 14 + Math.random() * 19 : 4
+        for (const phase of [.25, .5, .75, 1]) {
+          pose((stride + phase) / strides, 4 * phase * (1 - phase) * height)
+        }
+      }
+      const speed = 225 + Math.random() * 155
+      leg = sprite.animate(frames, { duration: Math.max(280, distance / speed * 1000), fill: "forwards" })
       leg.onfinish = () => {
         leg?.cancel()
         corner = next

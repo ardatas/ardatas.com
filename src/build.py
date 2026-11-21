@@ -50,7 +50,7 @@ public_path = os.path.join(script_path, "..", "public")
 env.globals["asset_versions"] = {}
 for asset in ("favicon.svg", "favicon.ico", "favicon.png", "apple-touch-icon.png",
               "link-conversion.js", "site-path.css", "whoami-handwriting.js", "travel/globe.js", "travel/globe.css",
-              "julia/explorer.js", "julia/explorer.css", "julia/manifest.json", "footer-plane.js"):
+              "julia/explorer.js", "julia/explorer.css", "julia/manifest.json"):
     with open(os.path.join(public_path, asset), "rb") as source:
         env.globals["asset_versions"][asset] = hashlib.sha256(source.read()).hexdigest()[:12]
 
@@ -243,15 +243,11 @@ macbook_html = subprocess.check_output(
     ["node", "--import", "tsx", "src/render-macbook.tsx"],
     cwd=os.path.dirname(script_path), text=True,
 )
-loading_state_html = subprocess.check_output(
-    ["node", "--import", "tsx", "src/render-loading-state.tsx"],
-    cwd=os.path.dirname(script_path), text=True,
-)
 # next/image reads optional configuration from process.env in this browser bundle.
 loading_bundle, loading_state_version = bundle_entry("loading-state", defines=("--define:process.env={}",))
 with open(loading_bundle.removesuffix(".js") + ".css", "rb") as source:
     homepage_style_version = hashlib.sha256(source.read()).hexdigest()[:12]
-rendered = index.render(homepage_style_version=homepage_style_version, loading_state_html=loading_state_html, loading_state_version=loading_state_version, lists=lists, name=name, title=name, running=running, travel=travel,
+rendered = index.render(homepage_style_version=homepage_style_version, loading_state_version=loading_state_version, lists=lists, name=name, title=name, running=running, travel=travel,
                         portrait_html=portrait_html, macbook_html=macbook_html,
                         macbook_files=publish_home(Path(script_path).parent / "macbook-home", Path(args.output)),
                         exploration=build_exploration_stats(travel["countries"]))

@@ -3,33 +3,27 @@
   <div id="project-backdrop" aria-hidden="true"></div>
   <details class="project-drawer">
     <summary class="project-folder">
-      <span class="project-folder-back" aria-hidden="true"></span>
-      <span class="project-folder-paper" aria-hidden="true"></span>
-      <span class="project-folder-front">
-        <span class="project-folder-title">Projects</span>
-        <span class="project-folder-meta">{{ posts|length }} projects <span aria-hidden="true">/</span>
-          <span class="folder-open-label">Open folder</span><span class="folder-close-label">Close folder</span>
-        </span>
-      </span>
+      <img src="/macbook/icons/folder.webp" width="72" height="72" alt="" />
+      <span><strong>Projects</strong><small>{{ posts|length }} folders</small></span>
+      <span class="drawer-chevron" aria-hidden="true"></span>
     </summary>
-    <ul class="project-files">
+    <ul class="project-files" aria-label="Project folders">
       {% for post in posts %}
-      <li class="project-file">
-        <a href="{{ post.href }}" {% if post.external %}target="_blank" rel="noopener noreferrer"{% endif %} class="project-file-link">
-          <span class="project-file-top">
-            <img src="{{ post.coverImage }}" alt="" loading="lazy" />
-            {{ icon('arrow-up-right-01', '18') }}
-          </span>
-          <h3>{{ post.title }}</h3>
-          <p>{{ post.summary }}</p>
-        </a>
-        {% if post.highlights %}
-        <details class="project-highlights">
-          <summary>Highlights</summary>
-          <ul>{% for highlight in post.highlights %}<li>{{ highlight }}</li>{% endfor %}</ul>
-        </details>
-        {% endif %}
-      </li>
+        {% set details_url = "/projects/" ~ post.slug ~ ".html" %}
+        {% set source = post.href.startswith("https://github.com/") %}
+        <li class="project-file" style="--order: {{ loop.index0 }}">
+          <a class="project-file-link" href="{{ details_url }}">
+            <img src="/macbook/icons/folder.webp" width="44" height="44" alt="" />
+            <span>{{ post.title }}</span>
+          </a>
+          {% if post.href != details_url %}
+            {% set action = "Source code" if source else "Open website" %}
+            <a class="project-destination" href="{{ post.href }}" title="{{ action }} · {{ post.title }}"
+               aria-label="{{ action }} · {{ post.title }}" {% if post.external %}target="_blank" rel="noopener noreferrer"{% endif %}>
+              {{ icon('github' if source else 'arrow-up-right-01', '18') }}
+            </a>
+          {% endif %}
+        </li>
       {% endfor %}
     </ul>
   </details>

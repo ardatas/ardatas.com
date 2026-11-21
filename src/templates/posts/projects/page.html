@@ -6,11 +6,20 @@
     <article>
       <h2 class="m-0 mb-1 text-4xl">{{ post.title }}</h2>
       <h3 class="italic text-xl m-0 font-normal">{{ post.summary }}</h3>
-      <div class="h-4" />
+      <div class="h-4"></div>
     </article>
-    <img src="{{ post.coverImage }}" class="mb-4" />
+    <img src="{{ post.coverImage }}" class="mb-4 h-16 w-16 object-contain" alt="" />
     <article>
       {{ post.content|safe }}
+      {% if post.highlights %}
+        <details class="mt-3">
+          <summary class="cursor-pointer">Highlights</summary>
+          <ul>{% for highlight in post.highlights %}<li>{{ highlight }}</li>{% endfor %}</ul>
+        </details>
+      {% endif %}
+      {% if post.website and post.website not in post.content %}
+        <p><a href="{{ post.website }}" target="_blank" rel="noopener noreferrer">{{ "Source code" if post.website.startswith("https://github.com/") else "Visit website" }}</a></p>
+      {% endif %}
     </article>
   {% endcall %}
 {% endblock %}

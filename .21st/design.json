@@ -54,6 +54,11 @@
   },
   "decisions": [
     {
+      "id": "project-stack",
+      "decision": "Open Projects as a low, desktop-first Finder stack with blue folders, dark name labels, and separate destination icons.",
+      "source": "src/templates/posts/projects/list.html"
+    },
+    {
       "id": "document-preview",
       "decision": "Display PDFs in the Safari-01 frame with a blank address bar and a resizable portrait reading area. Overlay reading controls on the document.",
       "source": "components/ui/safari-01.tsx"
