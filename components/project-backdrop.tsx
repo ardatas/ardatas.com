@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react"
-import { GridPattern } from "@/components/ui/grid-pattern"
 
 // Original pixel artwork inspired by BlackisPlay's Pac-Man Ghost Loader on Uiverse.
 const corners = [[0, 0], [100, 0], [100, 100], [0, 100]] as const
@@ -68,8 +67,7 @@ export function ProjectBackdrop() {
     }
   }, [])
 
-  return <>
-    <GridPattern width={32} height={32} squares={[[1, 2], [5, 0], [12, 3], [19, 1], [25, 5], [3, 8]]} />
+  return (
     <div className="project-ghost-track">
       <svg ref={ghost} className="project-ghost" viewBox="0 0 16 16" shapeRendering="crispEdges" aria-hidden="true">
         <path fill="#d83b43" d="M5 1h6v1h2v2h1v2h1v9h-2v-2h-2v2H9v-2H7v2H5v-2H3v2H1V6h1V4h1V2h2z" />
@@ -77,5 +75,5 @@ export function ProjectBackdrop() {
         <path className="project-ghost-eyes" fill="#243d81" d="M4 7h2v2H4zm6 0h2v2h-2z" />
       </svg>
     </div>
-  </>
+  )
 }

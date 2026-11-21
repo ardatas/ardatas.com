@@ -441,11 +441,6 @@ article {
   background: #e9f2f8;
 }
 #project-backdrop { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
-#project-backdrop:empty {
-  background-image: linear-gradient(#a1bac740 1px, transparent 1px), linear-gradient(90deg, #a1bac740 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-#project-backdrop > svg { fill: #a3c6dc32; stroke: #8eaaba40; }
 .project-ghost-track { position: absolute; inset: 24px; }
 .project-ghost { position: absolute; width: 48px; height: 48px; translate: -50% -50%; }
 .project-ghost-eyes { transform: translate(var(--look-x, 0px), var(--look-y, 0px)); }
