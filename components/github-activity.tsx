@@ -22,9 +22,8 @@ function isCalendar(value: unknown): value is (ActivityDay & { level: number })[
   });
 }
 
-export default function GitHubActivity() {
+export function useGitHubDays() {
   const [days, setDays] = useState(snapshot);
-  const [selected, setSelected] = useState<string | null>(null);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -50,6 +49,11 @@ export default function GitHubActivity() {
     };
   }, []);
 
+  return days;
+}
+
+export default function GitHubActivity({ days }: { days: ActivityDay[] }) {
+  const [selected, setSelected] = useState<string | null>(null);
   const endDate = dateFormat.format(new Date(days.at(-1)!.date + "T00:00:00Z"));
   const period = `the year ending ${endDate}`;
   return (

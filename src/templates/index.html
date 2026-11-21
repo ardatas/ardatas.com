@@ -16,16 +16,13 @@
           <p>
             Based in <span class="handwritten-circle">Munich<svg class="handwritten-ring" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M8 54 C6 26 30 8 52 7 C76 6 95 20 95 46 C95 74 72 93 48 93 C24 93 7 78 6 52 C6 34 16 20 34 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke" pathLength="1" stroke-dasharray="1" data-handwritten-draw /></svg></span>.
           </p>
-          <p id="contact">
-            Reach me at
-            <a
-              id="link-conversion"
-              rel="nofollow noindex"
-              href="mailto:arda@ardatas.com"
-            ><strong>arda (at) ardatas (dot) com</strong></a>
-          </p>
         </article>
         {{ portrait_html | safe }}
+      </div>
+      <div id="contact" class="mt-3">
+        <a class="social-link" data-email-link href="mailto:arda@ardatas.com">Email Arda</a>
+        <a class="social-link ml-3" href="https://github.com/ardatas" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="social-link ml-3" href="https://linkedin.com/in/arda-tas" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
     {% endcall %}
     <script src="/whoami-handwriting.js?v={{ asset_versions['whoami-handwriting.js'] }}" defer></script>
