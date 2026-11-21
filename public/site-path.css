@@ -47,7 +47,7 @@
 @media (max-width:520px){.nimbus-nav:not([data-compact="false"]) .nimbus-item{padding:0 13px}.nimbus-nav:not([data-compact="false"]) .nimbus-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
 @media (prefers-reduced-motion:reduce){.nv-ico svg,.nv-ico::before,.nv-ico::after,.nv-door{animation:none!important;transition:none}}
 
-html { scroll-padding-top: 78px; }
+html { --portfolio-nav-clearance: 78px; scroll-padding-top: var(--portfolio-nav-clearance); }
 #portfolio-path {
   position: sticky;
   top: 8px;

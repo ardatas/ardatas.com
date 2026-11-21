@@ -54,6 +54,16 @@ body::before {
   background-color: var(--panel-surface);
 }
 
+/* Reserve space for the sticky navigation, fieldset legend, and panel padding. */
+#appointment-picker {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - var(--portfolio-nav-clearance) - 4.5rem);
+  max-height: calc(100dvh - var(--portfolio-nav-clearance) - 4.5rem);
+}
+#appointment-picker iframe { min-height: 0; }
+#appointment-picker > a { flex: none; align-self: flex-start; }
+
 .section-title {
   background-color: var(--floating-surface);
 }
