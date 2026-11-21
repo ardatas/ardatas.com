@@ -29,12 +29,14 @@
   align-items: center;
 }
 .mac-dock {
+  --icon-size: clamp(25px, 4.65cqw, 34px);
   pointer-events: auto;
   display: flex;
   max-width: 100%;
   align-items: end;
   gap: .62cqw;
-  padding: 1.15cqw .95cqw .3cqw;
+  padding: max(6px, 1.15cqw) .95cqw .3cqw;
+  transition: padding-top 140ms ease-out;
   overflow-x: auto;
   scrollbar-width: thin;
   background: rgb(26 25 37 / 86%);
@@ -43,8 +45,8 @@
   box-shadow: 0 2px 8px #10082a66;
   backdrop-filter: blur(8px);
 }
+.mac-dock[data-expanded] { padding-top: calc(var(--icon-size) * .45); }
 .mac-dock-item {
-  --icon-size: clamp(25px, 4.65cqw, 34px);
   position: relative;
   flex: none;
   display: grid;
@@ -100,11 +102,11 @@
   font: 500 clamp(10px, 2cqw, 13px)/1.5 system-ui, sans-serif;
 }
 @container (max-width: 440px) {
-  .mac-dock { border-radius: 9px; padding: 4px 6px 1px; }
-  .mac-dock-item { width: var(--icon-size); }
+  .mac-dock { border-radius: 9px; padding-inline: 6px; padding-bottom: 1px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .mac-dock-item { width: var(--icon-size); transition: none; }
+  .mac-dock, .mac-dock-item { transition: none; }
+  .mac-dock-item { width: var(--icon-size); }
 }
 
 .macbook-screen { pointer-events: auto; overflow: hidden; border-radius: 1%; font-family: system-ui, sans-serif; }
