@@ -7,7 +7,10 @@ function PortfolioPath({ items, initial }: { items: LiquidNavItem[]; initial: nu
 
   useEffect(() => {
     if (items[0].href !== "#top") return;
-    const sections = items.map(item => document.getElementById(item.href!.slice(1))!);
+    const sections = items.flatMap((item, index) => {
+      const section = item.href?.startsWith("#") && document.getElementById(item.href.slice(1));
+      return section ? [{ section, index }] : [];
+    });
     let frame = 0;
     let followingAnchor = false;
     let settleTimer = 0;
@@ -17,8 +20,8 @@ function PortfolioPath({ items, initial }: { items: LiquidNavItem[]; initial: nu
       if (followingAnchor) return;
       const offset = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) + 4;
       let index = 0;
-      sections.forEach((section, i) => {
-        if (section.getBoundingClientRect().top <= offset) index = i;
+      sections.forEach(({ section, index: itemIndex }) => {
+        if (section.getBoundingClientRect().top <= offset) index = itemIndex;
       });
       setActive(index);
     }
