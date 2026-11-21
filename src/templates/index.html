@@ -129,6 +129,19 @@
         {{ lists["projects"]|safe }}
       {% endcall %}
     </section>
+    <aside id="resume-builder" aria-label="Free AI resume builder">
+      <a class="resume-promo" href="https://larpyourresume.com/" target="_blank" rel="noopener noreferrer" aria-labelledby="resume-promo-title resume-promo-brand">
+        <div class="resume-promo-copy">
+          <span class="resume-promo-brand" id="resume-promo-brand"><img src="/resume-builder/head.webp" alt="" />larpyourresume<span>.</span></span>
+          <h2 id="resume-promo-title">Get your <span>free</span><br />AI-generated resume</h2>
+          <span class="resume-promo-action">Open the builder {{ icon('arrow-up-right-01', '16') }}</span>
+        </div>
+        <div class="resume-promo-art" aria-hidden="true">
+          <img class="resume-promo-sun" src="/resume-builder/sun.webp" alt="" />
+          <img class="resume-promo-figure" src="/resume-builder/figure.webp" alt="" />
+        </div>
+      </a>
+    </aside>
     <section id="macbook">
       {% call fieldset("Arda’s MacBook") %}
         <div id="macbook-desktop" data-files='{{ macbook_files | tojson }}'>{{ macbook_html | safe }}</div>

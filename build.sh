@@ -72,6 +72,9 @@ static() {
     echo "Copying the self-contained travel globe to dist/travel"
     cp -R public/travel dist/travel || fail
 
+    mkdir -p dist/resume-builder || fail
+    cp -R public/resume-builder/. dist/resume-builder/ || fail
+
     cp -R public/macbook dist/macbook || fail
 
     mkdir -p dist/portrait || fail
