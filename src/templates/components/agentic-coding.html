@@ -10,21 +10,13 @@
 ] %}
 <section id="agentic-coding" aria-label="Agentic coding, LLMs and AI">
   {% call fieldset("Agentic coding, LLMs and AI") %}
-    <div class="grid gap-x-8 gap-y-4 sm:grid-cols-2">
+    <div class="space-y-4">
       {% for heading, entries in groups %}
-        <div class="min-w-0">
-          <h3 class="mb-1 text-sm font-semibold">{{ heading }}</h3>
-          <ul class="divide-y divide-[var(--notebook-border)]">
+        <div>
+          <h3 class="mb-3 text-lg font-bold text-neutral-800">{{ heading }}</h3>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
             {% for title, description, url in entries %}
-              <li>
-                <a class="group flex min-h-11 items-center justify-between gap-3 py-2 focus-visible:outline-2 focus-visible:outline-[#315f87]" href="{{ url }}" target="_blank" rel="noopener noreferrer">
-                  <span class="min-w-0">
-                    <span class="profile-title block group-hover:underline">{{ title }}</span>
-                    <span class="block text-sm leading-snug text-[var(--notebook-muted)]">{{ description }}</span>
-                  </span>
-                  <span class="shrink-0 text-[#315f87]" aria-hidden="true">{{ icon('arrow-up-right-01') }}</span>
-                </a>
-              </li>
+              <li>{{ resource_card(title, description, url, "h4") }}</li>
             {% endfor %}
           </ul>
         </div>

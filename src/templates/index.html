@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% from "components/resource-card.html" import resource_card %}
 {% from "components/icon.html" import icon %}
 {% from "components/fieldset.html" import fieldset %}
 
@@ -222,18 +223,7 @@
         <p class="mb-3 text-lg font-bold text-neutral-800">some resources I think you should check out</p>
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
           <li>
-            <a
-              class="resource-link group"
-              href="https://github.com/ardatas/ResumeTemplate"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div class="min-w-0">
-                <h3 class="profile-title">best resume template ever:</h3>
-                <p class="mt-2 font-mono text-xs text-neutral-500 break-words">github.com/ardatas/ResumeTemplate</p>
-              </div>
-              <span class="resource-arrow" aria-hidden="true">{{ icon('arrow-up-right-01') }}</span>
-            </a>
+            {{ resource_card("best resume template ever:", "github.com/ardatas/ResumeTemplate", "https://github.com/ardatas/ResumeTemplate") }}
           </li>
         </ul>
       {% endcall %}

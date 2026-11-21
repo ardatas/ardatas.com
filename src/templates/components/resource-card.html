@@ -1,0 +1,10 @@
+{% from "components/icon.html" import icon %}
+{% macro resource_card(title, description, url, heading="h3") -%}
+  <a class="resource-link group" href="{{ url }}" target="_blank" rel="noopener noreferrer">
+    <div class="min-w-0">
+      <{{ heading }} class="profile-title">{{ title }}</{{ heading }}>
+      <p class="mt-2 font-mono text-xs break-words">{{ description }}</p>
+    </div>
+    <span class="resource-arrow" aria-hidden="true">{{ icon('arrow-up-right-01') }}</span>
+  </a>
+{%- endmacro %}
