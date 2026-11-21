@@ -5,6 +5,7 @@ interface MenuItem { label: string; run?: () => void; checked?: boolean }
 interface Menu { name: string; face?: ReactNode; items: MenuItem[]; className?: string }
 interface Props {
   app: "Finder" | "Terminal"; clock: string; files: HomeEntry[]; icons: boolean;
+  muted: boolean; toggleMute: () => void;
   go: (path: string) => void; search: () => void; showTerminal: () => void;
   setView: (icons: boolean) => void; closeWindow: () => void; lock: () => void;
 }
@@ -14,11 +15,10 @@ function glyph(name: string, width: number, alt = "") {
     style={{ width: width / 28 + "em" }} src={"/macbook/menu/" + name + ".webp"} />;
 }
 
-export function MacOSMenuBar({ app, clock, files, icons, go, search, showTerminal, setView, closeWindow, lock }: Props) {
+export function MacOSMenuBar({ app, clock, files, icons, muted, toggleMute, go, search, showTerminal, setView, closeWindow, lock }: Props) {
   const [active, setActive] = useState<string | null>(null);
   const [left, setLeft] = useState(0);
   const [wifi, setWifi] = useState(true);
-  const [muted, setMuted] = useState(true);
   const root = useRef<HTMLDivElement>(null);
   const panel = useRef<HTMLDivElement>(null);
   const triggers = useRef(new Map<string, HTMLButtonElement>());
@@ -48,7 +48,7 @@ export function MacOSMenuBar({ app, clock, files, icons, go, search, showTermina
   const terminal = { label: "Show Terminal", run: showTerminal };
   const close = { label: "Close Window", run: closeWindow };
   const radio = { label: "Wi-Fi", checked: wifi, run: () => setWifi(!wifi) };
-  const sound = { label: "Mute Sound", checked: muted, run: () => setMuted(!muted) };
+  const sound = { label: "Mute Sound", checked: muted, run: toggleMute };
   const spotlight = { name: "Spotlight", face: glyph("spotlight", 32), items: [find] };
   const control = { name: "Control Center", face: glyph("controls", 32), items: [radio, sound] };
   const apple = <svg viewBox="0 0 110 140" width="1em" height="1.22em" aria-hidden="true"><use href="/macbook/menu-icons.svg#apple" /></svg>;

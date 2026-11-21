@@ -38,6 +38,8 @@ export function MacbookDesktop({ files = [] }: { files?: HomeEntry[] }) {
   const [visible, setVisible] = useState(true);
   const [now, setNow] = useState<Date | null>(null);
   const [file, setFile] = useState<DocumentFile | null>(null);
+  const [muted, setMuted] = useState(false);
+  const openSound = useRef<HTMLAudioElement>(null);
   const enter = useRef<HTMLButtonElement>(null);
   const time = now ? timeFormat.format(now) : "–:––";
   useEffect(() => {
@@ -59,6 +61,19 @@ export function MacbookDesktop({ files = [] }: { files?: HomeEntry[] }) {
     return () => window.removeEventListener("keydown", keydown);
   }, [locked]);
 
+  function openDocument(document: DocumentFile) {
+    if (file?.path === document.path) return;
+    setFile(document);
+    const sound = openSound.current;
+    if (sound && !muted) {
+      if (!sound.paused && !sound.ended) {
+        sound.pause();
+        sound.currentTime = 0;
+      }
+      void sound.play().catch(() => { /* Playback can be blocked by the browser. */ });
+    }
+  }
+
   function go(path: string, searching = false) {
     setApp("Finder");
     setFinder({ path, searching });
@@ -76,6 +91,7 @@ export function MacbookDesktop({ files = [] }: { files?: HomeEntry[] }) {
 
   return (
     <div className="macbook-desktop">
+      <audio ref={openSound} src="/macbook/document-open.wav" preload="none" muted={muted} />
       <MacbookPro src="/macbook/wallpaper.webp" role="img" aria-label="Arda’s MacBook Pro with the wallpaper “do first, perfect later.”" />
       <div className="macbook-screen">
         {locked ? <div className="mac-lock">
@@ -86,11 +102,11 @@ export function MacbookDesktop({ files = [] }: { files?: HomeEntry[] }) {
           </button>
         </div> : <>
           <MacOSMenuBar app={app} clock={now ? menuDate.format(now).replace(/,/g, "") + "  " + time : time}
-            files={files} icons={icons} go={go} search={() => go("/", true)} showTerminal={showTerminal}
+            files={files} icons={icons} muted={muted} toggleMute={() => setMuted(value => !value)} go={go} search={() => go("/", true)} showTerminal={showTerminal}
             setView={value => { setIcons(value); go(finder?.path ?? "/"); }} closeWindow={closeWindow}
             lock={() => { setFile(null); setLocked(true); requestAnimationFrame(() => enter.current?.focus({ preventScroll: true })); }} />
-          <Terminal files={files} visible={visible && !finder} onActivate={() => setApp("Terminal")} onHide={closeWindow} onOpen={setFile} />
-          {finder && <MacbookFinder location={finder} files={files} icons={icons} go={go} open={setFile} close={closeWindow} />}
+          <Terminal files={files} visible={visible && !finder} onActivate={() => setApp("Terminal")} onHide={closeWindow} onOpen={openDocument} />
+          {finder && <MacbookFinder location={finder} files={files} icons={icons} go={go} open={openDocument} close={closeWindow} />}
           <MacOSDock apps={apps} launch={{ finder: () => go("/"), terminal: showTerminal }} terminalOpen={visible} />
         </>}
       </div>
