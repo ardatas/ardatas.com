@@ -51,7 +51,7 @@ html { scroll-padding-top: 78px; }
 #portfolio-path {
   position: sticky;
   top: 8px;
-  z-index: 20;
+  z-index: 101; /* Keep navigation above the page-level PDF window (100). */
   align-self: center;
   max-width: 100%;
   margin-bottom: 12px;
