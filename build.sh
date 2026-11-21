@@ -38,6 +38,8 @@ static() {
         logo-uhrwerk.png
         logo-werkio.png
         logo-zarm.png
+        ribbon-field.webp
+        ribbon-field-portrait.webp
         portfolio-systems.svg
         projects.svg
         toolkit.svg

@@ -42,10 +42,10 @@
       class="flex min-h-screen flex-col max-w-5xl mx-auto px-4 py-4 sm:py-8 text-[15px] leading-5 font-normal tracking-[-0.005em] antialiased font-sans"
     >
       {% include "components/site-path.html" %}
-      <main class="flex flex-col">
+      <main class="flex flex-col bg-[var(--notebook-paper)]">
         {% block content %}{% endblock %}
       </main>
-      <footer id="links" class="links-footer mt-3">
+      <footer id="links" class="links-footer mt-3 bg-[var(--notebook-paper)]">
         {% call fieldset("cat ~/links.md") %}
           <div id="footer-plane" aria-hidden="true"></div>
           {% if loading_state_html %}

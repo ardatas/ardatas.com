@@ -19,12 +19,22 @@ html {
 }
 
 body {
-  background-color: var(--notebook-paper);
-  background-image:
-    linear-gradient(var(--notebook-grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--notebook-grid) 1px, transparent 1px);
-  background-size: 24px 24px;
+  isolation: isolate;
+  background-color: #1d62d7;
   color: #101114;
+}
+
+/* Static exports from the 21st Ribbon Field canvas include the wave and grain. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: url("/assets/ribbon-field.webp") center / 100% 100% no-repeat;
+}
+@media (orientation: portrait) {
+  body::before { background-image: url("/assets/ribbon-field-portrait.webp"); }
 }
 
 .section-title {
