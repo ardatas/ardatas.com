@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -13,7 +14,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&amp;family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&amp;family=Instrument+Sans:wdth,wght@75..100,400..600&amp;display=swap" rel="stylesheet"/>
-<link href="/index.css?v=dda35bdeb83b" rel="stylesheet"/>
+<link href="/index.css?v=85708b4ca10c" rel="stylesheet"/>
 <link href="/site-path.css?v=2351d4d139bf" rel="stylesheet"/>
 <script defer="" src="/site-path.js?v=ccac3088c3db"></script>
 <script defer="" src="/link-conversion.js?v=33de9b6de076"></script>
@@ -65,6 +66,32 @@
 </article>
 </fieldset>
 </main>
+<footer class="links-footer mt-3" id="links">
+<fieldset class="border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2">
+<legend class="ms-4 md:ms-0">
+<h2 class="section-title mx-2 font-mono italic tracking-tight px-1">cat ~/links.md</h2>
+</legend>
+<div aria-hidden="true" id="footer-plane"></div>
+<ul class="relative flex flex-wrap gap-x-6 gap-y-2 px-3 pt-2 text-sm md:px-0 md:pt-0">
+<li>
+<a class="social-link" href="https://linkedin.com/in/arda-tas" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+</li>
+<li>
+<a class="social-link" href="https://github.com/ardatas" rel="noopener noreferrer" target="_blank">GitHub</a>
+</li>
+</ul>
+</fieldset>
+</footer>
 </div>
+<script type="module">
+      const plane = document.getElementById("footer-plane");
+      const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          observer.disconnect();
+          import("/footer-plane.js?v=d5a119d91aaa");
+        }
+      });
+      observer.observe(plane);
+    </script>
 </body>
 </html>

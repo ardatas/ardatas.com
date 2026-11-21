@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -17,7 +19,7 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="/index.css?v=dda35bdeb83b" />
+    <link rel="stylesheet" href="/index.css?v=85708b4ca10c" />
     <link rel="stylesheet" href="/site-path.css?v=2351d4d139bf" />
 
     <script src="/site-path.js?v=ccac3088c3db" defer></script>
@@ -176,6 +178,39 @@
 <script type="module" src="/julia/explorer.js?v=f9189149f7f7"></script>
 
       </main>
+      <footer id="links" class="links-footer mt-3">
+
+  <fieldset
+    class="border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2"
+  >
+    <legend class="ms-4 md:ms-0">
+      <h2 class="section-title mx-2 font-mono italic tracking-tight px-1">cat ~/links.md</h2>
+    </legend>
+
+          <div id="footer-plane" aria-hidden="true"></div>
+          <ul class="relative flex flex-wrap gap-x-6 gap-y-2 px-3 pt-2 text-sm md:px-0 md:pt-0">
+            <li>
+              <a class="social-link" href="https://linkedin.com/in/arda-tas" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </li>
+            <li>
+              <a class="social-link" href="https://github.com/ardatas" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </li>
+          </ul>
+
+
+  </fieldset>
+
+      </footer>
     </div>
+    <script type="module">
+      const plane = document.getElementById("footer-plane");
+      const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          observer.disconnect();
+          import("/footer-plane.js?v=d5a119d91aaa");
+        }
+      });
+      observer.observe(plane);
+    </script>
   </body>
 </html>
