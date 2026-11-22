@@ -264,6 +264,9 @@ for img_tag in soup.find_all("img"):
 
 write_output(soup.encode_contents().decode("utf-8"), "index.html")
 
+not_found = env.get_template("404.html").render(title=f"404 · Page not found | {name}")
+write_output("\n".join(line.rstrip() for line in not_found.strip().splitlines()) + "\n", "404.html")
+
 julia_page = env.get_template("julia.html").render(
     name=name, title=f"{name} | Julia set explorer", julia_page=True)
 write_output("\n".join(line.rstrip() for line in julia_page.splitlines()) + "\n",

@@ -24,6 +24,7 @@
     />
 
     <link rel="stylesheet" href="/index.css?v={{ css_version }}" />
+    {% block site_assets %}
     <link rel="stylesheet" href="/site-path.css?v={{ asset_versions['site-path.css'] }}" />
     {% if not homepage_style_version %}
     <script src="/site-path.js?v={{ site_path_version }}" defer></script>
@@ -32,14 +33,16 @@
     <script src="/loading-state.js?v={{ loading_state_version }}" defer></script>
     <link rel="stylesheet" href="/loading-state.css?v={{ homepage_style_version }}" />
     {% endif %}
-    {% block extra_head %}{% endblock %}
     <script src="/link-conversion.js?v={{ asset_versions['link-conversion.js'] }}" defer></script>
     <script>
       /*to prevent Firefox FOUC, this must be here*/
       let FF_FOUC_FIX;
     </script>
+    {% endblock %}
+    {% block extra_head %}{% endblock %}
   </head>
   <body id="top" class="text-[#101114]">
+    {% block body %}
     <div
       class="flex min-h-screen flex-col max-w-5xl mx-auto px-4 py-4 sm:py-8 text-[15px] leading-5 font-normal tracking-[-0.005em] antialiased font-sans"
     >
@@ -72,5 +75,6 @@
       });
       observer.observe(plane);
     </script>
+    {% endblock %}
   </body>
 </html>

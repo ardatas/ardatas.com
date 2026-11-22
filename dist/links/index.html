@@ -20,11 +20,18 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="/index.css?v=bff6eac1f060" />
+    <link rel="stylesheet" href="/index.css?v=f8c9dbc12415" />
+
     <link rel="stylesheet" href="/site-path.css?v=224457820392" />
 
     <script src="/site-path.js?v=ccac3088c3db" defer></script>
 
+
+    <script src="/link-conversion.js?v=33de9b6de076" defer></script>
+    <script>
+      /*to prevent Firefox FOUC, this must be here*/
+      let FF_FOUC_FIX;
+    </script>
 
 
     <meta name="robots" content="noindex,nofollow" />
@@ -32,13 +39,9 @@
     <link rel="stylesheet" href="/links/links.css?v=14178bcafea4" />
     <script type="module" src="/links/links.js?v=1f30fbc1a1a0"></script>
 
-    <script src="/link-conversion.js?v=33de9b6de076" defer></script>
-    <script>
-      /*to prevent Firefox FOUC, this must be here*/
-      let FF_FOUC_FIX;
-    </script>
   </head>
   <body id="top" class="text-[#101114]">
+
     <div
       class="flex min-h-screen flex-col max-w-5xl mx-auto px-4 py-4 sm:py-8 text-[15px] leading-5 font-normal tracking-[-0.005em] antialiased font-sans"
     >
@@ -111,5 +114,6 @@
       });
       observer.observe(plane);
     </script>
+
   </body>
 </html>

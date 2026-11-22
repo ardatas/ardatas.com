@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% from "components/button.html" import button %}
+
+{% block site_assets %}{% endblock %}
+{% block extra_head %}<meta name="robots" content="noindex" />{% endblock %}
+
+{% block body %}
+  <main class="grid min-h-screen min-h-[100svh] place-items-center px-4 py-8 font-sans antialiased">
+    <div class="notebook-panel relative w-full max-w-md border border-[var(--notebook-frame)] px-6 py-8 sm:px-10 sm:py-10">
+      <p class="section-title absolute left-5 top-0 -translate-y-1/2 px-2 font-mono italic tracking-tight sm:left-9">404</p>
+      <h1 class="text-3xl font-semibold tracking-tight sm:text-4xl">Page not found</h1>
+      {% call button("/", "mt-6 w-fit") %}Back to homepage{% endcall %}
+    </div>
+  </main>
+{% endblock %}

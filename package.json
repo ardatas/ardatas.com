@@ -26,7 +26,7 @@
     "dev": "concurrently \"pnpm watch:html\" \"pnpm watch:tailwind\" \"pnpm flask-dev\"",
     "build": "./build.sh",
     "typecheck": "tsc --noEmit",
-    "preview": "python3 -m http.server 4173 --bind 127.0.0.1 --directory dist"
+    "preview": "python3 src/preview.py"
   },
   "dependencies": {
     "@radix-ui/react-scroll-area": "^1.4.0",
