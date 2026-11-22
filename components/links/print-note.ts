@@ -7,9 +7,17 @@ export function printNote(sheet: HTMLElement) {
   const ctx = canvas.getContext('2d');
   if (!ctx) throw new Error('Canvas unavailable');
   ctx.scale(2, 2);
-  const color = getComputedStyle(sheet).getPropertyValue('--paper').trim();
+  const paper = getComputedStyle(sheet);
+  const color = paper.getPropertyValue('--paper').trim();
   ctx.fillStyle = color;
   ctx.fillRect(0, 0, width, height);
+  const spacing = parseFloat(paper.getPropertyValue('--rule-spacing'));
+  ctx.fillStyle = paper.getPropertyValue('--rule-color');
+  for (let y = spacing - 1; spacing > 0 && y < height; y += spacing) {
+    ctx.fillRect(0, y, width, 1);
+  }
+  ctx.fillStyle = paper.getPropertyValue('--margin-color');
+  ctx.fillRect(parseFloat(paper.getPropertyValue('--margin-x')), 0, 1, height);
   const origin = sheet.getBoundingClientRect();
   for (const el of sheet.querySelectorAll<HTMLElement>('[data-print]')) {
     const node = el.firstChild;

@@ -66,6 +66,11 @@ export function useNoteMovement(id: string, index: number, activate: () => void)
     const observer = new ResizeObserver(() => place());
     observer.observe(slot.current!);
     observer.observe(slot.current!.parentElement!);
+    // Font loading and navbar initialization can move the grid without resizing it.
+    const header = slot.current!.closest('.board-desk')?.querySelector('.board-head');
+    const nav = document.getElementById('portfolio-path');
+    if (header) observer.observe(header);
+    if (nav) observer.observe(nav);
     observer.observe(document.body);
     place();
     return () => observer.disconnect();

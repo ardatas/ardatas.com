@@ -45,27 +45,34 @@
 .board-counter { gap: 5px; }
 .board-head h1 { margin: 3px 0 0; }
 .board-actions { gap: 6px; }
-.note-grid { position: relative; min-height: 360px; align-content: start; list-style: none; padding: 0; margin: 28px 0 10px; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 245px), 1fr)); gap: 24px 20px; align-items: start; }
-.note-slot { --paper: #fff0a8; position: relative; translate: var(--note-x, 0px) var(--note-y, 0px); touch-action: pinch-zoom; user-select: none; cursor: grab; min-width: 0; }
+.note-grid { position: relative; min-height: 360px; align-content: start; list-style: none; padding: 0; margin: 28px 0 10px; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr)); gap: 20px 16px; align-items: start; }
+.note-slot { --paper: #fff0a8; width: 100%; max-width: 208px; position: relative; translate: var(--note-x, 0px) var(--note-y, 0px); touch-action: pinch-zoom; user-select: none; cursor: grab; min-width: 0; }
 .note-slot[data-dragging], .note-slot[data-dragging] * { cursor: grabbing; }
 .note-slot[data-tone="1"] { --paper: #d9eed8; }
 .note-slot[data-tone="2"] { --paper: #f9d8c7; }
 .note-slot[data-tone="3"] { --paper: #e6e0f5; }
 .note-sheet {
-  position: relative; min-height: 218px; padding: 14px 21px 40px; border-radius: 2px 2px 14px 2px;
-  background-image: linear-gradient(to bottom, #ffffff24 0, transparent 24%, #10273e04 100%);
+  --rule-spacing: 20px;
+  --rule-color: rgb(61 103 137 / 18%);
+  --margin-x: 12px;
+  --margin-color: rgb(172 81 78 / 26%);
+  position: relative; min-height: 150px; padding: 11px 13px 26px 20px; border-radius: 2px 2px 14px 2px;
+  background-image:
+    linear-gradient(to right, transparent var(--margin-x), var(--margin-color) var(--margin-x) calc(var(--margin-x) + 1px), transparent 0),
+    repeating-linear-gradient(to bottom, transparent 0 calc(var(--rule-spacing) - 1px), var(--rule-color) 0 var(--rule-spacing)),
+    linear-gradient(to bottom, #ffffff24, transparent 24%, #10273e04);
 }
 .note-sheet::after {
   content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
   opacity: var(--flex, 0); transition: opacity 100ms ease-out;
   background: conic-gradient(from 28deg at 60% 44%, transparent 0 21%, #fff7 24%, transparent 27% 55%, #273e531f 58%, transparent 66%);
 }
-.note-top { margin-bottom: 22px; }
+.note-top { margin-bottom: 10px; }
 .note-host { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.note-link { display: inline-flex; max-width: 100%; align-items: baseline; gap: 6px; color: var(--ink); font: 700 clamp(2rem, 3.2vw, 2.55rem)/1.03 var(--hand); letter-spacing: -.025em; overflow-wrap: anywhere; }
+.note-link { display: inline-flex; max-width: 100%; align-items: baseline; gap: 6px; color: var(--ink); font: 700 clamp(1.6rem, 2.5vw, 2rem)/1.03 var(--hand); letter-spacing: -.025em; overflow-wrap: anywhere; }
 .note-link:hover span:first-child { text-decoration: underline; text-decoration-thickness: 1.5px; }
 .note-arrow { display: inline-block; flex: none; font: 500 .68em/1 "Instrument Sans", sans-serif; }
-.note-description { margin: 12px 0 0; font-size: 15px; line-height: 1.45; white-space: pre-line; overflow-wrap: anywhere; }
+.note-description { margin: 6px 0 0; font-size: 14px; line-height: var(--rule-spacing); white-space: pre-line; overflow-wrap: anywhere; }
 .paper-corner {
   position: absolute; right: 0; bottom: 0; width: 36px; height: 36px; cursor: pointer;
   background: linear-gradient(135deg, transparent 49%, #24354822 50%, #ffffff85 75%, transparent 76%);
@@ -92,7 +99,8 @@
   .board-head { align-items: start; flex-wrap: wrap; gap: 16px; }
   .board-actions { margin-left: auto; }
   .board-actions .ink-btn { padding-inline: 10px; }
-  .note-grid { gap: 17px; margin-top: 22px; }
-  .note-sheet { min-height: 180px; }
+  .note-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 144px), 1fr)); gap: 14px; margin-top: 22px; }
+  .note-slot { max-width: 176px; }
+  .note-sheet { min-height: 138px; }
 }
 @media (prefers-reduced-motion: reduce) { .note-slot[data-enter] { animation: none; } }
