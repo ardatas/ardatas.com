@@ -31,6 +31,8 @@ function database(string $dir): PDO {
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         PDO::ATTR_TIMEOUT => 5,
     ]);
+    // Established boards serve public reads without acquiring a database write lock.
+    if ($db->query("SELECT 1 FROM sqlite_master WHERE type='table' AND name='notes'")->fetchColumn()) return $db;
     $db->exec('CREATE TABLE IF NOT EXISTS attempts (ip TEXT PRIMARY KEY, started INTEGER, count INTEGER)');
     $db->exec('BEGIN IMMEDIATE');
     if (!$db->query("SELECT 1 FROM sqlite_master WHERE type='table' AND name='notes'")->fetchColumn()) {
@@ -68,23 +70,25 @@ try {
     session_name('ardatas_links');
     $local = PHP_SAPI === 'cli-server' && in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1'], true);
     session_set_cookie_params(['path' => '/links', 'httponly' => true, 'samesite' => 'Strict', 'secure' => !$local]);
-    if (!session_start()) throw new RuntimeException('Session unavailable');
+    if (($method === 'POST' || isset($_COOKIE[session_name()])) && !session_start()) {
+        throw new RuntimeException('Session unavailable');
+    }
     $action = $method === 'GET' ? 'list' : ($input['action'] ?? '');
     if ($action === 'lock') {
         $_SESSION = [];
         session_destroy();
         setcookie(session_name(), '', ['expires' => 1, 'path' => '/links', 'httponly' => true, 'samesite' => 'Strict', 'secure' => !$local]);
-        reply(200, ['locked' => true]);
     }
-    if ($action !== 'unlock' && ($_SESSION['until'] ?? 0) < time()) {
-        failRequest(401, 'Enter the password to unlock the board.');
+    $canWrite = ($_SESSION['until'] ?? 0) > time();
+    if (!in_array($action, ['list', 'unlock', 'lock'], true) && !$canWrite) {
+        failRequest(401, 'Enter the password to change saved links.');
     }
 
     $dir = getenv('LINKS_PRIVATE_DIR') ?: dirname($_SERVER['DOCUMENT_ROOT']) . '/.ardatas-links';
-    $hash = is_readable($dir . '/password.hash') ? trim(file_get_contents($dir . '/password.hash')) : '';
-    if (!$hash) failRequest(503, 'The board is unavailable. Try again later.');
     $db = database($dir);
     if ($action === 'unlock') {
+        $hash = is_readable($dir . '/password.hash') ? trim(file_get_contents($dir . '/password.hash')) : '';
+        if (!$hash) failRequest(503, 'Editing is unavailable. Try again later.');
         $password = $input['password'] ?? null;
         if (!is_string($password) || strlen($password) > 256) failRequest(422, 'Enter a valid password.');
         $ip = hash('sha256', $_SERVER['REMOTE_ADDR']);
@@ -101,7 +105,8 @@ try {
         $db->prepare('DELETE FROM attempts WHERE ip=?')->execute([$ip]);
         session_regenerate_id(true);
         $_SESSION['until'] = time() + 12 * 3600;
-    } elseif ($action !== 'list') {
+        $canWrite = true;
+    } elseif (!in_array($action, ['list', 'lock'], true)) {
         $id = field($input, 'id', 36);
         if (!preg_match('/^[a-f0-9-]{32,36}$/D', $id)) failRequest(422, 'Invalid note.');
         if ($action === 'create' || $action === 'edit') {
@@ -128,7 +133,7 @@ try {
         }
         if ($action !== 'create' && !$query->rowCount()) failRequest(409, 'This note changed. Reopen it from the board.');
     }
-    reply(200, ['notes' => $db->query('SELECT id,title,url,description,revision,seq FROM notes ORDER BY seq DESC')->fetchAll()]);
+    reply(200, ['canWrite' => $canWrite, 'notes' => $db->query('SELECT id,title,url,description,revision,seq FROM notes ORDER BY seq DESC')->fetchAll()]);
 } catch (Throwable $error) {
     error_log('Links board: ' . get_class($error));
     failRequest(503, 'The board could not be reached. Please try again.');

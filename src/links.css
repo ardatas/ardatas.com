@@ -5,33 +5,22 @@
   color: var(--ink);
 }
 .board-loading, .empty-board { padding: 3rem 1rem; text-align: center; background: var(--panel-surface); }
-.lock-desk, .board-desk {
+.board-desk {
   margin: 12px 0 20px;
   border: 1px solid var(--notebook-frame);
   background-color: var(--panel-surface);
   background-image: radial-gradient(rgb(46 71 91 / 27%) .8px, transparent .9px);
   background-size: 13px 13px;
 }
-.lock-desk { min-height: min(68vh, 620px); display: grid; place-items: center; padding: clamp(24px, 5vw, 64px); }
-.lock-paper, .note-sheet, .note-editor {
+.note-sheet, .note-editor {
   background: var(--paper, #fff1ac); color: var(--ink);
   box-shadow: 1px 3px 4px rgb(30 43 52 / 12%), 2px 10px 14px -8px rgb(29 42 55 / 35%);
 }
-.lock-paper {
-  position: relative; width: min(100%, 390px); padding: clamp(24px, 5vw, 43px);
-  border-radius: 2px 3px 14px 2px; transform: rotate(-1deg);
-}
-.lock-paper::before {
-  content: ""; position: absolute; width: 90px; height: 22px;
-  top: -10px; left: calc(50% - 45px); transform: rotate(3deg);
-  background: rgb(241 240 217 / 76%); box-shadow: 0 1px 2px #172c3f26;
-}
-.lock-paper h1, .board-head h1, .editor-top h2 {
+.board-head h1, .editor-top h2 {
   font: 600 clamp(2.8rem, 6vw, 4rem)/1 var(--hand); margin: 10px 0; letter-spacing: -.035em;
 }
-.lock-paper > p { margin: 6px 0 23px; }
-.lock-paper label, .note-editor label { display: block; font: 500 .8rem/1.5 var(--mono); }
-.lock-paper input, .note-editor input, .note-editor textarea {
+.note-editor label { display: block; font: 500 .8rem/1.5 var(--mono); }
+.note-editor input, .note-editor textarea {
   display: block; width: 100%; min-width: 0; padding: 9px 10px; margin: 4px 0 16px;
   border: 1px solid #7b775d; border-radius: 4px; background: #fffdf2bf;
   color: var(--ink); font: 400 1rem/1.45 "Instrument Sans", sans-serif;
@@ -98,6 +87,5 @@
   .board-actions .ink-btn { padding-inline: 10px; }
   .note-grid { gap: 17px; margin-top: 22px; }
   .note-sheet { min-height: 180px; }
-  .lock-paper { transform: none; }
 }
 @media (prefers-reduced-motion: reduce) { .note-slot[data-enter] { animation: none; } }

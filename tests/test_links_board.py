@@ -68,7 +68,7 @@ class LinksBoardTest(unittest.TestCase):
 
     def test_shared_writes_require_unlock_and_survive_new_sessions(self):
         note = dict(id=secrets.token_hex(16), title="Test note", url="https://example.org/", description="")
-        self.assertEqual(self.call()[0], 401)
+        self.assertFalse(self.call()[1]["canWrite"])
         self.assertEqual(self.call("create", **note)[0], 401)
         self.assertEqual(self.call("unlock", password="wrong")[0], 401)
         self.assertEqual(self.call("unlock", password=self.password, board_header=False)[0], 403)
@@ -77,7 +77,9 @@ class LinksBoardTest(unittest.TestCase):
         notes = self.call("create", **note)[1]["notes"]
         self.assertEqual(sum(n["id"] == note["id"] for n in notes), 1)
         other = self.new_browser()
-        self.assertEqual(self.call(browser=other)[0], 401)
+        self.assertEqual(self.call(browser=other), (200, {"notes": notes, "canWrite": False}))
+        for action in ("create", "edit", "delete"):
+            self.assertEqual(self.call(action, browser=other, revision=1, **note)[0], 401)
         self.assertEqual(self.call("unlock", browser=other, password=self.password)[1]["notes"], notes)
         note["description"] = "Updated from the second session."
         self.assertEqual(self.call("edit", browser=other, revision=1, **note)[0], 200)
@@ -86,5 +88,5 @@ class LinksBoardTest(unittest.TestCase):
         self.assertEqual(self.call("delete", revision=2, id=note["id"])[0], 200)
         self.assertFalse(any(n["id"] == note["id"] for n in self.call(browser=other)[1]["notes"]))
         self.assertEqual(self.call("lock")[0], 200)
-        self.assertEqual(self.call()[0], 401)
+        self.assertFalse(self.call()[1]["canWrite"])
         self.assertEqual(self.call("create", **note)[0], 401)
