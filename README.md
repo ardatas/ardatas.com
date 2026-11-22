@@ -33,6 +33,25 @@ node --test tests/footer-plane.test.mjs
 PYTHONPATH=src python3 -m unittest discover -s tests -p 'test_*.py'
 ```
 
+## Saved links
+
+The navbar opens `/links`. Its PHP 8 endpoint requires PDO SQLite. On cPanel,
+the board stores `board.sqlite` and `password.hash` in
+`/home/ardatas/.ardatas-links/`, outside `public_html`. Create the directory
+with mode 0700 and install a PHP `password_hash` (bcrypt) verifier as
+`password.hash` with mode 0600. The PHP process needs write access to the
+directory. Back up this directory to preserve the live notes across hosts.
+
+For a local preview, use an empty private directory outside the checkout,
+place a test password verifier in it, then run:
+
+```sh
+LINKS_PRIVATE_DIR=/absolute/path/to/private-dir php -S 127.0.0.1:4173 -t dist
+```
+
+The static preview serves the portfolio. The PHP preview also supports signing
+in and saving shared notes. The board loads its PaperCrumple bundle on demand.
+
 ## Homepage portrait
 
 The homepage renders `components/ui/starry-nights.tsx` to static HTML during

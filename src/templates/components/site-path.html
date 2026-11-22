@@ -1,5 +1,7 @@
 {% from "components/icon.html" import icon %}
-{% if post or julia_page %}
+{% if links_page %}
+  {% set path = [('Home', '/', 'home-01', 'glow'), ('Links', '/links', 'bookmark', 'pop')] %}
+{% elif post or julia_page %}
   {% set path = [
     ('Home', '/', 'home-01', 'glow'),
     ('Projects', '/#projects', 'dashboard-square-01', 'spin'),
@@ -10,16 +12,17 @@
     ('Home', '#top', 'home-01', 'glow'),
     ('Experience', '#experience', 'briefcase-01', 'pop'),
     ('Projects', '#projects', 'dashboard-square-01', 'spin'),
-    ('Education', '#education', 'mortarboard-01', 'drop')
+    ('Education', '#education', 'mortarboard-01', 'drop'),
+    ('Links', '/links', 'bookmark', 'pop')
   ] %}
 {% endif %}
 <div id="portfolio-path">
   <nav class="nimbus-nav" data-compact="false" aria-label="Portfolio path">
     <span class="nimbus-glass" aria-hidden="true"></span>
-    {% for label, href, glyph, fx in path + profiles %}
+    {% for label, href, glyph, fx in path + ([('Links', '/links', 'bookmark', 'pop')] if post or julia_page else []) + profiles %}
       <a class="nimbus-item" href="{{ href }}" data-fx="{{ fx }}"
-         {% if loop.index > path|length %}target="_blank" rel="noopener noreferrer" aria-label="{{ label }} (opens in a new tab)"{% endif %}
-         {% if (post or julia_page) and loop.index == path|length or not (post or julia_page) and loop.first %}aria-current="page"{% endif %}>
+         {% if href.startswith('https://') %}target="_blank" rel="noopener noreferrer" aria-label="{{ label }} (opens in a new tab)"{% endif %}
+         {% if (post or julia_page or links_page) and loop.index == path|length or not (post or julia_page or links_page) and loop.first %}aria-current="page"{% endif %}>
         {{ icon(glyph, '18') }}<span class="nimbus-label">{{ label }}</span>
       </a>
     {% endfor %}

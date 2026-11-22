@@ -87,6 +87,11 @@
       "id": "homepage-portrait",
       "decision": "Render Arda's portrait as a detailed grid of 240 × 320 color tiles. The image loops automatically without controls.",
       "source": "components/ui/starry-nights.tsx"
+    },
+    {
+      "id": "links-board",
+      "decision": "Use the homepage ribbon and navbar with pastel folded post-its. Set link titles in bold Caveat and unfold newly saved notes using PaperCrumple.",
+      "source": "src/links.css"
     }
   ],
   "evidence": [

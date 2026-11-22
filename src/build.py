@@ -268,3 +268,19 @@ julia_page = env.get_template("julia.html").render(
     name=name, title=f"{name} | Julia set explorer", julia_page=True)
 write_output("\n".join(line.rstrip() for line in julia_page.splitlines()) + "\n",
              "julia", "index.html")
+
+# Separate the paper simulation from the lock screen and the portfolio bundles.
+links_dir = Path(args.output).resolve() / "links"
+links_dir.mkdir(exist_ok=True)
+subprocess.run([
+    "pnpm", "exec", "esbuild", "src/links.tsx", "--bundle", "--minify", "--splitting",
+    "--format=esm", '--define:process.env.NODE_ENV="production"', "--entry-names=[name]",
+    "--supported:template-literal=false", "--chunk-names=chunks/[name]-[hash]", f"--outdir={links_dir}",
+], check=True)
+links_page = env.get_template("links.html").render(
+    title="Links | Arda Tas", links_page=True,
+    links_js="links.js?v=" + hashlib.sha256((links_dir / "links.js").read_bytes()).hexdigest()[:12],
+    links_css="links.css?v=" + hashlib.sha256((links_dir / "links.css").read_bytes()).hexdigest()[:12],
+)
+write_output("\n".join(line.rstrip() for line in links_page.splitlines()) + "\n", "links", "index.html")
+write_output((Path(script_path).parent / "server/links/api.php").read_text(), "links", "api.php")

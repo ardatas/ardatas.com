@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block extra_head %}
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="stylesheet" href="/links/{{ links_css }}" />
+    <script type="module" src="/links/{{ links_js }}"></script>
+{% endblock %}
+{% block content %}
+    <div id="links-board" aria-label="Saved links">
+      <p class="board-loading" role="status">Opening links…</p>
+      <noscript>Enable JavaScript to unlock the board.</noscript>
+    </div>
+{% endblock %}
