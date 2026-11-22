@@ -280,10 +280,16 @@ subprocess.run([
     "--format=esm", '--define:process.env.NODE_ENV="production"', "--entry-names=[name]",
     "--supported:template-literal=false", "--chunk-names=chunks/[name]-[hash]", f"--outdir={links_dir}",
 ], check=True)
-links_page = env.get_template("links.html").render(
-    title="Links | Arda Tas", links_page=True,
-    links_js="links.js?v=" + hashlib.sha256((links_dir / "links.js").read_bytes()).hexdigest()[:12],
-    links_css="links.css?v=" + hashlib.sha256((links_dir / "links.css").read_bytes()).hexdigest()[:12],
-)
-write_output("\n".join(line.rstrip() for line in links_page.splitlines()) + "\n", "links", "index.html")
-write_output((Path(script_path).parent / "server/links/api.php").read_text(), "links", "api.php")
+links_assets = {
+    "links_js": "links.js?v=" + hashlib.sha256((links_dir / "links.js").read_bytes()).hexdigest()[:12],
+    "links_css": "links.css?v=" + hashlib.sha256((links_dir / "links.css").read_bytes()).hexdigest()[:12],
+}
+# Apache and the PHP preview serve index.php. Keep the static preview shell for non-PHP servers.
+for filename, server_render in [("board-view.php", True), ("index.html", False)]:
+    page = env.get_template("links.html").render(
+        title="Links | Arda Tas", links_page=True, server_render=server_render, **links_assets)
+    if server_render:
+        page = "<?php if (!isset($board)) { http_response_code(404); exit; } ?>\n" + page
+    write_output("\n".join(line.rstrip() for line in page.splitlines()) + "\n", "links", filename)
+for filename in ("api.php", "board.php", "index.php", ".htaccess"):
+    write_output((Path(script_path).parent / "server/links" / filename).read_text(), "links", filename)

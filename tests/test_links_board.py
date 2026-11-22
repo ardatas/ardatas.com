@@ -1,7 +1,9 @@
+import html
 import http.cookiejar
 import json
 import os
 from pathlib import Path
+import re
 import secrets
 import shutil
 import socket
@@ -32,7 +34,7 @@ class LinksBoardTest(unittest.TestCase):
         self.url = f"http://127.0.0.1:{port}/links/api.php"
         self.browser = self.new_browser()
         self.server = subprocess.Popen(
-            ["php", "-S", f"127.0.0.1:{port}", "-t", str(ROOT / "server")],
+            ["php", "-S", f"127.0.0.1:{port}", "-t", str(ROOT / "dist")],
             env=dict(os.environ, LINKS_PRIVATE_DIR=private.name),
             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
         )
@@ -76,6 +78,23 @@ class LinksBoardTest(unittest.TestCase):
             return response_error.code, json.load(response_error)
         with response:
             return response.status, json.load(response)
+
+    def test_first_response_contains_current_notes_and_session(self):
+        note = dict(id=secrets.token_hex(16), title='R&D <reading>', url='https://example.org/?a=1&b=2',
+                    description='Save the </script> example for later.')
+        self.assertEqual(self.call("unlock", password=self.password)[0], 200)
+        self.assertEqual(self.call("create", **note)[0], 200)
+        for browser, can_write in [(self.new_browser(), False), (self.browser, True)]:
+            with self.subTest(can_write=can_write), browser.open(self.url.removesuffix("api.php")) as response:
+                page = response.read().decode()
+                self.assertIn("no-store", response.headers["Cache-Control"])
+                self.assertNotIn("Opening links", page)
+                self.assertIn(f'href="{html.escape(note["url"])}"', page)
+                for key in ("title", "description"):
+                    self.assertIn(html.escape(note[key]), page)
+                state = json.loads(re.search(r'id="initial-links">(.*?)</script>', page).group(1))
+                self.assertEqual(state, self.call(browser=browser)[1])
+                self.assertEqual(state["canWrite"], can_write)
 
     def test_shared_writes_require_unlock_and_survive_new_sessions(self):
         note = dict(id=secrets.token_hex(16), title="Test note", url="https://example.org/", description="")

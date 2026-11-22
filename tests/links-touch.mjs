@@ -8,7 +8,7 @@ try {
   const note = { id: 'touch-fixture', seq: 1, revision: 1, title: 'Touch fixture', url: 'https://example.org/', description: '' };
   await page.route('**/links/api.php', route => route.fulfill({ json: { notes: [note], canWrite: false } }));
   await page.goto(new URL('/links/', process.env.LINKS_TEST_URL || 'http://127.0.0.1:4188').href);
-  const card = page.locator('.note-slot');
+  const card = page.locator('.note-slot').first();
   const title = card.getByRole('link');
   await title.waitFor();
   await page.waitForLoadState('networkidle');
@@ -26,6 +26,7 @@ try {
   assert.ok(after > before + 40, 'the note follows a touch drag that starts on its title');
   assert.equal(context.pages().length, 1, 'dragging the title must not activate its link');
   await page.reload();
+  await card.locator('button.paper-corner').waitFor();
   assert.ok(Math.abs(await position() - after) < 2, 'the dropped position survives reload');
 } finally {
   await browser.close();

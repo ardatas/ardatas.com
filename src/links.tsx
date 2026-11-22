@@ -111,12 +111,16 @@ function Editor({ initial, canWrite, unlock, busy, error, close, save, remove }:
   </dialog>;
 }
 
+type InitialBoard = { notes: Note[] | null; canWrite: boolean; error?: string };
+const initialElement = document.getElementById('initial-links');
+const initial: InitialBoard | null = initialElement ? JSON.parse(initialElement.textContent!) : null;
+
 function LinksBoard() {
-  const [notes, setNotes] = useState<Note[] | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [canWrite, setCanWrite] = useState(false);
+  const [notes, setNotes] = useState<Note[] | null>(initial?.notes ?? null);
+  const [loading, setLoading] = useState(initial === null);
+  const [canWrite, setCanWrite] = useState(initial?.canWrite ?? false);
   const [busy, setBusy] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState(initial?.error ?? '');
   const [draft, setDraft] = useState<Draft | null>(null);
   const [playback, setPlayback] = useState<Playback>();
   const [status, setStatus] = useState('');
@@ -136,7 +140,7 @@ function LinksBoard() {
     } finally { if (token === version.current) setLoading(false); }
   }
   useEffect(() => {
-    void refresh();
+    if (!initial) void refresh();
     const restored = (event: PageTransitionEvent) => { if (event.persisted) { forget(); setLoading(true); void refresh(); } };
     window.addEventListener('pageshow', restored);
     return () => window.removeEventListener('pageshow', restored);

@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% from "components/icon.html" import icon %}
 {% block extra_head %}
     <meta name="referrer" content="no-referrer" />
     <link rel="stylesheet" href="/links/{{ links_css }}" />
@@ -6,7 +7,36 @@
 {% endblock %}
 {% block content %}
     <div id="links-board" aria-label="Saved links">
+      {% if server_render %}
+      <?php if ($board['notes'] === null): ?>
+        <div class="board-loading"><p role="alert"><?= escapeBoardText($board['error']) ?></p><a class="text-btn" href="/links/">Try again</a></div>
+      <?php else: ?>
+        <section class="board-desk">
+          <header class="board-head">
+            <div><div class="board-counter"><?= count($board['notes']) ?> <?= count($board['notes']) === 1 ? 'note' : 'notes' ?></div><h1>Saved links</h1></div>
+            <div class="board-actions"><button class="ink-btn" disabled>{{ icon('plus-sign', '17') }} New note</button></div>
+          </header>
+          <?php if (!$board['notes']): ?><p class="empty-board">Save your first link with “New note”.</p><?php endif; ?>
+          <ul class="note-grid">
+            <?php foreach ($board['notes'] as $note): ?>
+              <li class="note-slot" data-tone="<?= ((int)$note['seq'] - 1) % 4 ?>">
+                <div class="note-sheet">
+                  <div class="note-top"><span class="note-host"><?= escapeBoardText(preg_replace('/^www\./i', '', (string)parse_url($note['url'], PHP_URL_HOST))) ?></span></div>
+                  <a class="note-link" href="<?= escapeBoardText($note['url']) ?>" target="_blank" rel="noopener noreferrer"><span><?= escapeBoardText($note['title']) ?></span><span class="note-arrow" aria-hidden="true">↗</span></a>
+                  <?php if ($note['description'] !== ''): ?><p class="note-description"><?= escapeBoardText($note['description']) ?></p><?php endif; ?>
+                  <span class="paper-corner" aria-hidden="true"></span>
+                </div>
+              </li>
+            <?php endforeach; ?>
+          </ul>
+        </section>
+      <?php endif; ?>
+      {% else %}
       <p class="board-loading" role="status">Opening links…</p>
       <noscript>Enable JavaScript to view the saved links.</noscript>
+      {% endif %}
     </div>
+    {% if server_render %}
+    <script type="application/json" id="initial-links"><?= json_encode($board, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_INVALID_UTF8_SUBSTITUTE) ?></script>
+    {% endif %}
 {% endblock %}

@@ -1,0 +1,3 @@
+DirectoryIndex disabled
+DirectoryIndex index.php
+RedirectMatch 302 ^/links/index\.html$ /links/

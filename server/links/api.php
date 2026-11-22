@@ -4,8 +4,7 @@ declare(strict_types=1);
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: private, no-store');
 header('X-Content-Type-Options: nosniff');
-ini_set('display_errors', '0');
-umask(0077);
+require_once __DIR__ . '/board.php';
 
 function reply(int $status, array $body): void {
     $json = json_encode($body, JSON_UNESCAPED_SLASHES);
@@ -27,34 +26,7 @@ function field(array $input, string $name, int $max, bool $required = true): str
     return trim($value);
 }
 
-function database(string $dir): PDO {
-    $db = new PDO('sqlite:' . $dir . '/board.sqlite', null, null, [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        PDO::ATTR_TIMEOUT => 5,
-    ]);
-    // Established boards serve public reads without acquiring a database write lock.
-    if ($db->query("SELECT 1 FROM sqlite_master WHERE type='table' AND name='notes'")->fetchColumn()) return $db;
-    $db->exec('CREATE TABLE IF NOT EXISTS attempts (ip TEXT PRIMARY KEY, started INTEGER, count INTEGER)');
-    $db->exec('BEGIN IMMEDIATE');
-    if (!$db->query("SELECT 1 FROM sqlite_master WHERE type='table' AND name='notes'")->fetchColumn()) {
-        $db->exec('CREATE TABLE notes (seq INTEGER PRIMARY KEY, id TEXT UNIQUE NOT NULL,
-            title TEXT NOT NULL, url TEXT NOT NULL, description TEXT NOT NULL, revision INTEGER NOT NULL DEFAULT 1)');
-        $insert = $db->prepare('INSERT INTO notes (id,title,url,description) VALUES (?,?,?,?)');
-        foreach ([
-            ['OpenCourseWare', 'https://ocw.mit.edu/', 'Course notes and problem sets from MIT.'],
-            ['Hugging Face Spaces', 'https://huggingface.co/spaces', 'A place to try community-built AI demos.'],
-            ['Startup School', 'https://www.startupschool.org/', 'Y Combinator’s free program for founders.'],
-        ] as $note) {
-            $insert->execute(array_merge([bin2hex(random_bytes(16))], $note));
-        }
-    }
-    $db->exec('COMMIT');
-    return $db;
-}
-
 try {
-    if (PHP_VERSION_ID < 80513) failRequest(503, 'The server PHP runtime needs an update.');
     $method = $_SERVER['REQUEST_METHOD'];
     if (!in_array($method, ['GET', 'POST'], true)) failRequest(405, 'Use GET or POST.');
     $input = [];
@@ -69,26 +41,18 @@ try {
         $input = json_decode($body, true);
         if (!is_array($input)) failRequest(400, 'Invalid request.');
     }
-    ini_set('session.use_strict_mode', '1');
-    session_name('ardatas_links');
-    $local = PHP_SAPI === 'cli-server' && in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1'], true);
-    $cookie = ['path' => '/links', 'secure' => !$local, 'httponly' => true, 'samesite' => 'Strict'];
-    session_set_cookie_params($cookie);
-    if (($method === 'POST' || isset($_COOKIE[session_name()])) && !session_start()) {
-        throw new RuntimeException('Session unavailable');
-    }
+    $cookie = boardSession($method === 'POST');
     $action = $method === 'GET' ? 'list' : ($input['action'] ?? '');
     if ($action === 'lock') {
         $_SESSION = [];
         session_destroy();
         setcookie(session_name(), '', ['expires' => 1] + $cookie);
     }
-    $canWrite = ($_SESSION['until'] ?? 0) > time();
-    if (!in_array($action, ['list', 'unlock', 'lock'], true) && !$canWrite) {
+    if (!in_array($action, ['list', 'unlock', 'lock'], true) && !boardCanWrite()) {
         failRequest(401, 'Enter the password to change saved links.');
     }
 
-    $dir = getenv('LINKS_PRIVATE_DIR') ?: dirname($_SERVER['DOCUMENT_ROOT']) . '/.ardatas-links';
+    $dir = boardDirectory();
     $db = database($dir);
     if ($action === 'unlock') {
         $hash = is_readable($dir . '/password.hash') ? trim(file_get_contents($dir . '/password.hash')) : '';
@@ -109,7 +73,6 @@ try {
         $db->prepare('DELETE FROM attempts WHERE ip=?')->execute([$ip]);
         session_regenerate_id(true);
         $_SESSION['until'] = time() + 12 * 3600;
-        $canWrite = true;
     } elseif (!in_array($action, ['list', 'lock'], true)) {
         $id = field($input, 'id', 36);
         if (!preg_match('/^[a-f0-9-]{32,36}$/D', $id)) failRequest(422, 'Invalid note.');
@@ -137,7 +100,7 @@ try {
         }
         if ($action !== 'create' && !$query->rowCount()) failRequest(409, 'This note changed. Reopen it from the board.');
     }
-    reply(200, ['canWrite' => $canWrite, 'notes' => $db->query('SELECT id,title,url,description,revision,seq FROM notes ORDER BY seq DESC')->fetchAll()]);
+    reply(200, boardSnapshot($db));
 } catch (Throwable $error) {
     error_log('Links board: ' . get_class($error));
     failRequest(503, 'The board could not be reached. Please try again.');
