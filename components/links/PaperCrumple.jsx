@@ -239,6 +239,7 @@ function createPaperPath(rest, triangles, shortSide, density, sharpness, depth, 
 const PaperCrumple = ({
   src,
   playback,
+  gesture,
   onPlaybackEnd,
   alt = 'Crumplable image',
   backSrc = '',
@@ -648,6 +649,11 @@ const PaperCrumple = ({
       const dt = lastTime ? Math.min(0.04, (time - lastTime) / 1000) : 1 / 60;
       lastTime = time;
       const opts = options.current;
+      if (playback === 'gesture') {
+        amount.target = reduceMotion ? 0 : gesture.fold;
+        tiltX.target = reduceMotion ? 0 : gesture.pitch;
+        tiltY.target = reduceMotion ? 0 : gesture.roll;
+      }
       let moving = false;
       const duration = held ? finite(opts.crumpleDuration, 0.55) : finite(opts.releaseDuration, 0.4);
       for (const s of springs)
@@ -689,6 +695,10 @@ const PaperCrumple = ({
       }
       renderer.render(scene, camera);
       placeHitTarget();
+      if (playback === 'gesture') {
+        root.dataset.flat = String(amount.value < .01);
+        if (!moving && (gesture.leaving || reduceMotion)) endRef.current?.();
+      }
       if (moving) wake();
       else if (playbackRunning && amount.target > 0) {
         amount.target = 0;
@@ -1009,7 +1019,9 @@ const PaperCrumple = ({
           backMaterial.map = backTexture || frontTexture;
           depthMaterial.map = frontTexture;
           frontMaterial.needsUpdate = backMaterial.needsUpdate = depthMaterial.needsUpdate = true;
-          if (playback) {
+          if (playback === 'gesture') {
+            gesture.wake = wake;
+          } else if (playback) {
             playbackRunning = true;
             amount.value = playback === 'unfold' ? 0.85 : 0;
             amount.target = playback === 'unfold' ? 0 : 0.85;
@@ -1031,6 +1043,7 @@ const PaperCrumple = ({
     }
     return () => {
       disposed = true;
+      if (gesture?.wake === wake) delete gesture.wake;
       cancelAnimationFrame(frame);
       if (pointerId !== null && hit.hasPointerCapture(pointerId)) hit.releasePointerCapture(pointerId);
       resetRef.current = cancelRef.current = null;
@@ -1080,6 +1093,7 @@ const PaperCrumple = ({
     rotation,
     seed,
     detail,
+    gesture,
     playback
   ]);
   useEffect(() => {

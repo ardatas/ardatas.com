@@ -54,6 +54,7 @@ function database(string $dir): PDO {
 }
 
 try {
+    if (PHP_VERSION_ID < 80513) failRequest(503, 'The server PHP runtime needs an update.');
     $method = $_SERVER['REQUEST_METHOD'];
     if (!in_array($method, ['GET', 'POST'], true)) failRequest(405, 'Use GET or POST.');
     $input = [];
@@ -71,14 +72,8 @@ try {
     ini_set('session.use_strict_mode', '1');
     session_name('ardatas_links');
     $local = PHP_SAPI === 'cli-server' && in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1'], true);
-    // PHP 7.1 emits the path verbatim and has no separate SameSite setting.
-    $cookiePath = '/links';
-    if (PHP_VERSION_ID < 70300) {
-        $cookiePath .= '; SameSite=Strict';
-    } else {
-        ini_set('session.cookie_samesite', 'Strict');
-    }
-    session_set_cookie_params(0, $cookiePath, '', !$local, true);
+    $cookie = ['path' => '/links', 'secure' => !$local, 'httponly' => true, 'samesite' => 'Strict'];
+    session_set_cookie_params($cookie);
     if (($method === 'POST' || isset($_COOKIE[session_name()])) && !session_start()) {
         throw new RuntimeException('Session unavailable');
     }
@@ -86,7 +81,7 @@ try {
     if ($action === 'lock') {
         $_SESSION = [];
         session_destroy();
-        setcookie(session_name(), '', 1, '/links', '', !$local, true);
+        setcookie(session_name(), '', ['expires' => 1] + $cookie);
     }
     $canWrite = ($_SESSION['until'] ?? 0) > time();
     if (!in_array($action, ['list', 'unlock', 'lock'], true) && !$canWrite) {

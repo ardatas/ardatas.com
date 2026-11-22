@@ -90,7 +90,7 @@
     },
     {
       "id": "links-board",
-      "decision": "Use the homepage ribbon and navbar with pastel folded post-its. Set link titles in bold Caveat and unfold newly saved notes using PaperCrumple.",
+      "decision": "Use the homepage ribbon and navbar with pastel folded post-its. Set link titles in bold Caveat and unfold newly saved notes using PaperCrumple. Movement across the sheet flexes it, and visitors can drag notes into their own arrangement.",
       "source": "src/links.css"
     }
   ],

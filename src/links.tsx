@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Bookmark, LockKeyhole, Pencil, Plus, X } from 'lucide-react';
+import { useNoteMovement } from '../components/links/use-note-movement';
 import { printNote } from '../components/links/print-note';
 import '../components/links/PaperCrumple.css';
 import './links.css';
@@ -12,7 +13,7 @@ function PaperFallback({ onError }: { onError: () => void }) {
 const PaperCrumple = lazy(() => import('../components/links/PaperCrumple.jsx')
   .catch(() => ({ default: PaperFallback })));
 type Note = { id: string; seq: number; revision: number; title: string; url: string; description: string };
-type Playback = { id: string; kind: 'crumple' | 'unfold' };
+type Playback = { id: string; kind: 'gesture' | 'crumple' | 'unfold' };
 type Draft = Pick<Note, 'id' | 'title' | 'url' | 'description'> & { revision?: number };
 const newDraft = (): Draft => ({ id: crypto.randomUUID(), title: '', url: '', description: '' });
 
@@ -39,14 +40,18 @@ function hostname(url: string) {
   catch { return 'Saved link'; }
 }
 
-function PostIt({ note, playback, play, stop, edit }: {
-  note: Note; playback?: Playback; play: () => void; stop: () => void; edit?: () => void;
+function PostIt({ note, index, playback, play, stop, edit }: {
+  note: Note; index: number; playback?: Playback; play: (kind: 'gesture' | 'crumple') => void; stop: () => void; edit?: () => void;
 }) {
   const sheet = useRef<HTMLDivElement>(null);
+  const paperUnavailable = useRef(false);
+  const movement = useNoteMovement(note.id, index, () => {
+    if (!paperUnavailable.current && playback?.kind !== 'gesture') play('gesture');
+  });
   const [print, setPrint] = useState<ReturnType<typeof printNote> | null>(null);
   useEffect(() => {
     if (!playback) { setPrint(null); return; }
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { stop(); return; }
+    if (paperUnavailable.current || matchMedia('(prefers-reduced-motion: reduce)').matches) { stop(); return; }
     let current = true;
     document.fonts.ready.then(() => {
       if (!current || !sheet.current) return;
@@ -54,7 +59,7 @@ function PostIt({ note, playback, play, stop, edit }: {
     });
     return () => { current = false; };
   }, [playback]);
-  return <li className="note-slot" data-tone={(note.seq - 1) % 4} data-enter={playback?.kind === 'unfold' || undefined}>
+  return <li ref={movement.slot} {...movement.events} className="note-slot" data-tone={(note.seq - 1) % 4} data-enter={playback?.kind === 'unfold' || undefined}>
     <div className="note-sheet" ref={sheet}>
       <div className="note-top"><span className="note-host" data-print>{hostname(note.url)}</span>
         {edit && <button className="icon-btn" type="button" aria-label={'Edit ' + note.title} onClick={edit}><Pencil size={15}/></button>}
@@ -63,11 +68,11 @@ function PostIt({ note, playback, play, stop, edit }: {
         <span data-print>{note.title}</span><span className="note-arrow" aria-hidden="true" data-print>↗</span>
       </a>
       {note.description && <p className="note-description" data-print>{note.description}</p>}
-      <button className="paper-corner" type="button" title="Crumple note" aria-label={'Crumple ' + note.title} onClick={play} />
+      <button className="paper-corner" type="button" title="Drag to move. Arrow keys move, Home resets." aria-label={'Move ' + note.title + '. Arrow keys to move, Home to reset.'} onKeyDown={movement.keyboard} onClick={() => play('crumple')} />
     </div>
     {playback && print && <div className="note-motion" aria-hidden="true"><Suspense fallback={null}>
       <PaperCrumple {...print} alt="" sceneHeight={print.height} detail={32} releaseDuration={0.77}
-        disabled playback={playback.kind} onPlaybackEnd={stop} onError={stop} />
+        disabled gesture={movement.gesture.current} playback={playback.kind} onPlaybackEnd={stop} onError={() => { paperUnavailable.current = true; stop(); }} />
     </Suspense></div>}
   </li>;
 }
@@ -177,10 +182,10 @@ function LinksBoard() {
     {!draft && error && <p className="board-error" role="alert">{error}</p>}
     <span role="status" className="sr-only">{status}</span>
     {notes.length === 0 && <p className="empty-board">Save your first link with “New note”.</p>}
-    <ul className="note-grid">{notes.map(note => <PostIt key={note.id} note={note}
+    <ul className="note-grid">{notes.map((note, index) => <PostIt key={note.id} note={note} index={index}
       playback={playback?.id === note.id ? playback : undefined}
       stop={() => setPlayback(active => active?.id === note.id ? undefined : active)}
-      play={() => setPlayback({ id: note.id, kind: 'crumple' })}
+      play={kind => setPlayback(active => active?.id === note.id && active.kind === kind ? active : { id: note.id, kind })}
       edit={canWrite ? () => openEditor(note) : undefined}/>)}</ul>
     {draft && <Editor key={draft.id} initial={draft} canWrite={canWrite} unlock={password => submit('unlock', { password })} busy={busy} error={error} close={closeEditor}
       save={value => submit(value.revision ? 'edit' : 'create', value)} remove={value => submit('delete', value)}/>}

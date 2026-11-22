@@ -35,7 +35,7 @@ PYTHONPATH=src python3 -m unittest discover -s tests -p 'test_*.py'
 
 ## Saved links
 
-The navbar opens the public saved-links board at `/links`. Adding, editing, and removing notes requires the board password. Its endpoint uses PDO SQLite and supports the PHP 7.1.33 runtime on the host as well as PHP 8. On cPanel,
+The navbar opens the public saved-links board at `/links`. Adding, editing, and removing notes requires the board password. The endpoint requires PHP 8.5.13 or newer with PDO SQLite. Both hosted domains inherit the cPanel account’s PHP 8.5 selection. On cPanel,
 the board stores `board.sqlite` and `password.hash` in
 `/home/ardatas/.ardatas-links/`, outside `public_html`. Create the directory
 with mode 0700 and install a PHP `password_hash` (bcrypt) verifier as

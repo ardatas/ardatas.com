@@ -45,14 +45,20 @@
 .board-counter { gap: 5px; }
 .board-head h1 { margin: 3px 0 0; }
 .board-actions { gap: 6px; }
-.note-grid { list-style: none; padding: 0; margin: 28px 0 10px; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 245px), 1fr)); gap: 24px 20px; align-items: start; }
-.note-slot { --paper: #fff0a8; position: relative; min-width: 0; }
+.note-grid { isolation: isolate; position: relative; min-height: 360px; align-content: start; list-style: none; padding: 0; margin: 28px 0 10px; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 245px), 1fr)); gap: 24px 20px; align-items: start; }
+.note-slot { --paper: #fff0a8; position: relative; translate: var(--note-x, 0px) var(--note-y, 0px); touch-action: pinch-zoom; user-select: none; cursor: grab; min-width: 0; }
+.note-slot[data-dragging], .note-slot[data-dragging] * { cursor: grabbing; }
 .note-slot[data-tone="1"] { --paper: #d9eed8; }
 .note-slot[data-tone="2"] { --paper: #f9d8c7; }
 .note-slot[data-tone="3"] { --paper: #e6e0f5; }
 .note-sheet {
   position: relative; min-height: 218px; padding: 14px 21px 40px; border-radius: 2px 2px 14px 2px;
   background-image: linear-gradient(to bottom, #ffffff24 0, transparent 24%, #10273e04 100%);
+}
+.note-sheet::after {
+  content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  opacity: var(--flex, 0); transition: opacity 100ms ease-out;
+  background: conic-gradient(from 28deg at 60% 44%, transparent 0 21%, #fff7 24%, transparent 27% 55%, #273e531f 58%, transparent 66%);
 }
 .note-top { margin-bottom: 22px; }
 .note-host { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -68,7 +74,8 @@
 .paper-corner:hover { width: 40px; height: 40px; }
 .note-motion { position: absolute; inset: 0; pointer-events: none; }
 .note-motion .paper-crumple:not([data-status="ready"]) { visibility: hidden; }
-.note-slot:has(.paper-crumple[data-status="ready"]) .note-sheet { opacity: 0; }
+.note-slot:has(.paper-crumple[data-status="ready"]:not([data-flat="true"])) .note-sheet { opacity: 0; }
+.note-motion .paper-crumple[data-flat="true"] { visibility: hidden; }
 .note-slot[data-enter] { animation: pin-note .42s cubic-bezier(.19,.8,.23,1) both; }
 @keyframes pin-note { from { opacity: 0; transform: translateY(-15px) rotate(-2deg) scale(.96); } to { opacity: 1; transform: none; } }
 .note-editor {
