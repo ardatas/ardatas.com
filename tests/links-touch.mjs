@@ -10,19 +10,23 @@ try {
   await page.goto(new URL('/links/', process.env.LINKS_TEST_URL || 'http://127.0.0.1:4188').href);
   const card = page.locator('.note-slot');
   const title = card.getByRole('link');
+  await title.waitFor();
+  await page.waitForLoadState('networkidle');
+  await page.evaluate(() => document.fonts.ready);
   const { x, y } = await title.boundingBox();
-  const before = await card.boundingBox();
+  const position = () => card.evaluate(el => el.getBoundingClientRect().top - el.parentElement.getBoundingClientRect().top);
+  const before = await position();
   const session = await context.newCDPSession(page);
   await session.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: x + 8, y: y + 8 }] });
   for (const dy of [15, 40, 60]) {
     await session.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: x + 8, y: y + 8 + dy }] });
   }
   await session.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
-  const after = await card.boundingBox();
-  assert.ok(after.y > before.y + 40, 'the note follows a touch drag that starts on its title');
+  const after = await position();
+  assert.ok(after > before + 40, 'the note follows a touch drag that starts on its title');
   assert.equal(context.pages().length, 1, 'dragging the title must not activate its link');
   await page.reload();
-  assert.ok(Math.abs((await card.boundingBox()).y - after.y) < 2, 'the dropped position survives reload');
+  assert.ok(Math.abs(await position() - after) < 2, 'the dropped position survives reload');
 } finally {
   await browser.close();
 }
