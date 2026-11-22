@@ -52,6 +52,17 @@ class LinksBoardTest(unittest.TestCase):
     def new_browser():
         return urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
 
+    def test_unlock_cookie_is_scoped_to_board(self):
+        request = urllib.request.Request(self.url, data=json.dumps({
+            "action": "unlock", "password": self.password,
+        }).encode(), headers={"Content-Type": "application/json", "X-Links-Board": "1"})
+        with self.browser.open(request) as response:
+            cookies = response.headers.get_all("Set-Cookie") or []
+            self.assertTrue(json.load(response)["canWrite"])
+        cookie = next(value.lower() for value in cookies if value.startswith("ardatas_links="))
+        for attribute in ("path=/links", "httponly", "samesite=strict"):
+            self.assertIn(attribute, cookie)
+
     def call(self, action=None, *, browser=None, board_header=True, **fields):
         request = urllib.request.Request(self.url)
         if action:

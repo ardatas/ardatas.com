@@ -8,8 +8,10 @@ ini_set('display_errors', '0');
 umask(0077);
 
 function reply(int $status, array $body): void {
+    $json = json_encode($body, JSON_UNESCAPED_SLASHES);
+    if ($json === false) throw new RuntimeException('Invalid board response');
     http_response_code($status);
-    echo json_encode($body, JSON_THROW_ON_ERROR | JSON_UNESCAPED_SLASHES);
+    echo $json;
     exit;
 }
 
@@ -69,7 +71,14 @@ try {
     ini_set('session.use_strict_mode', '1');
     session_name('ardatas_links');
     $local = PHP_SAPI === 'cli-server' && in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1'], true);
-    session_set_cookie_params(['path' => '/links', 'httponly' => true, 'samesite' => 'Strict', 'secure' => !$local]);
+    // PHP 7.1 emits the path verbatim and has no separate SameSite setting.
+    $cookiePath = '/links';
+    if (PHP_VERSION_ID < 70300) {
+        $cookiePath .= '; SameSite=Strict';
+    } else {
+        ini_set('session.cookie_samesite', 'Strict');
+    }
+    session_set_cookie_params(0, $cookiePath, '', !$local, true);
     if (($method === 'POST' || isset($_COOKIE[session_name()])) && !session_start()) {
         throw new RuntimeException('Session unavailable');
     }
@@ -77,7 +86,7 @@ try {
     if ($action === 'lock') {
         $_SESSION = [];
         session_destroy();
-        setcookie(session_name(), '', ['expires' => 1, 'path' => '/links', 'httponly' => true, 'samesite' => 'Strict', 'secure' => !$local]);
+        setcookie(session_name(), '', 1, '/links', '', !$local, true);
     }
     $canWrite = ($_SESSION['until'] ?? 0) > time();
     if (!in_array($action, ['list', 'unlock', 'lock'], true) && !$canWrite) {
@@ -114,7 +123,7 @@ try {
             $url = field($input, 'url', 2048);
             $description = field($input, 'description', 2400, false);
             if (!filter_var($url, FILTER_VALIDATE_URL) || !in_array(strtolower(parse_url($url, PHP_URL_SCHEME)), ['http', 'https'], true)
-                || str_contains($url, '\\') || parse_url($url, PHP_URL_USER) !== null) {
+                || strpos($url, '\\') !== false || parse_url($url, PHP_URL_USER) !== null) {
                 failRequest(422, 'Enter an http or https link without sign-in details.');
             }
             if ($action === 'create') {
