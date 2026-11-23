@@ -1,0 +1,18 @@
+{
+  "icons": {
+    "Label": "🏷️", "Book": "📚", "Notebook": "📓", "Bookmark": "🔖", "Pencil": "✏️",
+    "Idea": "💡", "Computer": "💻", "Globe": "🌍", "Science": "🔬", "Brain": "🧠",
+    "Art": "🎨", "Music": "🎵", "Camera": "📷", "Film": "🎬", "Headphones": "🎧",
+    "Tools": "🛠️", "Rocket": "🚀", "Star": "⭐", "Heart": "❤️", "Leaf": "🌿",
+    "Compass": "🧭", "Map": "🗺️", "Coffee": "☕", "Food": "🍎", "Sport": "⚽",
+    "Calendar": "📅", "Briefcase": "💼", "Chart": "📊", "Puzzle": "🧩", "Graduation": "🎓"
+  },
+  "colours": {
+    "Butter": "#fff0a8", "Lemon": "#f6f59b", "Honey": "#f4d77f", "Vanilla": "#fff2cc", "Sand": "#ead9b7",
+    "Apricot": "#ffd49f", "Peach": "#f9d8c7", "Coral": "#f7b5a5", "Blush": "#ffdce3", "Rose": "#f2b6c8",
+    "Petal": "#f9c8e5", "Orchid": "#edc1ec", "Mauve": "#d9b9d8", "Lilac": "#e6e0f5", "Lavender": "#d3c3ef",
+    "Periwinkle": "#c8cff7", "Cornflower": "#b5cef3", "Sky": "#c4e4fa", "Ice": "#e2f4fa", "Aqua": "#b5e9ec",
+    "Seafoam": "#bee9dc", "Mint": "#d9eed8", "Sage": "#c3d9b8", "Pistachio": "#dbe9ae", "Lime": "#eff3ad",
+    "Linen": "#f5ecdd", "Oat": "#e6d4c8", "Clay": "#dfbcae", "Mist": "#dce3e8", "Slate": "#c0d0dc"
+  }
+}

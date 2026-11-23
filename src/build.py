@@ -291,5 +291,5 @@ for filename, server_render in [("board-view.php", True), ("index.html", False)]
     if server_render:
         page = "<?php if (!isset($board)) { http_response_code(404); exit; } ?>\n" + page
     write_output("\n".join(line.rstrip() for line in page.splitlines()) + "\n", "links", filename)
-for filename in ("api.php", "board.php", "index.php", ".htaccess"):
+for filename in ("api.php", "board.php", "index.php", ".htaccess", "tag-options.json"):
     write_output((Path(script_path).parent / "server/links" / filename).read_text(), "links", filename)

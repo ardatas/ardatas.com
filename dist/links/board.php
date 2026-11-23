@@ -31,10 +31,10 @@ function database(string $dir): PDO {
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         PDO::ATTR_TIMEOUT => 5,
     ]);
-    // Established boards serve public reads without acquiring a database write lock.
-    if ($db->query("SELECT 1 FROM sqlite_master WHERE type='table' AND name='notes'")->fetchColumn()) return $db;
-    $db->exec('CREATE TABLE IF NOT EXISTS attempts (ip TEXT PRIMARY KEY, started INTEGER, count INTEGER)');
+    $db->exec('PRAGMA foreign_keys = ON');
+    if ((int)$db->query('PRAGMA user_version')->fetchColumn() >= 1) return $db;
     $db->exec('BEGIN IMMEDIATE');
+    $db->exec('CREATE TABLE IF NOT EXISTS attempts (ip TEXT PRIMARY KEY, started INTEGER, count INTEGER)');
     if (!$db->query("SELECT 1 FROM sqlite_master WHERE type='table' AND name='notes'")->fetchColumn()) {
         $db->exec('CREATE TABLE notes (seq INTEGER PRIMARY KEY, id TEXT UNIQUE NOT NULL,
             title TEXT NOT NULL, url TEXT NOT NULL, description TEXT NOT NULL, revision INTEGER NOT NULL DEFAULT 1)');
@@ -47,11 +47,18 @@ function database(string $dir): PDO {
             $insert->execute(array_merge([bin2hex(random_bytes(16))], $note));
         }
     }
+    if ((int)$db->query('PRAGMA user_version')->fetchColumn() < 1) {
+        $db->exec('CREATE TABLE tags (id TEXT PRIMARY KEY, name TEXT NOT NULL COLLATE NOCASE UNIQUE,
+            icon TEXT NOT NULL, colour TEXT NOT NULL)');
+        $db->exec('ALTER TABLE notes ADD COLUMN tagId TEXT REFERENCES tags(id)');
+        $db->exec('PRAGMA user_version = 1');
+    }
     $db->exec('COMMIT');
     return $db;
 }
 
 function boardSnapshot(PDO $db): array {
-    $notes = $db->query('SELECT id,title,url,description,revision,seq FROM notes ORDER BY seq DESC')->fetchAll();
-    return ['notes' => $notes, 'canWrite' => boardCanWrite()];
+    $notes = $db->query('SELECT id,title,url,description,revision,seq,tagId FROM notes ORDER BY seq DESC')->fetchAll();
+    $tags = $db->query('SELECT id,name,icon,colour FROM tags ORDER BY name')->fetchAll();
+    return ['notes' => $notes, 'tags' => $tags, 'canWrite' => boardCanWrite()];
 }

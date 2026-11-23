@@ -73,6 +73,23 @@ try {
         $db->prepare('DELETE FROM attempts WHERE ip=?')->execute([$ip]);
         session_regenerate_id(true);
         $_SESSION['until'] = time() + 12 * 3600;
+    } elseif ($action === 'createTag') {
+        $id = field($input, 'id', 36);
+        $name = field($input, 'name', 160);
+        if (!preg_match('/^[a-f0-9-]{32,36}$/D', $id)) failRequest(422, 'Invalid tag.');
+        $options = json_decode(file_get_contents(__DIR__ . '/tag-options.json'), true, 512, JSON_THROW_ON_ERROR);
+        $icon = field($input, 'icon', 32);
+        $colour = field($input, 'colour', 7);
+        if (!in_array($icon, $options['icons'], true) || !in_array($colour, $options['colours'], true)) {
+            failRequest(422, 'Choose an icon and a notebook colour from the palette.');
+        }
+        $insert = $db->prepare('INSERT OR IGNORE INTO tags (id,name,icon,colour) VALUES (?,?,?,?)');
+        $insert->execute([$id, $name, $icon, $colour]);
+        if (!$insert->rowCount()) {
+            $retry = $db->prepare('SELECT 1 FROM tags WHERE id=? AND name=? COLLATE BINARY AND icon=? AND colour=?');
+            $retry->execute([$id, $name, $icon, $colour]);
+            if (!$retry->fetchColumn()) failRequest(409, 'That tag already exists. Choose another name.');
+        }
     } elseif (!in_array($action, ['list', 'lock'], true)) {
         $id = field($input, 'id', 36);
         if (!preg_match('/^[a-f0-9-]{32,36}$/D', $id)) failRequest(422, 'Invalid note.');
@@ -84,13 +101,20 @@ try {
                 || strpos($url, '\\') !== false || parse_url($url, PHP_URL_USER) !== null) {
                 failRequest(422, 'Enter an http or https link without sign-in details.');
             }
+            $tagId = $input['tagId'] ?? null;
+            if ($tagId !== null) {
+                if (!is_string($tagId)) failRequest(422, 'Choose a saved tag.');
+                $check = $db->prepare('SELECT 1 FROM tags WHERE id=?');
+                $check->execute([$tagId]);
+                if (!$check->fetchColumn()) failRequest(422, 'Choose a saved tag.');
+            }
             if ($action === 'create') {
                 // A retried save with the same client-generated ID creates one note.
-                $db->prepare('INSERT OR IGNORE INTO notes (title,url,description,id) VALUES (?,?,?,?)')
-                    ->execute([$title, $url, $description, $id]);
+                $db->prepare('INSERT OR IGNORE INTO notes (title,url,description,id,tagId) VALUES (?,?,?,?,?)')
+                    ->execute([$title, $url, $description, $id, $tagId]);
             } else {
-                $query = $db->prepare('UPDATE notes SET title=?, url=?, description=?, revision=revision+1 WHERE id=? AND revision=?');
-                $query->execute([$title, $url, $description, $id, (int)($input['revision'] ?? 0)]);
+                $query = $db->prepare('UPDATE notes SET title=?, url=?, description=?, tagId=CASE WHEN ? THEN ? ELSE tagId END, revision=revision+1 WHERE id=? AND revision=?');
+                $query->execute([$title, $url, $description, (int)array_key_exists('tagId', $input), $tagId, $id, (int)($input['revision'] ?? 0)]);
             }
         } elseif ($action === 'delete') {
             $query = $db->prepare('DELETE FROM notes WHERE id=? AND revision=?');

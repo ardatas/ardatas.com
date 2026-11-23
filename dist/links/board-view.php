@@ -36,8 +36,8 @@
 
 
     <meta name="referrer" content="no-referrer" />
-    <link rel="stylesheet" href="/links/links.css?v=536a9201405c" />
-    <script type="module" src="/links/links.js?v=259f4303e2be"></script>
+    <link rel="stylesheet" href="/links/links.css?v=c7f1889e3eda" />
+    <script type="module" src="/links/links.js?v=9921e6b24b5c"></script>
 
   </head>
   <body id="top" class="text-[#101114]">
@@ -93,10 +93,12 @@
           </header>
           <?php if (!$board['notes']): ?><p class="empty-board">Save your first link with “New note”.</p><?php endif; ?>
           <ul class="note-grid">
-            <?php foreach ($board['notes'] as $note): ?>
-              <li class="note-slot" data-tone="<?= ((int)$note['seq'] - 1) % 4 ?>">
+            <?php $tagsById = array_column($board['tags'], null, 'id'); ?>
+            <?php foreach ($board['notes'] as $note): $tag = $tagsById[$note['tagId'] ?? ''] ?? null; ?>
+              <li class="note-slot" data-tone="<?= ((int)$note['seq'] - 1) % 4 ?>"<?php if ($tag): ?> style="--paper: <?= escapeBoardText($tag['colour']) ?>"<?php endif; ?>>
                 <div class="note-sheet">
                   <div class="note-top"><span class="note-host"><?= escapeBoardText(preg_replace('/^www\./i', '', (string)parse_url($note['url'], PHP_URL_HOST))) ?></span></div>
+                  <?php if ($tag): ?><div class="note-tag"><span aria-hidden="true"><?= escapeBoardText($tag['icon']) ?></span> <?= escapeBoardText($tag['name']) ?></div><?php endif; ?>
                   <a class="note-link" href="<?= escapeBoardText($note['url']) ?>" target="_blank" rel="noopener noreferrer"><span><?= escapeBoardText($note['title']) ?></span><span class="note-arrow" aria-hidden="true">↗</span></a>
                   <?php if ($note['description'] !== ''): ?><p class="note-description"><?= escapeBoardText($note['description']) ?></p><?php endif; ?>
                   <span class="paper-corner" aria-hidden="true"></span>

@@ -7,6 +7,7 @@ import re
 import secrets
 import shutil
 import socket
+import sqlite3
 import subprocess
 import tempfile
 import time
@@ -22,6 +23,7 @@ class LinksBoardTest(unittest.TestCase):
     def setUp(self):
         private = tempfile.TemporaryDirectory()
         self.addCleanup(private.cleanup)
+        self.db_path = Path(private.name, "board.sqlite")
         self.password = secrets.token_urlsafe()
         verifier = subprocess.check_output(
             ["php", "-r", "echo password_hash(stream_get_contents(STDIN), PASSWORD_DEFAULT);"],
@@ -107,7 +109,7 @@ class LinksBoardTest(unittest.TestCase):
         notes = self.call("create", **note)[1]["notes"]
         self.assertEqual(sum(n["id"] == note["id"] for n in notes), 1)
         other = self.new_browser()
-        self.assertEqual(self.call(browser=other), (200, {"notes": notes, "canWrite": False}))
+        self.assertEqual(self.call(browser=other), (200, {"notes": notes, "tags": [], "canWrite": False}))
         for action in ("create", "edit", "delete"):
             self.assertEqual(self.call(action, browser=other, revision=1, **note)[0], 401)
         self.assertEqual(self.call("unlock", browser=other, password=self.password)[1]["notes"], notes)
@@ -120,3 +122,42 @@ class LinksBoardTest(unittest.TestCase):
         self.assertEqual(self.call("lock")[0], 200)
         self.assertFalse(self.call()[1]["canWrite"])
         self.assertEqual(self.call("create", **note)[0], 401)
+
+    def test_existing_database_migrates_and_tags_are_shared(self):
+        # Recreate the pre-tag schema with one user's note.
+        self.db_path.unlink()
+        with sqlite3.connect(self.db_path) as db:
+            db.execute("CREATE TABLE notes (seq INTEGER PRIMARY KEY, id TEXT UNIQUE NOT NULL, title TEXT, "
+                       "url TEXT, description TEXT, revision INTEGER NOT NULL DEFAULT 1)")
+            db.execute("INSERT INTO notes(id,title,url,description) VALUES (?,?,?,?)",
+                       ("a" * 32, "Original", "https://example.org", "Saved earlier"))
+        board = self.call()[1]
+        self.assertEqual(len(board["notes"]), 1)
+        note = board["notes"][0]
+        self.assertIsNone(note["tagId"])
+        options = json.loads((ROOT / "server/links/tag-options.json").read_text())
+        self.assertEqual(len(set(options["icons"].values())), 30)
+        self.assertEqual(len(set(options["colours"].values())), 30)
+        tag = dict(id=secrets.token_hex(16), name="R&D <study>",
+                   icon=options["icons"]["Graduation"], colour=options["colours"]["Slate"])
+        self.assertEqual(self.call("createTag", **tag)[0], 401)
+        self.call("unlock", password=self.password)
+        for key in ["icon", "colour"]:
+            self.assertEqual(self.call("createTag", **(tag | {key: "unknown"}))[0], 422)
+        for _ in range(2):
+            self.assertEqual(self.call("createTag", **tag)[1]["tags"], [tag])
+        self.assertEqual(self.call("createTag", **(tag | {"id": secrets.token_hex(16)}))[0], 409)
+        self.assertEqual(self.call("edit", **(note | {"tagId": "unknown"}))[0], 422)
+        self.assertEqual(self.call("edit", **(note | {"tagId": tag["id"]}))[0], 200)
+        other = self.new_browser()
+        self.assertEqual(self.call(browser=other)[1]["notes"][0]["tagId"], tag["id"])
+        with other.open(self.url.removesuffix("api.php")) as response:
+            page = response.read().decode()
+        self.assertIn(html.escape(tag["name"]), page)
+        self.assertIn("--paper: " + tag["colour"], page)
+        self.assertIn(tag["icon"], page)
+        del note["tagId"]
+        saved = self.call("edit", **(note | {"revision": 2}))[1]["notes"][0]
+        self.assertEqual(saved["tagId"], tag["id"])
+        self.assertIsNone(self.call("edit", **(saved | {"tagId": None}))[1]["notes"][0]["tagId"])
+        self.assertEqual(self.call(browser=other)[1]["tags"], [tag])
