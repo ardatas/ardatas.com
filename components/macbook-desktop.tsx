@@ -19,6 +19,7 @@ const apps: DockApp[] = [
   { id: "claude", name: "Claude" },
   { id: "vscode", name: "Visual Studio Code", running: true },
   { id: "vibe", name: "Mistral Vibe", running: true },
+  { id: "zed", name: "Zed" },
   { id: "teams", name: "Microsoft Teams" },
   { id: "slack", name: "Slack", running: true },
   { id: "whatsapp", name: "WhatsApp", badge: 35, running: true },
