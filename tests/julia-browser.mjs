@@ -12,7 +12,7 @@ for (const [name, engine] of [['Chromium', chromium], ['WebKit', webkit]]) {
   await page.goto(`${base}/julia/`);
   await page.waitForFunction(() => Number(document.querySelector('[data-julia]').dataset.frames) > 0);
   assert.equal(await page.locator('[data-julia]').getAttribute('data-renderer'), 'simd');
-  const image = () => page.locator('canvas').evaluate(canvas => canvas.toDataURL());
+  const image = () => page.locator('[data-julia] canvas').evaluate(canvas => canvas.toDataURL());
   const initial = await image();
   assert.equal(await page.locator('[data-param=cr]').inputValue(), '-0.5125');
   const frames = () => page.locator('[data-julia]').evaluate(el => Number(el.dataset.frames));
@@ -20,13 +20,13 @@ for (const [name, engine] of [['Chromium', chromium], ['WebKit', webkit]]) {
     const before = await frames();
     await action();
     await page.waitForFunction(n => Number(document.querySelector('[data-julia]').dataset.frames) > n, before);
-    await page.waitForFunction(() => document.querySelector('canvas').width === 800);
+    await page.waitForFunction(() => document.querySelector('[data-julia] canvas').width === 800);
   }
 
   await changed(() => page.locator('[data-param=cr]').fill('-0.8'));
   assert.notEqual(await image(), initial);
   await changed(() => page.locator('[data-param=color]').check());
-  assert.equal(await page.locator('canvas').evaluate(canvas => {
+  assert.equal(await page.locator('[data-julia] canvas').evaluate(canvas => {
     const bytes = canvas.getContext('2d').getImageData(0, 0, canvas.width, canvas.height).data;
     for (let i = 0; i < bytes.length; i += 4) if (bytes[i] !== bytes[i+1]) return true;
     return false;
@@ -35,7 +35,7 @@ for (const [name, engine] of [['Chromium', chromium], ['WebKit', webkit]]) {
   assert.equal(await page.locator('[data-param=iterations]').getAttribute('aria-invalid'), 'true');
   await changed(() => page.locator('[data-action=reset]').click());
 
-  const box = await page.locator('canvas').boundingBox();
+  const box = await page.locator('[data-julia] canvas').boundingBox();
   await changed(async () => {
     await page.mouse.move(box.x + box.width * 0.4, box.y + box.height * 0.5);
     await page.mouse.down();
@@ -44,22 +44,22 @@ for (const [name, engine] of [['Chromium', chromium], ['WebKit', webkit]]) {
   });
   assert.ok(Number(await page.locator('[data-param=sr]').inputValue()) < -2);
   await changed(() => page.locator('[data-action=reset]').click());
-  await page.locator('canvas').focus();
+  await page.locator('[data-julia] canvas').focus();
   await changed(async () => {
     await page.mouse.move(box.x + box.width * 0.5, box.y + box.height * 0.5);
     await page.mouse.wheel(0, -120);
   });
   assert.ok(Number(await page.locator('[data-param=res]').inputValue()) < 0.005);
-  await page.locator('canvas').press('Escape');
-  assert.equal(await page.locator('canvas').evaluate(el => document.activeElement === el), false);
+  await page.locator('[data-julia] canvas').press('Escape');
+  assert.equal(await page.locator('[data-julia] canvas').evaluate(el => document.activeElement === el), false);
   await changed(() => page.locator('[data-action=reset]').click());
   assert.equal(await image(), initial);
 
   await changed(() => page.locator('[data-action=zoom-in]').click());
   assert.notEqual(await image(), initial);
-  await changed(() => page.locator('canvas').press('Home'));
+  await changed(() => page.locator('[data-julia] canvas').press('Home'));
   assert.equal(await image(), initial);
-  await changed(() => page.locator('canvas').press('ArrowRight'));
+  await changed(() => page.locator('[data-julia] canvas').press('ArrowRight'));
   assert.notEqual(await image(), initial);
   await changed(() => page.locator('[data-action=reset]').click());
 
@@ -127,17 +127,12 @@ for (const [name, engine] of [['Chromium', chromium], ['WebKit', webkit]]) {
   assert.equal(await image(), initial);
   await page.unroute('**/renderer-simd.wasm*');
 
-  // The homepage presents Julia using the same compact card as other projects.
+  // Follow the same folder path a visitor uses on the portfolio.
   await page.goto(`${base}/#projects`);
   assert.equal(await page.locator('[data-julia]').count(), 0);
-  const cards = page.locator('#projects a.group');
-  assert.equal(await cards.count(), 3);
-  const sizes = await cards.evaluateAll(elements => elements.map(element => {
-    const { width, height } = element.getBoundingClientRect();
-    return { width, height };
-  }));
-  assert.deepEqual(sizes[2], sizes[0]);
-  await page.locator('#projects a[href="/julia/"]').click();
+  await page.getByRole('button', { name: /^Open Projects,/ }).click();
+  await page.getByRole('button', { name: /^Open Julia Set Explorer,/ }).click();
+  await page.getByRole('link', { name: 'Explore the Julia set' }).click();
   await page.waitForURL(`${base}/julia/`);
   await page.waitForFunction(() => document.querySelector('[data-julia]').dataset.frames);
   await page.locator('[data-action=animate]').click();
@@ -148,20 +143,22 @@ for (const [name, engine] of [['Chromium', chromium], ['WebKit', webkit]]) {
 
   const mobile = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, reducedMotion: 'reduce' });
   await mobile.goto(`${base}/#projects`);
-  assert.equal(await mobile.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
-  await mobile.locator('#projects a[href="/julia/"]').tap();
+  assert.equal(await mobile.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), true);
+  await mobile.getByRole('button', { name: /^Open Projects,/ }).tap();
+  await mobile.getByRole('button', { name: /^Open Julia Set Explorer,/ }).tap();
+  await mobile.getByRole('link', { name: 'Explore the Julia set' }).tap();
   await mobile.waitForURL(`${base}/julia/`);
   await mobile.waitForFunction(() => document.querySelector('[data-julia]').dataset.frames);
-  assert.equal(await mobile.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+  assert.equal(await mobile.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), true);
   assert.equal(await mobile.locator('[data-action=animate]').getAttribute('aria-pressed'), 'false');
   await mobile.locator('[data-action=touch]').tap();
-  assert.equal(await mobile.locator('canvas').evaluate(el => getComputedStyle(el).touchAction), 'none');
+  assert.equal(await mobile.locator('[data-julia] canvas').evaluate(el => getComputedStyle(el).touchAction), 'none');
   await mobile.locator('[data-action=touch]').tap();
-  assert.equal(await mobile.locator('canvas').evaluate(el => getComputedStyle(el).touchAction), 'pan-y');
+  assert.equal(await mobile.locator('[data-julia] canvas').evaluate(el => getComputedStyle(el).touchAction), 'pan-y');
   if (name === 'Chromium') {
     await mobile.locator('[data-action=touch]').tap();
-    await mobile.locator('canvas').scrollIntoViewIfNeeded();
-    const box = await mobile.locator('canvas').boundingBox();
+    await mobile.locator('[data-julia] canvas').scrollIntoViewIfNeeded();
+    const box = await mobile.locator('[data-julia] canvas').boundingBox();
     const x = box.x + box.width / 2, y = box.y + box.height / 2;
     const session = await mobile.context().newCDPSession(mobile);
     await session.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [
@@ -176,7 +173,7 @@ for (const [name, engine] of [['Chromium', chromium], ['WebKit', webkit]]) {
     await mobile.locator('[data-action=touch]').tap();
   }
   await mobile.setViewportSize({ width: 320, height: 700 });
-  assert.equal(await mobile.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+  assert.equal(await mobile.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), true);
   await mobile.setViewportSize({ width: 390, height: 844 });
   await mobile.screenshot({ path: `/tmp/julia-${name.toLowerCase()}-mobile.png`, fullPage: true });
   await browser.close();

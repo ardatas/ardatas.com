@@ -1,6 +1,6 @@
 .root {
   --foreground: var(--github-ink);
-  --background: #102b48;
+  --background: var(--github-paper);
   --text-secondary: var(--github-muted);
   --text-muted: var(--github-muted);
   --border-strong: #7191ac;

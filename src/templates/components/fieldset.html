@@ -1,9 +1,9 @@
 {% macro fieldset(title) %}
   <fieldset
-    class="notebook-panel border-t md:border border-solid border-[var(--notebook-frame)] min-w-0 p-1 md:p-4 pt-2"
+    class="notebook-panel border border-solid border-[var(--notebook-frame)] min-w-0 px-3 pb-3 pt-2 md:p-4"
   >
-    <legend class="ms-4 md:ms-0">
-      <h2 class="section-title mx-2 font-mono italic tracking-tight px-1">{{ title }}</h2>
+    <legend class="min-w-0 max-w-full">
+      <h2 class="section-title mx-1 md:mx-2 [overflow-wrap:anywhere] font-mono italic tracking-tight px-1">{{ title }}</h2>
     </legend>
     {{ caller() }}
   </fieldset>

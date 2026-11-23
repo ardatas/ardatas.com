@@ -3,13 +3,13 @@
 
 {% block content %}
   {% call fieldset("cat ~" + post.href) %}
-    <article>
+    <article class="[overflow-wrap:anywhere]">
       <h2 class="m-0 mb-1 text-4xl">{{ post.title }}</h2>
       <h3 class="italic text-xl m-0 font-normal">{{ post.summary }}</h3>
       <div class="h-4"></div>
     </article>
     <img src="{{ post.coverImage }}" class="mb-4 h-16 w-16 object-contain" alt="" />
-    <article>
+    <article class="[overflow-wrap:anywhere]">
       {{ post.content|safe }}
       {% if post.highlights %}
         <details class="mt-3">

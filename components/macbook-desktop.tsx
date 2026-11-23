@@ -99,7 +99,8 @@ export function MacbookDesktop({ files = [] }: { files?: HomeEntry[] }) {
           <div className="mac-lock-clock"><span>{now && dateFormat.format(now)}</span><strong>{time}</strong></div>
           <button ref={enter} className="mac-unlock" onClick={() => { setApp("Finder"); setFinder(null); setVisible(true); setLocked(false); }}>
             <b>Arda Taş</b>
-            <span>Press Enter to unlock ↵</span>
+            <span className="mac-unlock-key">Press Enter to unlock ↵</span>
+            <span className="mac-unlock-touch">Tap to unlock</span>
           </button>
         </div> : <>
           <MacOSMenuBar app={app} clock={now ? menuDate.format(now).replace(/,/g, "") + "  " + time : time}

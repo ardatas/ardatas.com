@@ -16,6 +16,7 @@
   --card-surface: rgb(234 244 255 / 26%);
   --inset-surface: rgb(247 251 255 / 46%);
   --floating-surface: rgb(247 251 255 / 82%);
+  --github-paper: #102b48;
   --github-surface: rgb(9 29 57 / 76%);
   --github-ink: #effaff;
   --github-muted: #c5e0ef;
@@ -26,17 +27,27 @@
   --github-level-4: #c3f4ff;
 }
 
+@media (max-width: 767px) {
+  :root {
+    --panel-surface: rgb(242 248 255 / 86%);
+    --card-surface: rgb(234 244 255 / 74%);
+    --floating-surface: rgb(247 251 255 / 95%);
+    --github-surface: var(--github-paper);
+  }
+}
+
 @media (prefers-reduced-transparency: reduce) {
   :root {
     --panel-surface: var(--notebook-paper);
     --card-surface: var(--notebook-card);
     --inset-surface: var(--notebook-inset);
     --floating-surface: var(--notebook-inset);
-    --github-surface: #112e50;
+    --github-surface: var(--github-paper);
   }
 }
 
 html {
+  color-scheme: light;
   scroll-behavior: smooth;
 }
 
@@ -292,6 +303,19 @@ article {
   @apply mt-0.5 text-xs text-[var(--notebook-muted)];
 }
 
+@media (max-width: 639px) {
+  .whoami-portrait { max-width: 12rem; }
+  .whoami-note { font-size: 1.5rem; }
+  .profile-row { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr); gap: 6px 10px; }
+  .profile-logo { width: 2.5rem; height: 2.5rem; }
+  .profile-copy { display: contents; }
+  .profile-copy > :first-child { grid-column: 2; align-self: center; }
+  .profile-copy > p { grid-column: 1 / -1; }
+  .profile-copy > p.mt-2 { margin-top: 2px; }
+  #contact :is(a, button), .links-footer .social-link { min-height: 44px; }
+  #contact a { display: inline-grid; place-items: center; min-width: 44px; }
+}
+
 .skill-panel {
   @apply border border-[var(--notebook-border)] bg-[var(--card-surface)] p-3 text-sm leading-5;
 }
@@ -532,7 +556,7 @@ article {
 }
 .project-name::-webkit-details-marker { display: none; }
 .project-name img { width: 30px; height: 30px; flex: none; }
-.project-name span { white-space: nowrap; }
+.project-name span { min-width: 0; overflow-wrap: anywhere; }
 .project-name::after {
   content: ""; width: 7px; height: 7px; margin-left: auto; flex: none;
   border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg);
@@ -632,7 +656,7 @@ article {
 .project-glass-entry.gf-root[data-open] { --gf-stack: 50px; }
 .project-row-name {
   display: flex; align-items: center; justify-content: space-between; gap: 6px;
-  flex: 1; min-height: 44px; text-align: left; white-space: nowrap;
+  flex: 1; min-width: 0; min-height: 44px; text-align: left; overflow-wrap: anywhere;
   font-size: 15px; font-weight: 600; cursor: pointer;
 }
 @container (max-width: 22rem) {

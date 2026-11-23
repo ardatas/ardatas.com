@@ -21,9 +21,9 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="/index.css?v=f8c9dbc12415" />
+    <link rel="stylesheet" href="/index.css?v=db9f24f6a5cc" />
 
-    <link rel="stylesheet" href="/site-path.css?v=224457820392" />
+    <link rel="stylesheet" href="/site-path.css?v=db66aeaf8a44" />
 
     <script src="/site-path.js?v=ccac3088c3db" defer></script>
 
@@ -43,7 +43,7 @@
   <body id="top" class="text-[#101114]">
 
     <div
-      class="flex min-h-screen flex-col max-w-5xl mx-auto px-4 py-4 sm:py-8 text-[15px] leading-5 font-normal tracking-[-0.005em] antialiased font-sans"
+      class="flex min-h-screen flex-col max-w-5xl mx-auto px-4 py-3 sm:py-8 text-[15px] leading-5 font-normal tracking-[-0.005em] antialiased font-sans"
     >
 
 

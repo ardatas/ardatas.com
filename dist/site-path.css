@@ -94,17 +94,13 @@ html { --portfolio-nav-clearance: 78px; scroll-padding-top: var(--portfolio-nav-
     white-space: nowrap;
   }
 }
-@media (max-width: 440px) {
-  #portfolio-path .nimbus-item[href^="https://"] .nimbus-label {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    clip-path: inset(50%);
-  }
-  #portfolio-path .nimbus-item[href^="https://"] {
-    flex-shrink: 0;
-    min-width: 26px;
-  }
+@media (max-width: 520px) {
+  #portfolio-path { width: 100%; }
+  #portfolio-path .nimbus-nav { display: flex; width: fit-content; margin-inline: auto; }
+  #portfolio-path .nimbus-item { flex: 1 1 auto; min-width: 44px; height: 44px; padding-inline: 6px; }
+  #portfolio-path .nimbus-label { max-width: 100%; }
+  /* On the longer paths, profile links are available together in the footer. */
+  #portfolio-path .nimbus-nav:has(a:nth-of-type(5)) .nimbus-item[target="_blank"] { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

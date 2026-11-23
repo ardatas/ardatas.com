@@ -67,8 +67,9 @@
 .julia-section:fullscreen { overflow-y: auto; padding: 24px; background: var(--j-paper); }
 .julia-section:fullscreen > fieldset { max-width: 1400px; margin: auto; }
 @media (pointer: coarse) {
-  .julia-section .julia-touch-toggle { display: inline-block; min-height: 40px; }
-  .julia-zoom button { min-height: 40px; min-width: 40px; }
+  .julia-section .julia-touch-toggle { display: inline-block; }
+  .julia-section button, .julia-actions > a, .julia-advanced summary { min-height: 44px; align-content: center; }
+  .julia-zoom button { min-width: 44px; }
 }
 @media (max-width: 680px) {
   .julia-heading { align-items: flex-start; flex-direction: column; gap: 10px; }
@@ -80,9 +81,9 @@
   .julia-control-title, .julia-animation { grid-column: 1 / -1; }
   .julia-parameter { grid-template-columns: 1fr; gap: 5px; }
   .julia-parameter label span { display: inline; margin-left: 4px; }
-  .julia-parameter input[type=number] { font-size: 16px; }
+  .julia-section input[type=number] { font-size: 16px; }
   .julia-pair { grid-template-columns: 1fr; }
-  .julia-controls > button { align-self: end; min-height: 40px; }
+  .julia-controls > button { align-self: end; }
   .julia-advanced-grid { grid-template-columns: 1fr 1fr; }
   .julia-section:fullscreen { padding: 8px; }
 }

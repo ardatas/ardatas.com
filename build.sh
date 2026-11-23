@@ -81,7 +81,7 @@ static() {
     cp -R public/macbook dist/macbook || fail
 
     mkdir -p dist/portrait || fail
-    cp public/portrait/arda-tiles.webp dist/portrait/ || fail
+    cp public/portrait/arda-tiles{,-mobile}.webp dist/portrait/ || fail
 
     echo "Copying the Julia explorer to dist/julia"
     mkdir -p dist/julia || fail
