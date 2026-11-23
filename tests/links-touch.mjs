@@ -1,55 +1,46 @@
-// Run against a built portfolio with the same Playwright module as julia-browser.mjs.
+// Run against the built static preview with the Playwright module used by julia-browser.mjs.
 import assert from 'node:assert/strict';
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const browser = await chromium.launch({ channel: process.env.CHROME_CHANNEL });
 try {
-  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, reducedMotion: 'reduce' });
   const page = await context.newPage();
-  const note = { id: 'touch-fixture', seq: 1, revision: 1, title: 'Touch fixture', url: 'https://example.org/', description: '' };
-  await page.route('**/links/api.php', route => route.fulfill({ json: { notes: [note], canWrite: false } }));
+  const tags = [{ id: 'a', name: 'Art', colour: '#f9d8c7', icon: '🎨' }];
+  const notes = ['First', 'Second', 'Third'].map((title, i) => ({
+    id: title, title, seq: 3 - i, revision: 1, tagId: i < 2 ? 'a' : null,
+    url: 'https://example.org/', description: i === 1 ? 'Long description. '.repeat(10) : '',
+  }));
+  await page.route('**/links/api.php', route => route.fulfill({ json: { tags, notes, canWrite: false } }));
+  await page.addInitScript(() => localStorage.setItem('links-position:First', '{"space":"page","x":1,"y":1}'));
   await page.goto(new URL('/links/', process.env.LINKS_TEST_URL || 'http://127.0.0.1:4188').href);
-  const card = page.locator('.note-slot').first();
-  const title = card.getByRole('link');
-  await title.waitFor();
-  await page.waitForLoadState('networkidle');
-  await page.evaluate(() => document.fonts.ready);
-  const start = await title.boundingBox();
-  const origin = await card.boundingBox();
-  const grab = { x: start.x + 8 - origin.x, y: start.y + 8 - origin.y };
+  const cards = page.locator('.note-slot');
+  await cards.first().waitFor();
+  assert.deepEqual(await page.locator('.note-group-title').allTextContents(), ['🎨 Art', 'Untagged']);
+  const handle = page.locator('[data-note-id="First"] .paper-corner');
+  await handle.scrollIntoViewIfNeeded();
+  const origin = await handle.boundingBox();
+  const other = await cards.nth(1).boundingBox();
   const session = await context.newCDPSession(page);
-  await session.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: start.x + 8, y: start.y + 8 }] });
-  for (const fraction of [0.2, 0.6, 1]) {
-    await session.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{
-      x: start.x + 8 + (3 - origin.x) * fraction,
-      y: start.y + 8 + (5 - origin.y) * fraction,
-    }] });
-  }
+  await session.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: origin.x + 8, y: origin.y + 8 }] });
+  await session.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: other.x + 14, y: other.y + 14 }] });
   await session.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
-  const after = await card.boundingBox();
-  assert.ok(Math.abs(after.x - 3) < 2 && Math.abs(after.y - 5) < 2, 'touch can drop a note in the page margin above the board');
-  assert.equal(context.pages().length, 1, 'dragging the title must not activate its link');
+  await page.waitForFunction(() => document.querySelector('.note-slot').dataset.noteId === 'Second');
+  assert.equal(context.pages().length, 1);
   await page.reload();
-  const handle = card.locator('button.paper-corner');
   await handle.waitFor();
-  const restored = await card.boundingBox();
-  assert.ok(Math.abs(restored.x - after.x) < 2 && Math.abs(restored.y - after.y) < 2, 'the page position survives reload');
-  assert.ok(await card.evaluate(el => el.contains(document.elementFromPoint(120, 45))), 'the placed note remains grabbable above the nav');
-
-  await page.setViewportSize({ width: 1440, height: 500 });
-  await handle.press('Home');
-  await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
-  const reset = await card.boundingBox();
-  const board = await page.locator('.board-desk').boundingBox();
-  assert.ok(reset.x >= board.x && reset.y >= board.y);
-  await page.mouse.move(reset.x + grab.x, reset.y + grab.y);
-  await page.mouse.down();
-  await page.mouse.move(1435, 496, { steps: 12 });
-  await page.waitForFunction(() => window.scrollY > 0 && window.innerHeight + window.scrollY >= document.body.offsetHeight - 2);
-  await page.mouse.up();
-  const dropped = await card.boundingBox();
-  assert.ok(dropped.x > board.x + board.width - dropped.width && dropped.y + dropped.height > 490,
-    'a note can reach the right page margin and footer on a scrolled page');
-  assert.ok(await card.evaluate(el => el.contains(document.elementFromPoint(1430, 485))), 'the note stays interactive outside the board');
+  assert.deepEqual(await cards.locator('.note-link span:first-child').allTextContents(), ['First', 'Second', 'Third']);
+  await handle.press('ArrowRight');
+  assert.equal(await cards.first().getAttribute('data-note-id'), 'Second');
+  for (const width of [320, 390, 768, 1280]) {
+    await page.setViewportSize({ width, height: 844 });
+    const boxes = await cards.evaluateAll(els => els.map(el => el.getBoundingClientRect().toJSON()));
+    boxes.forEach((a, i) => {
+      assert.ok(a.left >= 0 && a.right <= width);
+      for (const b of boxes.slice(i + 1)) {
+        assert.ok(a.right <= b.left || b.right <= a.left || a.bottom <= b.top || b.bottom <= a.top);
+      }
+    });
+  }
 } finally {
   await browser.close();
 }

@@ -73,7 +73,7 @@ try {
         $db->prepare('DELETE FROM attempts WHERE ip=?')->execute([$ip]);
         session_regenerate_id(true);
         $_SESSION['until'] = time() + 12 * 3600;
-    } elseif ($action === 'createTag') {
+    } elseif ($action === 'createTag' || $action === 'editTag') {
         $id = field($input, 'id', 36);
         $name = field($input, 'name', 160);
         if (!preg_match('/^[a-f0-9-]{32,36}$/D', $id)) failRequest(422, 'Invalid tag.');
@@ -83,13 +83,35 @@ try {
         if (!in_array($icon, $options['icons'], true) || !in_array($colour, $options['colours'], true)) {
             failRequest(422, 'Choose an icon and a notebook colour from the palette.');
         }
-        $insert = $db->prepare('INSERT OR IGNORE INTO tags (id,name,icon,colour) VALUES (?,?,?,?)');
-        $insert->execute([$id, $name, $icon, $colour]);
-        if (!$insert->rowCount()) {
-            $retry = $db->prepare('SELECT 1 FROM tags WHERE id=? AND name=? COLLATE BINARY AND icon=? AND colour=?');
-            $retry->execute([$id, $name, $icon, $colour]);
-            if (!$retry->fetchColumn()) failRequest(409, 'That tag already exists. Choose another name.');
+        if ($action === 'editTag') {
+            $update = $db->prepare('UPDATE OR IGNORE tags SET name=?, icon=?, colour=?, revision=revision+1 WHERE id=? AND revision=?');
+            $update->execute([$name, $icon, $colour, $id, (int)($input['revision'] ?? 0)]);
+            if (!$update->rowCount()) {
+                $duplicate = $db->prepare('SELECT 1 FROM tags WHERE name=? AND id<>?');
+                $duplicate->execute([$name, $id]);
+                if ($duplicate->fetchColumn()) failRequest(422, 'That name is already in use.');
+                failRequest(409, 'This tag changed. Reopen its settings.');
+            }
+        } else {
+            $insert = $db->prepare('INSERT OR IGNORE INTO tags (id,name,icon,colour) VALUES (?,?,?,?)');
+            $insert->execute([$id, $name, $icon, $colour]);
+            if (!$insert->rowCount()) {
+                $retry = $db->prepare('SELECT 1 FROM tags WHERE id=? AND name=? COLLATE BINARY AND icon=? AND colour=?');
+                $retry->execute([$id, $name, $icon, $colour]);
+                if (!$retry->fetchColumn()) failRequest(409, 'That tag already exists. Choose another name.');
+            }
         }
+    } elseif ($action === 'deleteTag') {
+        $id = field($input, 'id', 36);
+        $db->beginTransaction();
+        $db->prepare('UPDATE notes SET tagId=NULL, revision=revision+1 WHERE tagId=?')->execute([$id]);
+        $delete = $db->prepare('DELETE FROM tags WHERE id=? AND revision=?');
+        $delete->execute([$id, (int)($input['revision'] ?? 0)]);
+        if (!$delete->rowCount()) {
+            $db->rollBack();
+            failRequest(409, 'This tag changed. Reopen its settings.');
+        }
+        $db->commit();
     } elseif (!in_array($action, ['list', 'lock'], true)) {
         $id = field($input, 'id', 36);
         if (!preg_match('/^[a-f0-9-]{32,36}$/D', $id)) failRequest(422, 'Invalid note.');
@@ -101,6 +123,8 @@ try {
                 || strpos($url, '\\') !== false || parse_url($url, PHP_URL_USER) !== null) {
                 failRequest(422, 'Enter an http or https link without sign-in details.');
             }
+            // Keep validation and assignment atomic if another editor removes the tag.
+            $db->exec('BEGIN IMMEDIATE');
             $tagId = $input['tagId'] ?? null;
             if ($tagId !== null) {
                 if (!is_string($tagId)) failRequest(422, 'Choose a saved tag.');
@@ -116,6 +140,7 @@ try {
                 $query = $db->prepare('UPDATE notes SET title=?, url=?, description=?, tagId=CASE WHEN ? THEN ? ELSE tagId END, revision=revision+1 WHERE id=? AND revision=?');
                 $query->execute([$title, $url, $description, (int)array_key_exists('tagId', $input), $tagId, $id, (int)($input['revision'] ?? 0)]);
             }
+            $db->exec('COMMIT');
         } elseif ($action === 'delete') {
             $query = $db->prepare('DELETE FROM notes WHERE id=? AND revision=?');
             $query->execute([$id, (int)($input['revision'] ?? 0)]);

@@ -17,9 +17,16 @@
             <div class="board-actions"><button class="ink-btn" disabled>{{ icon('plus-sign', '17') }} New note</button></div>
           </header>
           <?php if (!$board['notes']): ?><p class="empty-board">Save your first link with “New note”.</p><?php endif; ?>
-          <ul class="note-grid">
-            <?php $tagsById = array_column($board['tags'], null, 'id'); ?>
-            <?php foreach ($board['notes'] as $note): $tag = $tagsById[$note['tagId'] ?? ''] ?? null; ?>
+          <?php
+            $tagsById = array_column($board['tags'], null, 'id');
+            $groups = [];
+            foreach ($board['notes'] as $note) $groups[$note['tagId'] ?? ''][] = $note;
+            foreach ($groups as $id => $notes): $tag = $tagsById[$id] ?? null;
+          ?>
+          <section class="note-group">
+            <h2 class="note-group-title"><?php if ($tag): ?><span aria-hidden="true"><?= escapeBoardText($tag['icon']) ?> </span><?= escapeBoardText($tag['name']) ?><?php else: ?>Untagged<?php endif; ?></h2>
+            <ul class="note-grid">
+              <?php foreach ($notes as $note): ?>
               <li class="note-slot" data-tone="<?= ((int)$note['seq'] - 1) % 4 ?>"<?php if ($tag): ?> style="--paper: <?= escapeBoardText($tag['colour']) ?>"<?php endif; ?>>
                 <div class="note-sheet">
                   <div class="note-top"><span class="note-host"><?= escapeBoardText(preg_replace('/^www\./i', '', (string)parse_url($note['url'], PHP_URL_HOST))) ?></span></div>
@@ -30,7 +37,9 @@
                 </div>
               </li>
             <?php endforeach; ?>
-          </ul>
+            </ul>
+          </section>
+          <?php endforeach; ?>
         </section>
       <?php endif; ?>
       {% else %}

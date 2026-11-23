@@ -32,7 +32,7 @@ function database(string $dir): PDO {
         PDO::ATTR_TIMEOUT => 5,
     ]);
     $db->exec('PRAGMA foreign_keys = ON');
-    if ((int)$db->query('PRAGMA user_version')->fetchColumn() >= 1) return $db;
+    if ((int)$db->query('PRAGMA user_version')->fetchColumn() >= 2) return $db;
     $db->exec('BEGIN IMMEDIATE');
     $db->exec('CREATE TABLE IF NOT EXISTS attempts (ip TEXT PRIMARY KEY, started INTEGER, count INTEGER)');
     if (!$db->query("SELECT 1 FROM sqlite_master WHERE type='table' AND name='notes'")->fetchColumn()) {
@@ -53,12 +53,19 @@ function database(string $dir): PDO {
         $db->exec('ALTER TABLE notes ADD COLUMN tagId TEXT REFERENCES tags(id)');
         $db->exec('PRAGMA user_version = 1');
     }
+    if ((int)$db->query('PRAGMA user_version')->fetchColumn() < 2) {
+        $db->exec('ALTER TABLE tags ADD COLUMN revision INTEGER NOT NULL DEFAULT 1');
+        $db->exec('PRAGMA user_version = 2');
+    }
     $db->exec('COMMIT');
     return $db;
 }
 
 function boardSnapshot(PDO $db): array {
-    $notes = $db->query('SELECT id,title,url,description,revision,seq,tagId FROM notes ORDER BY seq DESC')->fetchAll();
-    $tags = $db->query('SELECT id,name,icon,colour FROM tags ORDER BY name')->fetchAll();
+    $db->beginTransaction();
+    $notes = $db->query('SELECT n.id,n.title,n.url,n.description,n.revision,n.seq,n.tagId FROM notes n
+        LEFT JOIN tags t ON t.id=n.tagId ORDER BY t.id IS NULL, t.name COLLATE NOCASE, n.seq DESC')->fetchAll();
+    $tags = $db->query('SELECT id,name,icon,colour,revision FROM tags ORDER BY name')->fetchAll();
+    $db->commit();
     return ['notes' => $notes, 'tags' => $tags, 'canWrite' => boardCanWrite()];
 }

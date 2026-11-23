@@ -45,8 +45,11 @@
 .board-counter { gap: 5px; }
 .board-head h1 { margin: 3px 0 0; }
 .board-actions { gap: 6px; }
-.note-grid { position: relative; min-height: 360px; align-content: start; list-style: none; padding: 0; margin: 28px 0 10px; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr)); gap: 20px 16px; align-items: start; }
-.note-slot { --paper: #fff0a8; width: 100%; max-width: 208px; position: relative; translate: var(--note-x, 0px) var(--note-y, 0px); touch-action: pinch-zoom; user-select: none; cursor: grab; min-width: 0; }
+.note-group { margin-top: 24px; }
+.note-group-title { margin: 0 0 10px; font: 600 1.15rem/1.4 var(--hand); overflow-wrap: anywhere; }
+.note-grid { position: relative; align-content: start; list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr)); gap: 20px 16px; align-items: stretch; }
+.note-slot { --paper: #fff0a8; width: 100%; position: relative; display: grid; touch-action: pan-y pinch-zoom; user-select: none; cursor: grab; min-width: 0; }
+.note-slot[data-drop-target] { outline: 2px dashed var(--ink); outline-offset: 3px; }
 .note-slot[data-dragging], .note-slot[data-dragging] * { cursor: grabbing; }
 .note-slot[data-tone="1"] { --paper: #d9eed8; }
 .note-slot[data-tone="2"] { --paper: #f9d8c7; }
@@ -74,7 +77,7 @@
 .note-arrow { display: inline-block; flex: none; font: 500 .68em/1 "Instrument Sans", sans-serif; }
 .note-description { margin: 6px 0 0; font-size: 14px; line-height: var(--rule-spacing); white-space: pre-line; overflow-wrap: anywhere; }
 .paper-corner {
-  position: absolute; right: 0; bottom: 0; width: 36px; height: 36px; cursor: pointer;
+  touch-action: none; position: absolute; right: 0; bottom: 0; width: 36px; height: 36px; cursor: pointer;
   background: linear-gradient(135deg, transparent 49%, #24354822 50%, #ffffff85 75%, transparent 76%);
   border-radius: 0 0 14px 0;
 }
@@ -99,8 +102,7 @@
   .board-head { align-items: start; flex-wrap: wrap; gap: 16px; }
   .board-actions { margin-left: auto; }
   .board-actions .ink-btn { padding-inline: 10px; }
-  .note-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 144px), 1fr)); gap: 14px; margin-top: 22px; }
-  .note-slot { max-width: 176px; }
+  .note-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 144px), 1fr)); gap: 14px; }
   .note-sheet { min-height: 138px; }
 }
 @media (prefers-reduced-motion: reduce) { .note-slot[data-enter] { animation: none; } }
@@ -116,7 +118,8 @@
 }
 .note-tag-field { display: flex; align-items: end; gap: 6px; margin-bottom: 16px; }
 .note-tag-field label { flex: 1; min-width: 0; }
-.note-tag-field select {
+.manage-tag-select { margin-bottom: 14px; }
+.manage-tag-select select, .note-tag-field select {
   display: block; width: 100%; min-height: 44px; margin-top: 4px; padding: 6px;
   border: 1px solid #7b775d; border-radius: 4px; background: #fffdf2bf;
   color: var(--ink); font: 1rem/1.45 "Instrument Sans", sans-serif;

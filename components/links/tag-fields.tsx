@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react';
 import options from '../../server/links/tag-options.json';
 
-export type Tag = { id: string; name: string; icon: string; colour: string };
+export type Tag = { id: string; revision?: number; name: string; icon: string; colour: string };
 export function paperStyle(colour?: string): CSSProperties | undefined {
   return colour ? { '--paper': colour } as CSSProperties : undefined;
 }

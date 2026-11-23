@@ -36,8 +36,8 @@
 
 
     <meta name="referrer" content="no-referrer" />
-    <link rel="stylesheet" href="/links/links.css?v=c7f1889e3eda" />
-    <script type="module" src="/links/links.js?v=9921e6b24b5c"></script>
+    <link rel="stylesheet" href="/links/links.css?v=8af319bb0757" />
+    <script type="module" src="/links/links.js?v=4e2e133f3d67"></script>
 
   </head>
   <body id="top" class="text-[#101114]">
@@ -92,9 +92,16 @@
             <div class="board-actions"><button class="ink-btn" disabled><svg aria-hidden="true" focusable="false" class="ui-icon " width="17" height="17" viewBox="0 0 24 24"><use href="/assets/hugeicons.svg?v=8db57b131cc8#plus-sign"></use></svg> New note</button></div>
           </header>
           <?php if (!$board['notes']): ?><p class="empty-board">Save your first link with “New note”.</p><?php endif; ?>
-          <ul class="note-grid">
-            <?php $tagsById = array_column($board['tags'], null, 'id'); ?>
-            <?php foreach ($board['notes'] as $note): $tag = $tagsById[$note['tagId'] ?? ''] ?? null; ?>
+          <?php
+            $tagsById = array_column($board['tags'], null, 'id');
+            $groups = [];
+            foreach ($board['notes'] as $note) $groups[$note['tagId'] ?? ''][] = $note;
+            foreach ($groups as $id => $notes): $tag = $tagsById[$id] ?? null;
+          ?>
+          <section class="note-group">
+            <h2 class="note-group-title"><?php if ($tag): ?><span aria-hidden="true"><?= escapeBoardText($tag['icon']) ?> </span><?= escapeBoardText($tag['name']) ?><?php else: ?>Untagged<?php endif; ?></h2>
+            <ul class="note-grid">
+              <?php foreach ($notes as $note): ?>
               <li class="note-slot" data-tone="<?= ((int)$note['seq'] - 1) % 4 ?>"<?php if ($tag): ?> style="--paper: <?= escapeBoardText($tag['colour']) ?>"<?php endif; ?>>
                 <div class="note-sheet">
                   <div class="note-top"><span class="note-host"><?= escapeBoardText(preg_replace('/^www\./i', '', (string)parse_url($note['url'], PHP_URL_HOST))) ?></span></div>
@@ -105,7 +112,9 @@
                 </div>
               </li>
             <?php endforeach; ?>
-          </ul>
+            </ul>
+          </section>
+          <?php endforeach; ?>
         </section>
       <?php endif; ?>
 
